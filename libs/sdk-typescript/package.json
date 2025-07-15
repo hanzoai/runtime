@@ -1,19 +1,19 @@
 {
-  "name": "@daytonaio/sdk",
+  "name": "@hanzo/runtime",
   "version": "0.0.0-dev",
-  "description": "TypeScript SDK for Daytona",
+  "description": "TypeScript SDK for Hanzo Runtime",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/daytonaio/daytona.git"
+    "url": "git+https://github.com/hanzoai/runtime.git"
   },
-  "author": "Daytona Platforms Inc.",
+  "author": "Hanzo Industries Inc",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/daytonaio/daytona/issues"
+    "url": "https://github.com/hanzoai/runtime/issues"
   },
-  "homepage": "https://www.daytona.io/docs",
+  "homepage": "https://github.com/hanzoai/runtime",
   "config": {
     "docsDir": "../../apps/docs/src/content/docs/typescript-sdk"
   },

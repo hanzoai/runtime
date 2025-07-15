@@ -1,4 +1,4 @@
-# Copyright 2025 Daytona Platforms Inc.
+# Copyright 2025 Hanzo Industries Inc
 # SPDX-License-Identifier: Apache-2.0
 
 from daytona_api_client import SandboxState, SessionExecuteResponse
@@ -12,9 +12,9 @@ from ._async.computer_use import (
     ScreenshotOptions,
     ScreenshotRegion,
 )
-from ._async.daytona import AsyncDaytona
+from ._async.daytona import AsyncHanzoRuntime
 from ._async.sandbox import AsyncSandbox
-from ._sync.daytona import Daytona
+from ._sync.daytona import HanzoRuntime
 from ._sync.sandbox import Sandbox
 from .common.charts import (
     BarChart,
@@ -31,9 +31,9 @@ from .common.daytona import (
     CreateSandboxBaseParams,
     CreateSandboxFromImageParams,
     CreateSandboxFromSnapshotParams,
-    DaytonaConfig,
+    HanzoRuntimeConfig,
 )
-from .common.errors import DaytonaError
+from .common.errors import HanzoRuntimeError
 from .common.filesystem import FileUpload
 from .common.image import Image
 from .common.lsp_server import LspLanguageId
@@ -43,12 +43,12 @@ from .common.snapshot import CreateSnapshotParams
 from .common.volume import VolumeMount
 
 __all__ = [
-    "Daytona",
-    "DaytonaConfig",
+    "HanzoRuntime",
+    "HanzoRuntimeConfig",
     "CodeLanguage",
     "SessionExecuteRequest",
     "SessionExecuteResponse",
-    "DaytonaError",
+    "HanzoRuntimeError",
     "LspLanguageId",
     "CodeRunParams",
     "Sandbox",
@@ -64,7 +64,7 @@ __all__ = [
     "CompositeChart",
     "FileUpload",
     "VolumeMount",
-    "AsyncDaytona",
+    "AsyncHanzoRuntime",
     "AsyncSandbox",
     "AsyncComputerUse",
     "AsyncMouse",
