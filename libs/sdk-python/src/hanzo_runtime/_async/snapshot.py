@@ -4,10 +4,10 @@
 import asyncio
 from typing import Callable, List, Optional
 
-from daytona_api_client_async import ObjectStorageApi, SnapshotsApi
-from daytona_api_client_async.models.create_build_info import CreateBuildInfo
-from daytona_api_client_async.models.create_snapshot import CreateSnapshot
-from daytona_api_client_async.models.snapshot_state import SnapshotState
+from hanzo_runtime_api_client_async import ObjectStorageApi, SnapshotsApi
+from hanzo_runtime_api_client_async.models.create_build_info import CreateBuildInfo
+from hanzo_runtime_api_client_async.models.create_snapshot import CreateSnapshot
+from hanzo_runtime_api_client_async.models.snapshot_state import SnapshotState
 
 from .._utils.errors import intercept_errors
 from .._utils.stream import process_streaming_response
@@ -36,8 +36,8 @@ class AsyncSnapshotService:
 
         Example:
             ```python
-            async with AsyncHanzoRuntime() as daytona:
-                snapshots = await daytona.snapshot.list()
+            async with AsyncHanzoRuntime() as runtime:
+                snapshots = await runtime.snapshot.list()
                 for snapshot in snapshots:
                     print(f"{snapshot.name} ({snapshot.image_name})")
             ```
@@ -56,9 +56,9 @@ class AsyncSnapshotService:
 
         Example:
             ```python
-            async with AsyncHanzoRuntime() as daytona:
-                snapshot = await daytona.snapshot.get("test-snapshot")
-                await daytona.snapshot.delete(snapshot)
+            async with AsyncHanzoRuntime() as runtime:
+                snapshot = await runtime.snapshot.get("test-snapshot")
+                await runtime.snapshot.delete(snapshot)
                 print("Snapshot deleted")
             ```
         """
@@ -76,8 +76,8 @@ class AsyncSnapshotService:
 
         Example:
             ```python
-            async with AsyncHanzoRuntime() as daytona:
-                snapshot = await daytona.snapshot.get("test-snapshot-name")
+            async with AsyncHanzoRuntime() as runtime:
+                snapshot = await runtime.snapshot.get("test-snapshot-name")
                 print(f"{snapshot.name} ({snapshot.image_name})")
             ```
         """
@@ -102,7 +102,7 @@ class AsyncSnapshotService:
         Example:
             ```python
             image = Image.debianSlim('3.12').pipInstall('numpy')
-            daytona.snapshot.create(
+            runtime.snapshot.create(
                 CreateSnapshotParams(name='my-snapshot', image=image),
                 on_logs=lambda chunk: print(chunk, end=""),
             )
@@ -142,7 +142,7 @@ class AsyncSnapshotService:
             _, url, *_ = self.__snapshots_api._get_snapshot_build_logs_serialize(  # pylint: disable=protected-access
                 id=created_snapshot.id,
                 follow=True,
-                x_daytona_organization_id=None,
+                x_hanzo_runtime_organization_id=None,
                 _request_auth=None,
                 _content_type=None,
                 _headers=None,

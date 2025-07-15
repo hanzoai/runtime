@@ -53,7 +53,7 @@ ADDITIONAL_REPLACEMENTS = {
     "async for": "for",
     "await ": "",
     # Module & class renames
-    "daytona_api_client_async": "daytona_api_client",
+    "hanzo_runtime_api_client_async": "hanzo_runtime_api_client",
     "AsyncVolumeService": "VolumeService",
     "AsyncFileSystem": "FileSystem",
     "AsyncGit": "Git",
@@ -133,9 +133,9 @@ def find_license_end(lines):
 def transform_docstrings(text: str) -> str:
     """
     Transform docstrings so that code-block examples are converted from async to sync:
-    1. async with AsyncDaytona() as var: -> var = Daytona()
-    2. try/finally blocks with only daytona.close() -> remove try/finally, unindent body
-    3. try/finally blocks with other content -> remove only daytona.close() line
+    1. async with AsyncHanzoRuntime() as var: -> var = HanzoRuntime()
+    2. try/finally blocks with only runtime.close() -> remove try/finally, unindent body
+    3. try/finally blocks with other content -> remove only runtime.close() line
     4. Properly handle indentation for all cases
     """
 
@@ -261,7 +261,7 @@ def transform_docstrings(text: str) -> str:
                         # Skip the finally block
                         i = k
                         continue
-                    # Keep try/finally but remove daytona.close() lines
+                    # Keep try/finally but remove runtime.close() lines
                     result_lines.append(line)  # Add 'try:' line
                     i += 1
 
@@ -1126,7 +1126,7 @@ def post_process(path: Path):
     6) Convert await asyncio.sleep(...) calls to time.sleep(...)
     7) Strip Awaitable[...] wrappers
     8) Clean up typing imports
-    9) Remove any leftover daytona.close() lines
+    9) Remove any leftover runtime.close() lines
     10) Collapse >2 blank lines into exactly 2
     11) Manage asyncio and time imports (add if needed based on usage, remove if unused)
     12) Inject auto‐gen banner if missing

@@ -4,8 +4,8 @@
 import re
 from typing import List
 
-from daytona_api_client_async import CreateVolume, VolumesApi
-from daytona_api_client_async.exceptions import NotFoundException
+from hanzo_runtime_api_client_async import CreateVolume, VolumesApi
+from hanzo_runtime_api_client_async.exceptions import NotFoundException
 
 from ..common.volume import Volume
 
@@ -24,8 +24,8 @@ class AsyncVolumeService:
 
         Example:
             ```python
-            async with AsyncHanzoRuntime() as daytona:
-                volumes = await daytona.volume.list()
+            async with AsyncHanzoRuntime() as runtime:
+                volumes = await runtime.volume.list()
                 for volume in volumes:
                     print(f"{volume.name} ({volume.id})")
             ```
@@ -44,8 +44,8 @@ class AsyncVolumeService:
 
         Example:
             ```python
-            async with AsyncHanzoRuntime() as daytona:
-                volume = await daytona.volume.get("test-volume-name", create=True)
+            async with AsyncHanzoRuntime() as runtime:
+                volume = await runtime.volume.get("test-volume-name", create=True)
                 print(f"{volume.name} ({volume.id})")
             ```
         """
@@ -67,8 +67,8 @@ class AsyncVolumeService:
 
         Example:
             ```python
-            async with AsyncHanzoRuntime() as daytona:
-                volume = await daytona.volume.create("test-volume")
+            async with AsyncHanzoRuntime() as runtime:
+                volume = await runtime.volume.create("test-volume")
                 print(f"{volume.name} ({volume.id}); state: {volume.state}")
             ```
         """
@@ -82,9 +82,9 @@ class AsyncVolumeService:
 
         Example:
             ```python
-            async with AsyncHanzoRuntime() as daytona:
-                volume = await daytona.volume.get("test-volume")
-                await daytona.volume.delete(volume)
+            async with AsyncHanzoRuntime() as runtime:
+                volume = await runtime.volume.get("test-volume")
+                await runtime.volume.delete(volume)
                 print("Volume deleted")
             ```
         """

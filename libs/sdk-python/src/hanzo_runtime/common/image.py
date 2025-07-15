@@ -191,7 +191,7 @@ class Image(BaseModel):
 
         Example:
             ```python
-            image = Image.debian_slim("3.12").add_local_file("package.json", "/home/daytona/package.json")
+            image = Image.debian_slim("3.12").add_local_file("package.json", "/home/hanzo/package.json")
             ```
         """
         if remote_path.endswith("/"):
@@ -216,7 +216,7 @@ class Image(BaseModel):
 
         Example:
             ```python
-            image = Image.debian_slim("3.12").add_local_dir("src", "/home/daytona/src")
+            image = Image.debian_slim("3.12").add_local_dir("src", "/home/hanzo/src")
             ```
         """
         local_path = os.path.expanduser(local_path)
@@ -266,7 +266,7 @@ class Image(BaseModel):
 
         Example:
             ```python
-            image = Image.debian_slim("3.12").env({"PROJECT_ROOT": "/home/daytona"})
+            image = Image.debian_slim("3.12").env({"PROJECT_ROOT": "/home/hanzo"})
             ```
         """
         non_str_keys = [key for key, val in env_vars.items() if not isinstance(val, str)]
@@ -289,7 +289,7 @@ class Image(BaseModel):
 
         Example:
             ```python
-            image = Image.debian_slim("3.12").workdir("/home/daytona")
+            image = Image.debian_slim("3.12").workdir("/home/hanzo")
             ```
         """
         self._dockerfile += f"WORKDIR {shlex.quote(str(path))}\n"

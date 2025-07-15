@@ -2,10 +2,10 @@
 
 Daytona MCP Server allows AI agents to utilize:
 
-- Daytona Sandbox Management (Create, Destroy)
-- Execute commands in Daytona Sandboxes
+- Hanzo Runtime Sandbox Management (Create, Destroy)
+- Execute commands in Hanzo Runtime Sandboxes
 - File Operations in Daytona sandboxes
-- Generate preview links for web applications running in Daytona Sandboxes
+- Generate preview links for web applications running in Hanzo Runtime Sandboxes
 
 ## Prerequisites
 
@@ -26,7 +26,7 @@ brew install daytonaio/cli/daytona
 **Windows**
 
 ```bash
-powershell -Command "irm https://get.daytona.io/windows | iex"
+powershell -Command "irm https://get.hanzo_runtime.io/windows | iex"
 ```
 
 2. **Log in to your Daytona account:**
@@ -193,4 +193,4 @@ Note: if you are running Daytona MCP Server on Windows OS, add the following to 
 
 ## Support
 
-For more information, visit [daytona.io](https://daytona.io) or contact support at support@daytona.io.
+For more information, visit [hanzo_runtime.io](https://hanzo_runtime.io) or contact support at support@hanzo_runtime.io.

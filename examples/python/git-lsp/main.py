@@ -1,10 +1,10 @@
-from daytona import CreateSandboxFromImageParams, Daytona, Image
+from hanzo_runtime import , Image
 
 
 def main():
-    daytona = Daytona()
+    hanzo_runtime = HanzoRuntime()
 
-    sandbox = daytona.create(
+    sandbox = hanzo_runtime.create(
         CreateSandboxFromImageParams(
             image=(
                 Image.base("ubuntu:25.10").run_commands(
@@ -61,7 +61,7 @@ def main():
         print("Error executing example:", error)
     finally:
         # Cleanup
-        daytona.delete(sandbox)
+        hanzo_runtime.delete(sandbox)
 
 
 if __name__ == "__main__":

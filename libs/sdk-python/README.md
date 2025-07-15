@@ -1,13 +1,13 @@
-# Daytona SDK for Python
+# Hanzo Runtime SDK for Python
 
-A Python SDK for interacting with the Daytona API, providing a simple interface for Daytona Sandbox management, Git operations, file system operations, and language server protocol support.
+A Python SDK for interacting with the Hanzo Runtime API, providing a simple interface for Hanzo Runtime Sandbox management, Git operations, file system operations, and language server protocol support.
 
 ## Installation
 
 You can install the package using pip:
 
 ```bash
-pip install daytona
+pip install hanzo-runtime
 ```
 
 ## Quick Start
@@ -15,20 +15,20 @@ pip install daytona
 Here's a simple example of using the SDK:
 
 ```python
-from daytona import Daytona
+from hanzo_runtime import HanzoRuntime
 
 # Initialize using environment variables
-daytona = Daytona()
+hanzo_runtime = HanzoRuntime()
 
 # Create a sandbox
-sandbox = daytona.create()
+sandbox = hanzo_runtime.create()
 
 # Run code in the sandbox
 response = sandbox.process.code_run('print("Hello World!")')
 print(response.result)
 
 # Clean up when done
-daytona.delete(sandbox)
+hanzo_runtime.delete(sandbox)
 ```
 
 ## Configuration
@@ -36,27 +36,27 @@ daytona.delete(sandbox)
 The SDK can be configured using environment variables or by passing a configuration object:
 
 ```python
-from daytona import Daytona, DaytonaConfig
+from hanzo_runtime import HanzoRuntime, HanzoRuntimeConfig
 
 # Initialize with configuration
-config = DaytonaConfig(
+config = HanzoRuntimeConfig(
     api_key="your-api-key",
     api_url="your-api-url",
     target="us"
 )
-daytona = Daytona(config)
+hanzo_runtime = HanzoRuntime(config)
 ```
 
 Or using environment variables:
 
-- `DAYTONA_API_KEY`: Your Daytona API key
-- `DAYTONA_API_URL`: The Daytona API URL
-- `DAYTONA_TARGET`: Your target environment
+- `HANZO_RUNTIME_API_KEY`: Your Hanzo Runtime API key
+- `HANZO_RUNTIME_API_URL`: The Hanzo Runtime API URL
+- `HANZO_RUNTIME_TARGET`: Your target environment
 
 You can also customize sandbox creation:
 
 ```python
-sandbox = daytona.create(CreateSandboxFromSnapshotParams(
+sandbox = hanzo_runtime.create(CreateSandboxFromSnapshotParams(
     language="python",
     env_vars={"PYTHON_ENV": "development"},
     auto_stop_interval=60,  # Auto-stop after 1 hour of inactivity
@@ -136,6 +136,6 @@ completions = lsp.completions('path/to/file.ts', {"line": 10, "character": 15})
 
 ## Contributing
 
-Daytona is Open Source under the [Apache License 2.0](/libs/sdk-python/LICENSE), and is the [copyright of its contributors](/NOTICE). If you would like to contribute to the software, read the Developer Certificate of Origin Version 1.1 (https://developercertificate.org/). Afterwards, navigate to the [contributing guide](/CONTRIBUTING.md) to get started.
+Hanzo Runtime is Open Source under the [Apache License 2.0](/libs/sdk-python/LICENSE), and is the [copyright of its contributors](/NOTICE). If you would like to contribute to the software, read the Developer Certificate of Origin Version 1.1 (https://developercertificate.org/). Afterwards, navigate to the [contributing guide](/CONTRIBUTING.md) to get started.
 
-Code in [\_sync](/libs/sdk-python/src/daytona/_sync/) directory shouldn't be edited directly. It should be generated from the corresponding async code in the [\_async](/libs/sdk-python/src/daytona/_async/) directory using the [sync_generator.py](/libs/sdk-python/scripts/sync_generator.py) script.
+Code in [\_sync](/libs/sdk-python/src/hanzo_runtime/_sync/) directory shouldn't be edited directly. It should be generated from the corresponding async code in the [\_async](/libs/sdk-python/src/hanzo_runtime/_async/) directory using the [sync_generator.py](/libs/sdk-python/scripts/sync_generator.py) script.

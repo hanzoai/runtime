@@ -1,10 +1,10 @@
-import { Daytona } from '@daytonaio/sdk'
+import { HanzoRuntime } from '@hanzo/runtime-sdk'
 
 async function main() {
-  const daytona = new Daytona()
+  const hanzoRuntime = new HanzoRuntime()
 
   console.log('Creating sandbox')
-  const sandbox = await daytona.create()
+  const sandbox = await hanzoRuntime.create()
   console.log('Sandbox created')
 
   await sandbox.setLabels({
@@ -20,7 +20,7 @@ async function main() {
   console.log('Sandbox started')
 
   console.log('Getting existing sandbox')
-  const existingSandbox = await daytona.get(sandbox.id)
+  const existingSandbox = await hanzoRuntime.get(sandbox.id)
   console.log('Got existing sandbox')
 
   const response = await existingSandbox.process.executeCommand(
@@ -35,7 +35,7 @@ async function main() {
     console.log(response.result)
   }
 
-  const sandboxes = await daytona.list()
+  const sandboxes = await hanzoRuntime.list()
   console.log('Total sandboxes count:', sandboxes.length)
 
   console.log(`Printing sandboxes[0] -> id: ${sandboxes[0].id} state: ${sandboxes[0].state}`)

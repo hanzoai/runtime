@@ -9,7 +9,7 @@ import base64
 import json
 from typing import Callable, Dict, List, Optional
 
-from daytona_api_client import (
+from hanzo_runtime_api_client import (
     Command,
     CreateSessionRequest,
     ExecuteRequest,
@@ -385,7 +385,7 @@ class Process:
             sandbox_id=self._sandbox_id,
             session_id=session_id,
             command_id=command_id,
-            x_daytona_organization_id=None,
+            x_hanzo_runtime_organization_id=None,
             follow=True,
             _request_auth=None,
             _content_type=None,

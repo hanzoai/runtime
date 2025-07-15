@@ -47,7 +47,7 @@ class SandboxApi:
     def archive_sandbox(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -66,8 +66,8 @@ class SandboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -92,7 +92,7 @@ class SandboxApi:
 
         _param = self._archive_sandbox_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -117,7 +117,7 @@ class SandboxApi:
     def archive_sandbox_with_http_info(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -136,8 +136,8 @@ class SandboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -162,7 +162,7 @@ class SandboxApi:
 
         _param = self._archive_sandbox_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -187,7 +187,7 @@ class SandboxApi:
     def archive_sandbox_without_preload_content(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -206,8 +206,8 @@ class SandboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -232,7 +232,7 @@ class SandboxApi:
 
         _param = self._archive_sandbox_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -252,7 +252,7 @@ class SandboxApi:
     def _archive_sandbox_serialize(
         self,
         sandbox_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -278,8 +278,8 @@ class SandboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -314,7 +314,7 @@ class SandboxApi:
     def create_backup(
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -333,8 +333,8 @@ class SandboxApi:
 
         :param sandbox_id: ID of the sandbox (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -359,7 +359,7 @@ class SandboxApi:
 
         _param = self._create_backup_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -384,7 +384,7 @@ class SandboxApi:
     def create_backup_with_http_info(
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -403,8 +403,8 @@ class SandboxApi:
 
         :param sandbox_id: ID of the sandbox (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -429,7 +429,7 @@ class SandboxApi:
 
         _param = self._create_backup_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -454,7 +454,7 @@ class SandboxApi:
     def create_backup_without_preload_content(
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -473,8 +473,8 @@ class SandboxApi:
 
         :param sandbox_id: ID of the sandbox (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -499,7 +499,7 @@ class SandboxApi:
 
         _param = self._create_backup_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -519,7 +519,7 @@ class SandboxApi:
     def _create_backup_serialize(
         self,
         sandbox_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -545,8 +545,8 @@ class SandboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -588,7 +588,7 @@ class SandboxApi:
     def create_sandbox(
         self,
         create_sandbox: CreateSandbox,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -607,8 +607,8 @@ class SandboxApi:
 
         :param create_sandbox: (required)
         :type create_sandbox: CreateSandbox
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -633,7 +633,7 @@ class SandboxApi:
 
         _param = self._create_sandbox_serialize(
             create_sandbox=create_sandbox,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -658,7 +658,7 @@ class SandboxApi:
     def create_sandbox_with_http_info(
         self,
         create_sandbox: CreateSandbox,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -677,8 +677,8 @@ class SandboxApi:
 
         :param create_sandbox: (required)
         :type create_sandbox: CreateSandbox
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -703,7 +703,7 @@ class SandboxApi:
 
         _param = self._create_sandbox_serialize(
             create_sandbox=create_sandbox,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -728,7 +728,7 @@ class SandboxApi:
     def create_sandbox_without_preload_content(
         self,
         create_sandbox: CreateSandbox,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -747,8 +747,8 @@ class SandboxApi:
 
         :param create_sandbox: (required)
         :type create_sandbox: CreateSandbox
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -773,7 +773,7 @@ class SandboxApi:
 
         _param = self._create_sandbox_serialize(
             create_sandbox=create_sandbox,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -793,7 +793,7 @@ class SandboxApi:
     def _create_sandbox_serialize(
         self,
         create_sandbox,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -817,8 +817,8 @@ class SandboxApi:
         # process the path parameters
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if create_sandbox is not None:
@@ -876,7 +876,7 @@ class SandboxApi:
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
         force: StrictBool,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -897,8 +897,8 @@ class SandboxApi:
         :type sandbox_id: str
         :param force: (required)
         :type force: bool
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -924,7 +924,7 @@ class SandboxApi:
         _param = self._delete_sandbox_serialize(
             sandbox_id=sandbox_id,
             force=force,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -950,7 +950,7 @@ class SandboxApi:
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
         force: StrictBool,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -971,8 +971,8 @@ class SandboxApi:
         :type sandbox_id: str
         :param force: (required)
         :type force: bool
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -998,7 +998,7 @@ class SandboxApi:
         _param = self._delete_sandbox_serialize(
             sandbox_id=sandbox_id,
             force=force,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1024,7 +1024,7 @@ class SandboxApi:
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
         force: StrictBool,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1045,8 +1045,8 @@ class SandboxApi:
         :type sandbox_id: str
         :param force: (required)
         :type force: bool
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1072,7 +1072,7 @@ class SandboxApi:
         _param = self._delete_sandbox_serialize(
             sandbox_id=sandbox_id,
             force=force,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1093,7 +1093,7 @@ class SandboxApi:
         self,
         sandbox_id,
         force,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -1123,8 +1123,8 @@ class SandboxApi:
             _query_params.append(('force', force))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -1159,7 +1159,7 @@ class SandboxApi:
     def get_build_logs(
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         follow: Annotated[Optional[StrictBool], Field(description="Whether to follow the logs stream")] = None,
         _request_timeout: Union[
             None,
@@ -1179,8 +1179,8 @@ class SandboxApi:
 
         :param sandbox_id: ID of the sandbox (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param follow: Whether to follow the logs stream
         :type follow: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1207,7 +1207,7 @@ class SandboxApi:
 
         _param = self._get_build_logs_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             follow=follow,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1233,7 +1233,7 @@ class SandboxApi:
     def get_build_logs_with_http_info(
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         follow: Annotated[Optional[StrictBool], Field(description="Whether to follow the logs stream")] = None,
         _request_timeout: Union[
             None,
@@ -1253,8 +1253,8 @@ class SandboxApi:
 
         :param sandbox_id: ID of the sandbox (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param follow: Whether to follow the logs stream
         :type follow: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1281,7 +1281,7 @@ class SandboxApi:
 
         _param = self._get_build_logs_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             follow=follow,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1307,7 +1307,7 @@ class SandboxApi:
     def get_build_logs_without_preload_content(
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         follow: Annotated[Optional[StrictBool], Field(description="Whether to follow the logs stream")] = None,
         _request_timeout: Union[
             None,
@@ -1327,8 +1327,8 @@ class SandboxApi:
 
         :param sandbox_id: ID of the sandbox (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param follow: Whether to follow the logs stream
         :type follow: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1355,7 +1355,7 @@ class SandboxApi:
 
         _param = self._get_build_logs_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             follow=follow,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1376,7 +1376,7 @@ class SandboxApi:
     def _get_build_logs_serialize(
         self,
         sandbox_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         follow,
         _request_auth,
         _content_type,
@@ -1407,8 +1407,8 @@ class SandboxApi:
             _query_params.append(('follow', follow))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -1444,7 +1444,7 @@ class SandboxApi:
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
         port: Annotated[Union[StrictFloat, StrictInt], Field(description="Port number to get preview URL for")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1465,8 +1465,8 @@ class SandboxApi:
         :type sandbox_id: str
         :param port: Port number to get preview URL for (required)
         :type port: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1492,7 +1492,7 @@ class SandboxApi:
         _param = self._get_port_preview_url_serialize(
             sandbox_id=sandbox_id,
             port=port,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1518,7 +1518,7 @@ class SandboxApi:
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
         port: Annotated[Union[StrictFloat, StrictInt], Field(description="Port number to get preview URL for")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1539,8 +1539,8 @@ class SandboxApi:
         :type sandbox_id: str
         :param port: Port number to get preview URL for (required)
         :type port: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1566,7 +1566,7 @@ class SandboxApi:
         _param = self._get_port_preview_url_serialize(
             sandbox_id=sandbox_id,
             port=port,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1592,7 +1592,7 @@ class SandboxApi:
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
         port: Annotated[Union[StrictFloat, StrictInt], Field(description="Port number to get preview URL for")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1613,8 +1613,8 @@ class SandboxApi:
         :type sandbox_id: str
         :param port: Port number to get preview URL for (required)
         :type port: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1640,7 +1640,7 @@ class SandboxApi:
         _param = self._get_port_preview_url_serialize(
             sandbox_id=sandbox_id,
             port=port,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1661,7 +1661,7 @@ class SandboxApi:
         self,
         sandbox_id,
         port,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -1689,8 +1689,8 @@ class SandboxApi:
             _path_params['port'] = port
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -1732,7 +1732,7 @@ class SandboxApi:
     def get_sandbox(
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         verbose: Annotated[Optional[StrictBool], Field(description="Include verbose output")] = None,
         _request_timeout: Union[
             None,
@@ -1752,8 +1752,8 @@ class SandboxApi:
 
         :param sandbox_id: ID of the sandbox (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param verbose: Include verbose output
         :type verbose: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1780,7 +1780,7 @@ class SandboxApi:
 
         _param = self._get_sandbox_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             verbose=verbose,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1806,7 +1806,7 @@ class SandboxApi:
     def get_sandbox_with_http_info(
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         verbose: Annotated[Optional[StrictBool], Field(description="Include verbose output")] = None,
         _request_timeout: Union[
             None,
@@ -1826,8 +1826,8 @@ class SandboxApi:
 
         :param sandbox_id: ID of the sandbox (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param verbose: Include verbose output
         :type verbose: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1854,7 +1854,7 @@ class SandboxApi:
 
         _param = self._get_sandbox_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             verbose=verbose,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1880,7 +1880,7 @@ class SandboxApi:
     def get_sandbox_without_preload_content(
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         verbose: Annotated[Optional[StrictBool], Field(description="Include verbose output")] = None,
         _request_timeout: Union[
             None,
@@ -1900,8 +1900,8 @@ class SandboxApi:
 
         :param sandbox_id: ID of the sandbox (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param verbose: Include verbose output
         :type verbose: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1928,7 +1928,7 @@ class SandboxApi:
 
         _param = self._get_sandbox_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             verbose=verbose,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1949,7 +1949,7 @@ class SandboxApi:
     def _get_sandbox_serialize(
         self,
         sandbox_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         verbose,
         _request_auth,
         _content_type,
@@ -1980,8 +1980,8 @@ class SandboxApi:
             _query_params.append(('verbose', verbose))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -2022,7 +2022,7 @@ class SandboxApi:
     @validate_call
     def list_sandboxes(
         self,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         verbose: Annotated[Optional[StrictBool], Field(description="Include verbose output")] = None,
         labels: Annotated[Optional[StrictStr], Field(description="JSON encoded labels to filter by")] = None,
         include_errored_deleted: Annotated[Optional[StrictBool], Field(description="Include errored and deleted sandboxes")] = None,
@@ -2042,8 +2042,8 @@ class SandboxApi:
         """List all sandboxes
 
 
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param verbose: Include verbose output
         :type verbose: bool
         :param labels: JSON encoded labels to filter by
@@ -2073,7 +2073,7 @@ class SandboxApi:
         """ # noqa: E501
 
         _param = self._list_sandboxes_serialize(
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             verbose=verbose,
             labels=labels,
             include_errored_deleted=include_errored_deleted,
@@ -2100,7 +2100,7 @@ class SandboxApi:
     @validate_call
     def list_sandboxes_with_http_info(
         self,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         verbose: Annotated[Optional[StrictBool], Field(description="Include verbose output")] = None,
         labels: Annotated[Optional[StrictStr], Field(description="JSON encoded labels to filter by")] = None,
         include_errored_deleted: Annotated[Optional[StrictBool], Field(description="Include errored and deleted sandboxes")] = None,
@@ -2120,8 +2120,8 @@ class SandboxApi:
         """List all sandboxes
 
 
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param verbose: Include verbose output
         :type verbose: bool
         :param labels: JSON encoded labels to filter by
@@ -2151,7 +2151,7 @@ class SandboxApi:
         """ # noqa: E501
 
         _param = self._list_sandboxes_serialize(
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             verbose=verbose,
             labels=labels,
             include_errored_deleted=include_errored_deleted,
@@ -2178,7 +2178,7 @@ class SandboxApi:
     @validate_call
     def list_sandboxes_without_preload_content(
         self,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         verbose: Annotated[Optional[StrictBool], Field(description="Include verbose output")] = None,
         labels: Annotated[Optional[StrictStr], Field(description="JSON encoded labels to filter by")] = None,
         include_errored_deleted: Annotated[Optional[StrictBool], Field(description="Include errored and deleted sandboxes")] = None,
@@ -2198,8 +2198,8 @@ class SandboxApi:
         """List all sandboxes
 
 
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param verbose: Include verbose output
         :type verbose: bool
         :param labels: JSON encoded labels to filter by
@@ -2229,7 +2229,7 @@ class SandboxApi:
         """ # noqa: E501
 
         _param = self._list_sandboxes_serialize(
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             verbose=verbose,
             labels=labels,
             include_errored_deleted=include_errored_deleted,
@@ -2251,7 +2251,7 @@ class SandboxApi:
 
     def _list_sandboxes_serialize(
         self,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         verbose,
         labels,
         include_errored_deleted,
@@ -2290,8 +2290,8 @@ class SandboxApi:
             _query_params.append(('includeErroredDeleted', include_errored_deleted))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -2334,7 +2334,7 @@ class SandboxApi:
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
         sandbox_labels: SandboxLabels,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2355,8 +2355,8 @@ class SandboxApi:
         :type sandbox_id: str
         :param sandbox_labels: (required)
         :type sandbox_labels: SandboxLabels
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2382,7 +2382,7 @@ class SandboxApi:
         _param = self._replace_labels_serialize(
             sandbox_id=sandbox_id,
             sandbox_labels=sandbox_labels,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2408,7 +2408,7 @@ class SandboxApi:
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
         sandbox_labels: SandboxLabels,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2429,8 +2429,8 @@ class SandboxApi:
         :type sandbox_id: str
         :param sandbox_labels: (required)
         :type sandbox_labels: SandboxLabels
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2456,7 +2456,7 @@ class SandboxApi:
         _param = self._replace_labels_serialize(
             sandbox_id=sandbox_id,
             sandbox_labels=sandbox_labels,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2482,7 +2482,7 @@ class SandboxApi:
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
         sandbox_labels: SandboxLabels,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2503,8 +2503,8 @@ class SandboxApi:
         :type sandbox_id: str
         :param sandbox_labels: (required)
         :type sandbox_labels: SandboxLabels
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2530,7 +2530,7 @@ class SandboxApi:
         _param = self._replace_labels_serialize(
             sandbox_id=sandbox_id,
             sandbox_labels=sandbox_labels,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2551,7 +2551,7 @@ class SandboxApi:
         self,
         sandbox_id,
         sandbox_labels,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -2577,8 +2577,8 @@ class SandboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if sandbox_labels is not None:
@@ -2636,7 +2636,7 @@ class SandboxApi:
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
         interval: Annotated[Union[StrictFloat, StrictInt], Field(description="Auto-archive interval in minutes (0 means the maximum interval will be used)")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2657,8 +2657,8 @@ class SandboxApi:
         :type sandbox_id: str
         :param interval: Auto-archive interval in minutes (0 means the maximum interval will be used) (required)
         :type interval: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2684,7 +2684,7 @@ class SandboxApi:
         _param = self._set_auto_archive_interval_serialize(
             sandbox_id=sandbox_id,
             interval=interval,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2710,7 +2710,7 @@ class SandboxApi:
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
         interval: Annotated[Union[StrictFloat, StrictInt], Field(description="Auto-archive interval in minutes (0 means the maximum interval will be used)")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2731,8 +2731,8 @@ class SandboxApi:
         :type sandbox_id: str
         :param interval: Auto-archive interval in minutes (0 means the maximum interval will be used) (required)
         :type interval: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2758,7 +2758,7 @@ class SandboxApi:
         _param = self._set_auto_archive_interval_serialize(
             sandbox_id=sandbox_id,
             interval=interval,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2784,7 +2784,7 @@ class SandboxApi:
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
         interval: Annotated[Union[StrictFloat, StrictInt], Field(description="Auto-archive interval in minutes (0 means the maximum interval will be used)")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2805,8 +2805,8 @@ class SandboxApi:
         :type sandbox_id: str
         :param interval: Auto-archive interval in minutes (0 means the maximum interval will be used) (required)
         :type interval: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2832,7 +2832,7 @@ class SandboxApi:
         _param = self._set_auto_archive_interval_serialize(
             sandbox_id=sandbox_id,
             interval=interval,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2853,7 +2853,7 @@ class SandboxApi:
         self,
         sandbox_id,
         interval,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -2881,8 +2881,8 @@ class SandboxApi:
             _path_params['interval'] = interval
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -2918,7 +2918,7 @@ class SandboxApi:
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
         interval: Annotated[Union[StrictFloat, StrictInt], Field(description="Auto-delete interval in minutes (negative value means disabled, 0 means delete immediately upon stopping)")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2939,8 +2939,8 @@ class SandboxApi:
         :type sandbox_id: str
         :param interval: Auto-delete interval in minutes (negative value means disabled, 0 means delete immediately upon stopping) (required)
         :type interval: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2966,7 +2966,7 @@ class SandboxApi:
         _param = self._set_auto_delete_interval_serialize(
             sandbox_id=sandbox_id,
             interval=interval,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2992,7 +2992,7 @@ class SandboxApi:
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
         interval: Annotated[Union[StrictFloat, StrictInt], Field(description="Auto-delete interval in minutes (negative value means disabled, 0 means delete immediately upon stopping)")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3013,8 +3013,8 @@ class SandboxApi:
         :type sandbox_id: str
         :param interval: Auto-delete interval in minutes (negative value means disabled, 0 means delete immediately upon stopping) (required)
         :type interval: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3040,7 +3040,7 @@ class SandboxApi:
         _param = self._set_auto_delete_interval_serialize(
             sandbox_id=sandbox_id,
             interval=interval,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3066,7 +3066,7 @@ class SandboxApi:
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
         interval: Annotated[Union[StrictFloat, StrictInt], Field(description="Auto-delete interval in minutes (negative value means disabled, 0 means delete immediately upon stopping)")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3087,8 +3087,8 @@ class SandboxApi:
         :type sandbox_id: str
         :param interval: Auto-delete interval in minutes (negative value means disabled, 0 means delete immediately upon stopping) (required)
         :type interval: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3114,7 +3114,7 @@ class SandboxApi:
         _param = self._set_auto_delete_interval_serialize(
             sandbox_id=sandbox_id,
             interval=interval,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3135,7 +3135,7 @@ class SandboxApi:
         self,
         sandbox_id,
         interval,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -3163,8 +3163,8 @@ class SandboxApi:
             _path_params['interval'] = interval
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -3200,7 +3200,7 @@ class SandboxApi:
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
         interval: Annotated[Union[StrictFloat, StrictInt], Field(description="Auto-stop interval in minutes (0 to disable)")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3221,8 +3221,8 @@ class SandboxApi:
         :type sandbox_id: str
         :param interval: Auto-stop interval in minutes (0 to disable) (required)
         :type interval: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3248,7 +3248,7 @@ class SandboxApi:
         _param = self._set_autostop_interval_serialize(
             sandbox_id=sandbox_id,
             interval=interval,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3274,7 +3274,7 @@ class SandboxApi:
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
         interval: Annotated[Union[StrictFloat, StrictInt], Field(description="Auto-stop interval in minutes (0 to disable)")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3295,8 +3295,8 @@ class SandboxApi:
         :type sandbox_id: str
         :param interval: Auto-stop interval in minutes (0 to disable) (required)
         :type interval: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3322,7 +3322,7 @@ class SandboxApi:
         _param = self._set_autostop_interval_serialize(
             sandbox_id=sandbox_id,
             interval=interval,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3348,7 +3348,7 @@ class SandboxApi:
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
         interval: Annotated[Union[StrictFloat, StrictInt], Field(description="Auto-stop interval in minutes (0 to disable)")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3369,8 +3369,8 @@ class SandboxApi:
         :type sandbox_id: str
         :param interval: Auto-stop interval in minutes (0 to disable) (required)
         :type interval: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3396,7 +3396,7 @@ class SandboxApi:
         _param = self._set_autostop_interval_serialize(
             sandbox_id=sandbox_id,
             interval=interval,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3417,7 +3417,7 @@ class SandboxApi:
         self,
         sandbox_id,
         interval,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -3445,8 +3445,8 @@ class SandboxApi:
             _path_params['interval'] = interval
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -3481,7 +3481,7 @@ class SandboxApi:
     def start_sandbox(
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3500,8 +3500,8 @@ class SandboxApi:
 
         :param sandbox_id: ID of the sandbox (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3526,7 +3526,7 @@ class SandboxApi:
 
         _param = self._start_sandbox_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3551,7 +3551,7 @@ class SandboxApi:
     def start_sandbox_with_http_info(
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3570,8 +3570,8 @@ class SandboxApi:
 
         :param sandbox_id: ID of the sandbox (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3596,7 +3596,7 @@ class SandboxApi:
 
         _param = self._start_sandbox_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3621,7 +3621,7 @@ class SandboxApi:
     def start_sandbox_without_preload_content(
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3640,8 +3640,8 @@ class SandboxApi:
 
         :param sandbox_id: ID of the sandbox (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3666,7 +3666,7 @@ class SandboxApi:
 
         _param = self._start_sandbox_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3686,7 +3686,7 @@ class SandboxApi:
     def _start_sandbox_serialize(
         self,
         sandbox_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -3712,8 +3712,8 @@ class SandboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -3755,7 +3755,7 @@ class SandboxApi:
     def stop_sandbox(
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3774,8 +3774,8 @@ class SandboxApi:
 
         :param sandbox_id: ID of the sandbox (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3800,7 +3800,7 @@ class SandboxApi:
 
         _param = self._stop_sandbox_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3825,7 +3825,7 @@ class SandboxApi:
     def stop_sandbox_with_http_info(
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3844,8 +3844,8 @@ class SandboxApi:
 
         :param sandbox_id: ID of the sandbox (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3870,7 +3870,7 @@ class SandboxApi:
 
         _param = self._stop_sandbox_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3895,7 +3895,7 @@ class SandboxApi:
     def stop_sandbox_without_preload_content(
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3914,8 +3914,8 @@ class SandboxApi:
 
         :param sandbox_id: ID of the sandbox (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3940,7 +3940,7 @@ class SandboxApi:
 
         _param = self._stop_sandbox_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3960,7 +3960,7 @@ class SandboxApi:
     def _stop_sandbox_serialize(
         self,
         sandbox_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -3986,8 +3986,8 @@ class SandboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -4023,7 +4023,7 @@ class SandboxApi:
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
         is_public: Annotated[StrictBool, Field(description="Public status to set")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4044,8 +4044,8 @@ class SandboxApi:
         :type sandbox_id: str
         :param is_public: Public status to set (required)
         :type is_public: bool
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4071,7 +4071,7 @@ class SandboxApi:
         _param = self._update_public_status_serialize(
             sandbox_id=sandbox_id,
             is_public=is_public,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4097,7 +4097,7 @@ class SandboxApi:
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
         is_public: Annotated[StrictBool, Field(description="Public status to set")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4118,8 +4118,8 @@ class SandboxApi:
         :type sandbox_id: str
         :param is_public: Public status to set (required)
         :type is_public: bool
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4145,7 +4145,7 @@ class SandboxApi:
         _param = self._update_public_status_serialize(
             sandbox_id=sandbox_id,
             is_public=is_public,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4171,7 +4171,7 @@ class SandboxApi:
         self,
         sandbox_id: Annotated[StrictStr, Field(description="ID of the sandbox")],
         is_public: Annotated[StrictBool, Field(description="Public status to set")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4192,8 +4192,8 @@ class SandboxApi:
         :type sandbox_id: str
         :param is_public: Public status to set (required)
         :type is_public: bool
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4219,7 +4219,7 @@ class SandboxApi:
         _param = self._update_public_status_serialize(
             sandbox_id=sandbox_id,
             is_public=is_public,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4240,7 +4240,7 @@ class SandboxApi:
         self,
         sandbox_id,
         is_public,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -4268,8 +4268,8 @@ class SandboxApi:
             _path_params['isPublic'] = is_public
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 

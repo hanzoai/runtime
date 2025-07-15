@@ -1,22 +1,22 @@
 import asyncio
 import os
 
-from daytona import AsyncDaytona, CreateSandboxFromSnapshotParams, VolumeMount
+from hanzo_runtime import AsyncHanzoRuntime, CreateSandboxFromSnapshotParams, VolumeMount
 
 
 async def main():
-    async with AsyncDaytona() as daytona:
+    async with AsyncHanzoRuntime() as hanzo_runtime:
         # Create a new volume or get an existing one
-        volume = await daytona.volume.get("my-volume", create=True)
+        volume = await hanzo_runtime.volume.get("my-volume", create=True)
 
         # Mount the volume to the sandbox
-        mount_dir_1 = "/home/daytona/volume"
+        mount_dir_1 = "/home/hanzo/volume"
 
         params = CreateSandboxFromSnapshotParams(
             language="python",
             volumes=[VolumeMount(volumeId=volume.id, mountPath=mount_dir_1)],
         )
-        sandbox = await daytona.create(params)
+        sandbox = await hanzo_runtime.create(params)
 
         # Create a new directory in the mount directory
         new_dir = os.path.join(mount_dir_1, "new-dir")
@@ -28,13 +28,13 @@ async def main():
 
         # Create a new sandbox with the same volume
         # and mount it to the different path
-        mount_dir_2 = "/home/daytona/my-files"
+        mount_dir_2 = "/home/hanzo/my-files"
 
         params = CreateSandboxFromSnapshotParams(
             language="python",
             volumes=[VolumeMount(volumeId=volume.id, mountPath=mount_dir_2)],
         )
-        sandbox2 = await daytona.create(params)
+        sandbox2 = await hanzo_runtime.create(params)
 
         # List files in the mount directory
         files = await sandbox2.fs.list_files(mount_dir_2)
@@ -45,9 +45,9 @@ async def main():
         print("File:", file)
 
         # Cleanup
-        await daytona.delete(sandbox)
-        await daytona.delete(sandbox2)
-        # daytona.volume.delete(volume)
+        await hanzo_runtime.delete(sandbox)
+        await hanzo_runtime.delete(sandbox2)
+        # hanzo_runtime.volume.delete(volume)
 
 
 if __name__ == "__main__":

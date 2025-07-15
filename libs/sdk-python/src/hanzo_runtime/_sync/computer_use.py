@@ -7,7 +7,7 @@
 
 from typing import List, Optional
 
-from daytona_api_client import (
+from hanzo_runtime_api_client import (
     CompressedScreenshotResponse,
     ComputerUseStartResponse,
     ComputerUseStatusResponse,

@@ -5,7 +5,7 @@ import base64
 import json
 from typing import Awaitable, Callable, Dict, List, Optional
 
-from daytona_api_client_async import (
+from hanzo_runtime_api_client_async import (
     Command,
     CreateSessionRequest,
     ExecuteRequest,
@@ -384,7 +384,7 @@ class AsyncProcess:
             sandbox_id=self._sandbox_id,
             session_id=session_id,
             command_id=command_id,
-            x_daytona_organization_id=None,
+            x_hanzo_runtime_organization_id=None,
             follow=True,
             _request_auth=None,
             _content_type=None,

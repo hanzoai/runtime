@@ -1,12 +1,12 @@
-import { Daytona } from '@daytonaio/sdk'
+import { HanzoRuntime } from '@hanzo/runtime-sdk'
 import * as fs from 'fs'
 import * as path from 'path'
 
 async function main() {
-  const daytona = new Daytona()
+  const hanzoRuntime = new HanzoRuntime()
 
   //  first, create a sandbox
-  const sandbox = await daytona.create()
+  const sandbox = await hanzoRuntime.create()
 
   try {
     console.log(`Created sandbox with ID: ${sandbox.id}`)
@@ -97,7 +97,7 @@ Script: ${scriptResult.exitCode === 0 ? 'Executed successfully' : 'Failed'}
     console.error('Error:', error)
   } finally {
     //  cleanup
-    await daytona.delete(sandbox)
+    await hanzoRuntime.delete(sandbox)
   }
 }
 

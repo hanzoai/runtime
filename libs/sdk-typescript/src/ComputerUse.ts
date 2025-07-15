@@ -28,7 +28,7 @@ import {
   ProcessRestartResponse,
   ProcessLogsResponse,
   ProcessErrorsResponse,
-} from '@daytonaio/api-client'
+} from '@hanzo/runtime-api-client'
 
 /**
  * Interface for region coordinates used in screenshot operations

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Command, Session, SessionExecuteRequest, SessionExecuteResponse, ToolboxApi } from '@daytonaio/api-client'
+import { Command, Session, SessionExecuteRequest, SessionExecuteResponse, ToolboxApi } from '@hanzo/runtime-api-client'
 import { SandboxCodeToolbox } from './Sandbox'
 import { ExecuteResponse } from './types/ExecuteResponse'
 import { ArtifactParser } from './utils/ArtifactParser'
@@ -247,14 +247,14 @@ export class Process {
    *
    * // Change directory
    * await process.executeSessionCommand(sessionId, {
-   *   command: 'cd /home/daytona'
+   *   command: 'cd /home/hanzo'
    * });
    *
    * // Run command in new directory
    * const result = await process.executeSessionCommand(sessionId, {
    *   command: 'pwd'
    * });
-   * console.log(result.output);  // Prints: /home/daytona
+   * console.log(result.output);  // Prints: /home/hanzo
    */
   public async executeSessionCommand(
     sessionId: string,

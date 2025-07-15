@@ -48,7 +48,7 @@ class SnapshotsApi:
     def activate_snapshot(
         self,
         id: Annotated[StrictStr, Field(description="Snapshot ID")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -67,8 +67,8 @@ class SnapshotsApi:
 
         :param id: Snapshot ID (required)
         :type id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -93,7 +93,7 @@ class SnapshotsApi:
 
         _param = self._activate_snapshot_serialize(
             id=id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -120,7 +120,7 @@ class SnapshotsApi:
     def activate_snapshot_with_http_info(
         self,
         id: Annotated[StrictStr, Field(description="Snapshot ID")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -139,8 +139,8 @@ class SnapshotsApi:
 
         :param id: Snapshot ID (required)
         :type id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -165,7 +165,7 @@ class SnapshotsApi:
 
         _param = self._activate_snapshot_serialize(
             id=id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -192,7 +192,7 @@ class SnapshotsApi:
     def activate_snapshot_without_preload_content(
         self,
         id: Annotated[StrictStr, Field(description="Snapshot ID")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -211,8 +211,8 @@ class SnapshotsApi:
 
         :param id: Snapshot ID (required)
         :type id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -237,7 +237,7 @@ class SnapshotsApi:
 
         _param = self._activate_snapshot_serialize(
             id=id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -259,7 +259,7 @@ class SnapshotsApi:
     def _activate_snapshot_serialize(
         self,
         id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -285,8 +285,8 @@ class SnapshotsApi:
             _path_params['id'] = id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -328,7 +328,7 @@ class SnapshotsApi:
     def create_snapshot(
         self,
         create_snapshot: CreateSnapshot,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -347,8 +347,8 @@ class SnapshotsApi:
 
         :param create_snapshot: (required)
         :type create_snapshot: CreateSnapshot
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -373,7 +373,7 @@ class SnapshotsApi:
 
         _param = self._create_snapshot_serialize(
             create_snapshot=create_snapshot,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -399,7 +399,7 @@ class SnapshotsApi:
     def create_snapshot_with_http_info(
         self,
         create_snapshot: CreateSnapshot,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -418,8 +418,8 @@ class SnapshotsApi:
 
         :param create_snapshot: (required)
         :type create_snapshot: CreateSnapshot
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -444,7 +444,7 @@ class SnapshotsApi:
 
         _param = self._create_snapshot_serialize(
             create_snapshot=create_snapshot,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -470,7 +470,7 @@ class SnapshotsApi:
     def create_snapshot_without_preload_content(
         self,
         create_snapshot: CreateSnapshot,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -489,8 +489,8 @@ class SnapshotsApi:
 
         :param create_snapshot: (required)
         :type create_snapshot: CreateSnapshot
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -515,7 +515,7 @@ class SnapshotsApi:
 
         _param = self._create_snapshot_serialize(
             create_snapshot=create_snapshot,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -536,7 +536,7 @@ class SnapshotsApi:
     def _create_snapshot_serialize(
         self,
         create_snapshot,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -560,8 +560,8 @@ class SnapshotsApi:
         # process the path parameters
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if create_snapshot is not None:
@@ -617,7 +617,7 @@ class SnapshotsApi:
     @validate_call
     def get_all_snapshots(
         self,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         limit: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Number of items per page")] = None,
         page: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Page number")] = None,
         _request_timeout: Union[
@@ -636,8 +636,8 @@ class SnapshotsApi:
         """List all snapshots
 
 
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param limit: Number of items per page
         :type limit: float
         :param page: Page number
@@ -665,7 +665,7 @@ class SnapshotsApi:
         """ # noqa: E501
 
         _param = self._get_all_snapshots_serialize(
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             limit=limit,
             page=page,
             _request_auth=_request_auth,
@@ -691,7 +691,7 @@ class SnapshotsApi:
     @validate_call
     def get_all_snapshots_with_http_info(
         self,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         limit: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Number of items per page")] = None,
         page: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Page number")] = None,
         _request_timeout: Union[
@@ -710,8 +710,8 @@ class SnapshotsApi:
         """List all snapshots
 
 
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param limit: Number of items per page
         :type limit: float
         :param page: Page number
@@ -739,7 +739,7 @@ class SnapshotsApi:
         """ # noqa: E501
 
         _param = self._get_all_snapshots_serialize(
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             limit=limit,
             page=page,
             _request_auth=_request_auth,
@@ -765,7 +765,7 @@ class SnapshotsApi:
     @validate_call
     def get_all_snapshots_without_preload_content(
         self,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         limit: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Number of items per page")] = None,
         page: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Page number")] = None,
         _request_timeout: Union[
@@ -784,8 +784,8 @@ class SnapshotsApi:
         """List all snapshots
 
 
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param limit: Number of items per page
         :type limit: float
         :param page: Page number
@@ -813,7 +813,7 @@ class SnapshotsApi:
         """ # noqa: E501
 
         _param = self._get_all_snapshots_serialize(
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             limit=limit,
             page=page,
             _request_auth=_request_auth,
@@ -834,7 +834,7 @@ class SnapshotsApi:
 
     def _get_all_snapshots_serialize(
         self,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         limit,
         page,
         _request_auth,
@@ -868,8 +868,8 @@ class SnapshotsApi:
             _query_params.append(('page', page))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -911,7 +911,7 @@ class SnapshotsApi:
     def get_snapshot(
         self,
         id: Annotated[StrictStr, Field(description="Snapshot ID or name")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -930,8 +930,8 @@ class SnapshotsApi:
 
         :param id: Snapshot ID or name (required)
         :type id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -956,7 +956,7 @@ class SnapshotsApi:
 
         _param = self._get_snapshot_serialize(
             id=id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -982,7 +982,7 @@ class SnapshotsApi:
     def get_snapshot_with_http_info(
         self,
         id: Annotated[StrictStr, Field(description="Snapshot ID or name")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1001,8 +1001,8 @@ class SnapshotsApi:
 
         :param id: Snapshot ID or name (required)
         :type id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1027,7 +1027,7 @@ class SnapshotsApi:
 
         _param = self._get_snapshot_serialize(
             id=id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1053,7 +1053,7 @@ class SnapshotsApi:
     def get_snapshot_without_preload_content(
         self,
         id: Annotated[StrictStr, Field(description="Snapshot ID or name")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1072,8 +1072,8 @@ class SnapshotsApi:
 
         :param id: Snapshot ID or name (required)
         :type id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1098,7 +1098,7 @@ class SnapshotsApi:
 
         _param = self._get_snapshot_serialize(
             id=id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1119,7 +1119,7 @@ class SnapshotsApi:
     def _get_snapshot_serialize(
         self,
         id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -1145,8 +1145,8 @@ class SnapshotsApi:
             _path_params['id'] = id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -1188,7 +1188,7 @@ class SnapshotsApi:
     def get_snapshot_build_logs(
         self,
         id: Annotated[StrictStr, Field(description="Snapshot ID")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         follow: Annotated[Optional[StrictBool], Field(description="Whether to follow the logs stream")] = None,
         _request_timeout: Union[
             None,
@@ -1208,8 +1208,8 @@ class SnapshotsApi:
 
         :param id: Snapshot ID (required)
         :type id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param follow: Whether to follow the logs stream
         :type follow: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1236,7 +1236,7 @@ class SnapshotsApi:
 
         _param = self._get_snapshot_build_logs_serialize(
             id=id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             follow=follow,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1262,7 +1262,7 @@ class SnapshotsApi:
     def get_snapshot_build_logs_with_http_info(
         self,
         id: Annotated[StrictStr, Field(description="Snapshot ID")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         follow: Annotated[Optional[StrictBool], Field(description="Whether to follow the logs stream")] = None,
         _request_timeout: Union[
             None,
@@ -1282,8 +1282,8 @@ class SnapshotsApi:
 
         :param id: Snapshot ID (required)
         :type id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param follow: Whether to follow the logs stream
         :type follow: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1310,7 +1310,7 @@ class SnapshotsApi:
 
         _param = self._get_snapshot_build_logs_serialize(
             id=id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             follow=follow,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1336,7 +1336,7 @@ class SnapshotsApi:
     def get_snapshot_build_logs_without_preload_content(
         self,
         id: Annotated[StrictStr, Field(description="Snapshot ID")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         follow: Annotated[Optional[StrictBool], Field(description="Whether to follow the logs stream")] = None,
         _request_timeout: Union[
             None,
@@ -1356,8 +1356,8 @@ class SnapshotsApi:
 
         :param id: Snapshot ID (required)
         :type id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param follow: Whether to follow the logs stream
         :type follow: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1384,7 +1384,7 @@ class SnapshotsApi:
 
         _param = self._get_snapshot_build_logs_serialize(
             id=id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             follow=follow,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1405,7 +1405,7 @@ class SnapshotsApi:
     def _get_snapshot_build_logs_serialize(
         self,
         id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         follow,
         _request_auth,
         _content_type,
@@ -1436,8 +1436,8 @@ class SnapshotsApi:
             _query_params.append(('follow', follow))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -1472,7 +1472,7 @@ class SnapshotsApi:
     def remove_snapshot(
         self,
         id: Annotated[StrictStr, Field(description="Snapshot ID")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1491,8 +1491,8 @@ class SnapshotsApi:
 
         :param id: Snapshot ID (required)
         :type id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1517,7 +1517,7 @@ class SnapshotsApi:
 
         _param = self._remove_snapshot_serialize(
             id=id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1542,7 +1542,7 @@ class SnapshotsApi:
     def remove_snapshot_with_http_info(
         self,
         id: Annotated[StrictStr, Field(description="Snapshot ID")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1561,8 +1561,8 @@ class SnapshotsApi:
 
         :param id: Snapshot ID (required)
         :type id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1587,7 +1587,7 @@ class SnapshotsApi:
 
         _param = self._remove_snapshot_serialize(
             id=id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1612,7 +1612,7 @@ class SnapshotsApi:
     def remove_snapshot_without_preload_content(
         self,
         id: Annotated[StrictStr, Field(description="Snapshot ID")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1631,8 +1631,8 @@ class SnapshotsApi:
 
         :param id: Snapshot ID (required)
         :type id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1657,7 +1657,7 @@ class SnapshotsApi:
 
         _param = self._remove_snapshot_serialize(
             id=id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1677,7 +1677,7 @@ class SnapshotsApi:
     def _remove_snapshot_serialize(
         self,
         id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -1703,8 +1703,8 @@ class SnapshotsApi:
             _path_params['id'] = id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -1740,7 +1740,7 @@ class SnapshotsApi:
         self,
         id: Annotated[StrictStr, Field(description="Snapshot ID")],
         set_snapshot_general_status_dto: SetSnapshotGeneralStatusDto,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1761,8 +1761,8 @@ class SnapshotsApi:
         :type id: str
         :param set_snapshot_general_status_dto: (required)
         :type set_snapshot_general_status_dto: SetSnapshotGeneralStatusDto
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1788,7 +1788,7 @@ class SnapshotsApi:
         _param = self._set_snapshot_general_status_serialize(
             id=id,
             set_snapshot_general_status_dto=set_snapshot_general_status_dto,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1814,7 +1814,7 @@ class SnapshotsApi:
         self,
         id: Annotated[StrictStr, Field(description="Snapshot ID")],
         set_snapshot_general_status_dto: SetSnapshotGeneralStatusDto,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1835,8 +1835,8 @@ class SnapshotsApi:
         :type id: str
         :param set_snapshot_general_status_dto: (required)
         :type set_snapshot_general_status_dto: SetSnapshotGeneralStatusDto
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1862,7 +1862,7 @@ class SnapshotsApi:
         _param = self._set_snapshot_general_status_serialize(
             id=id,
             set_snapshot_general_status_dto=set_snapshot_general_status_dto,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1888,7 +1888,7 @@ class SnapshotsApi:
         self,
         id: Annotated[StrictStr, Field(description="Snapshot ID")],
         set_snapshot_general_status_dto: SetSnapshotGeneralStatusDto,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1909,8 +1909,8 @@ class SnapshotsApi:
         :type id: str
         :param set_snapshot_general_status_dto: (required)
         :type set_snapshot_general_status_dto: SetSnapshotGeneralStatusDto
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1936,7 +1936,7 @@ class SnapshotsApi:
         _param = self._set_snapshot_general_status_serialize(
             id=id,
             set_snapshot_general_status_dto=set_snapshot_general_status_dto,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1957,7 +1957,7 @@ class SnapshotsApi:
         self,
         id,
         set_snapshot_general_status_dto,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -1983,8 +1983,8 @@ class SnapshotsApi:
             _path_params['id'] = id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if set_snapshot_general_status_dto is not None:
@@ -2042,7 +2042,7 @@ class SnapshotsApi:
         self,
         id: Annotated[StrictStr, Field(description="Snapshot ID")],
         toggle_state: ToggleState,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2063,8 +2063,8 @@ class SnapshotsApi:
         :type id: str
         :param toggle_state: (required)
         :type toggle_state: ToggleState
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2090,7 +2090,7 @@ class SnapshotsApi:
         _param = self._toggle_snapshot_state_serialize(
             id=id,
             toggle_state=toggle_state,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2116,7 +2116,7 @@ class SnapshotsApi:
         self,
         id: Annotated[StrictStr, Field(description="Snapshot ID")],
         toggle_state: ToggleState,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2137,8 +2137,8 @@ class SnapshotsApi:
         :type id: str
         :param toggle_state: (required)
         :type toggle_state: ToggleState
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2164,7 +2164,7 @@ class SnapshotsApi:
         _param = self._toggle_snapshot_state_serialize(
             id=id,
             toggle_state=toggle_state,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2190,7 +2190,7 @@ class SnapshotsApi:
         self,
         id: Annotated[StrictStr, Field(description="Snapshot ID")],
         toggle_state: ToggleState,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2211,8 +2211,8 @@ class SnapshotsApi:
         :type id: str
         :param toggle_state: (required)
         :type toggle_state: ToggleState
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2238,7 +2238,7 @@ class SnapshotsApi:
         _param = self._toggle_snapshot_state_serialize(
             id=id,
             toggle_state=toggle_state,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2259,7 +2259,7 @@ class SnapshotsApi:
         self,
         id,
         toggle_state,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -2285,8 +2285,8 @@ class SnapshotsApi:
             _path_params['id'] = id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if toggle_state is not None:

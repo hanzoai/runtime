@@ -47,7 +47,7 @@ class WorkspaceApi:
     def archive_workspace_deprecated(
         self,
         workspace_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -66,8 +66,8 @@ class WorkspaceApi:
 
         :param workspace_id: (required)
         :type workspace_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -93,7 +93,7 @@ class WorkspaceApi:
 
         _param = self._archive_workspace_deprecated_serialize(
             workspace_id=workspace_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -118,7 +118,7 @@ class WorkspaceApi:
     def archive_workspace_deprecated_with_http_info(
         self,
         workspace_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -137,8 +137,8 @@ class WorkspaceApi:
 
         :param workspace_id: (required)
         :type workspace_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -164,7 +164,7 @@ class WorkspaceApi:
 
         _param = self._archive_workspace_deprecated_serialize(
             workspace_id=workspace_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -189,7 +189,7 @@ class WorkspaceApi:
     def archive_workspace_deprecated_without_preload_content(
         self,
         workspace_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -208,8 +208,8 @@ class WorkspaceApi:
 
         :param workspace_id: (required)
         :type workspace_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -235,7 +235,7 @@ class WorkspaceApi:
 
         _param = self._archive_workspace_deprecated_serialize(
             workspace_id=workspace_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -255,7 +255,7 @@ class WorkspaceApi:
     def _archive_workspace_deprecated_serialize(
         self,
         workspace_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -281,8 +281,8 @@ class WorkspaceApi:
             _path_params['workspaceId'] = workspace_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -317,7 +317,7 @@ class WorkspaceApi:
     def create_backup_workspace_deprecated(
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -336,8 +336,8 @@ class WorkspaceApi:
 
         :param workspace_id: ID of the workspace (required)
         :type workspace_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -363,7 +363,7 @@ class WorkspaceApi:
 
         _param = self._create_backup_workspace_deprecated_serialize(
             workspace_id=workspace_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -388,7 +388,7 @@ class WorkspaceApi:
     def create_backup_workspace_deprecated_with_http_info(
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -407,8 +407,8 @@ class WorkspaceApi:
 
         :param workspace_id: ID of the workspace (required)
         :type workspace_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -434,7 +434,7 @@ class WorkspaceApi:
 
         _param = self._create_backup_workspace_deprecated_serialize(
             workspace_id=workspace_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -459,7 +459,7 @@ class WorkspaceApi:
     def create_backup_workspace_deprecated_without_preload_content(
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -478,8 +478,8 @@ class WorkspaceApi:
 
         :param workspace_id: ID of the workspace (required)
         :type workspace_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -505,7 +505,7 @@ class WorkspaceApi:
 
         _param = self._create_backup_workspace_deprecated_serialize(
             workspace_id=workspace_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -525,7 +525,7 @@ class WorkspaceApi:
     def _create_backup_workspace_deprecated_serialize(
         self,
         workspace_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -551,8 +551,8 @@ class WorkspaceApi:
             _path_params['workspaceId'] = workspace_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -594,7 +594,7 @@ class WorkspaceApi:
     def create_workspace_deprecated(
         self,
         create_workspace: CreateWorkspace,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -613,8 +613,8 @@ class WorkspaceApi:
 
         :param create_workspace: (required)
         :type create_workspace: CreateWorkspace
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -640,7 +640,7 @@ class WorkspaceApi:
 
         _param = self._create_workspace_deprecated_serialize(
             create_workspace=create_workspace,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -665,7 +665,7 @@ class WorkspaceApi:
     def create_workspace_deprecated_with_http_info(
         self,
         create_workspace: CreateWorkspace,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -684,8 +684,8 @@ class WorkspaceApi:
 
         :param create_workspace: (required)
         :type create_workspace: CreateWorkspace
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -711,7 +711,7 @@ class WorkspaceApi:
 
         _param = self._create_workspace_deprecated_serialize(
             create_workspace=create_workspace,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -736,7 +736,7 @@ class WorkspaceApi:
     def create_workspace_deprecated_without_preload_content(
         self,
         create_workspace: CreateWorkspace,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -755,8 +755,8 @@ class WorkspaceApi:
 
         :param create_workspace: (required)
         :type create_workspace: CreateWorkspace
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -782,7 +782,7 @@ class WorkspaceApi:
 
         _param = self._create_workspace_deprecated_serialize(
             create_workspace=create_workspace,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -802,7 +802,7 @@ class WorkspaceApi:
     def _create_workspace_deprecated_serialize(
         self,
         create_workspace,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -826,8 +826,8 @@ class WorkspaceApi:
         # process the path parameters
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if create_workspace is not None:
@@ -885,7 +885,7 @@ class WorkspaceApi:
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
         force: StrictBool,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -906,8 +906,8 @@ class WorkspaceApi:
         :type workspace_id: str
         :param force: (required)
         :type force: bool
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -934,7 +934,7 @@ class WorkspaceApi:
         _param = self._delete_workspace_deprecated_serialize(
             workspace_id=workspace_id,
             force=force,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -960,7 +960,7 @@ class WorkspaceApi:
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
         force: StrictBool,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -981,8 +981,8 @@ class WorkspaceApi:
         :type workspace_id: str
         :param force: (required)
         :type force: bool
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1009,7 +1009,7 @@ class WorkspaceApi:
         _param = self._delete_workspace_deprecated_serialize(
             workspace_id=workspace_id,
             force=force,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1035,7 +1035,7 @@ class WorkspaceApi:
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
         force: StrictBool,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1056,8 +1056,8 @@ class WorkspaceApi:
         :type workspace_id: str
         :param force: (required)
         :type force: bool
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1084,7 +1084,7 @@ class WorkspaceApi:
         _param = self._delete_workspace_deprecated_serialize(
             workspace_id=workspace_id,
             force=force,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1105,7 +1105,7 @@ class WorkspaceApi:
         self,
         workspace_id,
         force,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -1135,8 +1135,8 @@ class WorkspaceApi:
             _query_params.append(('force', force))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -1171,7 +1171,7 @@ class WorkspaceApi:
     def get_build_logs_workspace_deprecated(
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         follow: Annotated[Optional[StrictBool], Field(description="Whether to follow the logs stream")] = None,
         _request_timeout: Union[
             None,
@@ -1191,8 +1191,8 @@ class WorkspaceApi:
 
         :param workspace_id: ID of the workspace (required)
         :type workspace_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param follow: Whether to follow the logs stream
         :type follow: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1220,7 +1220,7 @@ class WorkspaceApi:
 
         _param = self._get_build_logs_workspace_deprecated_serialize(
             workspace_id=workspace_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             follow=follow,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1246,7 +1246,7 @@ class WorkspaceApi:
     def get_build_logs_workspace_deprecated_with_http_info(
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         follow: Annotated[Optional[StrictBool], Field(description="Whether to follow the logs stream")] = None,
         _request_timeout: Union[
             None,
@@ -1266,8 +1266,8 @@ class WorkspaceApi:
 
         :param workspace_id: ID of the workspace (required)
         :type workspace_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param follow: Whether to follow the logs stream
         :type follow: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1295,7 +1295,7 @@ class WorkspaceApi:
 
         _param = self._get_build_logs_workspace_deprecated_serialize(
             workspace_id=workspace_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             follow=follow,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1321,7 +1321,7 @@ class WorkspaceApi:
     def get_build_logs_workspace_deprecated_without_preload_content(
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         follow: Annotated[Optional[StrictBool], Field(description="Whether to follow the logs stream")] = None,
         _request_timeout: Union[
             None,
@@ -1341,8 +1341,8 @@ class WorkspaceApi:
 
         :param workspace_id: ID of the workspace (required)
         :type workspace_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param follow: Whether to follow the logs stream
         :type follow: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1370,7 +1370,7 @@ class WorkspaceApi:
 
         _param = self._get_build_logs_workspace_deprecated_serialize(
             workspace_id=workspace_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             follow=follow,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1391,7 +1391,7 @@ class WorkspaceApi:
     def _get_build_logs_workspace_deprecated_serialize(
         self,
         workspace_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         follow,
         _request_auth,
         _content_type,
@@ -1422,8 +1422,8 @@ class WorkspaceApi:
             _query_params.append(('follow', follow))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -1459,7 +1459,7 @@ class WorkspaceApi:
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
         port: Annotated[Union[StrictFloat, StrictInt], Field(description="Port number to get preview URL for")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1480,8 +1480,8 @@ class WorkspaceApi:
         :type workspace_id: str
         :param port: Port number to get preview URL for (required)
         :type port: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1508,7 +1508,7 @@ class WorkspaceApi:
         _param = self._get_port_preview_url_workspace_deprecated_serialize(
             workspace_id=workspace_id,
             port=port,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1534,7 +1534,7 @@ class WorkspaceApi:
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
         port: Annotated[Union[StrictFloat, StrictInt], Field(description="Port number to get preview URL for")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1555,8 +1555,8 @@ class WorkspaceApi:
         :type workspace_id: str
         :param port: Port number to get preview URL for (required)
         :type port: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1583,7 +1583,7 @@ class WorkspaceApi:
         _param = self._get_port_preview_url_workspace_deprecated_serialize(
             workspace_id=workspace_id,
             port=port,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1609,7 +1609,7 @@ class WorkspaceApi:
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
         port: Annotated[Union[StrictFloat, StrictInt], Field(description="Port number to get preview URL for")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1630,8 +1630,8 @@ class WorkspaceApi:
         :type workspace_id: str
         :param port: Port number to get preview URL for (required)
         :type port: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1658,7 +1658,7 @@ class WorkspaceApi:
         _param = self._get_port_preview_url_workspace_deprecated_serialize(
             workspace_id=workspace_id,
             port=port,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1679,7 +1679,7 @@ class WorkspaceApi:
         self,
         workspace_id,
         port,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -1707,8 +1707,8 @@ class WorkspaceApi:
             _path_params['port'] = port
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -1750,7 +1750,7 @@ class WorkspaceApi:
     def get_workspace_deprecated(
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         verbose: Annotated[Optional[StrictBool], Field(description="Include verbose output")] = None,
         _request_timeout: Union[
             None,
@@ -1770,8 +1770,8 @@ class WorkspaceApi:
 
         :param workspace_id: ID of the workspace (required)
         :type workspace_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param verbose: Include verbose output
         :type verbose: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1799,7 +1799,7 @@ class WorkspaceApi:
 
         _param = self._get_workspace_deprecated_serialize(
             workspace_id=workspace_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             verbose=verbose,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1825,7 +1825,7 @@ class WorkspaceApi:
     def get_workspace_deprecated_with_http_info(
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         verbose: Annotated[Optional[StrictBool], Field(description="Include verbose output")] = None,
         _request_timeout: Union[
             None,
@@ -1845,8 +1845,8 @@ class WorkspaceApi:
 
         :param workspace_id: ID of the workspace (required)
         :type workspace_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param verbose: Include verbose output
         :type verbose: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1874,7 +1874,7 @@ class WorkspaceApi:
 
         _param = self._get_workspace_deprecated_serialize(
             workspace_id=workspace_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             verbose=verbose,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1900,7 +1900,7 @@ class WorkspaceApi:
     def get_workspace_deprecated_without_preload_content(
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         verbose: Annotated[Optional[StrictBool], Field(description="Include verbose output")] = None,
         _request_timeout: Union[
             None,
@@ -1920,8 +1920,8 @@ class WorkspaceApi:
 
         :param workspace_id: ID of the workspace (required)
         :type workspace_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param verbose: Include verbose output
         :type verbose: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1949,7 +1949,7 @@ class WorkspaceApi:
 
         _param = self._get_workspace_deprecated_serialize(
             workspace_id=workspace_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             verbose=verbose,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1970,7 +1970,7 @@ class WorkspaceApi:
     def _get_workspace_deprecated_serialize(
         self,
         workspace_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         verbose,
         _request_auth,
         _content_type,
@@ -2001,8 +2001,8 @@ class WorkspaceApi:
             _query_params.append(('verbose', verbose))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -2043,7 +2043,7 @@ class WorkspaceApi:
     @validate_call
     def list_workspaces_deprecated(
         self,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         verbose: Annotated[Optional[StrictBool], Field(description="Include verbose output")] = None,
         labels: Annotated[Optional[StrictStr], Field(description="JSON encoded labels to filter by")] = None,
         _request_timeout: Union[
@@ -2062,8 +2062,8 @@ class WorkspaceApi:
         """(Deprecated) [DEPRECATED] List all workspaces
 
 
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param verbose: Include verbose output
         :type verbose: bool
         :param labels: JSON encoded labels to filter by
@@ -2092,7 +2092,7 @@ class WorkspaceApi:
         warnings.warn("GET /workspace is deprecated.", DeprecationWarning)
 
         _param = self._list_workspaces_deprecated_serialize(
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             verbose=verbose,
             labels=labels,
             _request_auth=_request_auth,
@@ -2118,7 +2118,7 @@ class WorkspaceApi:
     @validate_call
     def list_workspaces_deprecated_with_http_info(
         self,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         verbose: Annotated[Optional[StrictBool], Field(description="Include verbose output")] = None,
         labels: Annotated[Optional[StrictStr], Field(description="JSON encoded labels to filter by")] = None,
         _request_timeout: Union[
@@ -2137,8 +2137,8 @@ class WorkspaceApi:
         """(Deprecated) [DEPRECATED] List all workspaces
 
 
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param verbose: Include verbose output
         :type verbose: bool
         :param labels: JSON encoded labels to filter by
@@ -2167,7 +2167,7 @@ class WorkspaceApi:
         warnings.warn("GET /workspace is deprecated.", DeprecationWarning)
 
         _param = self._list_workspaces_deprecated_serialize(
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             verbose=verbose,
             labels=labels,
             _request_auth=_request_auth,
@@ -2193,7 +2193,7 @@ class WorkspaceApi:
     @validate_call
     def list_workspaces_deprecated_without_preload_content(
         self,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         verbose: Annotated[Optional[StrictBool], Field(description="Include verbose output")] = None,
         labels: Annotated[Optional[StrictStr], Field(description="JSON encoded labels to filter by")] = None,
         _request_timeout: Union[
@@ -2212,8 +2212,8 @@ class WorkspaceApi:
         """(Deprecated) [DEPRECATED] List all workspaces
 
 
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param verbose: Include verbose output
         :type verbose: bool
         :param labels: JSON encoded labels to filter by
@@ -2242,7 +2242,7 @@ class WorkspaceApi:
         warnings.warn("GET /workspace is deprecated.", DeprecationWarning)
 
         _param = self._list_workspaces_deprecated_serialize(
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             verbose=verbose,
             labels=labels,
             _request_auth=_request_auth,
@@ -2263,7 +2263,7 @@ class WorkspaceApi:
 
     def _list_workspaces_deprecated_serialize(
         self,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         verbose,
         labels,
         _request_auth,
@@ -2297,8 +2297,8 @@ class WorkspaceApi:
             _query_params.append(('labels', labels))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -2341,7 +2341,7 @@ class WorkspaceApi:
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
         sandbox_labels: SandboxLabels,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2362,8 +2362,8 @@ class WorkspaceApi:
         :type workspace_id: str
         :param sandbox_labels: (required)
         :type sandbox_labels: SandboxLabels
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2390,7 +2390,7 @@ class WorkspaceApi:
         _param = self._replace_labels_workspace_deprecated_serialize(
             workspace_id=workspace_id,
             sandbox_labels=sandbox_labels,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2416,7 +2416,7 @@ class WorkspaceApi:
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
         sandbox_labels: SandboxLabels,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2437,8 +2437,8 @@ class WorkspaceApi:
         :type workspace_id: str
         :param sandbox_labels: (required)
         :type sandbox_labels: SandboxLabels
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2465,7 +2465,7 @@ class WorkspaceApi:
         _param = self._replace_labels_workspace_deprecated_serialize(
             workspace_id=workspace_id,
             sandbox_labels=sandbox_labels,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2491,7 +2491,7 @@ class WorkspaceApi:
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
         sandbox_labels: SandboxLabels,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2512,8 +2512,8 @@ class WorkspaceApi:
         :type workspace_id: str
         :param sandbox_labels: (required)
         :type sandbox_labels: SandboxLabels
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2540,7 +2540,7 @@ class WorkspaceApi:
         _param = self._replace_labels_workspace_deprecated_serialize(
             workspace_id=workspace_id,
             sandbox_labels=sandbox_labels,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2561,7 +2561,7 @@ class WorkspaceApi:
         self,
         workspace_id,
         sandbox_labels,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -2587,8 +2587,8 @@ class WorkspaceApi:
             _path_params['workspaceId'] = workspace_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if sandbox_labels is not None:
@@ -2646,7 +2646,7 @@ class WorkspaceApi:
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
         interval: Annotated[Union[StrictFloat, StrictInt], Field(description="Auto-archive interval in minutes (0 means the maximum interval will be used)")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2667,8 +2667,8 @@ class WorkspaceApi:
         :type workspace_id: str
         :param interval: Auto-archive interval in minutes (0 means the maximum interval will be used) (required)
         :type interval: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2695,7 +2695,7 @@ class WorkspaceApi:
         _param = self._set_auto_archive_interval_workspace_deprecated_serialize(
             workspace_id=workspace_id,
             interval=interval,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2721,7 +2721,7 @@ class WorkspaceApi:
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
         interval: Annotated[Union[StrictFloat, StrictInt], Field(description="Auto-archive interval in minutes (0 means the maximum interval will be used)")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2742,8 +2742,8 @@ class WorkspaceApi:
         :type workspace_id: str
         :param interval: Auto-archive interval in minutes (0 means the maximum interval will be used) (required)
         :type interval: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2770,7 +2770,7 @@ class WorkspaceApi:
         _param = self._set_auto_archive_interval_workspace_deprecated_serialize(
             workspace_id=workspace_id,
             interval=interval,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2796,7 +2796,7 @@ class WorkspaceApi:
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
         interval: Annotated[Union[StrictFloat, StrictInt], Field(description="Auto-archive interval in minutes (0 means the maximum interval will be used)")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2817,8 +2817,8 @@ class WorkspaceApi:
         :type workspace_id: str
         :param interval: Auto-archive interval in minutes (0 means the maximum interval will be used) (required)
         :type interval: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2845,7 +2845,7 @@ class WorkspaceApi:
         _param = self._set_auto_archive_interval_workspace_deprecated_serialize(
             workspace_id=workspace_id,
             interval=interval,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2866,7 +2866,7 @@ class WorkspaceApi:
         self,
         workspace_id,
         interval,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -2894,8 +2894,8 @@ class WorkspaceApi:
             _path_params['interval'] = interval
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -2931,7 +2931,7 @@ class WorkspaceApi:
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
         interval: Annotated[Union[StrictFloat, StrictInt], Field(description="Auto-stop interval in minutes (0 to disable)")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2952,8 +2952,8 @@ class WorkspaceApi:
         :type workspace_id: str
         :param interval: Auto-stop interval in minutes (0 to disable) (required)
         :type interval: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2980,7 +2980,7 @@ class WorkspaceApi:
         _param = self._set_autostop_interval_workspace_deprecated_serialize(
             workspace_id=workspace_id,
             interval=interval,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3006,7 +3006,7 @@ class WorkspaceApi:
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
         interval: Annotated[Union[StrictFloat, StrictInt], Field(description="Auto-stop interval in minutes (0 to disable)")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3027,8 +3027,8 @@ class WorkspaceApi:
         :type workspace_id: str
         :param interval: Auto-stop interval in minutes (0 to disable) (required)
         :type interval: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3055,7 +3055,7 @@ class WorkspaceApi:
         _param = self._set_autostop_interval_workspace_deprecated_serialize(
             workspace_id=workspace_id,
             interval=interval,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3081,7 +3081,7 @@ class WorkspaceApi:
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
         interval: Annotated[Union[StrictFloat, StrictInt], Field(description="Auto-stop interval in minutes (0 to disable)")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3102,8 +3102,8 @@ class WorkspaceApi:
         :type workspace_id: str
         :param interval: Auto-stop interval in minutes (0 to disable) (required)
         :type interval: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3130,7 +3130,7 @@ class WorkspaceApi:
         _param = self._set_autostop_interval_workspace_deprecated_serialize(
             workspace_id=workspace_id,
             interval=interval,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3151,7 +3151,7 @@ class WorkspaceApi:
         self,
         workspace_id,
         interval,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -3179,8 +3179,8 @@ class WorkspaceApi:
             _path_params['interval'] = interval
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -3215,7 +3215,7 @@ class WorkspaceApi:
     def start_workspace_deprecated(
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3234,8 +3234,8 @@ class WorkspaceApi:
 
         :param workspace_id: ID of the workspace (required)
         :type workspace_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3261,7 +3261,7 @@ class WorkspaceApi:
 
         _param = self._start_workspace_deprecated_serialize(
             workspace_id=workspace_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3286,7 +3286,7 @@ class WorkspaceApi:
     def start_workspace_deprecated_with_http_info(
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3305,8 +3305,8 @@ class WorkspaceApi:
 
         :param workspace_id: ID of the workspace (required)
         :type workspace_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3332,7 +3332,7 @@ class WorkspaceApi:
 
         _param = self._start_workspace_deprecated_serialize(
             workspace_id=workspace_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3357,7 +3357,7 @@ class WorkspaceApi:
     def start_workspace_deprecated_without_preload_content(
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3376,8 +3376,8 @@ class WorkspaceApi:
 
         :param workspace_id: ID of the workspace (required)
         :type workspace_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3403,7 +3403,7 @@ class WorkspaceApi:
 
         _param = self._start_workspace_deprecated_serialize(
             workspace_id=workspace_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3423,7 +3423,7 @@ class WorkspaceApi:
     def _start_workspace_deprecated_serialize(
         self,
         workspace_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -3449,8 +3449,8 @@ class WorkspaceApi:
             _path_params['workspaceId'] = workspace_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -3485,7 +3485,7 @@ class WorkspaceApi:
     def stop_workspace_deprecated(
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3504,8 +3504,8 @@ class WorkspaceApi:
 
         :param workspace_id: ID of the workspace (required)
         :type workspace_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3531,7 +3531,7 @@ class WorkspaceApi:
 
         _param = self._stop_workspace_deprecated_serialize(
             workspace_id=workspace_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3556,7 +3556,7 @@ class WorkspaceApi:
     def stop_workspace_deprecated_with_http_info(
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3575,8 +3575,8 @@ class WorkspaceApi:
 
         :param workspace_id: ID of the workspace (required)
         :type workspace_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3602,7 +3602,7 @@ class WorkspaceApi:
 
         _param = self._stop_workspace_deprecated_serialize(
             workspace_id=workspace_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3627,7 +3627,7 @@ class WorkspaceApi:
     def stop_workspace_deprecated_without_preload_content(
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3646,8 +3646,8 @@ class WorkspaceApi:
 
         :param workspace_id: ID of the workspace (required)
         :type workspace_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3673,7 +3673,7 @@ class WorkspaceApi:
 
         _param = self._stop_workspace_deprecated_serialize(
             workspace_id=workspace_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3693,7 +3693,7 @@ class WorkspaceApi:
     def _stop_workspace_deprecated_serialize(
         self,
         workspace_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -3719,8 +3719,8 @@ class WorkspaceApi:
             _path_params['workspaceId'] = workspace_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -3756,7 +3756,7 @@ class WorkspaceApi:
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
         is_public: Annotated[StrictBool, Field(description="Public status to set")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3777,8 +3777,8 @@ class WorkspaceApi:
         :type workspace_id: str
         :param is_public: Public status to set (required)
         :type is_public: bool
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3805,7 +3805,7 @@ class WorkspaceApi:
         _param = self._update_public_status_workspace_deprecated_serialize(
             workspace_id=workspace_id,
             is_public=is_public,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3831,7 +3831,7 @@ class WorkspaceApi:
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
         is_public: Annotated[StrictBool, Field(description="Public status to set")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3852,8 +3852,8 @@ class WorkspaceApi:
         :type workspace_id: str
         :param is_public: Public status to set (required)
         :type is_public: bool
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3880,7 +3880,7 @@ class WorkspaceApi:
         _param = self._update_public_status_workspace_deprecated_serialize(
             workspace_id=workspace_id,
             is_public=is_public,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3906,7 +3906,7 @@ class WorkspaceApi:
         self,
         workspace_id: Annotated[StrictStr, Field(description="ID of the workspace")],
         is_public: Annotated[StrictBool, Field(description="Public status to set")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3927,8 +3927,8 @@ class WorkspaceApi:
         :type workspace_id: str
         :param is_public: Public status to set (required)
         :type is_public: bool
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3955,7 +3955,7 @@ class WorkspaceApi:
         _param = self._update_public_status_workspace_deprecated_serialize(
             workspace_id=workspace_id,
             is_public=is_public,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3976,7 +3976,7 @@ class WorkspaceApi:
         self,
         workspace_id,
         is_public,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -4004,8 +4004,8 @@ class WorkspaceApi:
             _path_params['isPublic'] = is_public
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 

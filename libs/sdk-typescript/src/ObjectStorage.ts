@@ -41,7 +41,7 @@ export class ObjectStorage {
   private s3Client: S3Client
 
   constructor(config: ObjectStorageConfig) {
-    this.bucketName = config.bucketName || 'daytona-volume-builds'
+    this.bucketName = config.bucketName || 'hanzo-runtime-volume-builds'
     this.s3Client = new S3Client({
       region: this.extractAwsRegion(config.endpointUrl) || 'us-east-1',
       endpoint: config.endpointUrl,

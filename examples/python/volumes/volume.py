@@ -1,22 +1,22 @@
 import os
 
-from daytona import CreateSandboxFromSnapshotParams, Daytona, VolumeMount
+from hanzo_runtime import , VolumeMount
 
 
 def main():
-    daytona = Daytona()
+    hanzo_runtime = HanzoRuntime()
 
     # Create a new volume or get an existing one
-    volume = daytona.volume.get("my-volume", create=True)
+    volume = hanzo_runtime.volume.get("my-volume", create=True)
 
     # Mount the volume to the sandbox
-    mount_dir_1 = "/home/daytona/volume"
+    mount_dir_1 = "/home/hanzo/volume"
 
     params = CreateSandboxFromSnapshotParams(
         language="python",
         volumes=[VolumeMount(volumeId=volume.id, mountPath=mount_dir_1)],
     )
-    sandbox = daytona.create(params)
+    sandbox = hanzo_runtime.create(params)
 
     # Create a new directory in the mount directory
     new_dir = os.path.join(mount_dir_1, "new-dir")
@@ -28,13 +28,13 @@ def main():
 
     # Create a new sandbox with the same volume
     # and mount it to the different path
-    mount_dir_2 = "/home/daytona/my-files"
+    mount_dir_2 = "/home/hanzo/my-files"
 
     params = CreateSandboxFromSnapshotParams(
         language="python",
         volumes=[VolumeMount(volumeId=volume.id, mountPath=mount_dir_2)],
     )
-    sandbox2 = daytona.create(params)
+    sandbox2 = hanzo_runtime.create(params)
 
     # List files in the mount directory
     files = sandbox2.fs.list_files(mount_dir_2)
@@ -45,9 +45,9 @@ def main():
     print("File:", file)
 
     # Cleanup
-    daytona.delete(sandbox)
-    daytona.delete(sandbox2)
-    # daytona.volume.delete(volume)
+    hanzo_runtime.delete(sandbox)
+    hanzo_runtime.delete(sandbox2)
+    # hanzo_runtime.volume.delete(volume)
 
 
 if __name__ == "__main__":

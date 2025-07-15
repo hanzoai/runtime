@@ -3,7 +3,7 @@
 
 from typing import List, Optional
 
-from daytona_api_client_async import (
+from hanzo_runtime_api_client_async import (
     CompressedScreenshotResponse,
     ComputerUseStartResponse,
     ComputerUseStatusResponse,

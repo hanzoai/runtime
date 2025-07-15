@@ -4,9 +4,9 @@
 import asyncio
 from typing import Dict, Optional
 
-from daytona_api_client_async import PortPreviewUrl
-from daytona_api_client_async import Sandbox as SandboxDto
-from daytona_api_client_async import SandboxApi, ToolboxApi
+from hanzo_runtime_api_client_async import PortPreviewUrl
+from hanzo_runtime_api_client_async import Sandbox as SandboxDto
+from hanzo_runtime_api_client_async import SandboxApi, ToolboxApi
 from pydantic import ConfigDict, PrivateAttr
 
 from .._utils.errors import intercept_errors
@@ -208,7 +208,7 @@ class AsyncSandbox(SandboxDto):
 
         Example:
             ```python
-            sandbox = daytona.get_current_sandbox("my-sandbox")
+            sandbox = runtime.get_current_sandbox("my-sandbox")
             sandbox.start(timeout=40)  # Wait up to 40 seconds
             print("Sandbox started successfully")
             ```
@@ -234,7 +234,7 @@ class AsyncSandbox(SandboxDto):
 
         Example:
             ```python
-            sandbox = daytona.get_current_sandbox("my-sandbox")
+            sandbox = runtime.get_current_sandbox("my-sandbox")
             sandbox.stop()
             print("Sandbox stopped successfully")
             ```

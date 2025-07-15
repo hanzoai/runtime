@@ -8,8 +8,8 @@
 import re
 from typing import List
 
-from daytona_api_client import CreateVolume, VolumesApi
-from daytona_api_client.exceptions import NotFoundException
+from hanzo_runtime_api_client import CreateVolume, VolumesApi
+from hanzo_runtime_api_client.exceptions import NotFoundException
 
 from ..common.volume import Volume
 
@@ -29,7 +29,7 @@ class VolumeService:
         Example:
             ```python
             hanzo_runtime = HanzoRuntime()
-            volumes = daytona.volume.list()
+            volumes = runtime.volume.list()
             for volume in volumes:
                 print(f"{volume.name} ({volume.id})")
             ```
@@ -49,7 +49,7 @@ class VolumeService:
         Example:
             ```python
             hanzo_runtime = HanzoRuntime()
-            volume = daytona.volume.get("test-volume-name", create=True)
+            volume = runtime.volume.get("test-volume-name", create=True)
             print(f"{volume.name} ({volume.id})")
             ```
         """
@@ -72,7 +72,7 @@ class VolumeService:
         Example:
             ```python
             hanzo_runtime = HanzoRuntime()
-            volume = daytona.volume.create("test-volume")
+            volume = runtime.volume.create("test-volume")
             print(f"{volume.name} ({volume.id}); state: {volume.state}")
             ```
         """
@@ -87,8 +87,8 @@ class VolumeService:
         Example:
             ```python
             hanzo_runtime = HanzoRuntime()
-            volume = daytona.volume.get("test-volume")
-            daytona.volume.delete(volume)
+            volume = runtime.volume.get("test-volume")
+            runtime.volume.delete(volume)
             print("Volume deleted")
             ```
         """

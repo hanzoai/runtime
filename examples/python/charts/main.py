@@ -2,7 +2,7 @@ import base64
 import os
 import time
 
-from daytona import (
+from hanzo_runtime import (
     BarChart,
     BoxAndWhiskerChart,
     Chart,
@@ -77,8 +77,8 @@ plt.show()
 
 
 def main():
-    daytona = Daytona()
-    sandbox = daytona.create(
+    hanzo_runtime = HanzoRuntime()
+    sandbox = hanzo_runtime.create(
         CreateSandboxFromImageParams(
             image=Image.debian_slim("3.13").pip_install("matplotlib"),
         ),
@@ -102,7 +102,7 @@ def main():
 
             print_chart(chart)
 
-    daytona.delete(sandbox)
+    hanzo_runtime.delete(sandbox)
 
 
 def print_chart(chart: Chart):

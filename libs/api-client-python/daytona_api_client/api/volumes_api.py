@@ -45,7 +45,7 @@ class VolumesApi:
     def create_volume(
         self,
         create_volume: CreateVolume,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -64,8 +64,8 @@ class VolumesApi:
 
         :param create_volume: (required)
         :type create_volume: CreateVolume
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -90,7 +90,7 @@ class VolumesApi:
 
         _param = self._create_volume_serialize(
             create_volume=create_volume,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -115,7 +115,7 @@ class VolumesApi:
     def create_volume_with_http_info(
         self,
         create_volume: CreateVolume,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -134,8 +134,8 @@ class VolumesApi:
 
         :param create_volume: (required)
         :type create_volume: CreateVolume
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -160,7 +160,7 @@ class VolumesApi:
 
         _param = self._create_volume_serialize(
             create_volume=create_volume,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -185,7 +185,7 @@ class VolumesApi:
     def create_volume_without_preload_content(
         self,
         create_volume: CreateVolume,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -204,8 +204,8 @@ class VolumesApi:
 
         :param create_volume: (required)
         :type create_volume: CreateVolume
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -230,7 +230,7 @@ class VolumesApi:
 
         _param = self._create_volume_serialize(
             create_volume=create_volume,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -250,7 +250,7 @@ class VolumesApi:
     def _create_volume_serialize(
         self,
         create_volume,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -274,8 +274,8 @@ class VolumesApi:
         # process the path parameters
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if create_volume is not None:
@@ -332,7 +332,7 @@ class VolumesApi:
     def delete_volume(
         self,
         volume_id: Annotated[StrictStr, Field(description="ID of the volume")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -351,8 +351,8 @@ class VolumesApi:
 
         :param volume_id: ID of the volume (required)
         :type volume_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -377,7 +377,7 @@ class VolumesApi:
 
         _param = self._delete_volume_serialize(
             volume_id=volume_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -402,7 +402,7 @@ class VolumesApi:
     def delete_volume_with_http_info(
         self,
         volume_id: Annotated[StrictStr, Field(description="ID of the volume")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -421,8 +421,8 @@ class VolumesApi:
 
         :param volume_id: ID of the volume (required)
         :type volume_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -447,7 +447,7 @@ class VolumesApi:
 
         _param = self._delete_volume_serialize(
             volume_id=volume_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -472,7 +472,7 @@ class VolumesApi:
     def delete_volume_without_preload_content(
         self,
         volume_id: Annotated[StrictStr, Field(description="ID of the volume")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -491,8 +491,8 @@ class VolumesApi:
 
         :param volume_id: ID of the volume (required)
         :type volume_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -517,7 +517,7 @@ class VolumesApi:
 
         _param = self._delete_volume_serialize(
             volume_id=volume_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -537,7 +537,7 @@ class VolumesApi:
     def _delete_volume_serialize(
         self,
         volume_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -563,8 +563,8 @@ class VolumesApi:
             _path_params['volumeId'] = volume_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -599,7 +599,7 @@ class VolumesApi:
     def get_volume(
         self,
         volume_id: Annotated[StrictStr, Field(description="ID of the volume")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -618,8 +618,8 @@ class VolumesApi:
 
         :param volume_id: ID of the volume (required)
         :type volume_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -644,7 +644,7 @@ class VolumesApi:
 
         _param = self._get_volume_serialize(
             volume_id=volume_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -669,7 +669,7 @@ class VolumesApi:
     def get_volume_with_http_info(
         self,
         volume_id: Annotated[StrictStr, Field(description="ID of the volume")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -688,8 +688,8 @@ class VolumesApi:
 
         :param volume_id: ID of the volume (required)
         :type volume_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -714,7 +714,7 @@ class VolumesApi:
 
         _param = self._get_volume_serialize(
             volume_id=volume_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -739,7 +739,7 @@ class VolumesApi:
     def get_volume_without_preload_content(
         self,
         volume_id: Annotated[StrictStr, Field(description="ID of the volume")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -758,8 +758,8 @@ class VolumesApi:
 
         :param volume_id: ID of the volume (required)
         :type volume_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -784,7 +784,7 @@ class VolumesApi:
 
         _param = self._get_volume_serialize(
             volume_id=volume_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -804,7 +804,7 @@ class VolumesApi:
     def _get_volume_serialize(
         self,
         volume_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -830,8 +830,8 @@ class VolumesApi:
             _path_params['volumeId'] = volume_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -873,7 +873,7 @@ class VolumesApi:
     def get_volume_by_name(
         self,
         name: Annotated[StrictStr, Field(description="Name of the volume")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -892,8 +892,8 @@ class VolumesApi:
 
         :param name: Name of the volume (required)
         :type name: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -918,7 +918,7 @@ class VolumesApi:
 
         _param = self._get_volume_by_name_serialize(
             name=name,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -943,7 +943,7 @@ class VolumesApi:
     def get_volume_by_name_with_http_info(
         self,
         name: Annotated[StrictStr, Field(description="Name of the volume")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -962,8 +962,8 @@ class VolumesApi:
 
         :param name: Name of the volume (required)
         :type name: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -988,7 +988,7 @@ class VolumesApi:
 
         _param = self._get_volume_by_name_serialize(
             name=name,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1013,7 +1013,7 @@ class VolumesApi:
     def get_volume_by_name_without_preload_content(
         self,
         name: Annotated[StrictStr, Field(description="Name of the volume")],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1032,8 +1032,8 @@ class VolumesApi:
 
         :param name: Name of the volume (required)
         :type name: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1058,7 +1058,7 @@ class VolumesApi:
 
         _param = self._get_volume_by_name_serialize(
             name=name,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1078,7 +1078,7 @@ class VolumesApi:
     def _get_volume_by_name_serialize(
         self,
         name,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -1104,8 +1104,8 @@ class VolumesApi:
             _path_params['name'] = name
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -1146,7 +1146,7 @@ class VolumesApi:
     @validate_call
     def list_volumes(
         self,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         include_deleted: Annotated[Optional[StrictBool], Field(description="Include deleted volumes in the response")] = None,
         _request_timeout: Union[
             None,
@@ -1164,8 +1164,8 @@ class VolumesApi:
         """List all volumes
 
 
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param include_deleted: Include deleted volumes in the response
         :type include_deleted: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1191,7 +1191,7 @@ class VolumesApi:
         """ # noqa: E501
 
         _param = self._list_volumes_serialize(
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             include_deleted=include_deleted,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1216,7 +1216,7 @@ class VolumesApi:
     @validate_call
     def list_volumes_with_http_info(
         self,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         include_deleted: Annotated[Optional[StrictBool], Field(description="Include deleted volumes in the response")] = None,
         _request_timeout: Union[
             None,
@@ -1234,8 +1234,8 @@ class VolumesApi:
         """List all volumes
 
 
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param include_deleted: Include deleted volumes in the response
         :type include_deleted: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1261,7 +1261,7 @@ class VolumesApi:
         """ # noqa: E501
 
         _param = self._list_volumes_serialize(
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             include_deleted=include_deleted,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1286,7 +1286,7 @@ class VolumesApi:
     @validate_call
     def list_volumes_without_preload_content(
         self,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         include_deleted: Annotated[Optional[StrictBool], Field(description="Include deleted volumes in the response")] = None,
         _request_timeout: Union[
             None,
@@ -1304,8 +1304,8 @@ class VolumesApi:
         """List all volumes
 
 
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param include_deleted: Include deleted volumes in the response
         :type include_deleted: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -1331,7 +1331,7 @@ class VolumesApi:
         """ # noqa: E501
 
         _param = self._list_volumes_serialize(
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             include_deleted=include_deleted,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1351,7 +1351,7 @@ class VolumesApi:
 
     def _list_volumes_serialize(
         self,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         include_deleted,
         _request_auth,
         _content_type,
@@ -1380,8 +1380,8 @@ class VolumesApi:
             _query_params.append(('includeDeleted', include_deleted))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 

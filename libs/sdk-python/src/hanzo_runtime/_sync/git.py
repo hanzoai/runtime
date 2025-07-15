@@ -7,7 +7,7 @@
 
 from typing import Callable, List, Optional
 
-from daytona_api_client import (
+from hanzo_runtime_api_client import (
     GitAddRequest,
     GitBranchRequest,
     GitCheckoutRequest,

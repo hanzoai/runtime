@@ -9,7 +9,7 @@
 
 <div align="center">
 
-[![Documentation](https://img.shields.io/github/v/release/daytonaio/docs?label=Docs&color=23cc71)](https://www.daytona.io/docs)
+[![Documentation](https://img.shields.io/github/v/release/daytonaio/docs?label=Docs&color=23cc71)](https://www.hanzo_runtime.io/docs)
 [![License](https://img.shields.io/badge/License-Apache--2.0-blue)](#license)
 [![Issues - daytona](https://img.shields.io/github/issues/daytonaio/docs)](https://github.com/daytonaio/docs/issues)
 
@@ -24,7 +24,7 @@ Daytona user and developer documentation.
 <p align="center">
   <a href="https://github.com/daytonaio/docs/issues/new?assignees=&labels=bug">Report Bug</a>
     ·
-  <a href="https://go.daytona.io/slack">Join Our Slack</a>
+  <a href="https://go.hanzo_runtime.io/slack">Join Our Slack</a>
     ·
   <a href="https://twitter.com/daytonaio">Twitter</a>
 </p>
@@ -105,9 +105,9 @@ We explicitly grant permission for you to make a build that includes our tradema
 
 ## Code of Conduct
 
-This project has adapted the Code of Conduct from the [Contributor Covenant](https://www.contributor-covenant.org/). For more information see the [Code of Conduct](CODE_OF_CONDUCT.md) or contact [codeofconduct@daytona.io.](mailto:codeofconduct@daytona.io) with any additional questions or comments.
+This project has adapted the Code of Conduct from the [Contributor Covenant](https://www.contributor-covenant.org/). For more information see the [Code of Conduct](CODE_OF_CONDUCT.md) or contact [codeofconduct@hanzo_runtime.io.](mailto:codeofconduct@hanzo_runtime.io) with any additional questions or comments.
 
 ## Questions
 
 If you need guidance on contributing to Daytona, talk to us on
-[Slack](https://go.daytona.io/slack).
+[Slack](https://go.hanzo_runtime.io/slack).

@@ -7,7 +7,7 @@ import warnings
 from importlib.metadata import version
 from typing import Callable, Dict, List, Optional, Union, overload
 
-from daytona_api_client_async import (
+from hanzo_runtime_api_client_async import (
     ApiClient,
     Configuration,
     CreateBuildInfo,
@@ -17,8 +17,8 @@ from daytona_api_client_async import (
     SandboxState,
     SnapshotsApi,
 )
-from daytona_api_client_async import ToolboxApi as ToolboxApi
-from daytona_api_client_async import VolumesApi as VolumesApi
+from hanzo_runtime_api_client_async import ToolboxApi as ToolboxApi
+from hanzo_runtime_api_client_async import VolumesApi as VolumesApi
 from environs import Env
 
 from .._utils.enum import to_enum
@@ -412,7 +412,7 @@ class AsyncHanzoRuntime:
             _, url, *_ = self._sandbox_api._get_build_logs_serialize(  # pylint: disable=protected-access
                 response.id,
                 follow=True,
-                x_daytona_organization_id=None,
+                x_hanzo_runtime_organization_id=None,
                 _request_auth=None,
                 _content_type=None,
                 _headers=None,

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { FileInfo, Match, ReplaceRequest, ReplaceResult, SearchFilesResponse, ToolboxApi } from '@daytonaio/api-client'
+import { FileInfo, Match, ReplaceRequest, ReplaceResult, SearchFilesResponse, ToolboxApi } from '@hanzo/runtime-api-client'
 import { prefixRelativePath } from './utils/Path'
 import * as fs from 'fs'
 import { Readable } from 'stream'
@@ -20,7 +20,7 @@ import FormData from 'form-data'
  * @example
  * const permissions: FilePermissionsParams = {
  *   mode: '644',
- *   owner: 'daytona',
+ *   owner: 'hanzo',
  *   group: 'users'
  * };
  */
@@ -313,7 +313,7 @@ export class FileSystem {
    * @example
    * // Set file permissions and ownership
    * await fs.setFilePermissions('app/script.sh', {
-   *   owner: 'daytona',
+   *   owner: 'hanzo',
    *   group: 'users',
    *   mode: '755'  // Execute permission for shell script
    * });

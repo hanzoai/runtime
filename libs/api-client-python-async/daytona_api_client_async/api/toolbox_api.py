@@ -97,7 +97,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         mouse_click_request: MouseClickRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -119,8 +119,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param mouse_click_request: (required)
         :type mouse_click_request: MouseClickRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -146,7 +146,7 @@ class ToolboxApi:
         _param = self._click_mouse_serialize(
             sandbox_id=sandbox_id,
             mouse_click_request=mouse_click_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -172,7 +172,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         mouse_click_request: MouseClickRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -194,8 +194,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param mouse_click_request: (required)
         :type mouse_click_request: MouseClickRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -221,7 +221,7 @@ class ToolboxApi:
         _param = self._click_mouse_serialize(
             sandbox_id=sandbox_id,
             mouse_click_request=mouse_click_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -247,7 +247,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         mouse_click_request: MouseClickRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -269,8 +269,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param mouse_click_request: (required)
         :type mouse_click_request: MouseClickRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -296,7 +296,7 @@ class ToolboxApi:
         _param = self._click_mouse_serialize(
             sandbox_id=sandbox_id,
             mouse_click_request=mouse_click_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -317,7 +317,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         mouse_click_request,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -343,8 +343,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if mouse_click_request is not None:
@@ -403,7 +403,7 @@ class ToolboxApi:
         sandbox_id: StrictStr,
         path: StrictStr,
         mode: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -427,8 +427,8 @@ class ToolboxApi:
         :type path: str
         :param mode: (required)
         :type mode: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -455,7 +455,7 @@ class ToolboxApi:
             sandbox_id=sandbox_id,
             path=path,
             mode=mode,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -482,7 +482,7 @@ class ToolboxApi:
         sandbox_id: StrictStr,
         path: StrictStr,
         mode: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -506,8 +506,8 @@ class ToolboxApi:
         :type path: str
         :param mode: (required)
         :type mode: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -534,7 +534,7 @@ class ToolboxApi:
             sandbox_id=sandbox_id,
             path=path,
             mode=mode,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -561,7 +561,7 @@ class ToolboxApi:
         sandbox_id: StrictStr,
         path: StrictStr,
         mode: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -585,8 +585,8 @@ class ToolboxApi:
         :type path: str
         :param mode: (required)
         :type mode: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -613,7 +613,7 @@ class ToolboxApi:
             sandbox_id=sandbox_id,
             path=path,
             mode=mode,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -635,7 +635,7 @@ class ToolboxApi:
         sandbox_id,
         path,
         mode,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -669,8 +669,8 @@ class ToolboxApi:
             _query_params.append(('mode', mode))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -706,7 +706,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         create_session_request: CreateSessionRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -728,8 +728,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param create_session_request: (required)
         :type create_session_request: CreateSessionRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -755,7 +755,7 @@ class ToolboxApi:
         _param = self._create_session_serialize(
             sandbox_id=sandbox_id,
             create_session_request=create_session_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -781,7 +781,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         create_session_request: CreateSessionRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -803,8 +803,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param create_session_request: (required)
         :type create_session_request: CreateSessionRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -830,7 +830,7 @@ class ToolboxApi:
         _param = self._create_session_serialize(
             sandbox_id=sandbox_id,
             create_session_request=create_session_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -856,7 +856,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         create_session_request: CreateSessionRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -878,8 +878,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param create_session_request: (required)
         :type create_session_request: CreateSessionRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -905,7 +905,7 @@ class ToolboxApi:
         _param = self._create_session_serialize(
             sandbox_id=sandbox_id,
             create_session_request=create_session_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -926,7 +926,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         create_session_request,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -952,8 +952,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if create_session_request is not None:
@@ -1004,7 +1004,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1026,8 +1026,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1053,7 +1053,7 @@ class ToolboxApi:
         _param = self._delete_file_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1079,7 +1079,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1101,8 +1101,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1128,7 +1128,7 @@ class ToolboxApi:
         _param = self._delete_file_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1154,7 +1154,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1176,8 +1176,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1203,7 +1203,7 @@ class ToolboxApi:
         _param = self._delete_file_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1224,7 +1224,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         path,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -1254,8 +1254,8 @@ class ToolboxApi:
             _query_params.append(('path', path))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -1291,7 +1291,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         session_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1313,8 +1313,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param session_id: (required)
         :type session_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1340,7 +1340,7 @@ class ToolboxApi:
         _param = self._delete_session_serialize(
             sandbox_id=sandbox_id,
             session_id=session_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1366,7 +1366,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         session_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1388,8 +1388,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param session_id: (required)
         :type session_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1415,7 +1415,7 @@ class ToolboxApi:
         _param = self._delete_session_serialize(
             sandbox_id=sandbox_id,
             session_id=session_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1441,7 +1441,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         session_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1463,8 +1463,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param session_id: (required)
         :type session_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1490,7 +1490,7 @@ class ToolboxApi:
         _param = self._delete_session_serialize(
             sandbox_id=sandbox_id,
             session_id=session_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1511,7 +1511,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         session_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -1539,8 +1539,8 @@ class ToolboxApi:
             _path_params['sessionId'] = session_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -1576,7 +1576,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1598,8 +1598,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1625,7 +1625,7 @@ class ToolboxApi:
         _param = self._download_file_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1651,7 +1651,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1673,8 +1673,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1700,7 +1700,7 @@ class ToolboxApi:
         _param = self._download_file_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1726,7 +1726,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1748,8 +1748,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1775,7 +1775,7 @@ class ToolboxApi:
         _param = self._download_file_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1796,7 +1796,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         path,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -1826,8 +1826,8 @@ class ToolboxApi:
             _query_params.append(('path', path))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -1870,7 +1870,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         mouse_drag_request: MouseDragRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1892,8 +1892,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param mouse_drag_request: (required)
         :type mouse_drag_request: MouseDragRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1919,7 +1919,7 @@ class ToolboxApi:
         _param = self._drag_mouse_serialize(
             sandbox_id=sandbox_id,
             mouse_drag_request=mouse_drag_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1945,7 +1945,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         mouse_drag_request: MouseDragRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1967,8 +1967,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param mouse_drag_request: (required)
         :type mouse_drag_request: MouseDragRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1994,7 +1994,7 @@ class ToolboxApi:
         _param = self._drag_mouse_serialize(
             sandbox_id=sandbox_id,
             mouse_drag_request=mouse_drag_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2020,7 +2020,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         mouse_drag_request: MouseDragRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2042,8 +2042,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param mouse_drag_request: (required)
         :type mouse_drag_request: MouseDragRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2069,7 +2069,7 @@ class ToolboxApi:
         _param = self._drag_mouse_serialize(
             sandbox_id=sandbox_id,
             mouse_drag_request=mouse_drag_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2090,7 +2090,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         mouse_drag_request,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -2116,8 +2116,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if mouse_drag_request is not None:
@@ -2175,7 +2175,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         execute_request: ExecuteRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2197,8 +2197,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param execute_request: (required)
         :type execute_request: ExecuteRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2224,7 +2224,7 @@ class ToolboxApi:
         _param = self._execute_command_serialize(
             sandbox_id=sandbox_id,
             execute_request=execute_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2250,7 +2250,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         execute_request: ExecuteRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2272,8 +2272,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param execute_request: (required)
         :type execute_request: ExecuteRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2299,7 +2299,7 @@ class ToolboxApi:
         _param = self._execute_command_serialize(
             sandbox_id=sandbox_id,
             execute_request=execute_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2325,7 +2325,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         execute_request: ExecuteRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2347,8 +2347,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param execute_request: (required)
         :type execute_request: ExecuteRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2374,7 +2374,7 @@ class ToolboxApi:
         _param = self._execute_command_serialize(
             sandbox_id=sandbox_id,
             execute_request=execute_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2395,7 +2395,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         execute_request,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -2421,8 +2421,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if execute_request is not None:
@@ -2481,7 +2481,7 @@ class ToolboxApi:
         sandbox_id: StrictStr,
         session_id: StrictStr,
         session_execute_request: SessionExecuteRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2505,8 +2505,8 @@ class ToolboxApi:
         :type session_id: str
         :param session_execute_request: (required)
         :type session_execute_request: SessionExecuteRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2533,7 +2533,7 @@ class ToolboxApi:
             sandbox_id=sandbox_id,
             session_id=session_id,
             session_execute_request=session_execute_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2561,7 +2561,7 @@ class ToolboxApi:
         sandbox_id: StrictStr,
         session_id: StrictStr,
         session_execute_request: SessionExecuteRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2585,8 +2585,8 @@ class ToolboxApi:
         :type session_id: str
         :param session_execute_request: (required)
         :type session_execute_request: SessionExecuteRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2613,7 +2613,7 @@ class ToolboxApi:
             sandbox_id=sandbox_id,
             session_id=session_id,
             session_execute_request=session_execute_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2641,7 +2641,7 @@ class ToolboxApi:
         sandbox_id: StrictStr,
         session_id: StrictStr,
         session_execute_request: SessionExecuteRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2665,8 +2665,8 @@ class ToolboxApi:
         :type session_id: str
         :param session_execute_request: (required)
         :type session_execute_request: SessionExecuteRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2693,7 +2693,7 @@ class ToolboxApi:
             sandbox_id=sandbox_id,
             session_id=session_id,
             session_execute_request=session_execute_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2716,7 +2716,7 @@ class ToolboxApi:
         sandbox_id,
         session_id,
         session_execute_request,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -2744,8 +2744,8 @@ class ToolboxApi:
             _path_params['sessionId'] = session_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if session_execute_request is not None:
@@ -2804,7 +2804,7 @@ class ToolboxApi:
         sandbox_id: StrictStr,
         path: StrictStr,
         pattern: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2828,8 +2828,8 @@ class ToolboxApi:
         :type path: str
         :param pattern: (required)
         :type pattern: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2856,7 +2856,7 @@ class ToolboxApi:
             sandbox_id=sandbox_id,
             path=path,
             pattern=pattern,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2883,7 +2883,7 @@ class ToolboxApi:
         sandbox_id: StrictStr,
         path: StrictStr,
         pattern: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2907,8 +2907,8 @@ class ToolboxApi:
         :type path: str
         :param pattern: (required)
         :type pattern: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2935,7 +2935,7 @@ class ToolboxApi:
             sandbox_id=sandbox_id,
             path=path,
             pattern=pattern,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2962,7 +2962,7 @@ class ToolboxApi:
         sandbox_id: StrictStr,
         path: StrictStr,
         pattern: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2986,8 +2986,8 @@ class ToolboxApi:
         :type path: str
         :param pattern: (required)
         :type pattern: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3014,7 +3014,7 @@ class ToolboxApi:
             sandbox_id=sandbox_id,
             path=path,
             pattern=pattern,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3036,7 +3036,7 @@ class ToolboxApi:
         sandbox_id,
         path,
         pattern,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -3070,8 +3070,8 @@ class ToolboxApi:
             _query_params.append(('pattern', pattern))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -3113,7 +3113,7 @@ class ToolboxApi:
     async def get_computer_use_status(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3133,8 +3133,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3159,7 +3159,7 @@ class ToolboxApi:
 
         _param = self._get_computer_use_status_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3184,7 +3184,7 @@ class ToolboxApi:
     async def get_computer_use_status_with_http_info(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3204,8 +3204,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3230,7 +3230,7 @@ class ToolboxApi:
 
         _param = self._get_computer_use_status_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3255,7 +3255,7 @@ class ToolboxApi:
     async def get_computer_use_status_without_preload_content(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3275,8 +3275,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3301,7 +3301,7 @@ class ToolboxApi:
 
         _param = self._get_computer_use_status_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3321,7 +3321,7 @@ class ToolboxApi:
     def _get_computer_use_status_serialize(
         self,
         sandbox_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -3347,8 +3347,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -3390,7 +3390,7 @@ class ToolboxApi:
     async def get_display_info(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3410,8 +3410,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3436,7 +3436,7 @@ class ToolboxApi:
 
         _param = self._get_display_info_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3461,7 +3461,7 @@ class ToolboxApi:
     async def get_display_info_with_http_info(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3481,8 +3481,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3507,7 +3507,7 @@ class ToolboxApi:
 
         _param = self._get_display_info_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3532,7 +3532,7 @@ class ToolboxApi:
     async def get_display_info_without_preload_content(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3552,8 +3552,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3578,7 +3578,7 @@ class ToolboxApi:
 
         _param = self._get_display_info_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3598,7 +3598,7 @@ class ToolboxApi:
     def _get_display_info_serialize(
         self,
         sandbox_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -3624,8 +3624,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -3668,7 +3668,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3690,8 +3690,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3717,7 +3717,7 @@ class ToolboxApi:
         _param = self._get_file_info_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3743,7 +3743,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3765,8 +3765,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3792,7 +3792,7 @@ class ToolboxApi:
         _param = self._get_file_info_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3818,7 +3818,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3840,8 +3840,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -3867,7 +3867,7 @@ class ToolboxApi:
         _param = self._get_file_info_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -3888,7 +3888,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         path,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -3918,8 +3918,8 @@ class ToolboxApi:
             _query_params.append(('path', path))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -3961,7 +3961,7 @@ class ToolboxApi:
     async def get_mouse_position(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3981,8 +3981,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4007,7 +4007,7 @@ class ToolboxApi:
 
         _param = self._get_mouse_position_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4032,7 +4032,7 @@ class ToolboxApi:
     async def get_mouse_position_with_http_info(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4052,8 +4052,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4078,7 +4078,7 @@ class ToolboxApi:
 
         _param = self._get_mouse_position_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4103,7 +4103,7 @@ class ToolboxApi:
     async def get_mouse_position_without_preload_content(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4123,8 +4123,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4149,7 +4149,7 @@ class ToolboxApi:
 
         _param = self._get_mouse_position_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4169,7 +4169,7 @@ class ToolboxApi:
     def _get_mouse_position_serialize(
         self,
         sandbox_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -4195,8 +4195,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -4239,7 +4239,7 @@ class ToolboxApi:
         self,
         process_name: StrictStr,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4261,8 +4261,8 @@ class ToolboxApi:
         :type process_name: str
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4288,7 +4288,7 @@ class ToolboxApi:
         _param = self._get_process_errors_serialize(
             process_name=process_name,
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4314,7 +4314,7 @@ class ToolboxApi:
         self,
         process_name: StrictStr,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4336,8 +4336,8 @@ class ToolboxApi:
         :type process_name: str
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4363,7 +4363,7 @@ class ToolboxApi:
         _param = self._get_process_errors_serialize(
             process_name=process_name,
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4389,7 +4389,7 @@ class ToolboxApi:
         self,
         process_name: StrictStr,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4411,8 +4411,8 @@ class ToolboxApi:
         :type process_name: str
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4438,7 +4438,7 @@ class ToolboxApi:
         _param = self._get_process_errors_serialize(
             process_name=process_name,
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4459,7 +4459,7 @@ class ToolboxApi:
         self,
         process_name,
         sandbox_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -4487,8 +4487,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -4531,7 +4531,7 @@ class ToolboxApi:
         self,
         process_name: StrictStr,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4553,8 +4553,8 @@ class ToolboxApi:
         :type process_name: str
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4580,7 +4580,7 @@ class ToolboxApi:
         _param = self._get_process_logs_serialize(
             process_name=process_name,
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4606,7 +4606,7 @@ class ToolboxApi:
         self,
         process_name: StrictStr,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4628,8 +4628,8 @@ class ToolboxApi:
         :type process_name: str
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4655,7 +4655,7 @@ class ToolboxApi:
         _param = self._get_process_logs_serialize(
             process_name=process_name,
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4681,7 +4681,7 @@ class ToolboxApi:
         self,
         process_name: StrictStr,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4703,8 +4703,8 @@ class ToolboxApi:
         :type process_name: str
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4730,7 +4730,7 @@ class ToolboxApi:
         _param = self._get_process_logs_serialize(
             process_name=process_name,
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4751,7 +4751,7 @@ class ToolboxApi:
         self,
         process_name,
         sandbox_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -4779,8 +4779,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -4823,7 +4823,7 @@ class ToolboxApi:
         self,
         process_name: StrictStr,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4845,8 +4845,8 @@ class ToolboxApi:
         :type process_name: str
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4872,7 +4872,7 @@ class ToolboxApi:
         _param = self._get_process_status_serialize(
             process_name=process_name,
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4898,7 +4898,7 @@ class ToolboxApi:
         self,
         process_name: StrictStr,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4920,8 +4920,8 @@ class ToolboxApi:
         :type process_name: str
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -4947,7 +4947,7 @@ class ToolboxApi:
         _param = self._get_process_status_serialize(
             process_name=process_name,
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -4973,7 +4973,7 @@ class ToolboxApi:
         self,
         process_name: StrictStr,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4995,8 +4995,8 @@ class ToolboxApi:
         :type process_name: str
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5022,7 +5022,7 @@ class ToolboxApi:
         _param = self._get_process_status_serialize(
             process_name=process_name,
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5043,7 +5043,7 @@ class ToolboxApi:
         self,
         process_name,
         sandbox_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -5071,8 +5071,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -5114,7 +5114,7 @@ class ToolboxApi:
     async def get_project_dir(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5133,8 +5133,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5159,7 +5159,7 @@ class ToolboxApi:
 
         _param = self._get_project_dir_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5184,7 +5184,7 @@ class ToolboxApi:
     async def get_project_dir_with_http_info(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5203,8 +5203,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5229,7 +5229,7 @@ class ToolboxApi:
 
         _param = self._get_project_dir_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5254,7 +5254,7 @@ class ToolboxApi:
     async def get_project_dir_without_preload_content(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5273,8 +5273,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5299,7 +5299,7 @@ class ToolboxApi:
 
         _param = self._get_project_dir_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5319,7 +5319,7 @@ class ToolboxApi:
     def _get_project_dir_serialize(
         self,
         sandbox_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -5345,8 +5345,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -5389,7 +5389,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         session_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5411,8 +5411,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param session_id: (required)
         :type session_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5438,7 +5438,7 @@ class ToolboxApi:
         _param = self._get_session_serialize(
             sandbox_id=sandbox_id,
             session_id=session_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5464,7 +5464,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         session_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5486,8 +5486,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param session_id: (required)
         :type session_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5513,7 +5513,7 @@ class ToolboxApi:
         _param = self._get_session_serialize(
             sandbox_id=sandbox_id,
             session_id=session_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5539,7 +5539,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         session_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5561,8 +5561,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param session_id: (required)
         :type session_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5588,7 +5588,7 @@ class ToolboxApi:
         _param = self._get_session_serialize(
             sandbox_id=sandbox_id,
             session_id=session_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5609,7 +5609,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         session_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -5637,8 +5637,8 @@ class ToolboxApi:
             _path_params['sessionId'] = session_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -5682,7 +5682,7 @@ class ToolboxApi:
         sandbox_id: StrictStr,
         session_id: StrictStr,
         command_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5706,8 +5706,8 @@ class ToolboxApi:
         :type session_id: str
         :param command_id: (required)
         :type command_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5734,7 +5734,7 @@ class ToolboxApi:
             sandbox_id=sandbox_id,
             session_id=session_id,
             command_id=command_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5761,7 +5761,7 @@ class ToolboxApi:
         sandbox_id: StrictStr,
         session_id: StrictStr,
         command_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5785,8 +5785,8 @@ class ToolboxApi:
         :type session_id: str
         :param command_id: (required)
         :type command_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5813,7 +5813,7 @@ class ToolboxApi:
             sandbox_id=sandbox_id,
             session_id=session_id,
             command_id=command_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5840,7 +5840,7 @@ class ToolboxApi:
         sandbox_id: StrictStr,
         session_id: StrictStr,
         command_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5864,8 +5864,8 @@ class ToolboxApi:
         :type session_id: str
         :param command_id: (required)
         :type command_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -5892,7 +5892,7 @@ class ToolboxApi:
             sandbox_id=sandbox_id,
             session_id=session_id,
             command_id=command_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -5914,7 +5914,7 @@ class ToolboxApi:
         sandbox_id,
         session_id,
         command_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -5944,8 +5944,8 @@ class ToolboxApi:
             _path_params['commandId'] = command_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -5989,7 +5989,7 @@ class ToolboxApi:
         sandbox_id: StrictStr,
         session_id: StrictStr,
         command_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         follow: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
@@ -6014,8 +6014,8 @@ class ToolboxApi:
         :type session_id: str
         :param command_id: (required)
         :type command_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param follow:
         :type follow: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -6044,7 +6044,7 @@ class ToolboxApi:
             sandbox_id=sandbox_id,
             session_id=session_id,
             command_id=command_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             follow=follow,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -6072,7 +6072,7 @@ class ToolboxApi:
         sandbox_id: StrictStr,
         session_id: StrictStr,
         command_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         follow: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
@@ -6097,8 +6097,8 @@ class ToolboxApi:
         :type session_id: str
         :param command_id: (required)
         :type command_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param follow:
         :type follow: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -6127,7 +6127,7 @@ class ToolboxApi:
             sandbox_id=sandbox_id,
             session_id=session_id,
             command_id=command_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             follow=follow,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -6155,7 +6155,7 @@ class ToolboxApi:
         sandbox_id: StrictStr,
         session_id: StrictStr,
         command_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         follow: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
@@ -6180,8 +6180,8 @@ class ToolboxApi:
         :type session_id: str
         :param command_id: (required)
         :type command_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param follow:
         :type follow: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -6210,7 +6210,7 @@ class ToolboxApi:
             sandbox_id=sandbox_id,
             session_id=session_id,
             command_id=command_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             follow=follow,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -6233,7 +6233,7 @@ class ToolboxApi:
         sandbox_id,
         session_id,
         command_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         follow,
         _request_auth,
         _content_type,
@@ -6268,8 +6268,8 @@ class ToolboxApi:
             _query_params.append(('follow', follow))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -6311,7 +6311,7 @@ class ToolboxApi:
     async def get_windows(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6331,8 +6331,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6357,7 +6357,7 @@ class ToolboxApi:
 
         _param = self._get_windows_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6382,7 +6382,7 @@ class ToolboxApi:
     async def get_windows_with_http_info(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6402,8 +6402,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6428,7 +6428,7 @@ class ToolboxApi:
 
         _param = self._get_windows_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6453,7 +6453,7 @@ class ToolboxApi:
     async def get_windows_without_preload_content(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6473,8 +6473,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6499,7 +6499,7 @@ class ToolboxApi:
 
         _param = self._get_windows_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6519,7 +6519,7 @@ class ToolboxApi:
     def _get_windows_serialize(
         self,
         sandbox_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -6545,8 +6545,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -6589,7 +6589,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_add_request: GitAddRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6611,8 +6611,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_add_request: (required)
         :type git_add_request: GitAddRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6638,7 +6638,7 @@ class ToolboxApi:
         _param = self._git_add_files_serialize(
             sandbox_id=sandbox_id,
             git_add_request=git_add_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6664,7 +6664,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_add_request: GitAddRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6686,8 +6686,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_add_request: (required)
         :type git_add_request: GitAddRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6713,7 +6713,7 @@ class ToolboxApi:
         _param = self._git_add_files_serialize(
             sandbox_id=sandbox_id,
             git_add_request=git_add_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6739,7 +6739,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_add_request: GitAddRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6761,8 +6761,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_add_request: (required)
         :type git_add_request: GitAddRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6788,7 +6788,7 @@ class ToolboxApi:
         _param = self._git_add_files_serialize(
             sandbox_id=sandbox_id,
             git_add_request=git_add_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6809,7 +6809,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         git_add_request,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -6835,8 +6835,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if git_add_request is not None:
@@ -6887,7 +6887,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_checkout_request: GitCheckoutRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6909,8 +6909,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_checkout_request: (required)
         :type git_checkout_request: GitCheckoutRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -6936,7 +6936,7 @@ class ToolboxApi:
         _param = self._git_checkout_branch_serialize(
             sandbox_id=sandbox_id,
             git_checkout_request=git_checkout_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -6962,7 +6962,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_checkout_request: GitCheckoutRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6984,8 +6984,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_checkout_request: (required)
         :type git_checkout_request: GitCheckoutRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7011,7 +7011,7 @@ class ToolboxApi:
         _param = self._git_checkout_branch_serialize(
             sandbox_id=sandbox_id,
             git_checkout_request=git_checkout_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7037,7 +7037,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_checkout_request: GitCheckoutRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7059,8 +7059,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_checkout_request: (required)
         :type git_checkout_request: GitCheckoutRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7086,7 +7086,7 @@ class ToolboxApi:
         _param = self._git_checkout_branch_serialize(
             sandbox_id=sandbox_id,
             git_checkout_request=git_checkout_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7107,7 +7107,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         git_checkout_request,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -7133,8 +7133,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if git_checkout_request is not None:
@@ -7185,7 +7185,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_clone_request: GitCloneRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7207,8 +7207,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_clone_request: (required)
         :type git_clone_request: GitCloneRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7234,7 +7234,7 @@ class ToolboxApi:
         _param = self._git_clone_repository_serialize(
             sandbox_id=sandbox_id,
             git_clone_request=git_clone_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7260,7 +7260,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_clone_request: GitCloneRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7282,8 +7282,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_clone_request: (required)
         :type git_clone_request: GitCloneRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7309,7 +7309,7 @@ class ToolboxApi:
         _param = self._git_clone_repository_serialize(
             sandbox_id=sandbox_id,
             git_clone_request=git_clone_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7335,7 +7335,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_clone_request: GitCloneRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7357,8 +7357,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_clone_request: (required)
         :type git_clone_request: GitCloneRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7384,7 +7384,7 @@ class ToolboxApi:
         _param = self._git_clone_repository_serialize(
             sandbox_id=sandbox_id,
             git_clone_request=git_clone_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7405,7 +7405,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         git_clone_request,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -7431,8 +7431,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if git_clone_request is not None:
@@ -7483,7 +7483,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_commit_request: GitCommitRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7505,8 +7505,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_commit_request: (required)
         :type git_commit_request: GitCommitRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7532,7 +7532,7 @@ class ToolboxApi:
         _param = self._git_commit_changes_serialize(
             sandbox_id=sandbox_id,
             git_commit_request=git_commit_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7558,7 +7558,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_commit_request: GitCommitRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7580,8 +7580,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_commit_request: (required)
         :type git_commit_request: GitCommitRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7607,7 +7607,7 @@ class ToolboxApi:
         _param = self._git_commit_changes_serialize(
             sandbox_id=sandbox_id,
             git_commit_request=git_commit_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7633,7 +7633,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_commit_request: GitCommitRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7655,8 +7655,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_commit_request: (required)
         :type git_commit_request: GitCommitRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7682,7 +7682,7 @@ class ToolboxApi:
         _param = self._git_commit_changes_serialize(
             sandbox_id=sandbox_id,
             git_commit_request=git_commit_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7703,7 +7703,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         git_commit_request,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -7729,8 +7729,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if git_commit_request is not None:
@@ -7788,7 +7788,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_branch_request: GitBranchRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7810,8 +7810,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_branch_request: (required)
         :type git_branch_request: GitBranchRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7837,7 +7837,7 @@ class ToolboxApi:
         _param = self._git_create_branch_serialize(
             sandbox_id=sandbox_id,
             git_branch_request=git_branch_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7863,7 +7863,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_branch_request: GitBranchRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7885,8 +7885,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_branch_request: (required)
         :type git_branch_request: GitBranchRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7912,7 +7912,7 @@ class ToolboxApi:
         _param = self._git_create_branch_serialize(
             sandbox_id=sandbox_id,
             git_branch_request=git_branch_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -7938,7 +7938,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_branch_request: GitBranchRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -7960,8 +7960,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_branch_request: (required)
         :type git_branch_request: GitBranchRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -7987,7 +7987,7 @@ class ToolboxApi:
         _param = self._git_create_branch_serialize(
             sandbox_id=sandbox_id,
             git_branch_request=git_branch_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8008,7 +8008,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         git_branch_request,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -8034,8 +8034,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if git_branch_request is not None:
@@ -8086,7 +8086,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_delete_branch_request: GitDeleteBranchRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8108,8 +8108,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_delete_branch_request: (required)
         :type git_delete_branch_request: GitDeleteBranchRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8135,7 +8135,7 @@ class ToolboxApi:
         _param = self._git_delete_branch_serialize(
             sandbox_id=sandbox_id,
             git_delete_branch_request=git_delete_branch_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8161,7 +8161,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_delete_branch_request: GitDeleteBranchRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8183,8 +8183,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_delete_branch_request: (required)
         :type git_delete_branch_request: GitDeleteBranchRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8210,7 +8210,7 @@ class ToolboxApi:
         _param = self._git_delete_branch_serialize(
             sandbox_id=sandbox_id,
             git_delete_branch_request=git_delete_branch_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8236,7 +8236,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_delete_branch_request: GitDeleteBranchRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8258,8 +8258,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_delete_branch_request: (required)
         :type git_delete_branch_request: GitDeleteBranchRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8285,7 +8285,7 @@ class ToolboxApi:
         _param = self._git_delete_branch_serialize(
             sandbox_id=sandbox_id,
             git_delete_branch_request=git_delete_branch_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8306,7 +8306,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         git_delete_branch_request,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -8332,8 +8332,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if git_delete_branch_request is not None:
@@ -8384,7 +8384,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8406,8 +8406,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8433,7 +8433,7 @@ class ToolboxApi:
         _param = self._git_get_history_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8459,7 +8459,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8481,8 +8481,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8508,7 +8508,7 @@ class ToolboxApi:
         _param = self._git_get_history_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8534,7 +8534,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8556,8 +8556,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8583,7 +8583,7 @@ class ToolboxApi:
         _param = self._git_get_history_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8604,7 +8604,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         path,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -8634,8 +8634,8 @@ class ToolboxApi:
             _query_params.append(('path', path))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -8678,7 +8678,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8700,8 +8700,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8727,7 +8727,7 @@ class ToolboxApi:
         _param = self._git_get_status_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8753,7 +8753,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8775,8 +8775,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8802,7 +8802,7 @@ class ToolboxApi:
         _param = self._git_get_status_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8828,7 +8828,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8850,8 +8850,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -8877,7 +8877,7 @@ class ToolboxApi:
         _param = self._git_get_status_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -8898,7 +8898,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         path,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -8928,8 +8928,8 @@ class ToolboxApi:
             _query_params.append(('path', path))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -8972,7 +8972,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -8994,8 +8994,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9021,7 +9021,7 @@ class ToolboxApi:
         _param = self._git_list_branches_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9047,7 +9047,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9069,8 +9069,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9096,7 +9096,7 @@ class ToolboxApi:
         _param = self._git_list_branches_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9122,7 +9122,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9144,8 +9144,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9171,7 +9171,7 @@ class ToolboxApi:
         _param = self._git_list_branches_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9192,7 +9192,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         path,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -9222,8 +9222,8 @@ class ToolboxApi:
             _query_params.append(('path', path))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -9266,7 +9266,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_repo_request: GitRepoRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9288,8 +9288,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_repo_request: (required)
         :type git_repo_request: GitRepoRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9315,7 +9315,7 @@ class ToolboxApi:
         _param = self._git_pull_changes_serialize(
             sandbox_id=sandbox_id,
             git_repo_request=git_repo_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9341,7 +9341,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_repo_request: GitRepoRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9363,8 +9363,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_repo_request: (required)
         :type git_repo_request: GitRepoRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9390,7 +9390,7 @@ class ToolboxApi:
         _param = self._git_pull_changes_serialize(
             sandbox_id=sandbox_id,
             git_repo_request=git_repo_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9416,7 +9416,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_repo_request: GitRepoRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9438,8 +9438,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_repo_request: (required)
         :type git_repo_request: GitRepoRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9465,7 +9465,7 @@ class ToolboxApi:
         _param = self._git_pull_changes_serialize(
             sandbox_id=sandbox_id,
             git_repo_request=git_repo_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9486,7 +9486,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         git_repo_request,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -9512,8 +9512,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if git_repo_request is not None:
@@ -9564,7 +9564,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_repo_request: GitRepoRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9586,8 +9586,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_repo_request: (required)
         :type git_repo_request: GitRepoRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9613,7 +9613,7 @@ class ToolboxApi:
         _param = self._git_push_changes_serialize(
             sandbox_id=sandbox_id,
             git_repo_request=git_repo_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9639,7 +9639,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_repo_request: GitRepoRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9661,8 +9661,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_repo_request: (required)
         :type git_repo_request: GitRepoRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9688,7 +9688,7 @@ class ToolboxApi:
         _param = self._git_push_changes_serialize(
             sandbox_id=sandbox_id,
             git_repo_request=git_repo_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9714,7 +9714,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         git_repo_request: GitRepoRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -9736,8 +9736,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param git_repo_request: (required)
         :type git_repo_request: GitRepoRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -9763,7 +9763,7 @@ class ToolboxApi:
         _param = self._git_push_changes_serialize(
             sandbox_id=sandbox_id,
             git_repo_request=git_repo_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -9784,7 +9784,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         git_repo_request,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -9810,8 +9810,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if git_repo_request is not None:
@@ -9861,7 +9861,7 @@ class ToolboxApi:
     async def list_files(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         path: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
@@ -9881,8 +9881,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param path:
         :type path: str
         :param _request_timeout: timeout setting for this request. If one
@@ -9909,7 +9909,7 @@ class ToolboxApi:
 
         _param = self._list_files_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             path=path,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -9935,7 +9935,7 @@ class ToolboxApi:
     async def list_files_with_http_info(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         path: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
@@ -9955,8 +9955,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param path:
         :type path: str
         :param _request_timeout: timeout setting for this request. If one
@@ -9983,7 +9983,7 @@ class ToolboxApi:
 
         _param = self._list_files_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             path=path,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -10009,7 +10009,7 @@ class ToolboxApi:
     async def list_files_without_preload_content(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         path: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
@@ -10029,8 +10029,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param path:
         :type path: str
         :param _request_timeout: timeout setting for this request. If one
@@ -10057,7 +10057,7 @@ class ToolboxApi:
 
         _param = self._list_files_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             path=path,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -10078,7 +10078,7 @@ class ToolboxApi:
     def _list_files_serialize(
         self,
         sandbox_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         path,
         _request_auth,
         _content_type,
@@ -10109,8 +10109,8 @@ class ToolboxApi:
             _query_params.append(('path', path))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -10152,7 +10152,7 @@ class ToolboxApi:
     async def list_sessions(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10172,8 +10172,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10198,7 +10198,7 @@ class ToolboxApi:
 
         _param = self._list_sessions_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10223,7 +10223,7 @@ class ToolboxApi:
     async def list_sessions_with_http_info(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10243,8 +10243,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10269,7 +10269,7 @@ class ToolboxApi:
 
         _param = self._list_sessions_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10294,7 +10294,7 @@ class ToolboxApi:
     async def list_sessions_without_preload_content(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10314,8 +10314,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10340,7 +10340,7 @@ class ToolboxApi:
 
         _param = self._list_sessions_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10360,7 +10360,7 @@ class ToolboxApi:
     def _list_sessions_serialize(
         self,
         sandbox_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -10386,8 +10386,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -10430,7 +10430,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         lsp_completion_params: LspCompletionParams,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10452,8 +10452,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param lsp_completion_params: (required)
         :type lsp_completion_params: LspCompletionParams
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10479,7 +10479,7 @@ class ToolboxApi:
         _param = self._lsp_completions_serialize(
             sandbox_id=sandbox_id,
             lsp_completion_params=lsp_completion_params,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10505,7 +10505,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         lsp_completion_params: LspCompletionParams,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10527,8 +10527,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param lsp_completion_params: (required)
         :type lsp_completion_params: LspCompletionParams
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10554,7 +10554,7 @@ class ToolboxApi:
         _param = self._lsp_completions_serialize(
             sandbox_id=sandbox_id,
             lsp_completion_params=lsp_completion_params,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10580,7 +10580,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         lsp_completion_params: LspCompletionParams,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10602,8 +10602,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param lsp_completion_params: (required)
         :type lsp_completion_params: LspCompletionParams
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10629,7 +10629,7 @@ class ToolboxApi:
         _param = self._lsp_completions_serialize(
             sandbox_id=sandbox_id,
             lsp_completion_params=lsp_completion_params,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10650,7 +10650,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         lsp_completion_params,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -10676,8 +10676,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if lsp_completion_params is not None:
@@ -10735,7 +10735,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         lsp_document_request: LspDocumentRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10757,8 +10757,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param lsp_document_request: (required)
         :type lsp_document_request: LspDocumentRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10784,7 +10784,7 @@ class ToolboxApi:
         _param = self._lsp_did_close_serialize(
             sandbox_id=sandbox_id,
             lsp_document_request=lsp_document_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10810,7 +10810,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         lsp_document_request: LspDocumentRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10832,8 +10832,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param lsp_document_request: (required)
         :type lsp_document_request: LspDocumentRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10859,7 +10859,7 @@ class ToolboxApi:
         _param = self._lsp_did_close_serialize(
             sandbox_id=sandbox_id,
             lsp_document_request=lsp_document_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10885,7 +10885,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         lsp_document_request: LspDocumentRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10907,8 +10907,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param lsp_document_request: (required)
         :type lsp_document_request: LspDocumentRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10934,7 +10934,7 @@ class ToolboxApi:
         _param = self._lsp_did_close_serialize(
             sandbox_id=sandbox_id,
             lsp_document_request=lsp_document_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10955,7 +10955,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         lsp_document_request,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -10981,8 +10981,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if lsp_document_request is not None:
@@ -11033,7 +11033,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         lsp_document_request: LspDocumentRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11055,8 +11055,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param lsp_document_request: (required)
         :type lsp_document_request: LspDocumentRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11082,7 +11082,7 @@ class ToolboxApi:
         _param = self._lsp_did_open_serialize(
             sandbox_id=sandbox_id,
             lsp_document_request=lsp_document_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11108,7 +11108,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         lsp_document_request: LspDocumentRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11130,8 +11130,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param lsp_document_request: (required)
         :type lsp_document_request: LspDocumentRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11157,7 +11157,7 @@ class ToolboxApi:
         _param = self._lsp_did_open_serialize(
             sandbox_id=sandbox_id,
             lsp_document_request=lsp_document_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11183,7 +11183,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         lsp_document_request: LspDocumentRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11205,8 +11205,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param lsp_document_request: (required)
         :type lsp_document_request: LspDocumentRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11232,7 +11232,7 @@ class ToolboxApi:
         _param = self._lsp_did_open_serialize(
             sandbox_id=sandbox_id,
             lsp_document_request=lsp_document_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11253,7 +11253,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         lsp_document_request,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -11279,8 +11279,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if lsp_document_request is not None:
@@ -11333,7 +11333,7 @@ class ToolboxApi:
         language_id: StrictStr,
         path_to_project: StrictStr,
         uri: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11359,8 +11359,8 @@ class ToolboxApi:
         :type path_to_project: str
         :param uri: (required)
         :type uri: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11388,7 +11388,7 @@ class ToolboxApi:
             language_id=language_id,
             path_to_project=path_to_project,
             uri=uri,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11416,7 +11416,7 @@ class ToolboxApi:
         language_id: StrictStr,
         path_to_project: StrictStr,
         uri: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11442,8 +11442,8 @@ class ToolboxApi:
         :type path_to_project: str
         :param uri: (required)
         :type uri: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11471,7 +11471,7 @@ class ToolboxApi:
             language_id=language_id,
             path_to_project=path_to_project,
             uri=uri,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11499,7 +11499,7 @@ class ToolboxApi:
         language_id: StrictStr,
         path_to_project: StrictStr,
         uri: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11525,8 +11525,8 @@ class ToolboxApi:
         :type path_to_project: str
         :param uri: (required)
         :type uri: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11554,7 +11554,7 @@ class ToolboxApi:
             language_id=language_id,
             path_to_project=path_to_project,
             uri=uri,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11577,7 +11577,7 @@ class ToolboxApi:
         language_id,
         path_to_project,
         uri,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -11615,8 +11615,8 @@ class ToolboxApi:
             _query_params.append(('uri', uri))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -11659,7 +11659,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         lsp_server_request: LspServerRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11681,8 +11681,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param lsp_server_request: (required)
         :type lsp_server_request: LspServerRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11708,7 +11708,7 @@ class ToolboxApi:
         _param = self._lsp_start_serialize(
             sandbox_id=sandbox_id,
             lsp_server_request=lsp_server_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11734,7 +11734,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         lsp_server_request: LspServerRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11756,8 +11756,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param lsp_server_request: (required)
         :type lsp_server_request: LspServerRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11783,7 +11783,7 @@ class ToolboxApi:
         _param = self._lsp_start_serialize(
             sandbox_id=sandbox_id,
             lsp_server_request=lsp_server_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11809,7 +11809,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         lsp_server_request: LspServerRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11831,8 +11831,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param lsp_server_request: (required)
         :type lsp_server_request: LspServerRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11858,7 +11858,7 @@ class ToolboxApi:
         _param = self._lsp_start_serialize(
             sandbox_id=sandbox_id,
             lsp_server_request=lsp_server_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11879,7 +11879,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         lsp_server_request,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -11905,8 +11905,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if lsp_server_request is not None:
@@ -11957,7 +11957,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         lsp_server_request: LspServerRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11979,8 +11979,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param lsp_server_request: (required)
         :type lsp_server_request: LspServerRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12006,7 +12006,7 @@ class ToolboxApi:
         _param = self._lsp_stop_serialize(
             sandbox_id=sandbox_id,
             lsp_server_request=lsp_server_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12032,7 +12032,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         lsp_server_request: LspServerRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12054,8 +12054,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param lsp_server_request: (required)
         :type lsp_server_request: LspServerRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12081,7 +12081,7 @@ class ToolboxApi:
         _param = self._lsp_stop_serialize(
             sandbox_id=sandbox_id,
             lsp_server_request=lsp_server_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12107,7 +12107,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         lsp_server_request: LspServerRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12129,8 +12129,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param lsp_server_request: (required)
         :type lsp_server_request: LspServerRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12156,7 +12156,7 @@ class ToolboxApi:
         _param = self._lsp_stop_serialize(
             sandbox_id=sandbox_id,
             lsp_server_request=lsp_server_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12177,7 +12177,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         lsp_server_request,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -12203,8 +12203,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if lsp_server_request is not None:
@@ -12257,7 +12257,7 @@ class ToolboxApi:
         language_id: StrictStr,
         path_to_project: StrictStr,
         query: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12283,8 +12283,8 @@ class ToolboxApi:
         :type path_to_project: str
         :param query: (required)
         :type query: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12312,7 +12312,7 @@ class ToolboxApi:
             language_id=language_id,
             path_to_project=path_to_project,
             query=query,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12340,7 +12340,7 @@ class ToolboxApi:
         language_id: StrictStr,
         path_to_project: StrictStr,
         query: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12366,8 +12366,8 @@ class ToolboxApi:
         :type path_to_project: str
         :param query: (required)
         :type query: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12395,7 +12395,7 @@ class ToolboxApi:
             language_id=language_id,
             path_to_project=path_to_project,
             query=query,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12423,7 +12423,7 @@ class ToolboxApi:
         language_id: StrictStr,
         path_to_project: StrictStr,
         query: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12449,8 +12449,8 @@ class ToolboxApi:
         :type path_to_project: str
         :param query: (required)
         :type query: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12478,7 +12478,7 @@ class ToolboxApi:
             language_id=language_id,
             path_to_project=path_to_project,
             query=query,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12501,7 +12501,7 @@ class ToolboxApi:
         language_id,
         path_to_project,
         query,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -12539,8 +12539,8 @@ class ToolboxApi:
             _query_params.append(('query', query))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -12584,7 +12584,7 @@ class ToolboxApi:
         sandbox_id: StrictStr,
         source: StrictStr,
         destination: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12608,8 +12608,8 @@ class ToolboxApi:
         :type source: str
         :param destination: (required)
         :type destination: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12636,7 +12636,7 @@ class ToolboxApi:
             sandbox_id=sandbox_id,
             source=source,
             destination=destination,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12663,7 +12663,7 @@ class ToolboxApi:
         sandbox_id: StrictStr,
         source: StrictStr,
         destination: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12687,8 +12687,8 @@ class ToolboxApi:
         :type source: str
         :param destination: (required)
         :type destination: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12715,7 +12715,7 @@ class ToolboxApi:
             sandbox_id=sandbox_id,
             source=source,
             destination=destination,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12742,7 +12742,7 @@ class ToolboxApi:
         sandbox_id: StrictStr,
         source: StrictStr,
         destination: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12766,8 +12766,8 @@ class ToolboxApi:
         :type source: str
         :param destination: (required)
         :type destination: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12794,7 +12794,7 @@ class ToolboxApi:
             sandbox_id=sandbox_id,
             source=source,
             destination=destination,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12816,7 +12816,7 @@ class ToolboxApi:
         sandbox_id,
         source,
         destination,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -12850,8 +12850,8 @@ class ToolboxApi:
             _query_params.append(('destination', destination))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -12887,7 +12887,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         mouse_move_request: MouseMoveRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12909,8 +12909,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param mouse_move_request: (required)
         :type mouse_move_request: MouseMoveRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12936,7 +12936,7 @@ class ToolboxApi:
         _param = self._move_mouse_serialize(
             sandbox_id=sandbox_id,
             mouse_move_request=mouse_move_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12962,7 +12962,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         mouse_move_request: MouseMoveRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12984,8 +12984,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param mouse_move_request: (required)
         :type mouse_move_request: MouseMoveRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13011,7 +13011,7 @@ class ToolboxApi:
         _param = self._move_mouse_serialize(
             sandbox_id=sandbox_id,
             mouse_move_request=mouse_move_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13037,7 +13037,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         mouse_move_request: MouseMoveRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13059,8 +13059,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param mouse_move_request: (required)
         :type mouse_move_request: MouseMoveRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13086,7 +13086,7 @@ class ToolboxApi:
         _param = self._move_mouse_serialize(
             sandbox_id=sandbox_id,
             mouse_move_request=mouse_move_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13107,7 +13107,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         mouse_move_request,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -13133,8 +13133,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if mouse_move_request is not None:
@@ -13192,7 +13192,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         keyboard_hotkey_request: KeyboardHotkeyRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13214,8 +13214,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param keyboard_hotkey_request: (required)
         :type keyboard_hotkey_request: KeyboardHotkeyRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13241,7 +13241,7 @@ class ToolboxApi:
         _param = self._press_hotkey_serialize(
             sandbox_id=sandbox_id,
             keyboard_hotkey_request=keyboard_hotkey_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13267,7 +13267,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         keyboard_hotkey_request: KeyboardHotkeyRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13289,8 +13289,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param keyboard_hotkey_request: (required)
         :type keyboard_hotkey_request: KeyboardHotkeyRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13316,7 +13316,7 @@ class ToolboxApi:
         _param = self._press_hotkey_serialize(
             sandbox_id=sandbox_id,
             keyboard_hotkey_request=keyboard_hotkey_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13342,7 +13342,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         keyboard_hotkey_request: KeyboardHotkeyRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13364,8 +13364,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param keyboard_hotkey_request: (required)
         :type keyboard_hotkey_request: KeyboardHotkeyRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13391,7 +13391,7 @@ class ToolboxApi:
         _param = self._press_hotkey_serialize(
             sandbox_id=sandbox_id,
             keyboard_hotkey_request=keyboard_hotkey_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13412,7 +13412,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         keyboard_hotkey_request,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -13438,8 +13438,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if keyboard_hotkey_request is not None:
@@ -13490,7 +13490,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         keyboard_press_request: KeyboardPressRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13512,8 +13512,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param keyboard_press_request: (required)
         :type keyboard_press_request: KeyboardPressRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13539,7 +13539,7 @@ class ToolboxApi:
         _param = self._press_key_serialize(
             sandbox_id=sandbox_id,
             keyboard_press_request=keyboard_press_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13565,7 +13565,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         keyboard_press_request: KeyboardPressRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13587,8 +13587,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param keyboard_press_request: (required)
         :type keyboard_press_request: KeyboardPressRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13614,7 +13614,7 @@ class ToolboxApi:
         _param = self._press_key_serialize(
             sandbox_id=sandbox_id,
             keyboard_press_request=keyboard_press_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13640,7 +13640,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         keyboard_press_request: KeyboardPressRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13662,8 +13662,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param keyboard_press_request: (required)
         :type keyboard_press_request: KeyboardPressRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13689,7 +13689,7 @@ class ToolboxApi:
         _param = self._press_key_serialize(
             sandbox_id=sandbox_id,
             keyboard_press_request=keyboard_press_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13710,7 +13710,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         keyboard_press_request,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -13736,8 +13736,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if keyboard_press_request is not None:
@@ -13788,7 +13788,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         replace_request: ReplaceRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13810,8 +13810,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param replace_request: (required)
         :type replace_request: ReplaceRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13837,7 +13837,7 @@ class ToolboxApi:
         _param = self._replace_in_files_serialize(
             sandbox_id=sandbox_id,
             replace_request=replace_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13863,7 +13863,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         replace_request: ReplaceRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13885,8 +13885,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param replace_request: (required)
         :type replace_request: ReplaceRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13912,7 +13912,7 @@ class ToolboxApi:
         _param = self._replace_in_files_serialize(
             sandbox_id=sandbox_id,
             replace_request=replace_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -13938,7 +13938,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         replace_request: ReplaceRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -13960,8 +13960,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param replace_request: (required)
         :type replace_request: ReplaceRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -13987,7 +13987,7 @@ class ToolboxApi:
         _param = self._replace_in_files_serialize(
             sandbox_id=sandbox_id,
             replace_request=replace_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14008,7 +14008,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         replace_request,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -14034,8 +14034,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if replace_request is not None:
@@ -14093,7 +14093,7 @@ class ToolboxApi:
         self,
         process_name: StrictStr,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14115,8 +14115,8 @@ class ToolboxApi:
         :type process_name: str
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14142,7 +14142,7 @@ class ToolboxApi:
         _param = self._restart_process_serialize(
             process_name=process_name,
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14168,7 +14168,7 @@ class ToolboxApi:
         self,
         process_name: StrictStr,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14190,8 +14190,8 @@ class ToolboxApi:
         :type process_name: str
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14217,7 +14217,7 @@ class ToolboxApi:
         _param = self._restart_process_serialize(
             process_name=process_name,
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14243,7 +14243,7 @@ class ToolboxApi:
         self,
         process_name: StrictStr,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14265,8 +14265,8 @@ class ToolboxApi:
         :type process_name: str
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14292,7 +14292,7 @@ class ToolboxApi:
         _param = self._restart_process_serialize(
             process_name=process_name,
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14313,7 +14313,7 @@ class ToolboxApi:
         self,
         process_name,
         sandbox_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -14341,8 +14341,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -14385,7 +14385,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         mouse_scroll_request: MouseScrollRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14407,8 +14407,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param mouse_scroll_request: (required)
         :type mouse_scroll_request: MouseScrollRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14434,7 +14434,7 @@ class ToolboxApi:
         _param = self._scroll_mouse_serialize(
             sandbox_id=sandbox_id,
             mouse_scroll_request=mouse_scroll_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14460,7 +14460,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         mouse_scroll_request: MouseScrollRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14482,8 +14482,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param mouse_scroll_request: (required)
         :type mouse_scroll_request: MouseScrollRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14509,7 +14509,7 @@ class ToolboxApi:
         _param = self._scroll_mouse_serialize(
             sandbox_id=sandbox_id,
             mouse_scroll_request=mouse_scroll_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14535,7 +14535,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         mouse_scroll_request: MouseScrollRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14557,8 +14557,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param mouse_scroll_request: (required)
         :type mouse_scroll_request: MouseScrollRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14584,7 +14584,7 @@ class ToolboxApi:
         _param = self._scroll_mouse_serialize(
             sandbox_id=sandbox_id,
             mouse_scroll_request=mouse_scroll_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14605,7 +14605,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         mouse_scroll_request,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -14631,8 +14631,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if mouse_scroll_request is not None:
@@ -14691,7 +14691,7 @@ class ToolboxApi:
         sandbox_id: StrictStr,
         path: StrictStr,
         pattern: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14715,8 +14715,8 @@ class ToolboxApi:
         :type path: str
         :param pattern: (required)
         :type pattern: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14743,7 +14743,7 @@ class ToolboxApi:
             sandbox_id=sandbox_id,
             path=path,
             pattern=pattern,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14770,7 +14770,7 @@ class ToolboxApi:
         sandbox_id: StrictStr,
         path: StrictStr,
         pattern: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14794,8 +14794,8 @@ class ToolboxApi:
         :type path: str
         :param pattern: (required)
         :type pattern: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14822,7 +14822,7 @@ class ToolboxApi:
             sandbox_id=sandbox_id,
             path=path,
             pattern=pattern,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14849,7 +14849,7 @@ class ToolboxApi:
         sandbox_id: StrictStr,
         path: StrictStr,
         pattern: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -14873,8 +14873,8 @@ class ToolboxApi:
         :type path: str
         :param pattern: (required)
         :type pattern: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -14901,7 +14901,7 @@ class ToolboxApi:
             sandbox_id=sandbox_id,
             path=path,
             pattern=pattern,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -14923,7 +14923,7 @@ class ToolboxApi:
         sandbox_id,
         path,
         pattern,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -14957,8 +14957,8 @@ class ToolboxApi:
             _query_params.append(('pattern', pattern))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -15001,7 +15001,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         owner: Optional[StrictStr] = None,
         group: Optional[StrictStr] = None,
         mode: Optional[StrictStr] = None,
@@ -15026,8 +15026,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param owner:
         :type owner: str
         :param group:
@@ -15059,7 +15059,7 @@ class ToolboxApi:
         _param = self._set_file_permissions_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             owner=owner,
             group=group,
             mode=mode,
@@ -15088,7 +15088,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         owner: Optional[StrictStr] = None,
         group: Optional[StrictStr] = None,
         mode: Optional[StrictStr] = None,
@@ -15113,8 +15113,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param owner:
         :type owner: str
         :param group:
@@ -15146,7 +15146,7 @@ class ToolboxApi:
         _param = self._set_file_permissions_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             owner=owner,
             group=group,
             mode=mode,
@@ -15175,7 +15175,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         owner: Optional[StrictStr] = None,
         group: Optional[StrictStr] = None,
         mode: Optional[StrictStr] = None,
@@ -15200,8 +15200,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param owner:
         :type owner: str
         :param group:
@@ -15233,7 +15233,7 @@ class ToolboxApi:
         _param = self._set_file_permissions_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             owner=owner,
             group=group,
             mode=mode,
@@ -15257,7 +15257,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         path,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         owner,
         group,
         mode,
@@ -15302,8 +15302,8 @@ class ToolboxApi:
             _query_params.append(('mode', mode))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -15338,7 +15338,7 @@ class ToolboxApi:
     async def start_computer_use(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15358,8 +15358,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15384,7 +15384,7 @@ class ToolboxApi:
 
         _param = self._start_computer_use_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15409,7 +15409,7 @@ class ToolboxApi:
     async def start_computer_use_with_http_info(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15429,8 +15429,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15455,7 +15455,7 @@ class ToolboxApi:
 
         _param = self._start_computer_use_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15480,7 +15480,7 @@ class ToolboxApi:
     async def start_computer_use_without_preload_content(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15500,8 +15500,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15526,7 +15526,7 @@ class ToolboxApi:
 
         _param = self._start_computer_use_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15546,7 +15546,7 @@ class ToolboxApi:
     def _start_computer_use_serialize(
         self,
         sandbox_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -15572,8 +15572,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -15615,7 +15615,7 @@ class ToolboxApi:
     async def stop_computer_use(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15635,8 +15635,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15661,7 +15661,7 @@ class ToolboxApi:
 
         _param = self._stop_computer_use_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15686,7 +15686,7 @@ class ToolboxApi:
     async def stop_computer_use_with_http_info(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15706,8 +15706,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15732,7 +15732,7 @@ class ToolboxApi:
 
         _param = self._stop_computer_use_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15757,7 +15757,7 @@ class ToolboxApi:
     async def stop_computer_use_without_preload_content(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15777,8 +15777,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15803,7 +15803,7 @@ class ToolboxApi:
 
         _param = self._stop_computer_use_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15823,7 +15823,7 @@ class ToolboxApi:
     def _stop_computer_use_serialize(
         self,
         sandbox_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -15849,8 +15849,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -15896,7 +15896,7 @@ class ToolboxApi:
         width: Union[StrictFloat, StrictInt],
         y: Union[StrictFloat, StrictInt],
         x: Union[StrictFloat, StrictInt],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         scale: Optional[Union[StrictFloat, StrictInt]] = None,
         quality: Optional[Union[StrictFloat, StrictInt]] = None,
         format: Optional[StrictStr] = None,
@@ -15928,8 +15928,8 @@ class ToolboxApi:
         :type y: float
         :param x: (required)
         :type x: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param scale:
         :type scale: float
         :param quality:
@@ -15966,7 +15966,7 @@ class ToolboxApi:
             width=width,
             y=y,
             x=x,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             scale=scale,
             quality=quality,
             format=format,
@@ -15999,7 +15999,7 @@ class ToolboxApi:
         width: Union[StrictFloat, StrictInt],
         y: Union[StrictFloat, StrictInt],
         x: Union[StrictFloat, StrictInt],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         scale: Optional[Union[StrictFloat, StrictInt]] = None,
         quality: Optional[Union[StrictFloat, StrictInt]] = None,
         format: Optional[StrictStr] = None,
@@ -16031,8 +16031,8 @@ class ToolboxApi:
         :type y: float
         :param x: (required)
         :type x: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param scale:
         :type scale: float
         :param quality:
@@ -16069,7 +16069,7 @@ class ToolboxApi:
             width=width,
             y=y,
             x=x,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             scale=scale,
             quality=quality,
             format=format,
@@ -16102,7 +16102,7 @@ class ToolboxApi:
         width: Union[StrictFloat, StrictInt],
         y: Union[StrictFloat, StrictInt],
         x: Union[StrictFloat, StrictInt],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         scale: Optional[Union[StrictFloat, StrictInt]] = None,
         quality: Optional[Union[StrictFloat, StrictInt]] = None,
         format: Optional[StrictStr] = None,
@@ -16134,8 +16134,8 @@ class ToolboxApi:
         :type y: float
         :param x: (required)
         :type x: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param scale:
         :type scale: float
         :param quality:
@@ -16172,7 +16172,7 @@ class ToolboxApi:
             width=width,
             y=y,
             x=x,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             scale=scale,
             quality=quality,
             format=format,
@@ -16200,7 +16200,7 @@ class ToolboxApi:
         width,
         y,
         x,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         scale,
         quality,
         format,
@@ -16262,8 +16262,8 @@ class ToolboxApi:
             _query_params.append(('x', x))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -16305,7 +16305,7 @@ class ToolboxApi:
     async def take_compressed_screenshot(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         scale: Optional[Union[StrictFloat, StrictInt]] = None,
         quality: Optional[Union[StrictFloat, StrictInt]] = None,
         format: Optional[StrictStr] = None,
@@ -16329,8 +16329,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param scale:
         :type scale: float
         :param quality:
@@ -16363,7 +16363,7 @@ class ToolboxApi:
 
         _param = self._take_compressed_screenshot_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             scale=scale,
             quality=quality,
             format=format,
@@ -16392,7 +16392,7 @@ class ToolboxApi:
     async def take_compressed_screenshot_with_http_info(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         scale: Optional[Union[StrictFloat, StrictInt]] = None,
         quality: Optional[Union[StrictFloat, StrictInt]] = None,
         format: Optional[StrictStr] = None,
@@ -16416,8 +16416,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param scale:
         :type scale: float
         :param quality:
@@ -16450,7 +16450,7 @@ class ToolboxApi:
 
         _param = self._take_compressed_screenshot_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             scale=scale,
             quality=quality,
             format=format,
@@ -16479,7 +16479,7 @@ class ToolboxApi:
     async def take_compressed_screenshot_without_preload_content(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         scale: Optional[Union[StrictFloat, StrictInt]] = None,
         quality: Optional[Union[StrictFloat, StrictInt]] = None,
         format: Optional[StrictStr] = None,
@@ -16503,8 +16503,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param scale:
         :type scale: float
         :param quality:
@@ -16537,7 +16537,7 @@ class ToolboxApi:
 
         _param = self._take_compressed_screenshot_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             scale=scale,
             quality=quality,
             format=format,
@@ -16561,7 +16561,7 @@ class ToolboxApi:
     def _take_compressed_screenshot_serialize(
         self,
         sandbox_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         scale,
         quality,
         format,
@@ -16607,8 +16607,8 @@ class ToolboxApi:
             _query_params.append(('show_cursor', show_cursor))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -16654,7 +16654,7 @@ class ToolboxApi:
         width: Union[StrictFloat, StrictInt],
         y: Union[StrictFloat, StrictInt],
         x: Union[StrictFloat, StrictInt],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         show_cursor: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
@@ -16683,8 +16683,8 @@ class ToolboxApi:
         :type y: float
         :param x: (required)
         :type x: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param show_cursor:
         :type show_cursor: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -16715,7 +16715,7 @@ class ToolboxApi:
             width=width,
             y=y,
             x=x,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             show_cursor=show_cursor,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -16745,7 +16745,7 @@ class ToolboxApi:
         width: Union[StrictFloat, StrictInt],
         y: Union[StrictFloat, StrictInt],
         x: Union[StrictFloat, StrictInt],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         show_cursor: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
@@ -16774,8 +16774,8 @@ class ToolboxApi:
         :type y: float
         :param x: (required)
         :type x: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param show_cursor:
         :type show_cursor: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -16806,7 +16806,7 @@ class ToolboxApi:
             width=width,
             y=y,
             x=x,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             show_cursor=show_cursor,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -16836,7 +16836,7 @@ class ToolboxApi:
         width: Union[StrictFloat, StrictInt],
         y: Union[StrictFloat, StrictInt],
         x: Union[StrictFloat, StrictInt],
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         show_cursor: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
@@ -16865,8 +16865,8 @@ class ToolboxApi:
         :type y: float
         :param x: (required)
         :type x: float
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param show_cursor:
         :type show_cursor: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -16897,7 +16897,7 @@ class ToolboxApi:
             width=width,
             y=y,
             x=x,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             show_cursor=show_cursor,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -16922,7 +16922,7 @@ class ToolboxApi:
         width,
         y,
         x,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         show_cursor,
         _request_auth,
         _content_type,
@@ -16969,8 +16969,8 @@ class ToolboxApi:
             _query_params.append(('x', x))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -17012,7 +17012,7 @@ class ToolboxApi:
     async def take_screenshot(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         show_cursor: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
@@ -17033,8 +17033,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param show_cursor:
         :type show_cursor: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -17061,7 +17061,7 @@ class ToolboxApi:
 
         _param = self._take_screenshot_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             show_cursor=show_cursor,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -17087,7 +17087,7 @@ class ToolboxApi:
     async def take_screenshot_with_http_info(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         show_cursor: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
@@ -17108,8 +17108,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param show_cursor:
         :type show_cursor: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -17136,7 +17136,7 @@ class ToolboxApi:
 
         _param = self._take_screenshot_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             show_cursor=show_cursor,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -17162,7 +17162,7 @@ class ToolboxApi:
     async def take_screenshot_without_preload_content(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         show_cursor: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
@@ -17183,8 +17183,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param show_cursor:
         :type show_cursor: bool
         :param _request_timeout: timeout setting for this request. If one
@@ -17211,7 +17211,7 @@ class ToolboxApi:
 
         _param = self._take_screenshot_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             show_cursor=show_cursor,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -17232,7 +17232,7 @@ class ToolboxApi:
     def _take_screenshot_serialize(
         self,
         sandbox_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         show_cursor,
         _request_auth,
         _content_type,
@@ -17263,8 +17263,8 @@ class ToolboxApi:
             _query_params.append(('show_cursor', show_cursor))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 
@@ -17307,7 +17307,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         keyboard_type_request: KeyboardTypeRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17329,8 +17329,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param keyboard_type_request: (required)
         :type keyboard_type_request: KeyboardTypeRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -17356,7 +17356,7 @@ class ToolboxApi:
         _param = self._type_text_serialize(
             sandbox_id=sandbox_id,
             keyboard_type_request=keyboard_type_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -17382,7 +17382,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         keyboard_type_request: KeyboardTypeRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17404,8 +17404,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param keyboard_type_request: (required)
         :type keyboard_type_request: KeyboardTypeRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -17431,7 +17431,7 @@ class ToolboxApi:
         _param = self._type_text_serialize(
             sandbox_id=sandbox_id,
             keyboard_type_request=keyboard_type_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -17457,7 +17457,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         keyboard_type_request: KeyboardTypeRequest,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17479,8 +17479,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param keyboard_type_request: (required)
         :type keyboard_type_request: KeyboardTypeRequest
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -17506,7 +17506,7 @@ class ToolboxApi:
         _param = self._type_text_serialize(
             sandbox_id=sandbox_id,
             keyboard_type_request=keyboard_type_request,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -17527,7 +17527,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         keyboard_type_request,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -17553,8 +17553,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
         if keyboard_type_request is not None:
@@ -17605,7 +17605,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         _request_timeout: Union[
             None,
@@ -17628,8 +17628,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param file:
         :type file: bytearray
         :param _request_timeout: timeout setting for this request. If one
@@ -17658,7 +17658,7 @@ class ToolboxApi:
         _param = self._upload_file_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             file=file,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -17685,7 +17685,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         _request_timeout: Union[
             None,
@@ -17708,8 +17708,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param file:
         :type file: bytearray
         :param _request_timeout: timeout setting for this request. If one
@@ -17738,7 +17738,7 @@ class ToolboxApi:
         _param = self._upload_file_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             file=file,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -17765,7 +17765,7 @@ class ToolboxApi:
         self,
         sandbox_id: StrictStr,
         path: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         _request_timeout: Union[
             None,
@@ -17788,8 +17788,8 @@ class ToolboxApi:
         :type sandbox_id: str
         :param path: (required)
         :type path: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param file:
         :type file: bytearray
         :param _request_timeout: timeout setting for this request. If one
@@ -17818,7 +17818,7 @@ class ToolboxApi:
         _param = self._upload_file_serialize(
             sandbox_id=sandbox_id,
             path=path,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             file=file,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -17840,7 +17840,7 @@ class ToolboxApi:
         self,
         sandbox_id,
         path,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         file,
         _request_auth,
         _content_type,
@@ -17871,8 +17871,8 @@ class ToolboxApi:
             _query_params.append(('path', path))
             
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         if file is not None:
             _files['file'] = file
@@ -17922,7 +17922,7 @@ class ToolboxApi:
     async def upload_files(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -17942,8 +17942,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -17968,7 +17968,7 @@ class ToolboxApi:
 
         _param = self._upload_files_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -17993,7 +17993,7 @@ class ToolboxApi:
     async def upload_files_with_http_info(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18013,8 +18013,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -18039,7 +18039,7 @@ class ToolboxApi:
 
         _param = self._upload_files_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -18064,7 +18064,7 @@ class ToolboxApi:
     async def upload_files_without_preload_content(
         self,
         sandbox_id: StrictStr,
-        x_daytona_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
+        x_hanzo_runtime_organization_id: Annotated[Optional[StrictStr], Field(description="Use with JWT to specify the organization ID")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -18084,8 +18084,8 @@ class ToolboxApi:
 
         :param sandbox_id: (required)
         :type sandbox_id: str
-        :param x_daytona_organization_id: Use with JWT to specify the organization ID
-        :type x_daytona_organization_id: str
+        :param x_hanzo_runtime_organization_id: Use with JWT to specify the organization ID
+        :type x_hanzo_runtime_organization_id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -18110,7 +18110,7 @@ class ToolboxApi:
 
         _param = self._upload_files_serialize(
             sandbox_id=sandbox_id,
-            x_daytona_organization_id=x_daytona_organization_id,
+            x_hanzo_runtime_organization_id=x_hanzo_runtime_organization_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -18130,7 +18130,7 @@ class ToolboxApi:
     def _upload_files_serialize(
         self,
         sandbox_id,
-        x_daytona_organization_id,
+        x_hanzo_runtime_organization_id,
         _request_auth,
         _content_type,
         _headers,
@@ -18156,8 +18156,8 @@ class ToolboxApi:
             _path_params['sandboxId'] = sandbox_id
         # process the query parameters
         # process the header parameters
-        if x_daytona_organization_id is not None:
-            _header_params['X-Daytona-Organization-ID'] = x_daytona_organization_id
+        if x_hanzo_runtime_organization_id is not None:
+            _header_params['X-Daytona-Organization-ID'] = x_hanzo_runtime_organization_id
         # process the form parameters
         # process the body parameter
 

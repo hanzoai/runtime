@@ -1,16 +1,16 @@
-import { Daytona } from '@daytonaio/sdk'
+import { HanzoRuntime } from '@hanzo/runtime-sdk'
 import path from 'path'
 
 async function main() {
-  const daytona = new Daytona()
+  const hanzoRuntime = new HanzoRuntime()
 
   //  Create a new volume or get an existing one
-  const volume = await daytona.volume.get('my-volume', true)
+  const volume = await hanzoRuntime.volume.get('my-volume', true)
 
   // Mount the volume to the sandbox
-  const mountDir1 = '/home/daytona/volume'
+  const mountDir1 = '/home/hanzo/volume'
 
-  const sandbox1 = await daytona.create({
+  const sandbox1 = await hanzoRuntime.create({
     language: 'typescript',
     volumes: [{ volumeId: volume.id, mountPath: mountDir1 }],
   })
@@ -25,9 +25,9 @@ async function main() {
 
   // Create a new sandbox with the same volume
   // and mount it to the different path
-  const mountDir2 = '/home/daytona/my-files'
+  const mountDir2 = '/home/hanzo/my-files'
 
-  const sandbox2 = await daytona.create({
+  const sandbox2 = await hanzoRuntime.create({
     language: 'typescript',
     volumes: [{ volumeId: volume.id, mountPath: mountDir2 }],
   })
@@ -41,9 +41,9 @@ async function main() {
   console.log('File:', file.toString())
 
   // Cleanup
-  await daytona.delete(sandbox1)
-  await daytona.delete(sandbox2)
-  // await daytona.volume.delete(volume)
+  await hanzoRuntime.delete(sandbox1)
+  await hanzoRuntime.delete(sandbox2)
+  // await hanzoRuntime.volume.delete(volume)
 }
 
 main()
