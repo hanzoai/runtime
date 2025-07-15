@@ -5,9 +5,9 @@ import warnings
 from dataclasses import dataclass
 from typing import Dict, List, Optional
 
-from daytona_api_client import ExecuteResponse as ClientExecuteResponse
-from daytona_api_client import SessionExecuteRequest as ApiSessionExecuteRequest
-from daytona_api_client_async import SessionExecuteRequest as AsyncApiSessionExecuteRequest
+from hanzo_runtime_api_client import ExecuteResponse as ClientExecuteResponse
+from hanzo_runtime_api_client import SessionExecuteRequest as ApiSessionExecuteRequest
+from hanzo_runtime_api_client_async import SessionExecuteRequest as AsyncApiSessionExecuteRequest
 from pydantic import ConfigDict, model_validator
 
 from .charts import Chart

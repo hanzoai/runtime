@@ -52,9 +52,9 @@
         "cwd": "{projectRoot}",
         "commands": [
           "poetry publish --username __token__ --password $PYPI_TOKEN --no-interaction",
-          "sed -i 's/^name = \"[^\"]*\"/name = \"daytona_sdk\"/' pyproject.toml",
+          "sed -i 's/^name = \"[^\"]*\"/name = \"hanzo_runtime_sdk\"/' pyproject.toml",
           "poetry publish --username __token__ --password $PYPI_TOKEN --no-interaction",
-          "sed -i 's/^name = \"[^\"]*\"/name = \"daytona\"/' pyproject.toml"
+          "sed -i 's/^name = \"[^\"]*\"/name = \"hanzo_runtime\"/' pyproject.toml"
         ],
         "parallel": false
       },

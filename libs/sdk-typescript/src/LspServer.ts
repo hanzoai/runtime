@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { CompletionList, LspSymbol, ToolboxApi } from '@daytonaio/api-client'
+import { CompletionList, LspSymbol, ToolboxApi } from '@hanzo/runtime-api-client'
 import { prefixRelativePath } from './utils/Path'
 
 /**

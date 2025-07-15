@@ -80,8 +80,8 @@ RUN apt-get update && apt-get install -y \
 
 ```dockerfile
 # Setup VNC
-RUN mkdir -p /home/daytona/.vnc && \
-    chown -R daytona:daytona /home/daytona/.vnc
+RUN mkdir -p /home/hanzo/.vnc && \
+    chown -R daytona:daytona /home/hanzo/.vnc
 
 # NoVNC setup
 RUN ln -sf /usr/share/novnc/vnc.html /usr/share/novnc/index.html && \

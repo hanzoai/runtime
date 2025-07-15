@@ -3,8 +3,8 @@
 
 from typing import List, Optional, Union
 
-from daytona_api_client import BuildInfo, SnapshotDto
-from daytona_api_client_async import BuildInfo as AsyncBuildInfo
+from hanzo_runtime_api_client import BuildInfo, SnapshotDto
+from hanzo_runtime_api_client_async import BuildInfo as AsyncBuildInfo
 from pydantic import BaseModel
 
 from .hanzo_runtime import Resources

@@ -37,7 +37,7 @@ export type {
   ScatterChart,
 } from './types/Charts'
 
-export { SandboxState } from '@daytonaio/api-client'
+export { SandboxState } from '@hanzo/runtime-api-client'
 export type {
   FileInfo,
   GitStatus,
@@ -45,6 +45,6 @@ export type {
   Match,
   ReplaceResult,
   SearchFilesResponse,
-} from '@daytonaio/api-client'
+} from '@hanzo/runtime-api-client'
 
 export type { ScreenshotRegion, ScreenshotOptions } from './ComputerUse'

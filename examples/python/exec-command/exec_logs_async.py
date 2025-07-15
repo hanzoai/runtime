@@ -1,11 +1,11 @@
 import asyncio
 
-from daytona import Daytona, SessionExecuteRequest
+from hanzo_runtime import HanzoRuntime, SessionExecuteRequest
 
 
 async def main():
-    daytona = Daytona()
-    sandbox = daytona.create()
+    hanzo_runtime = HanzoRuntime()
+    sandbox = hanzo_runtime.create()
 
     try:
         session_id = "exec-session-1"
@@ -35,7 +35,7 @@ async def main():
         print(f"Error: {e}")
     finally:
         print("Cleaning up sandbox...")
-        daytona.delete(sandbox)
+        hanzo_runtime.delete(sandbox)
 
 
 if __name__ == "__main__":

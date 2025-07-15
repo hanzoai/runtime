@@ -7,7 +7,7 @@
 
 from typing import List
 
-from daytona_api_client import (
+from hanzo_runtime_api_client import (
     CompletionList,
     LspCompletionParams,
     LspDocumentRequest,

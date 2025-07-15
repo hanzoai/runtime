@@ -11,7 +11,7 @@ from contextlib import ExitStack
 from typing import Callable, List, Union, overload
 
 import httpx
-from daytona_api_client import FileInfo, Match, ReplaceRequest, ReplaceResult, SearchFilesResponse, ToolboxApi
+from hanzo_runtime_api_client import FileInfo, Match, ReplaceRequest, ReplaceResult, SearchFilesResponse, ToolboxApi
 
 from .._utils.errors import intercept_errors
 from .._utils.path import prefix_relative_path
@@ -149,7 +149,7 @@ class FileSystem:
         method, url, headers, *_ = self._toolbox_api._download_file_serialize(
             self._sandbox_id,
             path=prefix_relative_path(self._get_root_dir(), remote_path),
-            x_daytona_organization_id=None,
+            x_hanzo_runtime_organization_id=None,
             _request_auth=None,
             _content_type=None,
             _headers=None,
@@ -401,8 +401,8 @@ class FileSystem:
             # Change file owner
             sandbox.fs.set_file_permissions(
                 path="workspace/data/file.txt",
-                owner="daytona",
-                group="daytona"
+                owner="hanzo",
+                group="hanzo"
             )
             ```
         """

@@ -1,10 +1,10 @@
 import asyncio
 
-from daytona import AsyncDaytona, CreateSandboxFromImageParams, Resources
+from hanzo_runtime import AsyncHanzoRuntime, CreateSandboxFromImageParams, Resources
 
 
 async def main():
-    async with AsyncDaytona() as daytona:
+    async with AsyncHanzoRuntime() as hanzo_runtime:
         params = CreateSandboxFromImageParams(
             image="python:3.9.23-slim",
             language="python",
@@ -14,7 +14,7 @@ async def main():
                 disk=3,
             ),
         )
-        sandbox = await daytona.create(params, timeout=150, on_snapshot_create_logs=print)
+        sandbox = await hanzo_runtime.create(params, timeout=150, on_snapshot_create_logs=print)
 
         # Run the code securely inside the sandbox
         response = await sandbox.process.code_run('print("Hello World!")')
@@ -30,7 +30,7 @@ async def main():
         else:
             print(response.result)
 
-        await daytona.delete(sandbox)
+        await hanzo_runtime.delete(sandbox)
 
 
 if __name__ == "__main__":

@@ -1,9 +1,9 @@
-from daytona import Daytona, SessionExecuteRequest
+from hanzo_runtime import HanzoRuntime, SessionExecuteRequest
 
 
 def main():
-    daytona = Daytona()
-    sandbox = daytona.create()
+    hanzo_runtime = HanzoRuntime()
+    sandbox = hanzo_runtime.create()
 
     exec_session_id = "exec-session-1"
     sandbox.process.create_session(exec_session_id)
@@ -45,7 +45,7 @@ def main():
     # And of course you can delete the session at any time
     sandbox.process.delete_session(exec_session_id)
 
-    daytona.delete(sandbox)
+    hanzo_runtime.delete(sandbox)
 
 
 if __name__ == "__main__":

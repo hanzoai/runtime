@@ -1,13 +1,13 @@
 [tool.poetry]
-name = "daytona_api_client_async"
+name = "hanzo_runtime_api_client_async"
 version = "0.0.0-dev"
-description = "Daytona"
-authors = ["Daytona Platforms Inc. <support@daytona.com>"]
+description = "Hanzo Runtime API Client (Async)"
+authors = ["Hanzo Industries Inc. <support@hanzo.ai>"]
 license = "Apache-2.0"
 readme = "README.md"
-repository = "https://github.com/daytonaio/daytona"
-keywords = ["OpenAPI", "OpenAPI-Generator", "Daytona"]
-include = ["daytona_api_client_async/py.typed"]
+repository = "https://github.com/hanzoai/runner"
+keywords = ["OpenAPI", "OpenAPI-Generator", "Hanzo", "Runtime", "Async"]
+include = ["hanzo_runtime_api_client_async/py.typed"]
 
 [tool.poetry.dependencies]
 python = "^3.8"

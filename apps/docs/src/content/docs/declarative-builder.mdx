@@ -55,10 +55,10 @@ It doesn't require registering and validating a separate Snapshot for each versi
 dynamic_image = (
     Image.debian_slim("3.12")
     .pip_install(["pytest", "pytest-cov", "mypy", "ruff", "black", "gunicorn"])
-    .run_commands("apt-get update && apt-get install -y git curl", "mkdir -p /home/daytona/project")
-    .workdir("/home/daytona/project")
+    .run_commands("apt-get update && apt-get install -y git curl", "mkdir -p /home/hanzo/project")
+    .workdir("/home/hanzo/project")
     .env({"ENV_VAR": "My Environment Variable"})
-    .add_local_file("file_example.txt", "/home/daytona/project/file_example.txt")
+    .add_local_file("file_example.txt", "/home/hanzo/project/file_example.txt")
 )
 
 # Create a new Sandbox with the dynamic image and stream the build logs
@@ -78,12 +78,12 @@ on_snapshot_create_logs=print,
 // Define the dynamic image
 const dynamicImage = Image.debianSlim('3.13')
     .pipInstall(['pytest', 'pytest-cov', 'black', 'isort', 'mypy', 'ruff'])
-    .runCommands('apt-get update && apt-get install -y git', 'mkdir -p /home/daytona/project')
-    .workdir('/home/daytona/project')
+    .runCommands('apt-get update && apt-get install -y git', 'mkdir -p /home/hanzo/project')
+    .workdir('/home/hanzo/project')
     .env({
       NODE_ENV: 'development',
     })
-    .addLocalFile('file_example.txt', '/home/daytona/project/file_example.txt')
+    .addLocalFile('file_example.txt', '/home/hanzo/project/file_example.txt')
 
 // Create a new Sandbox with the dynamic image and stream the build logs
 const sandbox = await daytona.create(
@@ -131,12 +131,12 @@ Image.debian_slim("3.12")
 .run_commands(
 "apt-get update && apt-get install -y git",
 "groupadd -r daytona && useradd -r -g daytona -m daytona",
-"mkdir -p /home/daytona/workspace",
+"mkdir -p /home/hanzo/workspace",
 )
 .dockerfile_commands(["USER daytona"])
-.workdir("/home/daytona/workspace")
+.workdir("/home/hanzo/workspace")
 .env({"MY_ENV_VAR": "My Environment Variable"})
-.add_local_file("file_example.txt", "/home/daytona/workspace/file_example.txt")
+.add_local_file("file_example.txt", "/home/hanzo/workspace/file_example.txt")
 )
 
 # Create the Snapshot and stream the build logs
@@ -179,13 +179,13 @@ fs.writeFileSync(localFilePath, localFileContent)
 // Create a Python image with common data science packages
 const image = Image.debianSlim('3.12')
     .pipInstall(['numpy', 'pandas', 'matplotlib', 'scipy', 'scikit-learn'])
-    .runCommands('apt-get update && apt-get install -y git', 'mkdir -p /home/daytona/workspace')
+    .runCommands('apt-get update && apt-get install -y git', 'mkdir -p /home/hanzo/workspace')
     .dockerfileCommands(['USER daytona'])
-    .workdir('/home/daytona/workspace')
+    .workdir('/home/hanzo/workspace')
     .env({
         MY_ENV_VAR: 'My Environment Variable',
     })
-    .addLocalFile(localFilePath, '/home/daytona/workspace/file_example.txt')
+    .addLocalFile(localFilePath, '/home/hanzo/workspace/file_example.txt')
 
 // Create the Snapshot and stream the build logs
 console.log(`=== Creating Snapshot: ${snapshotName} ===`)

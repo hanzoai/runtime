@@ -12,7 +12,7 @@ import {
   SandboxVolume,
   BuildInfo,
   SandboxBackupStateEnum,
-} from '@daytonaio/api-client'
+} from '@hanzo/runtime-api-client'
 import { FileSystem } from './FileSystem'
 import { Git } from './Git'
 import { CodeRunParams, Process } from './Process'

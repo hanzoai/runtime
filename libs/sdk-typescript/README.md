@@ -1,6 +1,6 @@
-# Daytona SDK for TypeScript
+# Hanzo Runtime SDK for TypeScript
 
-A TypeScript SDK for interacting with the Daytona API, providing a simple interface for Daytona Sandbox management, Git operations, file system operations, and language server protocol support.
+A TypeScript SDK for interacting with the Hanzo Runtime API, providing a simple interface for Hanzo Runtime Sandbox management, Git operations, file system operations, and language server protocol support.
 
 ## Installation
 
@@ -24,17 +24,17 @@ Here's a simple example of using the SDK:
 import { Daytona } from '@daytonaio/sdk'
 
 // Initialize using environment variables
-const daytona = new Daytona()
+const hanzo_runtime = new HanzoRuntime()
 
 // Create a sandbox
-const sandbox = await daytona.create()
+const sandbox = await hanzo_runtime.create()
 
 // Run code in the sandbox
 const response = await sandbox.process.codeRun('console.log("Hello World!")')
 console.log(response.result)
 
 // Clean up when done
-await daytona.delete(sandbox)
+await hanzo_runtime.delete(sandbox)
 ```
 
 ## Configuration
@@ -45,7 +45,7 @@ The SDK can be configured using environment variables or by passing a configurat
 import { Daytona } from '@daytonaio/sdk'
 
 // Initialize with configuration
-const daytona = new Daytona({
+const hanzo_runtime = new HanzoRuntime({
   apiKey: 'your-api-key',
   apiUrl: 'your-api-url',
   target: 'us',
@@ -54,14 +54,14 @@ const daytona = new Daytona({
 
 Or using environment variables:
 
-- `DAYTONA_API_KEY`: Your Daytona API key
-- `DAYTONA_API_URL`: The Daytona API URL
-- `DAYTONA_TARGET`: Your target environment
+- `HANZO_RUNTIME_API_KEY`: Your Hanzo Runtime API key
+- `HANZO_RUNTIME_API_URL`: The Hanzo Runtime API URL
+- `HANZO_RUNTIME_TARGET`: Your target environment
 
 You can also customize sandbox creation:
 
 ```typescript
-const sandbox = await daytona.create({
+const sandbox = await hanzo_runtime.create({
   language: 'typescript',
   envVars: { NODE_ENV: 'development' },
   autoStopInterval: 60, // Auto-stop after 1 hour of inactivity,
@@ -144,4 +144,4 @@ const completions = await lsp.completions('path/to/file.ts', {
 
 ## Contributing
 
-Daytona is Open Source under the [Apache License 2.0](/libs/sdk-typescript//LICENSE), and is the [copyright of its contributors](/NOTICE). If you would like to contribute to the software, read the Developer Certificate of Origin Version 1.1 (https://developercertificate.org/). Afterwards, navigate to the [contributing guide](/CONTRIBUTING.md) to get started.
+Hanzo Runtime is Open Source under the [Apache License 2.0](/libs/sdk-typescript//LICENSE), and is the [copyright of its contributors](/NOTICE). If you would like to contribute to the software, read the Developer Certificate of Origin Version 1.1 (https://developercertificate.org/). Afterwards, navigate to the [contributing guide](/CONTRIBUTING.md) to get started.

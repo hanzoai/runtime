@@ -176,7 +176,7 @@ export class Image {
    * @example
    * const image = Image
    *  .debianSlim('3.12')
-   *  .addLocalFile('requirements.txt', '/home/daytona/requirements.txt')
+   *  .addLocalFile('requirements.txt', '/home/hanzo/requirements.txt')
    */
   addLocalFile(localPath: string, remotePath: string): Image {
     if (remotePath.endsWith('/')) {
@@ -200,7 +200,7 @@ export class Image {
    * @example
    * const image = Image
    *  .debianSlim('3.12')
-   *  .addLocalDir('src', '/home/daytona/src')
+   *  .addLocalDir('src', '/home/hanzo/src')
    */
   addLocalDir(localPath: string, remotePath: string): Image {
     const expandedPath = expandTilde(localPath)
@@ -273,7 +273,7 @@ export class Image {
    * @example
    * const image = Image
    *  .debianSlim('3.12')
-   *  .workdir('/home/daytona')
+   *  .workdir('/home/hanzo')
    */
   workdir(dirPath: string): Image {
     this._dockerfile += `WORKDIR ${quote([dirPath])}\n`

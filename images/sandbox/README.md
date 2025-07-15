@@ -1,4 +1,4 @@
-# Daytona Sandbox Image
+# Hanzo Runtime Sandbox Image
 
 [Dockerfile](./Dockerfile) contains the definition for [daytonaio/sandbox](https://hub.docker.com/r/daytonaio/sandbox) which is used as the default sandbox image in Daytona Cloud.
 

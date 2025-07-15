@@ -3,7 +3,7 @@
 
 from typing import Awaitable, Callable, List, Optional
 
-from daytona_api_client_async import (
+from hanzo_runtime_api_client_async import (
     GitAddRequest,
     GitBranchRequest,
     GitCheckoutRequest,

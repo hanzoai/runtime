@@ -3,7 +3,7 @@
 
 from typing import List
 
-from daytona_api_client_async import (
+from hanzo_runtime_api_client_async import (
     CompletionList,
     LspCompletionParams,
     LspDocumentRequest,

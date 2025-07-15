@@ -23,7 +23,7 @@ class ObjectStorage:
         aws_access_key_id (str): The access key ID for the object storage service.
         aws_secret_access_key (str): The secret access key for the object storage service.
         aws_session_token (str): The session token for the object storage service. Used for temporary credentials.
-        bucket_name (str): The name of the bucket to use. Defaults to "daytona-volume-builds".
+        bucket_name (str): The name of the bucket to use. Defaults to "hanzo-runtime-volume-builds".
     """
 
     def __init__(
@@ -32,7 +32,7 @@ class ObjectStorage:
         aws_access_key_id: str,
         aws_secret_access_key: str,
         aws_session_token: str,
-        bucket_name: str = "daytona-volume-builds",
+        bucket_name: str = "hanzo-runtime-volume-builds",
     ):
         self.bucket_name = bucket_name
         self.store = S3Store(

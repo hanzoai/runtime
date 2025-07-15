@@ -1,4 +1,4 @@
-import { Daytona, Sandbox, Image } from '@daytonaio/sdk'
+import { HanzoRuntime, Sandbox, Image } from '@hanzo/runtime-sdk'
 
 async function basicExec(sandbox: Sandbox) {
   //  run some typescript code directly
@@ -71,10 +71,10 @@ async function sessionExecLogsAsync(sandbox: Sandbox) {
 }
 
 async function main() {
-  const daytona = new Daytona()
+  const hanzoRuntime = new HanzoRuntime()
 
   //  first, create a sandbox
-  const sandbox = await daytona.create(
+  const sandbox = await hanzoRuntime.create(
     {
       image: Image.base('ubuntu:22.04').runCommands(
         'apt-get update && apt-get install -y --no-install-recommends nodejs npm coreutils',
@@ -100,7 +100,7 @@ async function main() {
     console.error('Error executing commands:', error)
   } finally {
     //  cleanup
-    await daytona.delete(sandbox)
+    await hanzoRuntime.delete(sandbox)
   }
 }
 

@@ -3,17 +3,17 @@ import json
 import os
 from datetime import datetime
 
-from daytona import AsyncDaytona, CreateSandboxFromSnapshotParams, FileUpload
+from hanzo_runtime import AsyncHanzoRuntime, CreateSandboxFromSnapshotParams, FileUpload
 
 
 async def main():
-    async with AsyncDaytona() as daytona:
+    async with AsyncHanzoRuntime() as hanzo_runtime:
         params = CreateSandboxFromSnapshotParams(
             language="python",
         )
 
         # First, create a sandbox
-        sandbox = await daytona.create(params)
+        sandbox = await hanzo_runtime.create(params)
         print(f"Created sandbox with ID: {sandbox.id}")
 
         # List files in the sandbox
@@ -88,7 +88,7 @@ async def main():
         os.remove(local_file_path)
 
         # Delete the sandbox
-        await daytona.delete(sandbox)
+        await hanzo_runtime.delete(sandbox)
 
 
 if __name__ == "__main__":

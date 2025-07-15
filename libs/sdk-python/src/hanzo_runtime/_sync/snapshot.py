@@ -10,10 +10,10 @@ import threading
 import time
 from typing import Callable, List, Optional
 
-from daytona_api_client import ObjectStorageApi, SnapshotsApi
-from daytona_api_client.models.create_build_info import CreateBuildInfo
-from daytona_api_client.models.create_snapshot import CreateSnapshot
-from daytona_api_client.models.snapshot_state import SnapshotState
+from hanzo_runtime_api_client import ObjectStorageApi, SnapshotsApi
+from hanzo_runtime_api_client.models.create_build_info import CreateBuildInfo
+from hanzo_runtime_api_client.models.create_snapshot import CreateSnapshot
+from hanzo_runtime_api_client.models.snapshot_state import SnapshotState
 
 from .._utils.errors import intercept_errors
 from .._utils.stream import process_streaming_response
@@ -43,7 +43,7 @@ class SnapshotService:
         Example:
             ```python
             hanzo_runtime = HanzoRuntime()
-            snapshots = daytona.snapshot.list()
+            snapshots = runtime.snapshot.list()
             for snapshot in snapshots:
                 print(f"{snapshot.name} ({snapshot.image_name})")
             ```
@@ -63,8 +63,8 @@ class SnapshotService:
         Example:
             ```python
             hanzo_runtime = HanzoRuntime()
-            snapshot = daytona.snapshot.get("test-snapshot")
-            daytona.snapshot.delete(snapshot)
+            snapshot = runtime.snapshot.get("test-snapshot")
+            runtime.snapshot.delete(snapshot)
             print("Snapshot deleted")
             ```
         """
@@ -83,7 +83,7 @@ class SnapshotService:
         Example:
             ```python
             hanzo_runtime = HanzoRuntime()
-            snapshot = daytona.snapshot.get("test-snapshot-name")
+            snapshot = runtime.snapshot.get("test-snapshot-name")
             print(f"{snapshot.name} ({snapshot.image_name})")
             ```
         """
@@ -108,7 +108,7 @@ class SnapshotService:
         Example:
             ```python
             image = Image.debianSlim('3.12').pipInstall('numpy')
-            daytona.snapshot.create(
+            runtime.snapshot.create(
                 CreateSnapshotParams(name='my-snapshot', image=image),
                 on_logs=lambda chunk: print(chunk, end=""),
             )
@@ -148,7 +148,7 @@ class SnapshotService:
             _, url, *_ = self.__snapshots_api._get_snapshot_build_logs_serialize(  # pylint: disable=protected-access
                 id=created_snapshot.id,
                 follow=True,
-                x_daytona_organization_id=None,
+                x_hanzo_runtime_organization_id=None,
                 _request_auth=None,
                 _content_type=None,
                 _headers=None,

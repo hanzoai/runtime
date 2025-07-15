@@ -1,8 +1,8 @@
-from daytona import CreateSandboxFromImageParams, Daytona, Resources
+from hanzo_runtime import , Resources
 
 
 def main():
-    daytona = Daytona()
+    hanzo_runtime = HanzoRuntime()
 
     params = CreateSandboxFromImageParams(
         image="python:3.9.23-slim",
@@ -13,7 +13,7 @@ def main():
             disk=3,
         ),
     )
-    sandbox = daytona.create(params, timeout=150, on_snapshot_create_logs=print)
+    sandbox = hanzo_runtime.create(params, timeout=150, on_snapshot_create_logs=print)
 
     # Run the code securely inside the sandbox
     response = sandbox.process.code_run('print("Hello World!")')
@@ -29,7 +29,7 @@ def main():
     else:
         print(response.result)
 
-    daytona.delete(sandbox)
+    hanzo_runtime.delete(sandbox)
 
 
 if __name__ == "__main__":

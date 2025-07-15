@@ -1,9 +1,9 @@
 # Copyright 2025 Hanzo Industries Inc.
 # SPDX-License-Identifier: Apache-2.0
 
-from daytona_api_client import SandboxVolume as ApiVolumeMount
-from daytona_api_client import VolumeDto
-from daytona_api_client_async import SandboxVolume as AsyncApiVolumeMount
+from hanzo_runtime_api_client import SandboxVolume as ApiVolumeMount
+from hanzo_runtime_api_client import VolumeDto
+from hanzo_runtime_api_client_async import SandboxVolume as AsyncApiVolumeMount
 
 
 class VolumeMount(ApiVolumeMount, AsyncApiVolumeMount):

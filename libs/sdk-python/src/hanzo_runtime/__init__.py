@@ -1,7 +1,7 @@
 # Copyright 2025 Hanzo Industries Inc
 # SPDX-License-Identifier: Apache-2.0
 
-from daytona_api_client import SandboxState, SessionExecuteResponse
+from hanzo_runtime_api_client import SandboxState, SessionExecuteResponse
 
 from ._async.computer_use import (
     AsyncComputerUse,

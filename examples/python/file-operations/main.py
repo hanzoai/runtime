@@ -2,17 +2,17 @@ import json
 import os
 from datetime import datetime
 
-from daytona import CreateSandboxFromSnapshotParams, Daytona, FileUpload
+from hanzo_runtime import , FileUpload
 
 
 def main():
-    daytona = Daytona()
+    hanzo_runtime = HanzoRuntime()
     params = CreateSandboxFromSnapshotParams(
         language="python",
     )
 
     # First, create a sandbox
-    sandbox = daytona.create(params)
+    sandbox = hanzo_runtime.create(params)
     print(f"Created sandbox with ID: {sandbox.id}")
 
     # List files in the sandbox
@@ -86,7 +86,7 @@ def main():
     os.remove(local_file_path)
 
     # Delete the sandbox
-    daytona.delete(sandbox)
+    hanzo_runtime.delete(sandbox)
 
 
 if __name__ == "__main__":

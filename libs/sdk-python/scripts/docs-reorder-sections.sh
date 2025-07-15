@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright 2025 Daytona Platforms Inc.
+# Copyright 2025 Hanzo Industries Inc.
 # SPDX-License-Identifier: Apache-2.0
 
 # Check if a file argument is provided

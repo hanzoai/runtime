@@ -3,7 +3,7 @@ import base64
 import os
 import time
 
-from daytona import (
+from hanzo_runtime import (
     AsyncDaytona,
     BarChart,
     BoxAndWhiskerChart,
@@ -78,8 +78,8 @@ plt.show()
 
 
 async def main():
-    async with AsyncDaytona() as daytona:
-        sandbox = await daytona.create(
+    async with AsyncHanzoRuntime() as hanzo_runtime:
+        sandbox = await hanzo_runtime.create(
             CreateSandboxFromImageParams(
                 image=Image.debian_slim("3.13").pip_install("matplotlib"),
             ),
@@ -103,7 +103,7 @@ async def main():
 
                 print_chart(chart)
 
-        await daytona.delete(sandbox)
+        await hanzo_runtime.delete(sandbox)
 
 
 def print_chart(chart: Chart):
