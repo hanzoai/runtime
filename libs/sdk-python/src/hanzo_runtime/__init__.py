@@ -12,9 +12,9 @@ from ._async.computer_use import (
     ScreenshotOptions,
     ScreenshotRegion,
 )
-from ._async.daytona import AsyncHanzoRuntime
+from ._async.hanzo_runtime import AsyncHanzoRuntime
 from ._async.sandbox import AsyncSandbox
-from ._sync.daytona import HanzoRuntime
+from ._sync.hanzo_runtime import HanzoRuntime
 from ._sync.sandbox import Sandbox
 from .common.charts import (
     BarChart,
@@ -26,7 +26,7 @@ from .common.charts import (
     PieChart,
     ScatterChart,
 )
-from .common.daytona import (
+from .common.hanzo_runtime import (
     CodeLanguage,
     CreateSandboxBaseParams,
     CreateSandboxFromImageParams,

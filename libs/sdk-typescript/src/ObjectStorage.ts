@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,7 +10,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 import * as tar from 'tar'
 import { PassThrough } from 'stream'
-import { DaytonaError } from './errors/DaytonaError'
+import { HanzoRuntimeError } from './errors/HanzoRuntimeError'
 
 /**
  * Configuration for the ObjectStorage class.
@@ -65,7 +65,7 @@ export class ObjectStorage {
   async upload(path: string, organizationId: string, archiveBasePath: string): Promise<string> {
     if (!fs.existsSync(path)) {
       const errMsg = `Path does not exist: ${path}`
-      throw new DaytonaError(errMsg)
+      throw new HanzoRuntimeError(errMsg)
     }
 
     // Compute hash for the path

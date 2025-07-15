@@ -1,6 +1,6 @@
-# Copyright 2025 Daytona Platforms Inc.
+# Copyright 2025 Hanzo Industries Inc.
 # SPDX-License-Identifier: Apache-2.0
 
 
-class DaytonaError(Exception):
-    """Base error for Daytona SDK."""
+class HanzoRuntimeError(Exception):
+    """Base error for HanzoRuntime SDK."""

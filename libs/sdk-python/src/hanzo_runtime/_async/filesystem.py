@@ -1,4 +1,4 @@
-# Copyright 2025 Daytona Platforms Inc.
+# Copyright 2025 Hanzo Industries Inc.
 # SPDX-License-Identifier: Apache-2.0
 
 import io
@@ -20,7 +20,7 @@ class AsyncFileSystem:
     """Provides file system operations within a Sandbox.
 
     This class implements a high-level interface to file system operations that can
-    be performed within a Daytona Sandbox.
+    be performed within a HanzoRuntime Sandbox.
     """
 
     def __init__(

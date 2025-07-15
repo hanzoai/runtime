@@ -1,4 +1,4 @@
-# Copyright 2025 Daytona Platforms Inc.
+# Copyright 2025 Hanzo Industries Inc.
 # SPDX-License-Identifier: Apache-2.0
 
 from typing import List, Optional
@@ -174,7 +174,7 @@ class AsyncKeyboard:
             delay (int): Delay between characters in milliseconds.
 
         Raises:
-            DaytonaError: If the type operation fails.
+            HanzoRuntimeError: If the type operation fails.
 
         Example:
             ```python
@@ -204,7 +204,7 @@ class AsyncKeyboard:
             modifiers (List[str]): Modifier keys ('ctrl', 'alt', 'meta', 'shift').
 
         Raises:
-            DaytonaError: If the press operation fails.
+            HanzoRuntimeError: If the press operation fails.
 
         Example:
             ```python
@@ -239,7 +239,7 @@ class AsyncKeyboard:
             keys (str): The hotkey combination (e.g., 'ctrl+c', 'alt+tab', 'cmd+shift+t').
 
         Raises:
-            DaytonaError: If the hotkey operation fails.
+            HanzoRuntimeError: If the hotkey operation fails.
 
         Example:
             ```python

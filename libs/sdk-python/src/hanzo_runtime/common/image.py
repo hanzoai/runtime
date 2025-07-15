@@ -1,4 +1,4 @@
-# Copyright 2025 Daytona Platforms Inc.
+# Copyright 2025 Hanzo Industries Inc.
 # SPDX-License-Identifier: Apache-2.0
 
 import glob
@@ -13,7 +13,7 @@ import toml
 from pydantic import BaseModel, PrivateAttr
 
 from .._sync.object_storage import ObjectStorage
-from .errors import DaytonaError
+from .errors import HanzoRuntimeError
 
 SupportedPythonSeries = Literal["3.9", "3.10", "3.11", "3.12", "3.13"]
 SUPPORTED_PYTHON_SERIES = list(get_args(SupportedPythonSeries))
@@ -33,7 +33,7 @@ class Context(BaseModel):
 
 
 class Image(BaseModel):
-    """Represents an image definition for a Daytona sandbox.
+    """Represents an image definition for a HanzoRuntime sandbox.
     Do not construct this class directly. Instead use one of its static factory methods,
     such as `Image.base()`, `Image.debian_slim()`, or `Image.from_dockerfile()`.
     """
@@ -110,7 +110,7 @@ class Image(BaseModel):
         """
         requirements_txt = os.path.expanduser(requirements_txt)
         if not Path(requirements_txt).exists():
-            raise DaytonaError(f"Requirements file {requirements_txt} does not exist")
+            raise HanzoRuntimeError(f"Requirements file {requirements_txt} does not exist")
 
         extra_args = self.__format_pip_install_args(find_links, index_url, extra_index_urls, pre, extra_options)
 
@@ -161,7 +161,7 @@ class Image(BaseModel):
                 "See https://packaging.python.org/en/latest/guides/writing-pyproject-toml "
                 "for further file format guidelines."
             )
-            raise DaytonaError(msg)
+            raise HanzoRuntimeError(msg)
 
         dependencies.extend(toml_data["project"]["dependencies"])
         if optional_dependencies:
@@ -271,7 +271,7 @@ class Image(BaseModel):
         """
         non_str_keys = [key for key, val in env_vars.items() if not isinstance(val, str)]
         if non_str_keys:
-            raise DaytonaError(f"Image ENV variables must be strings. Invalid keys: {non_str_keys}")
+            raise HanzoRuntimeError(f"Image ENV variables must be strings. Invalid keys: {non_str_keys}")
 
         for key, val in env_vars.items():
             self._dockerfile += f"ENV {key}={shlex.quote(val)}\n"
@@ -310,7 +310,7 @@ class Image(BaseModel):
             ```
         """
         if not isinstance(entrypoint_commands, list) or not all(isinstance(x, str) for x in entrypoint_commands):
-            raise DaytonaError("entrypoint_commands must be a list of strings.")
+            raise HanzoRuntimeError("entrypoint_commands must be a list of strings.")
 
         args_str = self.__flatten_str_args("entrypoint", "entrypoint_commands", entrypoint_commands)
         args_str = '"' + '", "'.join(args_str) + '"' if args_str else ""
@@ -333,7 +333,7 @@ class Image(BaseModel):
             ```
         """
         if not isinstance(cmd, list) or not all(isinstance(x, str) for x in cmd):
-            raise DaytonaError("Image CMD must be a list of strings.")
+            raise HanzoRuntimeError("Image CMD must be a list of strings.")
         cmd_str = self.__flatten_str_args("cmd", "cmd", cmd)
         cmd_str = '"' + '", "'.join(cmd_str) + '"' if cmd_str else ""
         self._dockerfile += f"CMD [{cmd_str}]\n"
@@ -361,7 +361,7 @@ class Image(BaseModel):
         if context_dir:
             context_dir = os.path.expanduser(context_dir)
             if not os.path.isdir(context_dir):
-                raise DaytonaError(f"Context directory {context_dir} does not exist")
+                raise HanzoRuntimeError(f"Context directory {context_dir} does not exist")
 
         for context_path, original_path in Image.__extract_copy_sources(
             "\n".join(dockerfile_commands), context_dir or ""
@@ -570,7 +570,7 @@ class Image(BaseModel):
             elif is_str_list(x):
                 ret.extend(x)
             else:
-                raise DaytonaError(f"{function_name}: {arg_name} must only contain strings")
+                raise HanzoRuntimeError(f"{function_name}: {arg_name} must only contain strings")
         return ret
 
     @staticmethod
@@ -621,26 +621,26 @@ class Image(BaseModel):
             str: The processed Python version.
 
         Raises:
-            DaytonaError: If the Python version is invalid.
+            HanzoRuntimeError: If the Python version is invalid.
         """
         if python_version is None:
             # If Python version is unspecified, match the local version, up to the minor component
             python_version = series_version = f"{sys.version_info.major}.{sys.version_info.minor}"
         elif not re.match(r"^3(?:\.\d{1,2}){1,2}(rc\d*)?$", python_version):
-            raise DaytonaError(f"Invalid Python version: {python_version!r}")
+            raise HanzoRuntimeError(f"Invalid Python version: {python_version!r}")
         else:
             components = python_version.split(".")
             if len(components) == 3 and not allow_micro_granularity:
-                raise DaytonaError(
+                raise HanzoRuntimeError(
                     "Python version must be specified as 'major.minor' for this interface;"
                     f" micro-level specification ({python_version!r}) is not valid."
                 )
             series_version = f"{components[0]}.{components[1]}"
 
         if series_version not in SUPPORTED_PYTHON_SERIES:
-            raise DaytonaError(
+            raise HanzoRuntimeError(
                 f"Unsupported Python version: {python_version!r}."
-                f" Daytona supports the following series: {SUPPORTED_PYTHON_SERIES!r}."
+                f" HanzoRuntime supports the following series: {SUPPORTED_PYTHON_SERIES!r}."
             )
 
         # If the python version is specified as a micro version, return it as is

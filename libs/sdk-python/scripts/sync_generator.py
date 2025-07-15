@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright 2025 Daytona Platforms Inc.
+# Copyright 2025 Hanzo Industries Inc.
 # SPDX-License-Identifier: Apache-2.0
 
 """
@@ -34,8 +34,8 @@ logger = logging.getLogger(__name__)
 project_root = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(project_root))
 
-SOURCE_DIR = project_root / "src" / "daytona" / "_async"
-TARGET_DIR = project_root / "src" / "daytona" / "_sync"
+SOURCE_DIR = project_root / "src" / "hanzo_runtime" / "_async"
+TARGET_DIR = project_root / "src" / "hanzo_runtime" / "_sync"
 
 # Regex markers for blocks
 MARKERS = {
@@ -59,7 +59,7 @@ ADDITIONAL_REPLACEMENTS = {
     "AsyncGit": "Git",
     "AsyncLspServer": "LspServer",
     "AsyncProcess": "Process",
-    "AsyncDaytona": "Daytona",
+    "AsyncHanzoRuntime": "HanzoRuntime",
     "AsyncSandbox": "Sandbox",
     # aiofiles replacement
     "aiofiles.open": "open",
@@ -82,7 +82,7 @@ POST_REPLACEMENTS = [
     (re.compile(r"httpx\.SyncClient\b"), "httpx.Client"),
     (re.compile(r"\.aiter_bytes\b"), ".iter_bytes"),
     # Update module imports
-    (re.compile(r"from daytona\._async"), "from daytona._sync"),
+    (re.compile(r"from hanzo_runtime\._async"), "from hanzo_runtime._sync"),
     # Documentation cleanup
     (re.compile(r"\basynchronous methods\b"), "methods"),
     (re.compile(r"\basynchronous\b"), "synchronous"),
@@ -160,12 +160,12 @@ def transform_docstrings(text: str) -> str:
 
             # Handle async with pattern
             async_with_match = re.match(
-                r"^(\s*)async\s+with\s+(?:Async)?Daytona\(\)(?:\([^)]*\))?\s+as\s+(\w+):\s*(#.*)?$", line
+                r"^(\s*)async\s+with\s+(?:Async)?HanzoRuntime\(\)(?:\([^)]*\))?\s+as\s+(\w+):\s*(#.*)?$", line
             )
             if async_with_match:
                 indent, var_name, comment = async_with_match.groups()
                 # Transform to variable assignment
-                new_line = f"{indent}{var_name} = Daytona()"
+                new_line = f"{indent}{var_name} = HanzoRuntime()"
                 if comment:
                     new_line += f"  {comment}"
                 result_lines.append(new_line)
@@ -233,11 +233,11 @@ def transform_docstrings(text: str) -> str:
                         finally_content.append(lines[k])
                         k += 1
 
-                    # Check if finally only contains daytona.close()
+                    # Check if finally only contains hanzo_runtime.close()
                     non_empty_finally = [l for l in finally_content if l.strip()]
                     only_has_close = len(non_empty_finally) == 1 and (
-                        re.search(r"daytona\w*\.close\(\)", non_empty_finally[0])
-                        or re.search(r"await\s+daytona\w*\.close\(\)", non_empty_finally[0])
+                        re.search(r"hanzo_runtime\w*\.close\(\)", non_empty_finally[0])
+                        or re.search(r"await\s+hanzo_runtime\w*\.close\(\)", non_empty_finally[0])
                     )
 
                     if only_has_close:
@@ -274,10 +274,10 @@ def transform_docstrings(text: str) -> str:
                     result_lines.append(lines[i])
                     i += 1
 
-                    # Add finally body, filtering out daytona.close()
+                    # Add finally body, filtering out hanzo_runtime.close()
                     while i < k:
                         line = lines[i]
-                        if not re.search(r"(?:await\s+)?daytona\w*\.close\(\)", line):
+                        if not re.search(r"(?:await\s+)?hanzo_runtime\w*\.close\(\)", line):
                             result_lines.append(line)
                         i += 1
                     continue
@@ -291,8 +291,8 @@ def transform_docstrings(text: str) -> str:
     # Process all python code blocks
     text = re.sub(r"(^[ \t]*```python\n.*?^[ \t]*```)", process_python_code_block, text, flags=re.MULTILINE | re.DOTALL)
 
-    # Remove any stray daytona.close() lines outside code blocks
-    text = re.sub(r"^\s*(?:await\s+)?daytona\w*\.close\(\)\s*$", "", text, flags=re.MULTILINE)
+    # Remove any stray hanzo_runtime.close() lines outside code blocks
+    text = re.sub(r"^\s*(?:await\s+)?hanzo_runtime\w*\.close\(\)\s*$", "", text, flags=re.MULTILINE)
 
     # Clean up multiple blank lines
     text = re.sub(r"\n\s*\n\s*\n", "\n\n", text)
@@ -1177,8 +1177,8 @@ def post_process(path: Path):
         flags=re.MULTILINE,
     )
 
-    # 9) Remove any leftover "daytona.close()" lines
-    text = re.sub(r"^\s*daytona\w*\.close\(\)\s*$", "", text, flags=re.MULTILINE)
+    # 9) Remove any leftover "hanzo_runtime.close()" lines
+    text = re.sub(r"^\s*hanzo_runtime\w*\.close\(\)\s*$", "", text, flags=re.MULTILINE)
 
     # 10) Collapse more than two blank lines into exactly two
     text = re.sub(r"\n\s*\n\s*\n", "\n\n", text)

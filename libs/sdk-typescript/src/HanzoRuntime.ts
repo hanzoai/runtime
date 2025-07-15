@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -18,7 +18,7 @@ import axios, { AxiosError } from 'axios'
 import * as dotenv from 'dotenv'
 import { SandboxPythonCodeToolbox } from './code-toolbox/SandboxPythonCodeToolbox'
 import { SandboxTsCodeToolbox } from './code-toolbox/SandboxTsCodeToolbox'
-import { DaytonaError, DaytonaNotFoundError } from './errors/DaytonaError'
+import { HanzoRuntimeError, HanzoRuntimeNotFoundError } from './errors/HanzoRuntimeError'
 import { Image } from './Image'
 import { Sandbox } from './Sandbox'
 import { SnapshotService } from './Snapshot'
@@ -40,34 +40,34 @@ export interface VolumeMount extends SandboxVolume {
 }
 
 /**
- * Configuration options for initializing the Daytona client.
+ * Configuration options for initializing the HanzoRuntime client.
  *
  * @interface
- * @property {string} apiKey - API key for authentication with the Daytona API
- * @property {string} jwtToken - JWT token for authentication with the Daytona API. If not set, it must be provided
- * via the environment variable `DAYTONA_JWT_TOKEN`, or an API key must be provided instead.
+ * @property {string} apiKey - API key for authentication with the HanzoRuntime API
+ * @property {string} jwtToken - JWT token for authentication with the HanzoRuntime API. If not set, it must be provided
+ * via the environment variable `HANZO_RUNTIME_JWT_TOKEN`, or an API key must be provided instead.
  * @property {string} organizationId - Organization ID used for JWT-based authentication. Required if a JWT token
- * is provided, and must be set either here or in the environment variable `DAYTONA_ORGANIZATION_ID`.
- * @property {string} apiUrl - URL of the Daytona API. Defaults to 'https://app.daytona.io/api'
- * if not set here and not set in environment variable DAYTONA_API_URL.
+ * is provided, and must be set either here or in the environment variable `HANZO_RUNTIME_ORGANIZATION_ID`.
+ * @property {string} apiUrl - URL of the HanzoRuntime API. Defaults to 'https://app.hanzo.ai/api'
+ * if not set here and not set in environment variable HANZO_RUNTIME_API_URL.
  * @property {string} target - Target location for Sandboxes
  *
  * @example
- * const config: DaytonaConfig = {
+ * const config: HanzoRuntimeConfig = {
  *     apiKey: "your-api-key",
  *     apiUrl: "https://your-api.com",
  *     target: "us"
  * };
- * const daytona = new Daytona(config);
+ * const hanzo_runtime = new HanzoRuntime(config);
  */
-export interface DaytonaConfig {
-  /** API key for authentication with the Daytona API */
+export interface HanzoRuntimeConfig {
+  /** API key for authentication with the HanzoRuntime API */
   apiKey?: string
-  /** JWT token for authentication with the Daytona API */
+  /** JWT token for authentication with the HanzoRuntime API */
   jwtToken?: string
-  /** Organization ID for authentication with the Daytona API */
+  /** Organization ID for authentication with the HanzoRuntime API */
   organizationId?: string
-  /** URL of the Daytona API.
+  /** URL of the HanzoRuntime API.
    */
   apiUrl?: string
   /**
@@ -176,31 +176,31 @@ export type SandboxFilter = {
 }
 
 /**
- * Main class for interacting with the Daytona API.
- * Provides methods for creating, managing, and interacting with Daytona Sandboxes.
+ * Main class for interacting with the HanzoRuntime API.
+ * Provides methods for creating, managing, and interacting with HanzoRuntime Sandboxes.
  * Can be initialized either with explicit configuration or using environment variables.
  *
- * @property {VolumeService} volume - Service for managing Daytona Volumes
- * @property {SnapshotService} snapshot - Service for managing Daytona Snapshots
+ * @property {VolumeService} volume - Service for managing HanzoRuntime Volumes
+ * @property {SnapshotService} snapshot - Service for managing HanzoRuntime Snapshots
  *
  * @example
  * // Using environment variables
- * // Uses DAYTONA_API_KEY, DAYTONA_API_URL, DAYTONA_TARGET
- * const daytona = new Daytona();
- * const sandbox = await daytona.create();
+ * // Uses HANZO_RUNTIME_API_KEY, HANZO_RUNTIME_API_URL, HANZO_RUNTIME_TARGET
+ * const hanzo_runtime = new HanzoRuntime();
+ * const sandbox = await hanzo_runtime.create();
  *
  * @example
  * // Using explicit configuration
- * const config: DaytonaConfig = {
+ * const config: HanzoRuntimeConfig = {
  *     apiKey: "your-api-key",
  *     apiUrl: "https://your-api.com",
  *     target: "us"
  * };
- * const daytona = new Daytona(config);
+ * const hanzo_runtime = new HanzoRuntime(config);
  *
  * @class
  */
-export class Daytona {
+export class HanzoRuntime {
   private readonly sandboxApi: SandboxApi
   private readonly toolboxApi: ToolboxApi
   private readonly objectStorageApi: ObjectStorageApi
@@ -213,12 +213,12 @@ export class Daytona {
   public readonly snapshot: SnapshotService
 
   /**
-   * Creates a new Daytona client instance.
+   * Creates a new HanzoRuntime client instance.
    *
-   * @param {DaytonaConfig} [config] - Configuration options
-   * @throws {DaytonaError} - `DaytonaError` - When API key is missing
+   * @param {HanzoRuntimeConfig} [config] - Configuration options
+   * @throws {HanzoRuntimeError} - `HanzoRuntimeError` - When API key is missing
    */
-  constructor(config?: DaytonaConfig) {
+  constructor(config?: HanzoRuntimeConfig) {
     let apiUrl: string | undefined
     if (config) {
       this.apiKey = !config?.apiKey && config?.jwtToken ? undefined : config?.apiKey
@@ -234,16 +234,16 @@ export class Daytona {
     ) {
       dotenv.config()
       dotenv.config({ path: '.env.local', override: true })
-      this.apiKey = this.apiKey || (this.jwtToken ? undefined : process?.env['DAYTONA_API_KEY'])
-      this.jwtToken = this.jwtToken || process?.env['DAYTONA_JWT_TOKEN']
-      this.organizationId = this.organizationId || process?.env['DAYTONA_ORGANIZATION_ID']
+      this.apiKey = this.apiKey || (this.jwtToken ? undefined : process?.env['HANZO_RUNTIME_API_KEY'])
+      this.jwtToken = this.jwtToken || process?.env['HANZO_RUNTIME_JWT_TOKEN']
+      this.organizationId = this.organizationId || process?.env['HANZO_RUNTIME_ORGANIZATION_ID']
       apiUrl =
-        apiUrl || process?.env['DAYTONA_API_URL'] || process?.env['DAYTONA_SERVER_URL'] || 'https://app.daytona.io/api'
-      this.target = this.target || process?.env['DAYTONA_TARGET']
+        apiUrl || process?.env['HANZO_RUNTIME_API_URL'] || process?.env['HANZO_RUNTIME_SERVER_URL'] || 'https://app.hanzo.ai/api'
+      this.target = this.target || process?.env['HANZO_RUNTIME_TARGET']
 
-      if (process?.env['DAYTONA_SERVER_URL'] && !process?.env['DAYTONA_API_URL']) {
+      if (process?.env['HANZO_RUNTIME_SERVER_URL'] && !process?.env['HANZO_RUNTIME_API_URL']) {
         console.warn(
-          '[Deprecation Warning] Environment variable `DAYTONA_SERVER_URL` is deprecated and will be removed in future versions. Use `DAYTONA_API_URL` instead.',
+          '[Deprecation Warning] Environment variable `HANZO_RUNTIME_SERVER_URL` is deprecated and will be removed in future versions. Use `HANZO_RUNTIME_API_URL` instead.',
         )
       }
     }
@@ -253,9 +253,9 @@ export class Daytona {
     const orgHeader: Record<string, string> = {}
     if (!this.apiKey) {
       if (!this.organizationId) {
-        throw new DaytonaError('Organization ID is required when using JWT token')
+        throw new HanzoRuntimeError('Organization ID is required when using JWT token')
       }
-      orgHeader['X-Daytona-Organization-ID'] = this.organizationId
+      orgHeader['X-HanzoRuntime-Organization-ID'] = this.organizationId
     }
 
     const configuration = new Configuration({
@@ -263,8 +263,8 @@ export class Daytona {
       baseOptions: {
         headers: {
           Authorization: `Bearer ${this.apiKey || this.jwtToken}`,
-          'X-Daytona-Source': 'typescript-sdk',
-          'X-Daytona-SDK-Version': packageJson.version,
+          'X-HanzoRuntime-Source': 'typescript-sdk',
+          'X-HanzoRuntime-SDK-Version': packageJson.version,
           ...orgHeader,
         },
       },
@@ -294,9 +294,9 @@ export class Daytona {
 
         switch (error.response?.data?.statusCode) {
           case 404:
-            throw new DaytonaNotFoundError(errorMessage)
+            throw new HanzoRuntimeNotFoundError(errorMessage)
           default:
-            throw new DaytonaError(errorMessage)
+            throw new HanzoRuntimeError(errorMessage)
         }
       },
     )
@@ -318,7 +318,7 @@ export class Daytona {
    * @returns {Promise<Sandbox>} The created Sandbox instance
    *
    * @example
-   * const sandbox = await daytona.create();
+   * const sandbox = await hanzo_runtime.create();
    *
    * @example
    * // Create a custom sandbox
@@ -333,12 +333,12 @@ export class Daytona {
    *     autoArchiveInterval: 60,
    *     autoDeleteInterval: 120
    * };
-   * const sandbox = await daytona.create(params, { timeout: 100 });
+   * const sandbox = await hanzo_runtime.create(params, { timeout: 100 });
    */
   public async create(params?: CreateSandboxFromSnapshotParams, options?: { timeout?: number }): Promise<Sandbox>
   /**
-   * Creates Sandboxes from specified image available on some registry or declarative Daytona Image. You can specify various parameters,
-   * including resources, language, image, environment variables, and volumes. Daytona creates snapshot from
+   * Creates Sandboxes from specified image available on some registry or declarative HanzoRuntime Image. You can specify various parameters,
+   * including resources, language, image, environment variables, and volumes. HanzoRuntime creates snapshot from
    * provided image and uses it to create Sandbox.
    *
    * @param {CreateSandboxFromImageParams} [params] - Parameters for Sandbox creation from image
@@ -348,7 +348,7 @@ export class Daytona {
    * @returns {Promise<Sandbox>} The created Sandbox instance
    *
    * @example
-   * const sandbox = await daytona.create({ image: 'debian:12.9' }, { timeout: 90, onSnapshotCreateLogs: console.log });
+   * const sandbox = await hanzo_runtime.create({ image: 'debian:12.9' }, { timeout: 90, onSnapshotCreateLogs: console.log });
    *
    * @example
    * // Create a custom sandbox
@@ -368,7 +368,7 @@ export class Daytona {
    *     autoArchiveInterval: 60,
    *     autoDeleteInterval: 120
    * };
-   * const sandbox = await daytona.create(params, { timeout: 100, onSnapshotCreateLogs: console.log });
+   * const sandbox = await hanzo_runtime.create(params, { timeout: 100, onSnapshotCreateLogs: console.log });
    */
   public async create(
     params?: CreateSandboxFromImageParams,
@@ -395,21 +395,21 @@ export class Daytona {
     }
 
     if (options.timeout < 0) {
-      throw new DaytonaError('Timeout must be a non-negative number')
+      throw new HanzoRuntimeError('Timeout must be a non-negative number')
     }
 
     if (
       params.autoStopInterval !== undefined &&
       (!Number.isInteger(params.autoStopInterval) || params.autoStopInterval < 0)
     ) {
-      throw new DaytonaError('autoStopInterval must be a non-negative integer')
+      throw new HanzoRuntimeError('autoStopInterval must be a non-negative integer')
     }
 
     if (
       params.autoArchiveInterval !== undefined &&
       (!Number.isInteger(params.autoArchiveInterval) || params.autoArchiveInterval < 0)
     ) {
-      throw new DaytonaError('autoArchiveInterval must be a non-negative integer')
+      throw new HanzoRuntimeError('autoArchiveInterval must be a non-negative integer')
     }
 
     const codeToolbox = this.getCodeToolbox(params.language as CodeLanguage)
@@ -499,9 +499,9 @@ export class Daytona {
 
       return sandbox
     } catch (error) {
-      if (error instanceof DaytonaError && error.message.includes('Operation timed out')) {
+      if (error instanceof HanzoRuntimeError && error.message.includes('Operation timed out')) {
         const errMsg = `Failed to create and start sandbox within ${options.timeout} seconds. Operation timed out.`
-        throw new DaytonaError(errMsg)
+        throw new HanzoRuntimeError(errMsg)
       }
       throw error
     }
@@ -514,7 +514,7 @@ export class Daytona {
    * @returns {Promise<Sandbox>} The Sandbox
    *
    * @example
-   * const sandbox = await daytona.get('my-sandbox-id');
+   * const sandbox = await hanzo_runtime.get('my-sandbox-id');
    * console.log(`Sandbox state: ${sandbox.state}`);
    */
   public async get(sandboxId: string): Promise<Sandbox> {
@@ -533,7 +533,7 @@ export class Daytona {
    * @returns {Promise<Sandbox>} First Sandbox that matches the ID or labels.
    *
    * @example
-   * const sandbox = await daytona.findOne({ labels: { 'my-label': 'my-value' } });
+   * const sandbox = await hanzo_runtime.findOne({ labels: { 'my-label': 'my-value' } });
    * console.log(`Sandbox ID: ${sandbox.id}, State: ${sandbox.state}`);
    */
   public async findOne(filter: SandboxFilter): Promise<Sandbox> {
@@ -544,7 +544,7 @@ export class Daytona {
     const sandboxes = await this.list(filter.labels)
     if (sandboxes.length === 0) {
       const errMsg = `No sandbox found with labels ${JSON.stringify(filter.labels)}`
-      throw new DaytonaError(errMsg)
+      throw new HanzoRuntimeError(errMsg)
     }
     return sandboxes[0]
   }
@@ -556,7 +556,7 @@ export class Daytona {
    * @returns {Promise<Sandbox[]>} Array of Sandboxes that match the labels.
    *
    * @example
-   * const sandboxes = await daytona.list({ 'my-label': 'my-value' });
+   * const sandboxes = await hanzo_runtime.list({ 'my-label': 'my-value' });
    * for (const sandbox of sandboxes) {
    *     console.log(`${sandbox.id}: ${sandbox.state}`);
    * }
@@ -582,9 +582,9 @@ export class Daytona {
    * @returns {Promise<void>}
    *
    * @example
-   * const sandbox = await daytona.get('my-sandbox-id');
+   * const sandbox = await hanzo_runtime.get('my-sandbox-id');
    * // Wait up to 60 seconds for the sandbox to start
-   * await daytona.start(sandbox, 60);
+   * await hanzo_runtime.start(sandbox, 60);
    */
   public async start(sandbox: Sandbox, timeout?: number) {
     await sandbox.start(timeout)
@@ -597,8 +597,8 @@ export class Daytona {
    * @returns {Promise<void>}
    *
    * @example
-   * const sandbox = await daytona.get('my-sandbox-id');
-   * await daytona.stop(sandbox);
+   * const sandbox = await hanzo_runtime.get('my-sandbox-id');
+   * await hanzo_runtime.stop(sandbox);
    */
   public async stop(sandbox: Sandbox) {
     await sandbox.stop()
@@ -612,8 +612,8 @@ export class Daytona {
    * @returns {Promise<void>}
    *
    * @example
-   * const sandbox = await daytona.get('my-sandbox-id');
-   * await daytona.delete(sandbox);
+   * const sandbox = await hanzo_runtime.get('my-sandbox-id');
+   * await hanzo_runtime.delete(sandbox);
    */
   public async delete(sandbox: Sandbox, timeout = 60) {
     await sandbox.delete(timeout)
@@ -625,7 +625,7 @@ export class Daytona {
    * @private
    * @param {CodeLanguage} [language] - Programming language for the toolbox
    * @returns {SandboxCodeToolbox} The appropriate code toolbox instance
-   * @throws {DaytonaError} - `DaytonaError` - When an unsupported language is specified
+   * @throws {HanzoRuntimeError} - `HanzoRuntimeError` - When an unsupported language is specified
    */
   private getCodeToolbox(language?: CodeLanguage) {
     switch (language) {
@@ -637,7 +637,7 @@ export class Daytona {
         return new SandboxPythonCodeToolbox()
       default: {
         const errMsg = `Unsupported language: ${language}, supported languages: ${Object.values(CodeLanguage).join(', ')}`
-        throw new DaytonaError(errMsg)
+        throw new HanzoRuntimeError(errMsg)
       }
     }
   }

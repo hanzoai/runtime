@@ -1,4 +1,4 @@
-# Copyright 2025 Daytona Platforms Inc.
+# Copyright 2025 Hanzo Industries Inc.
 # SPDX-License-Identifier: Apache-2.0
 
 import asyncio
@@ -12,7 +12,7 @@ from pydantic import ConfigDict, PrivateAttr
 from .._utils.errors import intercept_errors
 from .._utils.path import prefix_relative_path
 from .._utils.timeout import with_timeout
-from ..common.errors import DaytonaError
+from ..common.errors import HanzoRuntimeError
 from ..common.protocols import SandboxCodeToolbox
 from .computer_use import AsyncComputerUse
 from .filesystem import AsyncFileSystem
@@ -22,7 +22,7 @@ from .process import AsyncProcess
 
 
 class AsyncSandbox(SandboxDto):
-    """Represents a Daytona Sandbox.
+    """Represents a HanzoRuntime Sandbox.
 
     Attributes:
         fs (AsyncFileSystem): File system operations interface.
@@ -31,7 +31,7 @@ class AsyncSandbox(SandboxDto):
         computer_use (AsyncComputerUse): Computer use operations interface for desktop automation.
         id (str): Unique identifier for the Sandbox.
         organization_id (str): Organization ID of the Sandbox.
-        snapshot (str): Daytona snapshot used to create the Sandbox.
+        snapshot (str): HanzoRuntime snapshot used to create the Sandbox.
         user (str): OS user running in the Sandbox.
         env (Dict[str, str]): Environment variables set in the Sandbox.
         labels (Dict[str, str]): Custom labels attached to the Sandbox.
@@ -204,7 +204,7 @@ class AsyncSandbox(SandboxDto):
             timeout (Optional[float]): Maximum time to wait in seconds. 0 means no timeout. Default is 60 seconds.
 
         Raises:
-            DaytonaError: If timeout is negative. If sandbox fails to start or times out.
+            HanzoRuntimeError: If timeout is negative. If sandbox fails to start or times out.
 
         Example:
             ```python
@@ -230,7 +230,7 @@ class AsyncSandbox(SandboxDto):
             timeout (Optional[float]): Maximum time to wait in seconds. 0 means no timeout. Default is 60 seconds.
 
         Raises:
-            DaytonaError: If timeout is negative; If sandbox fails to stop or times out
+            HanzoRuntimeError: If timeout is negative; If sandbox fails to stop or times out
 
         Example:
             ```python
@@ -271,7 +271,7 @@ class AsyncSandbox(SandboxDto):
             timeout (Optional[float]): Maximum time to wait in seconds. 0 means no timeout. Default is 60 seconds.
 
         Raises:
-            DaytonaError: If timeout is negative; If Sandbox fails to start or times out
+            HanzoRuntimeError: If timeout is negative; If Sandbox fails to start or times out
         """
         while self.state != "started":
             await self.refresh_data()
@@ -283,7 +283,7 @@ class AsyncSandbox(SandboxDto):
                 err_msg = (
                     f"Sandbox {self.id} failed to start with state: {self.state}, error reason: {self.error_reason}"
                 )
-                raise DaytonaError(err_msg)
+                raise HanzoRuntimeError(err_msg)
 
             await asyncio.sleep(0.1)  # Wait 100ms between checks
 
@@ -305,7 +305,7 @@ class AsyncSandbox(SandboxDto):
             timeout (Optional[float]): Maximum time to wait in seconds. 0 means no timeout. Default is 60 seconds.
 
         Raises:
-            DaytonaError: If timeout is negative. If Sandbox fails to stop or times out.
+            HanzoRuntimeError: If timeout is negative. If Sandbox fails to stop or times out.
         """
         while self.state != "stopped":
             try:
@@ -315,7 +315,7 @@ class AsyncSandbox(SandboxDto):
                     err_msg = (
                         f"Sandbox {self.id} failed to stop with status: {self.state}, error reason: {self.error_reason}"
                     )
-                    raise DaytonaError(err_msg)
+                    raise HanzoRuntimeError(err_msg)
             except Exception as e:
                 # If there's a validation error, continue waiting
                 if "validation error" not in str(e):
@@ -336,7 +336,7 @@ class AsyncSandbox(SandboxDto):
                 Set to 0 to disable auto-stop. Defaults to 15.
 
         Raises:
-            DaytonaError: If interval is negative
+            HanzoRuntimeError: If interval is negative
 
         Example:
             ```python
@@ -347,7 +347,7 @@ class AsyncSandbox(SandboxDto):
             ```
         """
         if not isinstance(interval, int) or interval < 0:
-            raise DaytonaError("Auto-stop interval must be a non-negative integer")
+            raise HanzoRuntimeError("Auto-stop interval must be a non-negative integer")
 
         await self._sandbox_api.set_autostop_interval(self.id, interval)
         self.auto_stop_interval = interval
@@ -363,7 +363,7 @@ class AsyncSandbox(SandboxDto):
                 Set to 0 for the maximum interval. Default is 7 days.
 
         Raises:
-            DaytonaError: If interval is negative
+            HanzoRuntimeError: If interval is negative
 
         Example:
             ```python
@@ -374,7 +374,7 @@ class AsyncSandbox(SandboxDto):
             ```
         """
         if not isinstance(interval, int) or interval < 0:
-            raise DaytonaError("Auto-archive interval must be a non-negative integer")
+            raise HanzoRuntimeError("Auto-archive interval must be a non-negative integer")
         await self._sandbox_api.set_auto_archive_interval(self.id, interval)
         self.auto_archive_interval = interval
 

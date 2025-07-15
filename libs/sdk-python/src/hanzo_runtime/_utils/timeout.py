@@ -1,4 +1,4 @@
-# Copyright 2025 Daytona Platforms Inc.
+# Copyright 2025 Hanzo Industries Inc.
 # SPDX-License-Identifier: Apache-2.0
 
 import asyncio
@@ -7,7 +7,7 @@ import functools
 import inspect
 from typing import Any, Callable, Optional, ParamSpec, TypeVar
 
-from .._utils.errors import DaytonaError
+from .._utils.errors import HanzoRuntimeError
 
 P = ParamSpec("P")
 T = TypeVar("T")
@@ -47,7 +47,7 @@ def with_timeout(
                 if timeout is None or timeout == 0:
                     return await func(*args, **kwargs)
                 if timeout < 0:
-                    raise DaytonaError("Timeout must be a non-negative number or None.")
+                    raise HanzoRuntimeError("Timeout must be a non-negative number or None.")
 
                 try:
                     return await asyncio.wait_for(func(*args, **kwargs), timeout)
@@ -62,7 +62,7 @@ def with_timeout(
             if timeout is None or timeout == 0:
                 return func(*args, **kwargs)
             if timeout < 0:
-                raise DaytonaError("Timeout must be a non-negative number or None.")
+                raise HanzoRuntimeError("Timeout must be a non-negative number or None.")
 
             with concurrent.futures.ThreadPoolExecutor() as executor:
                 future = executor.submit(func, *args, **kwargs)

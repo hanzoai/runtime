@@ -1,4 +1,4 @@
-# Copyright 2025 Daytona Platforms Inc.
+# Copyright 2025 Hanzo Industries Inc.
 # SPDX-License-Identifier: Apache-2.0
 
 import re
@@ -11,7 +11,7 @@ from ..common.volume import Volume
 
 
 class AsyncVolumeService:
-    """Service for managing Daytona Volumes. Can be used to list, get, create and delete Volumes."""
+    """Service for managing HanzoRuntime Volumes. Can be used to list, get, create and delete Volumes."""
 
     def __init__(self, volumes_api: VolumesApi):
         self.__volumes_api = volumes_api
@@ -24,7 +24,7 @@ class AsyncVolumeService:
 
         Example:
             ```python
-            async with AsyncDaytona() as daytona:
+            async with AsyncHanzoRuntime() as daytona:
                 volumes = await daytona.volume.list()
                 for volume in volumes:
                     print(f"{volume.name} ({volume.id})")
@@ -44,7 +44,7 @@ class AsyncVolumeService:
 
         Example:
             ```python
-            async with AsyncDaytona() as daytona:
+            async with AsyncHanzoRuntime() as daytona:
                 volume = await daytona.volume.get("test-volume-name", create=True)
                 print(f"{volume.name} ({volume.id})")
             ```
@@ -67,7 +67,7 @@ class AsyncVolumeService:
 
         Example:
             ```python
-            async with AsyncDaytona() as daytona:
+            async with AsyncHanzoRuntime() as daytona:
                 volume = await daytona.volume.create("test-volume")
                 print(f"{volume.name} ({volume.id}); state: {volume.state}")
             ```
@@ -82,7 +82,7 @@ class AsyncVolumeService:
 
         Example:
             ```python
-            async with AsyncDaytona() as daytona:
+            async with AsyncHanzoRuntime() as daytona:
                 volume = await daytona.volume.get("test-volume")
                 await daytona.volume.delete(volume)
                 print("Volume deleted")
