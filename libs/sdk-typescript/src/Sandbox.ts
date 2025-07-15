@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -17,7 +17,7 @@ import { FileSystem } from './FileSystem'
 import { Git } from './Git'
 import { CodeRunParams, Process } from './Process'
 import { LspLanguageId, LspServer } from './LspServer'
-import { DaytonaError } from './errors/DaytonaError'
+import { HanzoRuntimeError } from './errors/HanzoRuntimeError'
 import { prefixRelativePath } from './utils/Path'
 import { ComputerUse } from './ComputerUse'
 
@@ -31,7 +31,7 @@ export interface SandboxCodeToolbox {
 }
 
 /**
- * Represents a Daytona Sandbox.
+ * Represents a HanzoRuntime Sandbox.
  *
  * @property {FileSystem} fs - File system operations interface
  * @property {Git} git - Git operations interface
@@ -39,7 +39,7 @@ export interface SandboxCodeToolbox {
  * @property {ComputerUse} computerUse - Computer use operations interface for desktop automation
  * @property {string} id - Unique identifier for the Sandbox
  * @property {string} organizationId - Organization ID of the Sandbox
- * @property {string} [snapshot] - Daytona snapshot used to create the Sandbox
+ * @property {string} [snapshot] - HanzoRuntime snapshot used to create the Sandbox
  * @property {string} user - OS user running in the Sandbox
  * @property {Record<string, string>} env - Environment variables set in the Sandbox
  * @property {Record<string, string>} labels - Custom labels attached to the Sandbox
@@ -185,16 +185,16 @@ export class Sandbox implements SandboxDto {
    * @param {number} [timeout] - Maximum time to wait in seconds. 0 means no timeout.
    *                            Defaults to 60-second timeout.
    * @returns {Promise<void>}
-   * @throws {DaytonaError} - `DaytonaError` - If Sandbox fails to start or times out
+   * @throws {HanzoRuntimeError} - `HanzoRuntimeError` - If Sandbox fails to start or times out
    *
    * @example
-   * const sandbox = await daytona.getCurrentSandbox('my-sandbox');
+   * const sandbox = await hanzo_runtime.getCurrentSandbox('my-sandbox');
    * await sandbox.start(40);  // Wait up to 40 seconds
    * console.log('Sandbox started successfully');
    */
   public async start(timeout = 60): Promise<void> {
     if (timeout < 0) {
-      throw new DaytonaError('Timeout must be a non-negative number')
+      throw new HanzoRuntimeError('Timeout must be a non-negative number')
     }
     const startTime = Date.now()
     const response = await this.sandboxApi.startSandbox(this.id, undefined, { timeout: timeout * 1000 })
@@ -213,13 +213,13 @@ export class Sandbox implements SandboxDto {
    * @returns {Promise<void>}
    *
    * @example
-   * const sandbox = await daytona.getCurrentSandbox('my-sandbox');
+   * const sandbox = await hanzo_runtime.getCurrentSandbox('my-sandbox');
    * await sandbox.stop();
    * console.log('Sandbox stopped successfully');
    */
   public async stop(timeout = 60): Promise<void> {
     if (timeout < 0) {
-      throw new DaytonaError('Timeout must be a non-negative number')
+      throw new HanzoRuntimeError('Timeout must be a non-negative number')
     }
     const startTime = Date.now()
     await this.sandboxApi.stopSandbox(this.id, undefined, { timeout: timeout * 1000 })
@@ -246,11 +246,11 @@ export class Sandbox implements SandboxDto {
    * @param {number} [timeout] - Maximum time to wait in seconds. 0 means no timeout.
    *                               Defaults to 60 seconds.
    * @returns {Promise<void>}
-   * @throws {DaytonaError} - `DaytonaError` - If the sandbox ends up in an error state or fails to start within the timeout period.
+   * @throws {HanzoRuntimeError} - `HanzoRuntimeError` - If the sandbox ends up in an error state or fails to start within the timeout period.
    */
   public async waitUntilStarted(timeout = 60) {
     if (timeout < 0) {
-      throw new DaytonaError('Timeout must be a non-negative number')
+      throw new HanzoRuntimeError('Timeout must be a non-negative number')
     }
 
     const checkInterval = 100 // Wait 100 ms between checks
@@ -266,11 +266,11 @@ export class Sandbox implements SandboxDto {
 
       if (this.state === 'error') {
         const errMsg = `Sandbox ${this.id} failed to start with status: ${this.state}, error reason: ${this.errorReason}`
-        throw new DaytonaError(errMsg)
+        throw new HanzoRuntimeError(errMsg)
       }
 
       if (timeout !== 0 && Date.now() - startTime > timeout * 1000) {
-        throw new DaytonaError('Sandbox failed to become ready within the timeout period')
+        throw new HanzoRuntimeError('Sandbox failed to become ready within the timeout period')
       }
 
       await new Promise((resolve) => setTimeout(resolve, checkInterval))
@@ -286,11 +286,11 @@ export class Sandbox implements SandboxDto {
    * @param {number} [timeout] - Maximum time to wait in seconds. 0 means no timeout.
    *                               Defaults to 60 seconds.
    * @returns {Promise<void>}
-   * @throws {DaytonaError} - `DaytonaError` - If the sandbox fails to stop within the timeout period.
+   * @throws {HanzoRuntimeError} - `HanzoRuntimeError` - If the sandbox fails to stop within the timeout period.
    */
   public async waitUntilStopped(timeout = 60) {
     if (timeout < 0) {
-      throw new DaytonaError('Timeout must be a non-negative number')
+      throw new HanzoRuntimeError('Timeout must be a non-negative number')
     }
 
     const checkInterval = 100 // Wait 100 ms between checks
@@ -306,11 +306,11 @@ export class Sandbox implements SandboxDto {
 
       if (this.state === 'error') {
         const errMsg = `Sandbox failed to stop with status: ${this.state}, error reason: ${this.errorReason}`
-        throw new DaytonaError(errMsg)
+        throw new HanzoRuntimeError(errMsg)
       }
 
       if (timeout !== 0 && Date.now() - startTime > timeout * 1000) {
-        throw new DaytonaError('Sandbox failed to become stopped within the timeout period')
+        throw new HanzoRuntimeError('Sandbox failed to become stopped within the timeout period')
       }
 
       await new Promise((resolve) => setTimeout(resolve, checkInterval))
@@ -343,7 +343,7 @@ export class Sandbox implements SandboxDto {
    * @param {number} interval - Number of minutes of inactivity before auto-stopping.
    *                           Set to 0 to disable auto-stop. Default is 15 minutes.
    * @returns {Promise<void>}
-   * @throws {DaytonaError} - `DaytonaError` - If interval is not a non-negative integer
+   * @throws {HanzoRuntimeError} - `HanzoRuntimeError` - If interval is not a non-negative integer
    *
    * @example
    * // Auto-stop after 1 hour
@@ -353,7 +353,7 @@ export class Sandbox implements SandboxDto {
    */
   public async setAutostopInterval(interval: number): Promise<void> {
     if (!Number.isInteger(interval) || interval < 0) {
-      throw new DaytonaError('autoStopInterval must be a non-negative integer')
+      throw new HanzoRuntimeError('autoStopInterval must be a non-negative integer')
     }
 
     await this.sandboxApi.setAutostopInterval(this.id, interval)
@@ -368,7 +368,7 @@ export class Sandbox implements SandboxDto {
    * @param {number} interval - Number of minutes after which a continuously stopped Sandbox will be auto-archived.
    *                           Set to 0 for the maximum interval. Default is 7 days.
    * @returns {Promise<void>}
-   * @throws {DaytonaError} - `DaytonaError` - If interval is not a non-negative integer
+   * @throws {HanzoRuntimeError} - `HanzoRuntimeError` - If interval is not a non-negative integer
    *
    * @example
    * // Auto-archive after 1 hour
@@ -378,7 +378,7 @@ export class Sandbox implements SandboxDto {
    */
   public async setAutoArchiveInterval(interval: number): Promise<void> {
     if (!Number.isInteger(interval) || interval < 0) {
-      throw new DaytonaError('autoArchiveInterval must be a non-negative integer')
+      throw new HanzoRuntimeError('autoArchiveInterval must be a non-negative integer')
     }
     await this.sandboxApi.setAutoArchiveInterval(this.id, interval)
     this.autoArchiveInterval = interval

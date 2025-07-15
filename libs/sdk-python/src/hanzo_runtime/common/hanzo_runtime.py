@@ -1,4 +1,4 @@
-# Copyright 2025 Daytona Platforms Inc.
+# Copyright 2025 Hanzo Industries Inc.
 # SPDX-License-Identifier: Apache-2.0
 
 import warnings
@@ -15,7 +15,7 @@ from .volume import VolumeMount
 
 @dataclass
 class CodeLanguage(Enum):
-    """Programming languages supported by Daytona
+    """Programming languages supported by HanzoRuntime
 
     **Enum Members**:
         - `PYTHON` ("python")
@@ -36,29 +36,29 @@ class CodeLanguage(Enum):
         return super().__eq__(other)
 
 
-class DaytonaConfig(BaseModel):
-    """Configuration options for initializing the Daytona client.
+class HanzoRuntimeConfig(BaseModel):
+    """Configuration options for initializing the HanzoRuntime client.
 
     Attributes:
-        api_key (Optional[str]): API key for authentication with the Daytona API. If not set, it must be provided
-            via the environment variable `DAYTONA_API_KEY`, or a JWT token must be provided instead.
-        jwt_token (Optional[str]): JWT token for authentication with the Daytona API. If not set, it must be provided
-            via the environment variable `DAYTONA_JWT_TOKEN`, or an API key must be provided instead.
+        api_key (Optional[str]): API key for authentication with the HanzoRuntime API. If not set, it must be provided
+            via the environment variable `HANZO_RUNTIME_API_KEY`, or a JWT token must be provided instead.
+        jwt_token (Optional[str]): JWT token for authentication with the HanzoRuntime API. If not set, it must be provided
+            via the environment variable `HANZO_RUNTIME_JWT_TOKEN`, or an API key must be provided instead.
         organization_id (Optional[str]): Organization ID used for JWT-based authentication. Required if a JWT token
-            is provided, and must be set either here or in the environment variable `DAYTONA_ORGANIZATION_ID`.
-        api_url (Optional[str]): URL of the Daytona API. Defaults to `'https://app.daytona.io/api'` if not set
-            here or in the environment variable `DAYTONA_API_URL`.
+            is provided, and must be set either here or in the environment variable `HANZO_RUNTIME_ORGANIZATION_ID`.
+        api_url (Optional[str]): URL of the HanzoRuntime API. Defaults to `'https://app.hanzo.ai/api'` if not set
+            here or in the environment variable `HANZO_RUNTIME_API_URL`.
         server_url (Optional[str]): Deprecated. Use `api_url` instead. This property will be removed
             in a future version.
         target (Optional[str]): Target runner location for the Sandbox. Defaults to `'us'` if not set here
-            or in the environment variable `DAYTONA_TARGET`.
+            or in the environment variable `HANZO_RUNTIME_TARGET`.
 
     Example:
         ```python
-        config = DaytonaConfig(api_key="your-api-key")
+        config = HanzoRuntimeConfig(api_key="your-api-key")
         ```
         ```python
-        config = DaytonaConfig(jwt_token="your-jwt-token", organization_id="your-organization-id")
+        config = HanzoRuntimeConfig(jwt_token="your-jwt-token", organization_id="your-organization-id")
         ```
     """
 

@@ -1,19 +1,19 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import { ObjectStorageApi, SnapshotDto, SnapshotsApi, SnapshotState, CreateSnapshot } from '@daytonaio/api-client'
-import { DaytonaError } from './errors/DaytonaError'
+import { HanzoRuntimeError } from './errors/HanzoRuntimeError'
 import { ObjectStorage } from './ObjectStorage'
 import { Image } from './Image'
-import { Resources } from './Daytona'
+import { Resources } from './HanzoRuntime'
 import { processStreamingResponse } from './utils/Stream'
 
 const SNAPSHOTS_FETCH_LIMIT = 200
 
 /**
- * Represents a Daytona Snapshot which is a pre-configured sandbox.
+ * Represents a HanzoRuntime Snapshot which is a pre-configured sandbox.
  *
  * @property {string} id - Unique identifier for the Snapshot.
  * @property {string} organizationId - Organization ID that owns the Snapshot.
@@ -40,7 +40,7 @@ export type Snapshot = SnapshotDto & { __brand: 'Snapshot' }
  *
  * @property {string} name - Name of the snapshot.
  * @property {string | Image} image - Image of the snapshot. If a string is provided, it should be available on some registry.
- * If an Image instance is provided, it will be used to create a new image in Daytona.
+ * If an Image instance is provided, it will be used to create a new image in HanzoRuntime.
  * @property {Resources} resources - Resources of the snapshot.
  * @property {string[]} entrypoint - Entrypoint of the snapshot.
  */
@@ -52,7 +52,7 @@ export type CreateSnapshotParams = {
 }
 
 /**
- * Service for managing Daytona Snapshots. Can be used to list, get, create and delete Snapshots.
+ * Service for managing HanzoRuntime Snapshots. Can be used to list, get, create and delete Snapshots.
  *
  * @class
  */
@@ -68,8 +68,8 @@ export class SnapshotService {
    * @returns {Promise<Snapshot[]>} List of all Snapshots accessible to the user
    *
    * @example
-   * const daytona = new Daytona();
-   * const snapshots = await daytona.snapshot.list();
+   * const hanzo_runtime = new HanzoRuntime();
+   * const snapshots = await hanzo_runtime.snapshot.list();
    * console.log(`Found ${snapshots.length} snapshots`);
    * snapshots.forEach(snapshot => console.log(`${snapshot.name} (${snapshot.imageName})`));
    */
@@ -89,8 +89,8 @@ export class SnapshotService {
    * @throws {Error} If the Snapshot does not exist or cannot be accessed
    *
    * @example
-   * const daytona = new Daytona();
-   * const snapshot = await daytona.snapshot.get("snapshot-name");
+   * const hanzo_runtime = new HanzoRuntime();
+   * const snapshot = await hanzo_runtime.snapshot.get("snapshot-name");
    * console.log(`Snapshot ${snapshot.name} is in state ${snapshot.state}`);
    */
   async get(name: string): Promise<Snapshot> {
@@ -106,9 +106,9 @@ export class SnapshotService {
    * @throws {Error} If the Snapshot does not exist or cannot be deleted
    *
    * @example
-   * const daytona = new Daytona();
-   * const snapshot = await daytona.snapshot.get("snapshot-name");
-   * await daytona.snapshot.delete(snapshot);
+   * const hanzo_runtime = new HanzoRuntime();
+   * const snapshot = await hanzo_runtime.snapshot.get("snapshot-name");
+   * await hanzo_runtime.snapshot.delete(snapshot);
    * console.log("Snapshot deleted successfully");
    */
   async delete(snapshot: Snapshot): Promise<void> {
@@ -126,7 +126,7 @@ export class SnapshotService {
    *
    * @example
    * const image = Image.debianSlim('3.12').pipInstall('numpy');
-   * await daytona.snapshot.create({ name: 'my-snapshot', image: image }, { onLogs: console.log });
+   * await hanzo_runtime.snapshot.create({ name: 'my-snapshot', image: image }, { onLogs: console.log });
    */
   public async create(
     params: CreateSnapshotParams,
@@ -163,7 +163,7 @@ export class SnapshotService {
     ).data
 
     if (!createdSnapshot) {
-      throw new DaytonaError("Failed to create snapshot. Didn't receive a snapshot from the server API.")
+      throw new HanzoRuntimeError("Failed to create snapshot. Didn't receive a snapshot from the server API.")
     }
 
     const terminalStates: SnapshotState[] = [SnapshotState.ACTIVE, SnapshotState.ERROR, SnapshotState.BUILD_FAILED]
@@ -218,7 +218,7 @@ export class SnapshotService {
 
     if (createdSnapshot.state === SnapshotState.ERROR || createdSnapshot.state === SnapshotState.BUILD_FAILED) {
       const errMsg = `Failed to create snapshot. Name: ${createdSnapshot.name} Reason: ${createdSnapshot.errorReason}`
-      throw new DaytonaError(errMsg)
+      throw new HanzoRuntimeError(errMsg)
     }
 
     return createdSnapshot as Snapshot

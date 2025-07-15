@@ -1,6 +1,6 @@
 {
   "name": "@hanzo/runtime",
-  "version": "0.0.0-dev",
+  "version": "0.0.1-dev",
   "description": "TypeScript SDK for Hanzo Runtime",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",

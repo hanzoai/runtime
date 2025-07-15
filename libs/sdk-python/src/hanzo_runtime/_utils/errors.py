@@ -1,4 +1,4 @@
-# Copyright 2025 Daytona Platforms Inc.
+# Copyright 2025 Hanzo Industries Inc.
 # SPDX-License-Identifier: Apache-2.0
 
 import functools
@@ -9,7 +9,7 @@ from typing import Callable, NoReturn, ParamSpec, TypeVar, Union
 from daytona_api_client.exceptions import OpenApiException
 from daytona_api_client_async.exceptions import OpenApiException as OpenApiExceptionAsync
 
-from ..common.errors import DaytonaError
+from ..common.errors import HanzoRuntimeError
 
 P = ParamSpec("P")
 T = TypeVar("T")
@@ -29,12 +29,12 @@ def intercept_errors(
         def process_n_raise_exception(e: Exception) -> NoReturn:
             if isinstance(e, (OpenApiException, OpenApiExceptionAsync)):
                 msg = _get_open_api_exception_message(e)
-                raise DaytonaError(f"{message_prefix}{msg}") from None
+                raise HanzoRuntimeError(f"{message_prefix}{msg}") from None
 
             if message_prefix:
                 msg = f"{message_prefix}{str(e)}"
-                raise DaytonaError(msg)  # pylint: disable=raise-missing-from
-            raise DaytonaError(str(e))  # pylint: disable=raise-missing-from
+                raise HanzoRuntimeError(msg)  # pylint: disable=raise-missing-from
+            raise HanzoRuntimeError(str(e))  # pylint: disable=raise-missing-from
 
         if inspect.iscoroutinefunction(func):
 

@@ -1,24 +1,24 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export { CodeLanguage, Daytona } from './Daytona'
+export { CodeLanguage, HanzoRuntime } from './HanzoRuntime'
 export type {
   CreateSandboxBaseParams,
   CreateSandboxFromImageParams,
   CreateSandboxFromSnapshotParams,
-  DaytonaConfig,
+  HanzoRuntimeConfig,
   Resources,
   VolumeMount,
-} from './Daytona'
+} from './HanzoRuntime'
 export { FileSystem } from './FileSystem'
 export { Git } from './Git'
 export { LspLanguageId } from './LspServer'
 export { Process } from './Process'
 // export { LspServer } from './LspServer'
 // export type { LspLanguageId, Position } from './LspServer'
-export { DaytonaError } from './errors/DaytonaError'
+export { HanzoRuntimeError } from './errors/HanzoRuntimeError'
 export { Image } from './Image'
 export { Sandbox } from './Sandbox'
 export type { SandboxCodeToolbox } from './Sandbox'

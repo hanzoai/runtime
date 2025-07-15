@@ -1,4 +1,4 @@
-# Copyright 2025 Daytona Platforms Inc.
+# Copyright 2025 Hanzo Industries Inc.
 # SPDX-License-Identifier: Apache-2.0
 
 from typing import List, Optional, Union
@@ -7,12 +7,12 @@ from daytona_api_client import BuildInfo, SnapshotDto
 from daytona_api_client_async import BuildInfo as AsyncBuildInfo
 from pydantic import BaseModel
 
-from .daytona import Resources
+from .hanzo_runtime import Resources
 from .image import Image
 
 
 class Snapshot(SnapshotDto):
-    """Represents a Daytona Snapshot which is a pre-configured sandbox.
+    """Represents a HanzoRuntime Snapshot which is a pre-configured sandbox.
 
     Attributes:
         id (StrictStr): Unique identifier for the Snapshot.
@@ -48,7 +48,7 @@ class CreateSnapshotParams(BaseModel):
         name (Optional[str]): Name of the snapshot.
         image (Union[str, Image]): Image of the snapshot. If a string is provided,
             it should be available on some registry. If an Image instance is provided,
-            it will be used to create a new image in Daytona.
+            it will be used to create a new image in HanzoRuntime.
         resources (Optional[Resources]): Resources of the snapshot.
         entrypoint (Optional[List[str]]): Entrypoint of the snapshot.
     """

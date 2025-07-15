@@ -1,4 +1,4 @@
-# Copyright 2025 Daytona Platforms Inc.
+# Copyright 2025 Hanzo Industries Inc.
 # SPDX-License-Identifier: Apache-2.0
 
 import asyncio
@@ -12,7 +12,7 @@ from daytona_api_client_async.models.snapshot_state import SnapshotState
 from .._utils.errors import intercept_errors
 from .._utils.stream import process_streaming_response
 from .._utils.timeout import with_timeout
-from ..common.errors import DaytonaError
+from ..common.errors import HanzoRuntimeError
 from ..common.image import Image
 from ..common.snapshot import CreateSnapshotParams, Snapshot
 from .object_storage import AsyncObjectStorage
@@ -21,7 +21,7 @@ SNAPSHOTS_FETCH_LIMIT = 200
 
 
 class AsyncSnapshotService:
-    """Service for managing Daytona Snapshots. Can be used to list, get, create and delete Snapshots."""
+    """Service for managing HanzoRuntime Snapshots. Can be used to list, get, create and delete Snapshots."""
 
     def __init__(self, snapshots_api: SnapshotsApi, object_storage_api: ObjectStorageApi):
         self.__snapshots_api = snapshots_api
@@ -36,7 +36,7 @@ class AsyncSnapshotService:
 
         Example:
             ```python
-            async with AsyncDaytona() as daytona:
+            async with AsyncHanzoRuntime() as daytona:
                 snapshots = await daytona.snapshot.list()
                 for snapshot in snapshots:
                     print(f"{snapshot.name} ({snapshot.image_name})")
@@ -56,7 +56,7 @@ class AsyncSnapshotService:
 
         Example:
             ```python
-            async with AsyncDaytona() as daytona:
+            async with AsyncHanzoRuntime() as daytona:
                 snapshot = await daytona.snapshot.get("test-snapshot")
                 await daytona.snapshot.delete(snapshot)
                 print("Snapshot deleted")
@@ -76,7 +76,7 @@ class AsyncSnapshotService:
 
         Example:
             ```python
-            async with AsyncDaytona() as daytona:
+            async with AsyncHanzoRuntime() as daytona:
                 snapshot = await daytona.snapshot.get("test-snapshot-name")
                 print(f"{snapshot.name} ({snapshot.image_name})")
             ```
@@ -182,7 +182,7 @@ class AsyncSnapshotService:
                 on_logs(f"Created snapshot {created_snapshot.name} ({created_snapshot.state})")
 
         if created_snapshot.state in (SnapshotState.ERROR, SnapshotState.BUILD_FAILED):
-            raise DaytonaError(
+            raise HanzoRuntimeError(
                 f"Failed to create snapshot {created_snapshot.name}, reason: {created_snapshot.error_reason}"
             )
 

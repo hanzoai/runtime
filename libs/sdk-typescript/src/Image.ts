@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -8,7 +8,7 @@ import * as fg from 'fast-glob'
 import * as _path from 'path'
 import { quote, parse as parseShellQuote } from 'shell-quote'
 import expandTilde from 'expand-tilde'
-import { DaytonaError } from './errors/DaytonaError'
+import { HanzoRuntimeError } from './errors/HanzoRuntimeError'
 import { parse as parseToml } from '@iarna/toml'
 
 const SUPPORTED_PYTHON_SERIES = ['3.9', '3.10', '3.11', '3.12', '3.13'] as const
@@ -58,7 +58,7 @@ export interface PyprojectOptions extends PipInstallOptions {
 }
 
 /**
- * Represents an image definition for a Daytona sandbox.
+ * Represents an image definition for a HanzoRuntime sandbox.
  * Do not construct this class directly. Instead use one of its static factory methods,
  * such as `Image.base()`, `Image.debianSlim()` or `Image.fromDockerfile()`.
  *
@@ -148,7 +148,7 @@ export class Image {
         'No [project.dependencies] section in pyproject.toml file. ' +
         'See https://packaging.python.org/en/latest/guides/writing-pyproject-toml ' +
         'for further file format guidelines.'
-      throw new DaytonaError(msg)
+      throw new HanzoRuntimeError(msg)
     }
 
     dependencies.push(...tomlData.project.dependencies)
@@ -521,7 +521,7 @@ export class Image {
     if (!SUPPORTED_PYTHON_SERIES.includes(pythonVersion)) {
       throw new Error(
         `Unsupported Python version: ${pythonVersion}. ` +
-          `Daytona supports the following series: ${SUPPORTED_PYTHON_SERIES.join(', ')}`,
+          `HanzoRuntime supports the following series: ${SUPPORTED_PYTHON_SERIES.join(', ')}`,
       )
     }
 

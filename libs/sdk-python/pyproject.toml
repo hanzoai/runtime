@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "hanzo-runtime"
-version = "0.0.0-dev"
+version = "0.0.1-dev"
 authors = [
     { name = "Hanzo Industries Inc", email = "support@hanzo.ai"  },
 ]
@@ -32,5 +32,5 @@ keywords = ["hanzo", "runtime", "sdk", "ai", "code-execution"]
 license = {text = "Apache-2.0"}
 
 [tool.deptry]
-exclude = ["src/daytona/_utils/chart_data_extractor_wrapper.py", "scripts/sync_generator.py"]
+exclude = ["src/hanzo_runtime/_utils/chart_data_extractor_wrapper.py", "scripts/sync_generator.py"]
 extend_exclude = [".venv", "dist", "build", ".pytest_cache", "__pycache__"]
