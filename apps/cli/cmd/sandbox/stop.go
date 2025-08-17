@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package sandbox
@@ -7,8 +7,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/daytonaio/daytona/cli/apiclient"
-	view_common "github.com/daytonaio/daytona/cli/views/common"
+	"github.com/hanzoai/runtime/cli/apiclient"
+	view_common "github.com/hanzoai/runtime/cli/views/common"
 	"github.com/spf13/cobra"
 )
 

@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package docker
@@ -12,9 +12,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/daytonaio/runner/cmd/runner/config"
-	"github.com/daytonaio/runner/pkg/api/dto"
-	"github.com/daytonaio/runner/pkg/storage"
+	"github.com/hanzoai/runner/cmd/runner/config"
+	"github.com/hanzoai/runner/pkg/api/dto"
+	"github.com/hanzoai/runner/pkg/storage"
 
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/pkg/jsonmessage"

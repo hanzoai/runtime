@@ -1,9 +1,9 @@
-## daytona snapshot delete
+## runtime snapshot delete
 
 Delete a snapshot
 
 ```
-daytona snapshot delete [SNAPSHOT_ID] [flags]
+runtime snapshot delete [SNAPSHOT_ID] [flags]
 ```
 
 ### Options
@@ -15,9 +15,9 @@ daytona snapshot delete [SNAPSHOT_ID] [flags]
 ### Options inherited from parent commands
 
 ```
-      --help   help for daytona
+      --help   help for runtime
 ```
 
 ### SEE ALSO
 
-- [daytona snapshot](daytona_snapshot.md) - Manage Daytona snapshots
+- [runtime snapshot](runtime_snapshot.md) - Manage Runtime snapshots

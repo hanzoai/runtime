@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package mcp
@@ -8,13 +8,13 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/daytonaio/daytona/cli/cmd/mcp/agents"
+	"github.com/hanzoai/runtime/cli/cmd/mcp/agents"
 	"github.com/spf13/cobra"
 )
 
 var InitCmd = &cobra.Command{
 	Use:   "init [AGENT_NAME]",
-	Short: "Initialize Daytona MCP Server with an agent (currently supported: claude, windsurf, cursor)",
+	Short: "Initialize Runtime MCP Server with an agent (currently supported: claude, windsurf, cursor)",
 	Args:  cobra.MaximumNArgs(1),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		if len(args) == 0 {
@@ -53,7 +53,7 @@ var InitCmd = &cobra.Command{
 }
 
 func injectConfig(agentConfigFilePath, mcpLogFilePath string) error {
-	daytonaMcpConfig, err := getDayonaMcpConfig(mcpLogFilePath)
+	runtimeMcpConfig, err := getDayonaMcpConfig(mcpLogFilePath)
 	if err != nil {
 		return err
 	}
@@ -76,8 +76,8 @@ func injectConfig(agentConfigFilePath, mcpLogFilePath string) error {
 		mcpServers = make(map[string]interface{})
 	}
 
-	// Add or update daytona-mcp configuration
-	mcpServers["daytona-mcp"] = daytonaMcpConfig
+	// Add or update runtime-mcp configuration
+	mcpServers["runtime-mcp"] = runtimeMcpConfig
 	agentConfig["mcpServers"] = mcpServers
 
 	// Write back the updated config with indentation

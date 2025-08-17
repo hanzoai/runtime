@@ -4,17 +4,17 @@ title: File System Operations
 
 import { TabItem, Tabs } from '@astrojs/starlight/components'
 
-The Daytona SDK provides comprehensive file system operations through the `fs` module in Sandboxes. This guide covers all available file system operations and best practices.
+The Runtime SDK provides comprehensive file system operations through the `fs` module in Sandboxes. This guide covers all available file system operations and best practices.
 
 ## Basic Operations
 
-Daytona SDK provides an option to interact with the file system in Sandboxes. You can perform various operations like listing files, creating directories, reading and writing files, and more.
+Runtime SDK provides an option to interact with the file system in Sandboxes. You can perform various operations like listing files, creating directories, reading and writing files, and more.
 
 For simplicity, file operations by default assume you are operating in the root directory of the Sandbox user - e.g. `workspace` implies `/home/[username]/workspace`, but you are free to provide an absolute workdir path as well - which should start with a leading slash `/`.
 
 ### Listing Files and Directories
 
-Daytona SDK provides an option to list files and directories in a Sandbox using Python and TypeScript.
+Runtime SDK provides an option to list files and directories in a Sandbox using Python and TypeScript.
 
 <Tabs>
 <TabItem label="Python" icon="seti:python">
@@ -48,7 +48,7 @@ files.forEach(file => {
 
 ### Creating Directories
 
-Daytona SDK provides an option to create directories with specific permissions using Python and TypeScript.
+Runtime SDK provides an option to create directories with specific permissions using Python and TypeScript.
 
 <Tabs>
 <TabItem label="Python" icon="seti:python">
@@ -68,7 +68,7 @@ await sandbox.fs.createFolder("workspace/new-dir", "755")
 
 ### Uploading Files
 
-Daytona SDK provides options to read, write, upload, download, and delete files in Sandboxes using Python and TypeScript.
+Runtime SDK provides options to read, write, upload, download, and delete files in Sandboxes using Python and TypeScript.
 
 #### Uploading a Single File
 
@@ -201,11 +201,11 @@ await sandbox.fs.deleteFile("workspace/file.txt")
 
 ## Advanced Operations
 
-Daytona SDK provides advanced file system operations like file permissions, search and replace, and more.
+Runtime SDK provides advanced file system operations like file permissions, search and replace, and more.
 
 ### File Permissions
 
-Daytona SDK provides an option to set file permissions, get file permissions, and set directory permissions recursively using Python and TypeScript.
+Runtime SDK provides an option to set file permissions, get file permissions, and set directory permissions recursively using Python and TypeScript.
 
 <Tabs>
 <TabItem label="Python" icon="seti:python">
@@ -235,7 +235,7 @@ console.log(`Permissions: ${fileInfo.permissions}`)
 
 ### File Search and Replace
 
-Daytona SDK provides an option to search for text in files and replace text in files using Python and TypeScript.
+Runtime SDK provides an option to search for text in files and replace text in files using Python and TypeScript.
 
 <Tabs>
 <TabItem label="Python" icon="seti:python">

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -11,7 +11,7 @@ import { useOrganizations } from '@/hooks/useOrganizations'
 import { useSelectedOrganization } from '@/hooks/useSelectedOrganization'
 import { Input } from '@/components/ui/input'
 import { DeleteOrganizationDialog } from '@/components/Organizations/DeleteOrganizationDialog'
-import { OrganizationUserRoleEnum } from '@daytonaio/api-client'
+import { OrganizationUserRoleEnum } from '@hanzo/api-client'
 import { LeaveOrganizationDialog } from '@/components/Organizations/LeaveOrganizationDialog'
 import { Label } from '@/components/ui/label'
 import { handleApiError } from '@/lib/error-handling'

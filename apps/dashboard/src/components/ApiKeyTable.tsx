@@ -1,9 +1,9 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
-import { ApiKeyList } from '@daytonaio/api-client'
+import { ApiKeyList } from '@hanzo/api-client'
 import {
   ColumnDef,
   flexRender,
@@ -105,11 +105,11 @@ export function ApiKeyTable({ data, loading, loadingKeys, onRevoke }: DataTableP
                 icon={<KeyRound className="w-8 h-8" />}
                 description={
                   <div className="space-y-2">
-                    <p>API Keys authenticate requests made through the Daytona SDK or CLI.</p>
+                    <p>API Keys authenticate requests made through the Runtime SDK or CLI.</p>
                     <p>
                       Generate one and{' '}
                       <a
-                        href="https://www.daytona.io/docs/api-keys"
+                        href="https://www.hanzo.ai/docs/api-keys"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-primary hover:underline font-medium"

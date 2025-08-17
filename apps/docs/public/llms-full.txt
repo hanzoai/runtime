@@ -1,14 +1,14 @@
-# Daytona Documentation v0.0.0-dev
-# Generated on: 2025-07-11
+# Runtime Documentation v0.0.0-dev
+# Generated on: 2025-07-15
 
 
 title: API Keys
 
 import { TabItem, Tabs } from '@astrojs/starlight/components'
 
-Daytona API keys are used to authenticate requests to the [Daytona API](/docs/tools/api).
+Runtime API keys are used to authenticate requests to the [Runtime API](/docs/tools/api).
 
-The [Configuration](/docs/configuration) page covers how to set up your environment variables, including the `DAYTONA_API_KEY` environment variable.
+The [Configuration](/docs/configuration) page covers how to set up your environment variables, including the `RUNTIME_API_KEY` environment variable.
 
 To list existing API Keys go to the Keys subpage in the Dashboard. Clicking on `Create Key` will show a modal for creating and copying a new key to your clipboard.
 
@@ -58,26 +58,26 @@ import { TabItem, Tabs } from '@astrojs/starlight/components'
 
 ## Set Up Your Environment Variables
 
-To authenticate with Daytona, you need an API key. You can obtain an API key from the Daytona platform.
+To authenticate with Runtime, you need an API key. You can obtain an API key from the Runtime platform.
 
-1. Navigate to the [Daytona Dashboard](https://app.daytona.io/dashboard/).
+1. Navigate to the [Runtime Dashboard](https://app.hanzo.ai/dashboard/).
 2. Go to API Keys.
 3. Click the **`Create Key`** button.
-4. Add your API key to your **`.env`** file by setting the **`DAYTONA_API_KEY`** environment variable.
-5. Define the Daytona API URL in your **`.env`** file by setting the **`DAYTONA_API_URL`** environment variable.
+4. Add your API key to your **`.env`** file by setting the **`RUNTIME_API_KEY`** environment variable.
+5. Define the Runtime API URL in your **`.env`** file by setting the **`RUNTIME_API_URL`** environment variable.
 
 ## Configuration Options
 
-Daytona SDK provides an option to configure settings using the `DaytonaConfig` class in Python and TypeScript. The `DaytonaConfig` class accepts the following parameters:
+Runtime SDK provides an option to configure settings using the `RuntimeConfig` class in Python and TypeScript. The `RuntimeConfig` class accepts the following parameters:
 
-- `api_key`: Your Daytona API key
-- `api_url`: URL of your Daytona API
-- `target`: Daytona Target to create the Sandboxes on.
+- `api_key`: Your Runtime API key
+- `api_url`: URL of your Runtime API
+- `target`: Runtime Target to create the Sandboxes on.
 
 ```python
-from daytona import DaytonaConfig
+from runtime import RuntimeConfig
 
-config = DaytonaConfig(
+config = RuntimeConfig(
 api_key="your-api-key",
 api_url="your-api-url",
 target="us"
@@ -85,9 +85,9 @@ target="us"
 
 ```
 ```typescript
-import { DaytonaConfig } from '@daytonaio/sdk';
+import { RuntimeConfig } from '@hanzo/runtime';
 
-const config: DaytonaConfig = {
+const config: RuntimeConfig = {
     apiKey: "your-api-key",
     apiUrl: "your-api-url",
     target: "us"
@@ -96,17 +96,17 @@ const config: DaytonaConfig = {
 
 ## Environment Variables
 
-Daytona SDK supports environment variables for configuration. The SDK automatically looks for these environment variables:
+Runtime SDK supports environment variables for configuration. The SDK automatically looks for these environment variables:
 
 | Variable              | Description                                | Optional |
 | --------------------- | ------------------------------------------ | -------- |
-| **`DAYTONA_API_KEY`** | Your Daytona API key.                      |          |
-| **`DAYTONA_API_URL`** | URL of your Daytona API.                   | Yes      |
-| **`DAYTONA_TARGET`**  | Daytona Target to create the Sandboxes on. | Yes      |
+| **`RUNTIME_API_KEY`** | Your Runtime API key.                      |          |
+| **`RUNTIME_API_URL`** | URL of your Runtime API.                   | Yes      |
+| **`RUNTIME_TARGET`**  | Runtime Target to create the Sandboxes on. | Yes      |
 
 ### Setting Environment Variables
 
-Daytona SDK can read configuration from environment variables. You can set these environment variables using the following methods:
+Runtime SDK can read configuration from environment variables. You can set these environment variables using the following methods:
 
 - [Using a **`.env`** file](#using-a-env-file)
 - [Using Shell Environment](#using-shell-environment)
@@ -116,24 +116,24 @@ Daytona SDK can read configuration from environment variables. You can set these
 Create a `.env` file in your project root directory:
 
 ```bash
-DAYTONA_API_KEY=your-api-key
-DAYTONA_API_URL=https://your-api-url
-DAYTONA_TARGET=us
+RUNTIME_API_KEY=your-api-key
+RUNTIME_API_URL=https://your-api-url
+RUNTIME_TARGET=us
 ```
 
-- `DAYTONA_API_KEY`: Your Daytona API key.
-- `DAYTONA_API_URL`: URL of your Daytona API.
-- `DAYTONA_TARGET`: Daytona Target to create the Sandboxes on.
+- `RUNTIME_API_KEY`: Your Runtime API key.
+- `RUNTIME_API_URL`: URL of your Runtime API.
+- `RUNTIME_TARGET`: Runtime Target to create the Sandboxes on.
 
 #### Using Shell Environment
 
 Set environment variables in your shell:
 
-    ```bash export DAYTONA_API_KEY=your-api-key export
-    DAYTONA_API_URL=https://your-api-url ```
+    ```bash export RUNTIME_API_KEY=your-api-key export
+    RUNTIME_API_URL=https://your-api-url ```
     ```bash 
-    $env:DAYTONA_API_KEY="your-api-key"
-    $env:DAYTONA_API_URL="https://your-api-url"
+    $env:RUNTIME_API_KEY="your-api-key"
+    $env:RUNTIME_API_URL="https://your-api-url"
     ```
 
 ## Configuration Precedence
@@ -149,7 +149,7 @@ title: Declarative Builder
 
 import { TabItem, Tabs } from '@astrojs/starlight/components'
 
-Daytona's declarative builder provides a powerful, code-first approach to defining dependencies for Sandboxes. Instead of importing images from a container registry, you can programmatically define them using the SDK.
+Runtime's declarative builder provides a powerful, code-first approach to defining dependencies for Sandboxes. Instead of importing images from a container registry, you can programmatically define them using the SDK.
 
 ## Overview
 
@@ -190,7 +190,7 @@ For detailed method signatures and usage examples, refer to the [Python](/docs/p
 Create images on-the-fly when creating Sandboxes. This is useful when you want to create a new Sandbox with specific dependencies that are not part of any existing image.
 
 You can either define an entirely new image or append some specific dependencies to an existing one - e.g. a `pip` package or an `apt-get install` command.
-This eliminates the need to use your own compute for the build process and you can instead offload it to Daytona's infrastructure.
+This eliminates the need to use your own compute for the build process and you can instead offload it to Runtime's infrastructure.
 It doesn't require registering and validating a separate Snapshot for each version. Instead, it allows you to iterate on the dependency list quickly or to have slightly different versions for tens or hundreds of similar usecases/setups.
 
 ```python
@@ -198,15 +198,15 @@ It doesn't require registering and validating a separate Snapshot for each versi
 dynamic_image = (
     Image.debian_slim("3.12")
     .pip_install(["pytest", "pytest-cov", "mypy", "ruff", "black", "gunicorn"])
-    .run_commands("apt-get update && apt-get install -y git curl", "mkdir -p /home/daytona/project")
-    .workdir("/home/daytona/project")
+    .run_commands("apt-get update && apt-get install -y git curl", "mkdir -p /home/hanzo/project")
+    .workdir("/home/hanzo/project")
     .env({"ENV_VAR": "My Environment Variable"})
-    .add_local_file("file_example.txt", "/home/daytona/project/file_example.txt")
+    .add_local_file("file_example.txt", "/home/hanzo/project/file_example.txt")
 )
 
 # Create a new Sandbox with the dynamic image and stream the build logs
 
-sandbox = daytona.create(
+sandbox = runtime.create(
 CreateSandboxFromImageParams(
 image=dynamic_image,
 ),
@@ -219,15 +219,15 @@ on_snapshot_create_logs=print,
 // Define the dynamic image
 const dynamicImage = Image.debianSlim('3.13')
     .pipInstall(['pytest', 'pytest-cov', 'black', 'isort', 'mypy', 'ruff'])
-    .runCommands('apt-get update && apt-get install -y git', 'mkdir -p /home/daytona/project')
-    .workdir('/home/daytona/project')
+    .runCommands('apt-get update && apt-get install -y git', 'mkdir -p /home/hanzo/project')
+    .workdir('/home/hanzo/project')
     .env({
       NODE_ENV: 'development',
     })
-    .addLocalFile('file_example.txt', '/home/daytona/project/file_example.txt')
+    .addLocalFile('file_example.txt', '/home/hanzo/project/file_example.txt')
 
 // Create a new Sandbox with the dynamic image and stream the build logs
-const sandbox = await daytona.create(
+const sandbox = await runtime.create(
   {
     image: dynamicImage,
   },
@@ -242,14 +242,14 @@ const sandbox = await daytona.create(
 :::tip
 Once you've run the Sandbox creation from a dynamic image a single time, the image will get cached for the next 24 hours and any subsequent Sandbox creation that lands on the same Runner will be almost instantaneous.
 
-This means you can use the same script every time and Daytona will take of caching the image properly.
+This means you can use the same script every time and Runtime will take of caching the image properly.
 :::
 
 ## Creating Pre-built Snapshots
 
-If you want to prepare a new Daytona Snapshot with specific dependencies and then use it instantly across multiple Sandboxes whenever necessary, you can create a pre-built Snapshot.
+If you want to prepare a new Runtime Snapshot with specific dependencies and then use it instantly across multiple Sandboxes whenever necessary, you can create a pre-built Snapshot.
 
-This Snapshot will stay visible in the Daytona dashboard and be permanently cached, ensuring that rebuilding it is not needed.
+This Snapshot will stay visible in the Runtime dashboard and be permanently cached, ensuring that rebuilding it is not needed.
 
 ```python
 # Generate a unique name for the Snapshot
@@ -267,19 +267,19 @@ Image.debian_slim("3.12")
 .pip_install(["numpy", "pandas", "matplotlib", "scipy", "scikit-learn", "jupyter"])
 .run_commands(
 "apt-get update && apt-get install -y git",
-"groupadd -r daytona && useradd -r -g daytona -m daytona",
-"mkdir -p /home/daytona/workspace",
+"groupadd -r runtime && useradd -r -g runtime -m runtime",
+"mkdir -p /home/hanzo/workspace",
 )
-.dockerfile_commands(["USER daytona"])
-.workdir("/home/daytona/workspace")
+.dockerfile_commands(["USER runtime"])
+.workdir("/home/hanzo/workspace")
 .env({"MY_ENV_VAR": "My Environment Variable"})
-.add_local_file("file_example.txt", "/home/daytona/workspace/file_example.txt")
+.add_local_file("file_example.txt", "/home/hanzo/workspace/file_example.txt")
 )
 
 # Create the Snapshot and stream the build logs
 
 print(f"=== Creating Snapshot: {snapshot_name} ===")
-daytona.snapshot.create(
+runtime.snapshot.create(
 CreateSnapshotParams(
 name=snapshot_name,
 image=image,
@@ -294,7 +294,7 @@ on_logs=print,
 
 # Create a new Sandbox using the pre-built Snapshot
 
-sandbox = daytona.create(
+sandbox = runtime.create(
 CreateSandboxFromSnapshotParams(
 snapshot=snapshot_name
 )
@@ -314,17 +314,17 @@ fs.writeFileSync(localFilePath, localFileContent)
 // Create a Python image with common data science packages
 const image = Image.debianSlim('3.12')
     .pipInstall(['numpy', 'pandas', 'matplotlib', 'scipy', 'scikit-learn'])
-    .runCommands('apt-get update && apt-get install -y git', 'mkdir -p /home/daytona/workspace')
-    .dockerfileCommands(['USER daytona'])
-    .workdir('/home/daytona/workspace')
+    .runCommands('apt-get update && apt-get install -y git', 'mkdir -p /home/hanzo/workspace')
+    .dockerfileCommands(['USER runtime'])
+    .workdir('/home/hanzo/workspace')
     .env({
         MY_ENV_VAR: 'My Environment Variable',
     })
-    .addLocalFile(localFilePath, '/home/daytona/workspace/file_example.txt')
+    .addLocalFile(localFilePath, '/home/hanzo/workspace/file_example.txt')
 
 // Create the Snapshot and stream the build logs
 console.log(`=== Creating Snapshot: ${snapshotName} ===`)
-await daytona.snapshot.create(
+await runtime.snapshot.create(
     {
       name: snapshotName,
       image,
@@ -340,7 +340,7 @@ await daytona.snapshot.create(
   )
 
 // Create a new Sandbox using the pre-built Snapshot
-const sandbox = await daytona.create({
+const sandbox = await runtime.create({
     snapshot: snapshotName,
 })
 ```
@@ -372,17 +372,17 @@ title: File System Operations
 
 import { TabItem, Tabs } from '@astrojs/starlight/components'
 
-The Daytona SDK provides comprehensive file system operations through the `fs` module in Sandboxes. This guide covers all available file system operations and best practices.
+The Runtime SDK provides comprehensive file system operations through the `fs` module in Sandboxes. This guide covers all available file system operations and best practices.
 
 ## Basic Operations
 
-Daytona SDK provides an option to interact with the file system in Sandboxes. You can perform various operations like listing files, creating directories, reading and writing files, and more.
+Runtime SDK provides an option to interact with the file system in Sandboxes. You can perform various operations like listing files, creating directories, reading and writing files, and more.
 
 For simplicity, file operations by default assume you are operating in the root directory of the Sandbox user - e.g. `workspace` implies `/home/[username]/workspace`, but you are free to provide an absolute workdir path as well - which should start with a leading slash `/`.
 
 ### Listing Files and Directories
 
-Daytona SDK provides an option to list files and directories in a Sandbox using Python and TypeScript.
+Runtime SDK provides an option to list files and directories in a Sandbox using Python and TypeScript.
 
 ```python
 # List files in a directory
@@ -410,7 +410,7 @@ files.forEach(file => {
 
 ### Creating Directories
 
-Daytona SDK provides an option to create directories with specific permissions using Python and TypeScript.
+Runtime SDK provides an option to create directories with specific permissions using Python and TypeScript.
 
 ```python
 # Create with specific permissions
@@ -424,7 +424,7 @@ await sandbox.fs.createFolder("workspace/new-dir", "755")
 
 ### Uploading Files
 
-Daytona SDK provides options to read, write, upload, download, and delete files in Sandboxes using Python and TypeScript.
+Runtime SDK provides options to read, write, upload, download, and delete files in Sandboxes using Python and TypeScript.
 
 #### Uploading a Single File
 
@@ -533,11 +533,11 @@ await sandbox.fs.deleteFile("workspace/file.txt")
 
 ## Advanced Operations
 
-Daytona SDK provides advanced file system operations like file permissions, search and replace, and more.
+Runtime SDK provides advanced file system operations like file permissions, search and replace, and more.
 
 ### File Permissions
 
-Daytona SDK provides an option to set file permissions, get file permissions, and set directory permissions recursively using Python and TypeScript.
+Runtime SDK provides an option to set file permissions, get file permissions, and set directory permissions recursively using Python and TypeScript.
 
 ```python
 # Set file permissions
@@ -561,7 +561,7 @@ console.log(`Permissions: ${fileInfo.permissions}`)
 
 ### File Search and Replace
 
-Daytona SDK provides an option to search for text in files and replace text in files using Python and TypeScript.
+Runtime SDK provides an option to search for text in files and replace text in files using Python and TypeScript.
 
 ```python
 # Search for text in files; if a folder is specified, the search is recursive
@@ -608,45 +608,45 @@ title: Getting Started
 
 import { TabItem, Tabs } from '@astrojs/starlight/components'
 
-The Daytona SDK provides official [Python](/docs/python-sdk) and [TypeScript](/docs/typescript-sdk) interfaces for interacting with Daytona, enabling you to programmatically manage development environments and execute code. [Python SDK](/docs/python-sdk) supports both sync and async programming models where async classes are prefixed with `Async`.
+The Runtime SDK provides official [Python](/docs/python-sdk) and [TypeScript](/docs/typescript-sdk) interfaces for interacting with Runtime, enabling you to programmatically manage development environments and execute code. [Python SDK](/docs/python-sdk) supports both sync and async programming models where async classes are prefixed with `Async`.
 
-Follow the step by step guide to create and run your first Daytona Sandbox for an AI Agent.
+Follow the step by step guide to create and run your first Runtime Sandbox for an AI Agent.
 
 For steps on additional configuration, including setting environmnent variables as well as accessing experimental features on our staging deployment, visit [Configuration](/docs/configuration).
 
-## Install the Daytona SDK
+## Install the Runtime SDK
 
-Daytona provides official Python and TypeScript SDKs for interacting with the Daytona platform. Install the SDK using your preferred method:
+Runtime provides official Python and TypeScript SDKs for interacting with the Runtime platform. Install the SDK using your preferred method:
 
 ```bash
-pip install daytona
+pip install runtime
 ```
 ```bash
 # Using npm
-npm install @daytonaio/sdk
+npm install @hanzo/runtime
 
 # Using yarn
 
-yarn add @daytonaio/sdk
+yarn add @hanzo/runtime
 
 # Using pnpm
 
-pnpm add @daytonaio/sdk
+pnpm add @hanzo/runtime
 
 ```
 
 ## Run Code Inside a Sandbox
 
-Run the following code to create a Daytona Sandbox and execute commands:
+Run the following code to create a Runtime Sandbox and execute commands:
 
 ```python
-from daytona import Daytona, DaytonaConfig
+from runtime import Runtime, RuntimeConfig
 
-# Initialize the Daytona client
-daytona = Daytona(DaytonaConfig(api_key="YOUR_API_KEY"))
+# Initialize the Runtime client
+runtime = Runtime(RuntimeConfig(api_key="YOUR_API_KEY"))
 
 # Create the Sandbox instance
-sandbox = daytona.create()
+sandbox = runtime.create()
 
 # Run code securely inside the Sandbox
 response = sandbox.process.code_run('print("Sum of 3 and 4 is " + str(3 + 4))')
@@ -660,18 +660,18 @@ sandbox.delete()
 ```
 
 ```typescript
-import { Daytona } from '@daytonaio/sdk'
+import { Runtime } from '@hanzo/runtime'
 
 async function main() {
-// Initialize the Daytona client
-const daytona = new Daytona({
+// Initialize the Runtime client
+const runtime = new Runtime({
 apiKey: 'YOUR_API_KEY',
 })
 
 let sandbox;
 try {
 // Create the Sandbox instance
-sandbox = await daytona.create({
+sandbox = await runtime.create({
 language: "python",
 });
 // Run code securely inside the Sandbox
@@ -707,14 +707,14 @@ npx tsx ./index.ts
 
 ## Preview Your App
 
-The following snippet uploads a file containing a simple Flask app to a Daytona Sandbox. The web server runs on port `3000` and is accessible through the provided preview URL:
+The following snippet uploads a file containing a simple Flask app to a Runtime Sandbox. The web server runs on port `3000` and is accessible through the provided preview URL:
 
 ```python
-from daytona import Daytona, DaytonaConfig, SessionExecuteRequest
+from runtime import Runtime, RuntimeConfig, SessionExecuteRequest
 
-daytona = Daytona(DaytonaConfig(api_key="YOUR_API_KEY"))
+runtime = Runtime(RuntimeConfig(api_key="YOUR_API_KEY"))
 
-sandbox = daytona.create()
+sandbox = runtime.create()
 
 app_code = b'''
 from flask import Flask
@@ -728,12 +728,12 @@ return """
 <html>
 <head>
 <title>Hello World</title>
-<link rel="icon" href="https://www.daytona.io/favicon.ico">
+<link rel="icon" href="https://www.hanzo.ai/favicon.ico">
 </head>
 <body style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #0a0a0a; font-family: Arial, sans-serif;">
 <div style="text-align: center; padding: 2rem; border-radius: 10px; background-color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-<img src="https://raw.githubusercontent.com/daytonaio/daytona/main/assets/images/Daytona-logotype-black.png" alt="Daytona Logo" style="width: 180px; margin: 10px 0px;">
-<p>This web app is running in a Daytona sandbox!</p>
+<img src="https://raw.githubusercontent.com/hanzoai/runtime/main/assets/images/Runtime-logotype-black.png" alt="Runtime Logo" style="width: 180px; margin: 10px 0px;">
+<p>This web app is running in a Runtime sandbox!</p>
 </div>
 </body>
 </html>
@@ -765,14 +765,14 @@ print(f"Flask app is available at: {preview_info.url}")
 ```
 
 ```typescript
-import { Daytona } from '@daytonaio/sdk';
+import { Runtime } from '@hanzo/runtime';
 
-const daytona = new Daytona(({
+const runtime = new Runtime(({
   apiKey: "YOUR_API_KEY"
 }));
 
 async function main() {
-  const sandbox = await daytona.create();
+  const sandbox = await runtime.create();
 
   const appCode = Buffer.from(`
 from flask import Flask
@@ -786,12 +786,12 @@ def hello():
     <html>
     <head>
         <title>Hello World</title>
-        <link rel="icon" href="https://www.daytona.io/favicon.ico">
+        <link rel="icon" href="https://www.hanzo.ai/favicon.ico">
     </head>
     <body style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #0a0a0a; font-family: Arial, sans-serif;">
         <div style="text-align: center; padding: 2rem; border-radius: 10px; background-color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-            <img src="https://raw.githubusercontent.com/daytonaio/daytona/main/assets/images/Daytona-logotype-black.png" alt="Daytona Logo" style="width: 180px; margin: 10px 0px;">
-            <p>This web app is running in a Daytona sandbox!</p>
+            <img src="https://raw.githubusercontent.com/hanzoai/runtime/main/assets/images/Runtime-logotype-black.png" alt="Runtime Logo" style="width: 180px; margin: 10px 0px;">
+            <p>This web app is running in a Runtime sandbox!</p>
         </div>
     </body>
     </html>
@@ -831,20 +831,20 @@ You can access the Sandbox [Web Terminal](/docs/web-terminal) by printing out th
 
 ## Connect to an LLM
 
-The following snippet connects to an LLM using the Anthropic API and asks Claude to generate code for getting the factorial of 25 and then executes it inside of a Daytona Sandbox:
+The following snippet connects to an LLM using the Anthropic API and asks Claude to generate code for getting the factorial of 25 and then executes it inside of a Runtime Sandbox:
 
 ```python
 import os
 import re
 import requests
-from daytona import Daytona, DaytonaConfig
+from runtime import Runtime, RuntimeConfig
 from dotenv import load_dotenv
 
 load_dotenv()
 
-daytona = Daytona(DaytonaConfig())
+runtime = Runtime(RuntimeConfig())
 
-sandbox = daytona.create()
+sandbox = runtime.create()
 
 def get_claude_response(api_key, prompt):
 url = "https://api.anthropic.com/v1/messages"
@@ -885,8 +885,8 @@ Running the snippet:
 
 ```bash
 ANTHROPIC_API_KEY="your-anthropic-api-key"
-DAYTONA_API_KEY="your-daytona-api-key"
-DAYTONA_TARGET=us
+RUNTIME_API_KEY="your-runtime-api-key"
+RUNTIME_TARGET=us
 python claude-example.py
 ```
 
@@ -895,13 +895,13 @@ python claude-example.py
 ```
 
 ```typescript
-import { Daytona } from '@daytonaio/sdk'
+import { Runtime } from '@hanzo/runtime'
 import * as dotenv from 'dotenv'
 import axios from 'axios'
 
 dotenv.config()
 
-const daytona = new Daytona()
+const runtime = new Runtime()
 
 async function getClaudeResponse(apiKey: string, prompt: string): Promise<string> {
 const url = "https://api.anthropic.com/v1/messages"
@@ -933,7 +933,7 @@ return `Error: ${error.message}`
 }
 
 async function main() {
-const sandbox = await daytona.create()
+const sandbox = await runtime.create()
 
 const prompt = "Python code that returns the factorial of 25. Output only the code. No explanation. No intro. No comments. Just raw code in a single code block."
 
@@ -959,8 +959,8 @@ Running the snippet:
 
 ```bash
 ANTHROPIC_API_KEY="your-anthropic-api-key"
-DAYTONA_API_KEY="your-daytona-api-key"
-DAYTONA_TARGET=us
+RUNTIME_API_KEY="your-runtime-api-key"
+RUNTIME_TARGET=us
 npx ts-node claude-example.ts
 ```
 
@@ -971,39 +971,39 @@ npx ts-node claude-example.ts
 
 ## Additional Examples
 
-Use the Daytona SDK [Python examples](https://github.com/daytonaio/daytona/tree/main/examples/python) or [TypeScript/JavaScript examples](https://github.com/daytonaio/daytona/tree/main/examples/typescript) to create a Sandbox and run your code.
+Use the Runtime SDK [Python examples](https://github.com/hanzoai/runtime/tree/main/examples/python) or [TypeScript/JavaScript examples](https://github.com/hanzoai/runtime/tree/main/examples/typescript) to create a Sandbox and run your code.
 
-Speed up your development on Daytona using LLMs. Copy the /llms.txt files and include them into your projects or chat context: [llms-full.txt](https://www.daytona.io/docs/llms-full.txt) or [llms.txt](https://www.daytona.io/docs/llms.txt)
+Speed up your development on Runtime using LLMs. Copy the /llms.txt files and include them into your projects or chat context: [llms-full.txt](https://www.hanzo.ai/docs/llms-full.txt) or [llms.txt](https://www.hanzo.ai/docs/llms.txt)
 
-Learn more by checking out the Daytona SDK repository on [GitHub](https://github.com/daytonaio/daytona).
+Learn more by checking out the Runtime SDK repository on [GitHub](https://github.com/hanzoai/runtime).
 
-## Setting up the Daytona CLI
+## Setting up the Runtime CLI
 
-If you want to use [images from your local device](/docs/snapshots#using-a-local-image) or simply prefer managing your Sandboxes using the command line interface, install the Daytona CLI by running:
+If you want to use [images from your local device](/docs/snapshots#using-a-local-image) or simply prefer managing your Sandboxes using the command line interface, install the Runtime CLI by running:
 
 ```bash
-brew install daytonaio/cli/daytona
+brew install hanzoai/cli/runtime
 ```
 
 ```bash
-powershell -Command "irm https://get.daytona.io/windows | iex"
+powershell -Command "irm https://get.hanzo.ai/windows | iex"
 ```
 
 title: Git Operations
 
 import { TabItem, Tabs } from '@astrojs/starlight/components'
 
-The Daytona SDK provides built-in Git support through the `git` module in Sandboxes. This guide covers all available Git operations and best practices.
+The Runtime SDK provides built-in Git support through the `git` module in Sandboxes. This guide covers all available Git operations and best practices.
 
 ## Basic Operations
 
-Daytona SDK provides an option to clone, check status, and manage Git repositories in Sandboxes. You can interact with Git repositories using the `git` module.
+Runtime SDK provides an option to clone, check status, and manage Git repositories in Sandboxes. You can interact with Git repositories using the `git` module.
 
 Similarly to file operations the starting cloning dir is the current Sandbox user's root - e.g. `workspace/repo` implies `/home/[username]/workspace/repo`, but you are free to provide an absolute workdir path as well (by starting the path with `/`).
 
 ### Cloning Repositories
 
-Daytona SDK provides an option to clone Git repositories into Sandboxes using Python and TypeScript. You can clone public or private repositories, specific branches, and authenticate using personal access tokens.
+Runtime SDK provides an option to clone Git repositories into Sandboxes using Python and TypeScript. You can clone public or private repositories, specific branches, and authenticate using personal access tokens.
 
 ```python
 # Basic clone
@@ -1058,7 +1058,7 @@ await sandbox.git.clone(
 
 ### Repository Status
 
-Daytona SDK provides an option to check the status of Git repositories in Sandboxes. You can get the current branch, modified files, number of commits ahead and behind main branch using Python and TypeScript.
+Runtime SDK provides an option to check the status of Git repositories in Sandboxes. You can get the current branch, modified files, number of commits ahead and behind main branch using Python and TypeScript.
 
 ```python
 # Get repository status
@@ -1096,11 +1096,11 @@ response.branches.forEach(branch => {
 
 ## Branch Operations
 
-Daytona SDK provides an option to manage branches in Git repositories. You can create, switch, and delete branches.
+Runtime SDK provides an option to manage branches in Git repositories. You can create, switch, and delete branches.
 
 ### Managing Branches
 
-Daytona SDK provides an option to create, switch, and delete branches in Git repositories using Python and TypeScript.
+Runtime SDK provides an option to create, switch, and delete branches in Git repositories using Python and TypeScript.
 
 ```python
 # Create new branch
@@ -1129,7 +1129,7 @@ await sandbox.git.deleteBranch("workspace/repo", "feature/old-feature");
 
 ## Staging and Committing
 
-Daytona SDK provides an option to stage and commit changes in Git repositories. You can stage specific files, all changes, and commit with a message using Python and TypeScript.
+Runtime SDK provides an option to stage and commit changes in Git repositories. You can stage specific files, all changes, and commit with a message using Python and TypeScript.
 
 ### Working with Changes
 
@@ -1176,11 +1176,11 @@ commits.forEach(commit => {
 
 ## Remote Operations
 
-Daytona SDK provides an option to work with remote repositories in Git. You can push changes, pull changes, and list remotes.
+Runtime SDK provides an option to work with remote repositories in Git. You can push changes, pull changes, and list remotes.
 
 ### Working with Remotes
 
-Daytona SDK provides an option to push, pull, and list remotes in Git repositories using Python and TypeScript.
+Runtime SDK provides an option to push, pull, and list remotes in Git repositories using Python and TypeScript.
 
 ```python
 # Push changes
@@ -1211,59 +1211,59 @@ await sandbox.git.pull("workspace/repo");
 await sandbox.git.pull("workspace/repo", "origin", "main");
 ```
 
-title: Daytona Documentation
-description: Start managing your Sandboxes with Daytona.
+title: Runtime Documentation
+description: Start managing your Sandboxes with Runtime.
 template: doc
 head:
   - tag: title
-    content: Documentation · Daytona
+    content: Documentation · Runtime
   - tag: meta
     attrs:
       property: og:title
-      content: Documentation · Daytona
+      content: Documentation · Runtime
   - tag: meta
     attrs:
       name: twitter:title
-      content: Documentation · Daytona
+      content: Documentation · Runtime
 tableOfContents: false
 
 import { TabItem, Tabs } from '@astrojs/starlight/components'
 
-The Daytona SDK provides official Python and TypeScript interfaces for interacting with Daytona,
+The Runtime SDK provides official Python and TypeScript interfaces for interacting with Runtime,
 enabling you to programmatically manage development environments and execute code.
 
 ### Quick Start
 
-Run your first line of code in a Daytona Sandbox. Use our [LLMs context files](/docs/getting-started#additional-examples) for faster development with AI assistants.
+Run your first line of code in a Runtime Sandbox. Use our [LLMs context files](/docs/getting-started#additional-examples) for faster development with AI assistants.
 
 #### 1. Get Your API Key
 
-- Go to the Daytona [Dashboard](https://app.daytona.io/dashboard).
-- Create a new [API key](https://app.daytona.io/dashboard/keys). Make sure to save it securely,
+- Go to the Runtime [Dashboard](https://app.hanzo.ai/dashboard).
+- Create a new [API key](https://app.hanzo.ai/dashboard/keys). Make sure to save it securely,
   as it won't be shown again.
 
 #### 2. Install the SDK
 
-    ```bash pip install daytona ```
-    ```bash npm install @daytonaio/sdk ```
+    ```bash pip install runtime ```
+    ```bash npm install @hanzo/runtime ```
 
 #### 3. Write Your Code
 
   Create a file named: `main.py`
   ```python
-  from daytona import Daytona, DaytonaConfig
+  from runtime import Runtime, RuntimeConfig
 
 # Define the configuration
 
-config = DaytonaConfig(api_key="your-api-key")
+config = RuntimeConfig(api_key="your-api-key")
 
-# Initialize the Daytona client
+# Initialize the Runtime client
 
-daytona = Daytona(config)
+runtime = Runtime(config)
 
 # Create the Sandbox instance
 
-sandbox = daytona.create()
+sandbox = runtime.create()
 
 # Run the code securely inside the Sandbox
 
@@ -1280,13 +1280,13 @@ sandbox.delete()
 ```
 Create a file named: `index.mts`
 ```typescript
-import { Daytona } from '@daytonaio/sdk';
+import { Runtime } from '@hanzo/runtime';
 
-// Initialize the Daytona client
-const daytona = new Daytona({ apiKey: 'your-api-key' });
+// Initialize the Runtime client
+const runtime = new Runtime({ apiKey: 'your-api-key' });
 
 // Create the Sandbox instance
-const sandbox = await daytona.create({
+const sandbox = await runtime.create({
   language: 'typescript',
 });
 
@@ -1300,7 +1300,7 @@ await sandbox.delete()
 
 
 :::note
-Replace `your-api-key` with the value from your Daytona dashboard.
+Replace `your-api-key` with the value from your Runtime dashboard.
 :::
 
 #### 4. Run It
@@ -1310,12 +1310,12 @@ Replace `your-api-key` with the value from your Daytona dashboard.
 
 #### ✅ What You Just Did
 
-- Installed the Daytona SDK.
+- Installed the Runtime SDK.
 - Created a secure sandbox environment.
 - Executed code remotely inside that sandbox.
 - Retrieved and displayed the output locally.
 
-You're now ready to use Daytona for secure, isolated code execution.
+You're now ready to use Runtime for secure, isolated code execution.
 
 <ExploreMore />
 
@@ -1323,19 +1323,19 @@ title: Language Server Protocol
 
 import { TabItem, Tabs } from '@astrojs/starlight/components'
 
-The Daytona SDK provides Language Server Protocol (LSP) support through Sandbox instances. This enables advanced language features like code completion, diagnostics, and more.
+The Runtime SDK provides Language Server Protocol (LSP) support through Sandbox instances. This enables advanced language features like code completion, diagnostics, and more.
 
 ## Creating LSP Servers
 
-Daytona SDK provides an option to create LSP servers using Python and TypeScript. The `path_to_project` starting point defaults to the current Sandbox user's root - e.g. `workspace/project` implies `/home/[username]/workspace/project`, but by starting with `/`, you may define an absolute path as well.
+Runtime SDK provides an option to create LSP servers using Python and TypeScript. The `path_to_project` starting point defaults to the current Sandbox user's root - e.g. `workspace/project` implies `/home/[username]/workspace/project`, but by starting with `/`, you may define an absolute path as well.
 
 ```python
-from daytona import Daytona, LspLanguageId
+from runtime import Runtime, LspLanguageId
 
 # Create Sandbox
 
-daytona = Daytona()
-sandbox = daytona.create()
+runtime = Runtime()
+sandbox = runtime.create()
 
 # Create LSP server for Python
 
@@ -1346,11 +1346,11 @@ path_to_project="workspace/project"
 
 ```
 ```typescript
-import { Daytona, LspLanguageId } from '@daytonaio/sdk'
+import { Runtime, LspLanguageId } from '@hanzo/runtime'
 
 // Create sandbox
-const daytona = new Daytona()
-const sandbox = await daytona.create({
+const runtime = new Runtime()
+const sandbox = await runtime.create({
     language: 'typescript'
 })
 
@@ -1364,10 +1364,10 @@ const lspServer = await sandbox.createLspServer(
 
 ## Supported Languages
 
-Daytona SDK provides an option to create LSP servers for various languages through the `LspLanguageId` enum in Python and TypeScript.
+Runtime SDK provides an option to create LSP servers for various languages through the `LspLanguageId` enum in Python and TypeScript.
 
 ```python
-from daytona import LspLanguageId
+from runtime import LspLanguageId
 
 # Available language IDs
 
@@ -1376,7 +1376,7 @@ LspLanguageId.TYPESCRIPT
 
 ```
 ```typescript
-import { LspLanguageId } from '@daytonaio/sdk'
+import { LspLanguageId } from '@hanzo/runtime'
 
 // Available language IDs
 LspLanguageId.PYTHON
@@ -1389,11 +1389,11 @@ LspLanguageId.TYPESCRIPT
 
 ## LSP Features
 
-Daytona SDK provides various LSP features for code analysis and editing.
+Runtime SDK provides various LSP features for code analysis and editing.
 
 ### Code Completion
 
-Daytona SDK provides an option to get code completions for a specific position in a file using Python and TypeScript.
+Runtime SDK provides an option to get code completions for a specific position in a file using Python and TypeScript.
 
 ```python
 completions = lsp_server.completions(
@@ -1412,14 +1412,14 @@ console.log('Completions:', completions)
 
 title: Limits
 
-Daytona enforces resource limits to ensure fair usage and stability across all organizations. Your organization has access to a compute pool consisting of:
+Runtime enforces resource limits to ensure fair usage and stability across all organizations. Your organization has access to a compute pool consisting of:
 
 - **vCPU** — total CPU cores available
 - **Memory** — total RAM available
 - **Disk** — total disk space across sandboxes
 
 These resources are pooled and shared across all running Sandboxes.  
-The number of Sandboxes you can run at once depends on how much CPU, RAM, and disk each one uses. You can see how to configure and estimate resource usage in the [Sandbox Management docs](https://www.daytona.io/docs/sandbox-management/).
+The number of Sandboxes you can run at once depends on how much CPU, RAM, and disk each one uses. You can see how to configure and estimate resource usage in the [Sandbox Management docs](https://www.hanzo.ai/docs/sandbox-management/).
 
 :::tip
 
@@ -1434,7 +1434,7 @@ Use **Stop**, **Archive**, or **Delete** to manage resources:
 
 :::
 
-Check your current usage and limits in the [Dashboard](https://app.daytona.io/dashboard/limits).
+Check your current usage and limits in the [Dashboard](https://app.hanzo.ai/dashboard/limits).
 
 ## Tiers & Limit Increases
 
@@ -1444,24 +1444,24 @@ You can unlock higher limits by completing the following steps:
 | Tier   | Compute Pool (vCPU / RAM / Disk) | Access Requirements                                                                                                     |
 | ------ | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | Tier 1 | 10 / 10GiB / 30GiB               | Email verified                                                                                                          |
-| Tier 2 | 100 / 200GiB / 300GiB            | Credit card linked, [GitHub connected](https://www.daytona.io/docs/linked-accounts#how-to-link-an-account), $10 top-up. |
+| Tier 2 | 100 / 200GiB / 300GiB            | Credit card linked, [GitHub connected](https://www.hanzo.ai/docs/linked-accounts#how-to-link-an-account), $10 top-up. |
 | Tier 3 | Everything bigger 🚀             | Coming soon.                                                                                                            |
-| Custom | Custom limits                    | Contact [support@daytona.io](mailto:support@daytona.io)                                                                 |
+| Custom | Custom limits                    | Contact [support@hanzo.ai](mailto:support@hanzo.ai)                                                                 |
 
 You’ll be automatically upgraded once you meet the criteria.
 
 ## Need More?
 
-If you need higher or specialized limits, reach out to [support@daytona.io](mailto:support@daytona.io).
+If you need higher or specialized limits, reach out to [support@hanzo.ai](mailto:support@hanzo.ai).
 
 title: Linked Accounts
 
-Daytona supports the linking of user accounts from various identity providers. At the moment, the following providers are supported:
+Runtime supports the linking of user accounts from various identity providers. At the moment, the following providers are supported:
 
 - Google
 - GitHub
 
-This allows you to use different providers for logging into your Daytona account.
+This allows you to use different providers for logging into your Runtime account.
 
 :::tip
 
@@ -1473,21 +1473,21 @@ Linking your GitHub account is one of the requirements to automatically upgrade 
 
 ## How to link an account
 
-To link an account, go to the [Linked Accounts](https://app.daytona.io/dashboard/user/linked-accounts) page in the Daytona dashboard and click on the "Link Account" button for the account provider you want to link.
+To link an account, go to the [Linked Accounts](https://app.hanzo.ai/dashboard/user/linked-accounts) page in the Runtime dashboard and click on the "Link Account" button for the account provider you want to link.
 
 ## How to unlink an account
 
-To unlink an account, go to the [Linked Accounts](https://app.daytona.io/dashboard/user/linked-accounts) page in the Daytona dashboard and click on the "Unlink" button for the account provider you want to unlink.
+To unlink an account, go to the [Linked Accounts](https://app.hanzo.ai/dashboard/user/linked-accounts) page in the Runtime dashboard and click on the "Unlink" button for the account provider you want to unlink.
 
 ## Need More?
 
-If you need support for other identity providers, reach out to [support@daytona.io](mailto:support@daytona.io).
+If you need support for other identity providers, reach out to [support@hanzo.ai](mailto:support@hanzo.ai).
 
 title: Log Streaming
 
 When executing long-running processes in a sandbox, you’ll often want to access and process their logs in **real time**.
 
-The Daytona SDK supports both:
+The Runtime SDK supports both:
 
 - `Fetching log snapshot` — retrieve all logs up to a certain point.
 - `Log streaming` — stream logs as they are being produced, while the process is still running.
@@ -1510,11 +1510,11 @@ import { TabItem, Tabs } from '@astrojs/starlight/components'
 
 ```python
 import asyncio
-from daytona import Daytona, SessionExecuteRequest
+from runtime import Runtime, SessionExecuteRequest
 
 async def main():
-daytona = Daytona()
-sandbox = daytona.create()
+runtime = Runtime()
+sandbox = runtime.create()
 
     try:
         session_id = "exec-session-1"
@@ -1551,11 +1551,11 @@ asyncio.run(main())
 
 ```
   ```typescript
-  import { Daytona, Sandbox } from '@daytonaio/sdk'
+  import { Runtime, Sandbox } from '@hanzo/runtime'
 
   async function main() {
-    const daytona = new Daytona()
-    const sandbox = await daytona.create()
+    const runtime = new Runtime()
+    const sandbox = await runtime.create()
 
     try {
       const sessionId = 'exec-session-async-logs'
@@ -1596,11 +1596,11 @@ you can process log stream synchronously. For example, you can write logs to a f
   ```python
   import asyncio
   import os
-  from daytona import Daytona, SessionExecuteRequest
+  from runtime import Runtime, SessionExecuteRequest
 
 async def main():
-daytona = Daytona()
-sandbox = daytona.create()
+runtime = Runtime()
+sandbox = runtime.create()
 
       try:
           session_id = "exec-session-1"
@@ -1639,11 +1639,11 @@ asyncio.run(main())
 
 ```
 ```typescript
-import { Daytona, Sandbox } from '@daytonaio/sdk'
+import { Runtime, Sandbox } from '@hanzo/runtime'
 
 async function main() {
-  const daytona = new Daytona()
-  const sandbox = await daytona.create()
+  const runtime = new Runtime()
+  const sandbox = await runtime.create()
 
   try {
     const sessionId = 'exec-session-async-logs'
@@ -1678,58 +1678,58 @@ async function main() {
 main()
 ```
 
-title: Daytona MCP Server
+title: Runtime MCP Server
 
 import { TabItem, Tabs } from '@astrojs/starlight/components'
 
-The Daytona Model Context Protocol (MCP) Server enables AI agents to interact with Daytona's features programmatically. This guide covers how to set up and use the MCP server with various AI agents.
+The Runtime Model Context Protocol (MCP) Server enables AI agents to interact with Runtime's features programmatically. This guide covers how to set up and use the MCP server with various AI agents.
 
 ## Prerequisites
 
 Before getting started, ensure you have:
 
-- A Daytona account
-- Daytona CLI installed
+- A Runtime account
+- Runtime CLI installed
 - A compatible AI agent (Claude Desktop App, Claude Code, Cursor, or Windsurf)
 
 ## Installation and Setup
 
-### 1. Install Daytona CLI
+### 1. Install Runtime CLI
 
 ```bash
-brew install daytonaio/cli/daytona
+brew install hanzoai/cli/runtime
 ```
 
 ```bash
-powershell -Command "irm https://get.daytona.io/windows | iex"
+powershell -Command "irm https://get.hanzo.ai/windows | iex"
 ```
 
-### 2. Authenticate with Daytona
+### 2. Authenticate with Runtime
 
 ```bash
-daytona login
+runtime login
 ```
 
 ### 3. Initialize MCP Server
 
-Initialize the Daytona MCP server with your preferred AI agent:
+Initialize the Runtime MCP server with your preferred AI agent:
 
 ```bash
-daytona mcp init [claude/cursor/windsurf]
+runtime mcp init [claude/cursor/windsurf]
 ```
 
 ### 4. Open Your AI Agent
 
-After initialization, open your AI agent application to begin using Daytona features.
+After initialization, open your AI agent application to begin using Runtime features.
 
 ## Integration with Other AI Agents
 
-To integrate Daytona MCP with other AI agents, follow these steps:
+To integrate Runtime MCP with other AI agents, follow these steps:
 
 1. Generate the MCP configuration:
 
 ```bash
-daytona mcp config
+runtime mcp config
 ```
 
 This command outputs a JSON configuration that you can copy into your agent's settings:
@@ -1737,14 +1737,14 @@ This command outputs a JSON configuration that you can copy into your agent's se
 ```json
 {
   "mcpServers": {
-    "daytona-mcp": {
-      "command": "daytona",
+    "runtime-mcp": {
+      "command": "runtime",
       "args": ["mcp", "start"],
       "env": {
         "HOME": "${HOME}",
         "PATH": "${HOME}:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin"
       },
-      "logFile": "${HOME}/Library/Logs/daytona/daytona-mcp-server.log"
+      "logFile": "${HOME}/Library/Logs/runtime/runtime-mcp-server.log"
     }
   }
 }
@@ -1767,7 +1767,7 @@ For Windows users, add the following to the `env` field:
 
 - **Create Sandbox**
 
-  - Creates a new Daytona sandbox
+  - Creates a new Runtime sandbox
   - Parameters:
     - `target` (default: "us"): Target region
     - `snapshot`: Snapshot for the sandbox (optional)
@@ -1775,20 +1775,20 @@ For Windows users, add the following to the `env` field:
     - `auto_archive_interval` (default: "10080"): Auto-archive interval in minutes (0 means the maximum interval will be used)
 
 - **Destroy Sandbox**
-  - Removes an existing Daytona sandbox
+  - Removes an existing Runtime sandbox
 
 ### File Operations
 
 - **Download File**
 
-  - Downloads a file from the Daytona sandbox
+  - Downloads a file from the Runtime sandbox
   - Returns content as text or base64 encoded image
   - Parameters:
     - `file_path`: Path to the file
 
 - **Upload File**
 
-  - Uploads a file to the Daytona sandbox
+  - Uploads a file to the Runtime sandbox
   - Supports text or base64-encoded binary content
   - Creates necessary parent directories automatically
   - Files persist during the session with appropriate permissions
@@ -1858,7 +1858,7 @@ For Windows users, add the following to the `env` field:
 ### Command Execution
 
 - **Execute Command**
-  - Runs shell commands in the Daytona environment
+  - Runs shell commands in the Runtime environment
   - Returns stdout, stderr, and exit code
   - Commands run with sandbox user permissions
   - Parameters:
@@ -1870,7 +1870,7 @@ Common issues and solutions:
 
 - **Authentication Issues**
 
-  - Run `daytona login` to refresh credentials
+  - Run `runtime login` to refresh credentials
 
 - **Connection Errors**
 
@@ -1878,24 +1878,24 @@ Common issues and solutions:
   - Check server status
 
 - **Sandbox Errors**
-  - Use `daytona sandbox list` to check sandbox status
+  - Use `runtime sandbox list` to check sandbox status
 
 ## Support
 
 For additional assistance:
 
-- Visit [daytona.io](https://daytona.io)
-- Contact support at support@daytona.io
+- Visit [hanzo.ai](https://hanzo.ai)
+- Contact support at support@hanzo.ai
 
 title: Organizations
 
 import { TabItem, Tabs } from '@astrojs/starlight/components'
 
-Organizations in Daytona are a way to group resources and easily collaborate with other users.
+Organizations in Runtime are a way to group resources and easily collaborate with other users.
 Users in an Organization, depending on their permissions, view and manage the same set of key
 resources such as Sandboxes, Snapshots and Registries, as well as consume the same quotas for these resources.
 
-After signing up to Daytona, users are assigned a Personal Organization. This default Organization
+After signing up to Runtime, users are assigned a Personal Organization. This default Organization
 cannot take new members and cannot be deleted. It has separate billing and will most commonly be used
 as a testing playground or by solo developers. Switching between organizations is done by selecting
 an option from the dropdown menu on the top of the sidebar.
@@ -1954,12 +1954,12 @@ import { TabItem, Tabs } from '@astrojs/starlight/components'
 Processes listening for HTTP traffic in port range `3000-9999` can be previewed using preview links.
 
 A preview link's schema consists of the port, Sandbox ID and Runner combination, e.g.:
-`https://3000-sandbox-123456.h7890.daytona.work`
+`https://3000-sandbox-123456.h7890.runtime.work`
 
 If the Sandbox has its `public` property set to `true`, these links will be publicly accessible, otherwise the preview link will be available only to the Sandbox Organization users.
 
 For programmatic access (for example, `curl`), use the authorization token to access the preview URL, e.g.:
-`curl -H "x-daytona-preview-token: vg5c0ylmcimr8b_v1ne0u6mdnvit6gc0" https://3000-sandbox-123456.h7890.daytona.work`
+`curl -H "x-runtime-preview-token: vg5c0ylmcimr8b_v1ne0u6mdnvit6gc0" https://3000-sandbox-123456.h7890.runtime.work`
 
 To fetch the preview link and the authorization token for a specific port, you can simply use the SDK method:
 
@@ -1985,15 +1985,15 @@ title: Process and Code Execution
 
 import { TabItem, Tabs } from '@astrojs/starlight/components'
 
-The Daytona SDK provides powerful process and code execution capabilities through the `process` module in Sandboxes. This guide covers all available process operations and best practices.
+The Runtime SDK provides powerful process and code execution capabilities through the `process` module in Sandboxes. This guide covers all available process operations and best practices.
 
 ## Code Execution
 
-Daytona SDK provides an option to execute code in Python and TypeScript.
+Runtime SDK provides an option to execute code in Python and TypeScript.
 
 ### Running Code
 
-Daytona SDK provides an option to run code snippets in Python and TypeScript. You can execute code with input, timeout, and environment variables.
+Runtime SDK provides an option to run code snippets in Python and TypeScript. You can execute code with input, timeout, and environment variables.
 
 ```python
 # Run Python code
@@ -2001,7 +2001,7 @@ response = sandbox.process.code_run('''
 def greet(name):
     return f"Hello, {name}!"
 
-print(greet("Daytona"))
+print(greet("Runtime"))
 ''')
 
 print(response.result)
@@ -2014,7 +2014,7 @@ function greet(name: string): string {
     return \`Hello, \${name}!\`;
 }
 
-console.log(greet("Daytona"));
+console.log(greet("Runtime"));
 `);
 console.log(response.result);
 
@@ -2025,7 +2025,7 @@ response = await sandbox.process.codeRun(
     console.log(\`FOO: \${process.env.FOO}\`);
     `,
     {
-      argv: ["Daytona"],
+      argv: ["Runtime"],
       env: { FOO: "BAR" }
     }
 );
@@ -2043,11 +2043,11 @@ console.log(response.result);
 
 ## Process Execution
 
-Daytona SDK provides an option to execute shell commands and manage background processes in Sandboxes. The workdir for executing defaults to the current Sandbox user's root - e.g. `workspace/repo` implies `/home/[username]/workspace/repo`, but you can override it with an absolute path (by starting the path with `/`).
+Runtime SDK provides an option to execute shell commands and manage background processes in Sandboxes. The workdir for executing defaults to the current Sandbox user's root - e.g. `workspace/repo` implies `/home/[username]/workspace/repo`, but you can override it with an absolute path (by starting the path with `/`).
 
 ### Running Commands
 
-Daytona SDK provides an option to execute shell commands in Python and TypeScript. You can run commands with input, timeout, and environment variables.
+Runtime SDK provides an option to execute shell commands in Python and TypeScript. You can run commands with input, timeout, and environment variables.
 
 ```python
 # Execute any shell command
@@ -2062,7 +2062,7 @@ print(response.result)
 # Passing environment variables
 
 response = sandbox.process.exec("echo $CUSTOM_SECRET", env={
-"CUSTOM_SECRET": "DAYTONA"
+"CUSTOM_SECRET": "RUNTIME"
 }
 )
 print(response.result)
@@ -2080,7 +2080,7 @@ console.log(response2.result);
 
 // Passing environment variables
 const response3 = await sandbox.process.executeCommand("echo $CUSTOM_SECRET", "~", {
-        "CUSTOM_SECRET": "DAYTONA"
+        "CUSTOM_SECRET": "RUNTIME"
     }
 );
 console.log(response3.result);
@@ -2090,11 +2090,11 @@ console.log(response3.result);
 
 ## Sessions (Background Processes)
 
-Daytona SDK provides an option to start, stop, and manage background process sessions in Sandboxes. You can run long-running commands, monitor process status, and list all running processes.
+Runtime SDK provides an option to start, stop, and manage background process sessions in Sandboxes. You can run long-running commands, monitor process status, and list all running processes.
 
 ### Managing Long-Running Processes
 
-Daytona SDK provides an option to start and stop background processes. You can run long-running commands and monitor process status.
+Runtime SDK provides an option to start and stop background processes. You can run long-running commands and monitor process status.
 
 ```python
 # Check session's executed commands
@@ -2129,7 +2129,7 @@ for (const session of sessions) {
 
 ## Best Practices
 
-Daytona SDK provides best practices for process and code execution in Sandboxes.
+Runtime SDK provides best practices for process and code execution in Sandboxes.
 
 1. **Resource Management**
 
@@ -2187,7 +2187,7 @@ try {
 
 ## Common Issues
 
-Daytona SDK provides an option to troubleshoot common issues related to process execution and code execution.
+Runtime SDK provides an option to troubleshoot common issues related to process execution and code execution.
 
 ### Process Execution Failed
 
@@ -2211,27 +2211,27 @@ title: Region Selection
 
 import { TabItem, Tabs } from '@astrojs/starlight/components'
 
-Daytona is currently available in the following regions:
+Runtime is currently available in the following regions:
 
 - United States (US)
 - Europe (EU)
 
-You can select the region during the Daytona [configuration](/docs/configuration) step.
+You can select the region during the Runtime [configuration](/docs/configuration) step.
 
 ```python
-from daytona import Daytona, DaytonaConfig
+from runtime import Runtime, RuntimeConfig
 
-config = DaytonaConfig(
+config = RuntimeConfig(
     target="us"
 )
 
-daytona = Daytona(config)
+runtime = Runtime(config)
 ```
 
 ```typescript
-import { Daytona } from '@daytonaio/sdk'
+import { Runtime } from '@hanzo/runtime'
 
-const daytona: Daytona = new Daytona({
+const runtime: Runtime = new Runtime({
   target: 'eu',
 })
 ```
@@ -2241,12 +2241,12 @@ title: Sandbox Management
 import { TabItem, Tabs } from '@astrojs/starlight/components'
 import Image from 'astro/components/Image.astro'
 
-Sandboxes are isolated development environments managed by Daytona. This guide covers how to create, manage, and remove Sandboxes using the SDK.
+Sandboxes are isolated development environments managed by Runtime. This guide covers how to create, manage, and remove Sandboxes using the SDK.
 By default, Sandboxes auto-stop after 15 minutes of inactivity and use **1 vCPU**, **1GB RAM**, and **3GiB disk**.
 
 ## Sandbox Lifecycle
 
-Throughout its lifecycle, a Daytona Sandbox can have several different states. The diagram below shows the states and possible transitions between them.
+Throughout its lifecycle, a Runtime Sandbox can have several different states. The diagram below shows the states and possible transitions between them.
 
 <Fragment set:html={sandboxDiagram} />
 
@@ -2254,7 +2254,7 @@ By default, sandboxes auto-stop after `15 minutes` of inactivity and auto-archiv
 
 ## Creating Sandboxes
 
-The Daytona SDK provides an option to create Sandboxes with default or custom configurations. You can specify the language, [Snapshot](/docs/snapshots), resources, environment variables, and volumes for the Sandbox.
+The Runtime SDK provides an option to create Sandboxes with default or custom configurations. You can specify the language, [Snapshot](/docs/snapshots), resources, environment variables, and volumes for the Sandbox.
 Running Sandboxes utilize CPU, memory, and disk storage. Every resource is charged per second of usage.
 
 :::tip
@@ -2263,64 +2263,64 @@ If you want to prolong the auto-stop interval, you can [set the auto-stop interv
 
 ### Basic Sandbox Creation
 
-The Daytona SDK provides methods to create Sandboxes with default configurations, specific languages, or custom labels using Python and TypeScript.
+The Runtime SDK provides methods to create Sandboxes with default configurations, specific languages, or custom labels using Python and TypeScript.
 
 ```python
-from daytona import Daytona, CreateSandboxFromSnapshotParams
+from runtime import Runtime, CreateSandboxFromSnapshotParams
 
-daytona = Daytona()
+runtime = Runtime()
 
 # Create a basic Sandbox
 
-sandbox = daytona.create()
+sandbox = runtime.create()
 
 # Create a Sandbox with specific language
 
 params = CreateSandboxFromSnapshotParams(language="python")
-sandbox = daytona.create(params)
+sandbox = runtime.create(params)
 
 # Create a Sandbox with custom labels
 
 params = CreateSandboxFromSnapshotParams(labels={"SOME_LABEL": "my-label"})
-sandbox = daytona.create(params)
+sandbox = runtime.create(params)
 
 ```
 
 ```typescript
-import { Daytona } from '@daytonaio/sdk';
+import { Runtime } from '@hanzo/runtime';
 
-const daytona = new Daytona();
+const runtime = new Runtime();
 
 // Create a basic Sandbox
-const sandbox = await daytona.create();
+const sandbox = await runtime.create();
 
 // Create a Sandbox with specific language
-const sandbox = await daytona.create({ language: 'typescript' });
+const sandbox = await runtime.create({ language: 'typescript' });
 
 // Create a Sandbox with custom labels
-const sandbox = await daytona.create({ labels: { SOME_LABEL: 'my-label' } });
+const sandbox = await runtime.create({ labels: { SOME_LABEL: 'my-label' } });
 ```
 
 
 When Sandboxes are not actively used, it is recommended that they be stopped. This can be done manually [using the stop command](/docs/sandbox-management#stop-and-start-sandbox) or automatically by [setting the auto-stop interval](/docs/sandbox-management#auto-stop-and-auto-archive).
 
 :::note
-Daytona keeps a pool of warm Sandboxes using default Snapshots.  
+Runtime keeps a pool of warm Sandboxes using default Snapshots.  
 When available, your Sandbox will launch in milliseconds instead of cold-booting.
 :::
 
 ### Sandbox Resources
 
-Daytona Sandboxes come with **1 vCPU**, **1GB RAM**, and **3GiB disk** by default.
+Runtime Sandboxes come with **1 vCPU**, **1GB RAM**, and **3GiB disk** by default.
 
 Need more power? Use the `Resources` class to define exactly what you need: CPU, memory, and disk space are all customizable.
 
-Check your available resources and limits in the [dashboard](https://app.daytona.io/dashboard/limits).
+Check your available resources and limits in the [dashboard](https://app.hanzo.ai/dashboard/limits).
 
 ```python
-from daytona import Daytona, Resources, CreateSandboxFromImageParams, Image
+from runtime import Runtime, Resources, CreateSandboxFromImageParams, Image
 
-daytona = Daytona()
+runtime = Runtime()
 
 # Create a Sandbox with custom resources
 
@@ -2335,17 +2335,17 @@ image=Image.debian_slim("3.12"),
 resources=resources
 )
 
-sandbox = daytona.create(params)
+sandbox = runtime.create(params)
 
 ```
 ```typescript
-import { Daytona, Image } from "@daytonaio/sdk";
+import { Runtime, Image } from "@hanzo/runtime";
 
 async function main() {
-  const daytona = new Daytona();
+  const runtime = new Runtime();
 
   // Create a Sandbox with custom resources
-  const sandbox = await daytona.create({
+  const sandbox = await runtime.create({
     image: Image.debianSlim("3.13"),
     resources: {
       cpu: 2, // 2 CPU cores
@@ -2360,12 +2360,12 @@ main();
 
 
 :::note
-All resource parameters are optional. If not specified, Daytona will use default values appropriate for the selected language and use case.
+All resource parameters are optional. If not specified, Runtime will use default values appropriate for the selected language and use case.
 :::
 
 ## Sandbox Information
 
-The Daytona SDK provides methods to get information about a Sandbox, such as ID, root directory, and status using Python and TypeScript.
+The Runtime SDK provides methods to get information about a Sandbox, such as ID, root directory, and status using Python and TypeScript.
 
 ```python
 # Get Sandbox ID
@@ -2401,12 +2401,12 @@ To get the preview URL for a specific port, check out [Preview & Authentication]
 
 ## Stop and Start Sandbox
 
-The Daytona SDK provides methods to stop and start Sandboxes using Python and TypeScript.
+The Runtime SDK provides methods to stop and start Sandboxes using Python and TypeScript.
 
 Stopped Sandboxes maintain filesystem persistence while their memory state is cleared. They incur only disk usage costs and can be started again when needed.
 
 ```python
-sandbox = daytona.create(CreateSandboxParams(language="python"))
+sandbox = runtime.create(CreateSandboxParams(language="python"))
 
 # Stop Sandbox
 
@@ -2416,7 +2416,7 @@ print(sandbox.id) # 7cd11133-96c1-4cc8-9baa-c757b8f8c916
 
 # The sandbox ID can later be used to find the sandbox and start it
 
-sandbox = daytona.find_one("7cd11133-96c1-4cc8-9baa-c757b8f8c916")
+sandbox = runtime.find_one("7cd11133-96c1-4cc8-9baa-c757b8f8c916")
 
 # Start Sandbox
 
@@ -2424,7 +2424,7 @@ sandbox.start()
 
 ```
 ```typescript
-const sandbox = await daytona.create({ language: 'typescript' });
+const sandbox = await runtime.create({ language: 'typescript' });
 
 // Stop Sandbox
 await sandbox.stop();
@@ -2433,7 +2433,7 @@ console.log(sandbox.id) // 7cd11133-96c1-4cc8-9baa-c757b8f8c916
 
 // The sandbox ID can later be used to find the sandbox and start it
 
-const sandbox = await daytona.findOne("7cd11133-96c1-4cc8-9baa-c757b8f8c916");
+const sandbox = await runtime.findOne("7cd11133-96c1-4cc8-9baa-c757b8f8c916");
 
 // Start Sandbox
 await sandbox.start();
@@ -2444,7 +2444,7 @@ The stopped state should be used when the Sandbox is expected to be started agai
 
 ## Archive Sandbox
 
-The Daytona SDK provides methods to archive Sandboxes using Python and TypeScript.
+The Runtime SDK provides methods to archive Sandboxes using Python and TypeScript.
 
 When Sandboxes are archived, the entire filesystem state is moved to very cost-effective object storage, making it possible to keep Sandboxes available for an extended period.
 Starting an archived Sandbox takes more time than starting a stopped Sandbox, depending on its size.
@@ -2456,7 +2456,7 @@ A Sandbox must be stopped before it can be archived, and can be started again in
 
 ## Delete Sandbox
 
-The Daytona SDK provides methods to delete Sandboxes using Python and TypeScript.
+The Runtime SDK provides methods to delete Sandboxes using Python and TypeScript.
 
 ```python
 # Delete Sandbox
@@ -2469,10 +2469,10 @@ await sandbox.delete();
 
 
 :::tip
-Check out the [Daytona CLI](/docs/getting-started#setting-up-the-daytona-cli) if you prefer managing Sandboxes through the terminal:
+Check out the [Runtime CLI](/docs/getting-started#setting-up-the-runtime-cli) if you prefer managing Sandboxes through the terminal:
 
 ```bash
-daytona sandbox list
+runtime sandbox list
 ```
 
 ```text
@@ -2488,7 +2488,7 @@ daytona sandbox list
 ```
 
 ```bash
-daytona sandbox start|stop|remove --all
+runtime sandbox start|stop|remove --all
 ```
 
 ```text
@@ -2499,7 +2499,7 @@ All sandboxes have been deleted
 
 ## Automated Lifecycle Management
 
-Daytona Sandboxes can be automatically stopped, archived, and deleted based on user-defined intervals.
+Runtime Sandboxes can be automatically stopped, archived, and deleted based on user-defined intervals.
 
 ### Auto-stop Interval
 
@@ -2515,13 +2515,13 @@ If the parameter is not set, the default interval of `15` minutes will be used.
 :::
 
 ```python
-sandbox = daytona.create(CreateSandboxFromSnapshotParams(
+sandbox = runtime.create(CreateSandboxFromSnapshotParams(
     snapshot="my-snapshot-name",
     auto_stop_interval=0,  # Disables the auto-stop feature - default is 15 minutes
 ))
 ```
 ```typescript
-const sandbox = await daytona.create({
+const sandbox = await runtime.create({
     snapshot: "my-snapshot-name",
     autoStopInterval: 0, // Disables the auto-stop feature - default is 15 minutes
 });
@@ -2540,13 +2540,13 @@ The parameter can either be set to:
 If the parameter is not set, the default interval of `7 days` days will be used.
 
 ```python
-sandbox = daytona.create(CreateSandboxFromSnapshotParams(
+sandbox = runtime.create(CreateSandboxFromSnapshotParams(
     snapshot="my-snapshot-name",
     auto_archive_interval=60 # Auto-archive after a Sandbox has been stopped for 1 hour
 ))
 ```
 ```typescript
-const sandbox = await daytona.create({
+const sandbox = await runtime.create({
     snapshot: "my-snapshot-name",
     autoArchiveInterval: 60 // Auto-archive after a Sandbox has been stopped for 1 hour
 });
@@ -2565,7 +2565,7 @@ The parameter can either be set to:
 If the parameter is not set, the Sandbox will not be deleted automatically.
 
 ```python
-sandbox = daytona.create(CreateSandboxFromSnapshotParams(
+sandbox = runtime.create(CreateSandboxFromSnapshotParams(
     snapshot="my-snapshot-name",
     auto_delete_interval=60,  # Auto-delete after a Sandbox has been stopped for 1 hour
 ))
@@ -2580,7 +2580,7 @@ sandbox.set_auto_delete_interval(-1)
 
 ```
 ```typescript
-const sandbox = await daytona.create({
+const sandbox = await runtime.create({
     snapshot: "my-snapshot-name",
     autoDeleteInterval: 60, // Auto-delete after a Sandbox has been stopped for 1 hour
 });
@@ -2598,13 +2598,13 @@ await sandbox.setAutoDeleteInterval(-1)
 By default, Sandboxes auto-stop after 15 minutes of inactivity. To keep a Sandbox running without interruption, set the auto-stop interval to `0` when creating a new Sandbox:
 
 ```python
-sandbox = daytona.create(CreateSandboxFromSnapshotParams(
+sandbox = runtime.create(CreateSandboxFromSnapshotParams(
     snapshot="my-snapshot-name",
     auto_stop_interval=0,  # Disables the auto-stop feature - default is 15 minutes
 ))
 ```
 ```typescript
-const sandbox = await daytona.create({
+const sandbox = await runtime.create({
     snapshot: "my-snapshot-name",
     autoStopInterval: 0, // Disables the auto-stop feature - default is 15 minutes
 });
@@ -2614,17 +2614,17 @@ title: Snapshots
 
 import { TabItem, Tabs } from '@astrojs/starlight/components'
 
-Snapshots are pre-configured templates containing all dependencies, tools, environment settings and resource requirements for your Daytona Sandbox. Daytona supports creating Snapshots from all standard [Docker](https://www.docker.com/) or [OCI](https://opencontainers.org/) compatible images.
+Snapshots are pre-configured templates containing all dependencies, tools, environment settings and resource requirements for your Runtime Sandbox. Runtime supports creating Snapshots from all standard [Docker](https://www.docker.com/) or [OCI](https://opencontainers.org/) compatible images.
 
 ## Creating Snapshots
 
-When spinning up a Sandbox, Daytona uses a Snapshot based on a simple image with some useful utilities pre-installed, such as `python`, `node`, `pip` as well as some common pip packages. More information [below](#default-snapshot).
+When spinning up a Sandbox, Runtime uses a Snapshot based on a simple image with some useful utilities pre-installed, such as `python`, `node`, `pip` as well as some common pip packages. More information [below](#default-snapshot).
 
-It is possible to override this behavior and create custom Snapshots by visiting the Dashboard, clicking on [Snapshots](https://app.daytona.io/dashboard/snapshots) and on `Create Snapshot`.
+It is possible to override this behavior and create custom Snapshots by visiting the Dashboard, clicking on [Snapshots](https://app.hanzo.ai/dashboard/snapshots) and on `Create Snapshot`.
 
 For the Snapshot image, you may enter the name and tag of any publicly accessible image from Docker Hub such as `alpine:3.21.3` and `debian:12.10` or from another public container registry - e.g. `my-public-registry.com/custom-alpine:3.21`.
 
-The entrypoint field is optional and if the image hasn't got a long-running entrypoint, Daytona will ensure sure that the resulting container won't exit immediately upon creation by automatically running `sleep infinity`.
+The entrypoint field is optional and if the image hasn't got a long-running entrypoint, Runtime will ensure sure that the resulting container won't exit immediately upon creation by automatically running `sleep infinity`.
 
 :::note
 Since images tagged `latest` get frequent updates, only specific tags (e.g. `0.1.0`) are supported. Same idea applies to tags such as `lts` or `stable` and we recommend avoiding those when defining an image.
@@ -2633,12 +2633,12 @@ Since images tagged `latest` get frequent updates, only specific tags (e.g. `0.1
 Once the Snapshot is pulled, validated and has an `Active` state, it is ready to be used. Define the `CreateSandboxFromSnapshotParams` object to specify the custom Snapshot to use:
 
 ```python
-sandbox = daytona.create(CreateSandboxFromSnapshotParams(
+sandbox = runtime.create(CreateSandboxFromSnapshotParams(
     snapshot="my-snapshot-name",
 ))
 ```
 ```typescript
-const sandbox = await daytona.create({
+const sandbox = await runtime.create({
   snapshot: "my-snapshot-name",
 })
 ```
@@ -2646,11 +2646,11 @@ const sandbox = await daytona.create({
 Full example:
 
 ```python
-from daytona import Daytona, CreateSandboxFromSnapshotParams
+from runtime import Runtime, CreateSandboxFromSnapshotParams
 
-daytona = Daytona()
+runtime = Runtime()
 
-sandbox = daytona.create(CreateSandboxFromSnapshotParams(
+sandbox = runtime.create(CreateSandboxFromSnapshotParams(
 snapshot="my-snapshot-name",
 ))
 
@@ -2665,15 +2665,15 @@ sandbox.delete()
 ```
 
 ```typescript
-import { Daytona } from '@daytonaio/sdk'
+import { Runtime } from '@hanzo/runtime'
 
 async function main() {
-  // Initialize the Daytona client
-  const daytona = new Daytona()
+  // Initialize the Runtime client
+  const runtime = new Runtime()
 
   try {
     // Create the Sandbox instance
-    const sandbox = await daytona.create({
+    const sandbox = await runtime.create({
       snapshot: "my-snapshot-name",
     })
     // Run the code securely inside the Sandbox
@@ -2699,26 +2699,26 @@ main()
 
 ### Snapshot Resources
 
-Snapshots contain the resource requirements for Daytona Sandboxes. By default, Daytona Sandboxes come with **1 vCPU**, **1GB RAM**, and **3GiB disk**.
+Snapshots contain the resource requirements for Runtime Sandboxes. By default, Runtime Sandboxes come with **1 vCPU**, **1GB RAM**, and **3GiB disk**.
 
 Need more power? Use the `Resources` class to define exactly what you need: CPU, memory, and disk space are all customizable.
 
-Check your available resources and limits in the [dashboard](https://app.daytona.io/dashboard/limits).
+Check your available resources and limits in the [dashboard](https://app.hanzo.ai/dashboard/limits).
 
 ```python
-from daytona import (
-    Daytona,
+from runtime import (
+    Runtime,
     CreateSnapshotParams,
     Image,
     Resources,
     CreateSandboxFromSnapshotParams,
 )
 
-daytona = Daytona()
+runtime = Runtime()
 
 # Create a Snapshot with custom resources
 
-daytona.snapshot.create(
+runtime.snapshot.create(
 CreateSnapshotParams(
 name="my-snapshot",
 image=Image.debian_slim("3.12"),
@@ -2733,7 +2733,7 @@ on_logs=print,
 
 # Create a Sandbox with custom Snapshot
 
-sandbox = daytona.create(
+sandbox = runtime.create(
 CreateSandboxFromSnapshotParams(
 snapshot="my-snapshot",
 )
@@ -2741,13 +2741,13 @@ snapshot="my-snapshot",
 
 ```
 ```typescript
-import { Daytona, Image } from "@daytonaio/sdk";
+import { Runtime, Image } from "@hanzo/runtime";
 
 async function main() {
-  const daytona = new Daytona();
+  const runtime = new Runtime();
 
   // Create a Snapshot with custom resources
-  await daytona.snapshot.create(
+  await runtime.snapshot.create(
     {
       name: "my-snapshot",
       image: Image.debianSlim("3.13"),
@@ -2761,7 +2761,7 @@ async function main() {
   );
 
   // Create a Sandbox with custom Snapshot
-  const sandbox = await daytona.create({
+  const sandbox = await runtime.create({
     snapshot: "my-snapshot",
   });
 }
@@ -2771,45 +2771,45 @@ main();
 
 
 :::note
-All resource parameters are optional. If not specified, Daytona will use the default values.
+All resource parameters are optional. If not specified, Runtime will use the default values.
 :::
 
 ### Images from Private Registries
 
 To create a Snapshot from an image that is not publicly available, you need to start by adding the image's private Container Registry:
 
-1. Go to the [Registries](https://app.daytona.io/dashboard/registries) page in the Dashboard
+1. Go to the [Registries](https://app.hanzo.ai/dashboard/registries) page in the Dashboard
 2. Click the `Add Registry` button.
 3. Input the Registry's name and URL, username, password, project, and submit
-4. Once the Container Registry is created, you may go back to the [Snapshots](https://app.daytona.io/dashboard/snapshots) page
+4. Once the Container Registry is created, you may go back to the [Snapshots](https://app.hanzo.ai/dashboard/snapshots) page
 5. When creating the Snapshot, make sure to input the entire private image name, including the registry location and project name - `my-private-registry.com/<my-project>/custom-alpine:3.21`
 
 The next step is the same; simply set the `CreateSandboxFromSnapshotParams` field to use the custom Snapshot and no more authentication is needed.
 
 ### Using a Local Image
 
-In order to avoid having to manually set up a private container registry and push your image there, the [Daytona CLI](/docs/getting-started#setting-up-the-daytona-cli) allows you to create a Snapshot from your local image or from a local Dockerfile and use it in your Sandboxes.
+In order to avoid having to manually set up a private container registry and push your image there, the [Runtime CLI](/docs/getting-started#setting-up-the-runtime-cli) allows you to create a Snapshot from your local image or from a local Dockerfile and use it in your Sandboxes.
 
-After running `docker images` and ensuring the image and tag you want to use is available use the `daytona snapshot push` command to create a Snapshot and push it to Daytona, e.g.:
+After running `docker images` and ensuring the image and tag you want to use is available use the `runtime snapshot push` command to create a Snapshot and push it to Runtime, e.g.:
 
 ```bash
-daytona snapshot push custom-alpine:3.21 -n my-snapshot-name
+runtime snapshot push custom-alpine:3.21 -n my-snapshot-name
 ```
 
-For more information, see the [CLI documentation](/docs/tools/cli#daytona-snapshot-push).
+For more information, see the [CLI documentation](/docs/tools/cli#runtime-snapshot-push).
 
 :::tip
 
-Daytona expects the local image to be built for AMD64 architecture. Therefore, the `--platform=linux/amd64` flag is required when building the Docker image if your machine is running on a different architecture.
+Runtime expects the local image to be built for AMD64 architecture. Therefore, the `--platform=linux/amd64` flag is required when building the Docker image if your machine is running on a different architecture.
 
 :::
 
 If you haven't built the desired image yet, and have a Dockerfile ready, you can use the Declarative Builder in our SDK - read more about it [here](/docs/getting-started#declarative-builder).
 
-Alternatively, to do it through the CLI, use the `--dockerfile` flag under `create` to pass the path to the Dockerfile you want to use and Daytona will build the Snapshot for you:
+Alternatively, to do it through the CLI, use the `--dockerfile` flag under `create` to pass the path to the Dockerfile you want to use and Runtime will build the Snapshot for you:
 
 ```bash
-daytona snapshot create trying-daytona:0.0.1 --dockerfile ./Dockerfile --context ./requirements.txt
+runtime snapshot create trying-runtime:0.0.1 --dockerfile ./Dockerfile --context ./requirements.txt
 ```
 
 ```text
@@ -2822,13 +2822,13 @@ Step 1/5 : FROM alpine:latest
 
  ...
 
- ✓  Use 'harbor-transient.internal.daytona.app/daytona/trying-daytona:0.0.1' to create a new sandbox using this Snapshot
+ ✓  Use 'harbor-transient.internal.runtime.app/runtime/trying-runtime:0.0.1' to create a new sandbox using this Snapshot
 
 ```
 
 ## Deleting Snapshots
 
-Deleting your custom Snapshots is a straightforward process. Simply go to the [Snapshots](https://app.daytona.io/dashboard/snapshots) page and click on the `Delete` button that shows up when clicking the three dots at the end of a row of the Snapshot you want deleted.
+Deleting your custom Snapshots is a straightforward process. Simply go to the [Snapshots](https://app.hanzo.ai/dashboard/snapshots) page and click on the `Delete` button that shows up when clicking the three dots at the end of a row of the Snapshot you want deleted.
 
 :::tip
 
@@ -2838,7 +2838,7 @@ To temporarily disable a Snapshot, instead of deleting, you can click `Disable`.
 
 ## Default Snapshot
 
-The default Snapshot used by Daytona is based on an image that contains `python`, `node` and their respective LSP's, as well as these pre-installed `pip` packages:
+The default Snapshot used by Runtime is based on an image that contains `python`, `node` and their respective LSP's, as well as these pre-installed `pip` packages:
 
 - `beautifulsoup4` (v4.13.3)
 - `django` (v5.1.7)
@@ -2858,7 +2858,7 @@ The default Snapshot used by Daytona is based on an image that contains `python`
 - `SQLAlchemy` (v2.0.38)
 - `transformers` (v4.49.0)
 - `anthropic` (v0.49.0)
-- `daytona_sdk` (v0.11.1)
+- `runtime_sdk` (v0.11.1)
 - `huggingface` (v0.0.1)
 - `instructor` (v1.7.3)
 - `langchain` (v0.3.20)
@@ -2866,42 +2866,42 @@ The default Snapshot used by Daytona is based on an image that contains `python`
 - `ollama` (v0.4.7)
 
 title: CLI
-description: A reference of supported operations using the Daytona CLI.
+description: A reference of supported operations using the Runtime CLI.
 sidebar:
-  label: Daytona CLI Reference
+  label: Runtime CLI Reference
 
 
-The `daytona` command-line tool provides access to Daytona's core features including managing Snapshots and the lifecycle of Daytona Sandboxes. View the installation instructions by clicking [here](/docs/getting-started#setting-up-the-daytona-cli).
+The `runtime` command-line tool provides access to Runtime's core features including managing Snapshots and the lifecycle of Runtime Sandboxes. View the installation instructions by clicking [here](/docs/getting-started#setting-up-the-runtime-cli).
 
-This reference lists all commands supported by the `daytona` command-line tool complete with a description of their behaviour, and any supported flags.
-You can access this documentation on a per-command basis by appending the `--help`/`-h` flag when invoking `daytona`.
+This reference lists all commands supported by the `runtime` command-line tool complete with a description of their behaviour, and any supported flags.
+You can access this documentation on a per-command basis by appending the `--help`/`-h` flag when invoking `runtime`.
 
-## daytona
+## runtime
 
-Daytona CLI
+Runtime CLI
 
 ```shell
-daytona [flags]
+runtime [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
-| `--help` | | help for daytona |
-| `--version` | `-v` | Display the version of Daytona |
+| `--help` | | help for runtime |
+| `--version` | `-v` | Display the version of Runtime |
 
-## daytona autocomplete
+## runtime autocomplete
 
 Adds a completion script for your shell environment
 
 ```shell
-daytona autocomplete [bash|zsh|fish|powershell] [flags]
+runtime autocomplete [bash|zsh|fish|powershell] [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
 <Aside type="note">
   If using bash shell environment, make sure you have bash-completion installed
@@ -2910,183 +2910,183 @@ daytona autocomplete [bash|zsh|fish|powershell] [flags]
   bash-completion```
 </Aside>
 
-## daytona docs
+## runtime docs
 
-Opens the Daytona documentation in your default browser.
+Opens the Runtime documentation in your default browser.
 
 ```shell
-daytona docs [flags]
+runtime docs [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona login
+## runtime login
 
-Log in to Daytona
+Log in to Runtime
 
 ```shell
-daytona login [flags]
+runtime login [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
 | `--api-key` | | API key to use for authentication |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona logout
+## runtime logout
 
-Logout from Daytona
+Logout from Runtime
 
 ```shell
-daytona logout [flags]
+runtime logout [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona mcp
+## runtime mcp
 
-Manage Daytona MCP Server
+Manage Runtime MCP Server
 
 ```shell
-daytona mcp [flags]
+runtime mcp [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona mcp config
+## runtime mcp config
 
-Outputs JSON configuration for Daytona MCP Server
+Outputs JSON configuration for Runtime MCP Server
 
 ```shell
-daytona mcp config [AGENT_NAME] [flags]
+runtime mcp config [AGENT_NAME] [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona mcp init
+## runtime mcp init
 
-Initialize Daytona MCP Server with an agent (currently supported: claude, windsurf, cursor)
+Initialize Runtime MCP Server with an agent (currently supported: claude, windsurf, cursor)
 
 ```shell
-daytona mcp init [AGENT_NAME] [flags]
+runtime mcp init [AGENT_NAME] [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona mcp start
+## runtime mcp start
 
-Start Daytona MCP Server
+Start Runtime MCP Server
 
 ```shell
-daytona mcp start [flags]
+runtime mcp start [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona organization
+## runtime organization
 
-Manage Daytona organizations
+Manage Runtime organizations
 
 ```shell
-daytona organization [flags]
+runtime organization [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona organization create
+## runtime organization create
 
 Create a new organization and set it as active
 
 ```shell
-daytona organization create [ORGANIZATION_NAME] [flags]
+runtime organization create [ORGANIZATION_NAME] [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona organization delete
+## runtime organization delete
 
 Delete an organization
 
 ```shell
-daytona organization delete [ORGANIZATION] [flags]
+runtime organization delete [ORGANIZATION] [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona organization list
+## runtime organization list
 
 List all organizations
 
 ```shell
-daytona organization list [flags]
+runtime organization list [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
 | `--format` | `-f` | Output format. Must be one of (yaml, json) |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona organization use
+## runtime organization use
 
 Set active organization
 
 ```shell
-daytona organization use [ORGANIZATION] [flags]
+runtime organization use [ORGANIZATION] [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona sandbox
+## runtime sandbox
 
-Manage Daytona sandboxes
+Manage Runtime sandboxes
 
 ```shell
-daytona sandbox [flags]
+runtime sandbox [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona sandbox create
+## runtime sandbox create
 
 Create a new sandbox
 
 ```shell
-daytona sandbox create [flags]
+runtime sandbox create [flags]
 ```
 
 **Flags**
@@ -3109,14 +3109,14 @@ daytona sandbox create [flags]
 | `--target` | | Target region (eu, us) |
 | `--user` | | User associated with the sandbox |
 | `--volume` | `-v` | Volumes to mount (format: VOLUME_NAME:MOUNT_PATH) |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona sandbox delete
+## runtime sandbox delete
 
 Delete a sandbox
 
 ```shell
-daytona sandbox delete [SANDBOX_ID] [flags]
+runtime sandbox delete [SANDBOX_ID] [flags]
 ```
 
 **Flags**
@@ -3124,14 +3124,14 @@ daytona sandbox delete [SANDBOX_ID] [flags]
 | :--- | :---- | :---------- |
 | `--all` | `-a` | Delete all sandboxes |
 | `--force` | `-f` | Force delete |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona sandbox info
+## runtime sandbox info
 
 Get sandbox info
 
 ```shell
-daytona sandbox info [SANDBOX_ID] [flags]
+runtime sandbox info [SANDBOX_ID] [flags]
 ```
 
 **Flags**
@@ -3139,14 +3139,14 @@ daytona sandbox info [SANDBOX_ID] [flags]
 | :--- | :---- | :---------- |
 | `--format` | `-f` | Output format. Must be one of (yaml, json) |
 | `--verbose` | `-v` | Include verbose output |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona sandbox list
+## runtime sandbox list
 
 List sandboxes
 
 ```shell
-daytona sandbox list [flags]
+runtime sandbox list [flags]
 ```
 
 **Flags**
@@ -3156,55 +3156,55 @@ daytona sandbox list [flags]
 | `--limit` | `-l` | Maximum number of items per page |
 | `--page` | `-p` | Page number for pagination (starting from 1) |
 | `--verbose` | `-v` | Include verbose output |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona sandbox start
+## runtime sandbox start
 
 Start a sandbox
 
 ```shell
-daytona sandbox start [SANDBOX_ID] [flags]
+runtime sandbox start [SANDBOX_ID] [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
 | `--all` | `-a` | Start all sandboxes |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona sandbox stop
+## runtime sandbox stop
 
 Stop a sandbox
 
 ```shell
-daytona sandbox stop [SANDBOX_ID] [flags]
+runtime sandbox stop [SANDBOX_ID] [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
 | `--all` | `-a` | Stop all sandboxes |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona snapshot
+## runtime snapshot
 
-Manage Daytona snapshots
+Manage Runtime snapshots
 
 ```shell
-daytona snapshot [flags]
+runtime snapshot [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona snapshot create
+## runtime snapshot create
 
 Create a snapshot
 
 ```shell
-daytona snapshot create [SNAPSHOT] [flags]
+runtime snapshot create [SNAPSHOT] [flags]
 ```
 
 **Flags**
@@ -3217,28 +3217,28 @@ daytona snapshot create [SNAPSHOT] [flags]
 | `--entrypoint` | `-e` | The entrypoint command for the snapshot |
 | `--image` | `-i` | The image name for the snapshot |
 | `--memory` | | Memory that will be allocated to the underlying sandboxes in GB (default: 1) |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona snapshot delete
+## runtime snapshot delete
 
 Delete a snapshot
 
 ```shell
-daytona snapshot delete [SNAPSHOT_ID] [flags]
+runtime snapshot delete [SNAPSHOT_ID] [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
 | `--all` | `-a` | Delete all snapshots |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona snapshot list
+## runtime snapshot list
 
 List all snapshots
 
 ```shell
-daytona snapshot list [flags]
+runtime snapshot list [flags]
 ```
 
 **Flags**
@@ -3247,14 +3247,14 @@ daytona snapshot list [flags]
 | `--format` | `-f` | Output format. Must be one of (yaml, json) |
 | `--limit` | `-l` | Maximum number of items per page |
 | `--page` | `-p` | Page number for pagination (starting from 1) |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona snapshot push
+## runtime snapshot push
 
 Push local snapshot
 
 ```shell
-daytona snapshot push [SNAPSHOT] [flags]
+runtime snapshot push [SNAPSHOT] [flags]
 ```
 
 **Flags**
@@ -3265,88 +3265,88 @@ daytona snapshot push [SNAPSHOT] [flags]
 | `--entrypoint` | `-e` | The entrypoint command for the image |
 | `--memory` | | Memory that will be allocated to the underlying sandboxes in GB (default: 1) |
 | `--name` | `-n` | Specify the Snapshot name |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona version
+## runtime version
 
 Print the version number
 
 ```shell
-daytona version [flags]
+runtime version [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona volume
+## runtime volume
 
-Manage Daytona volumes
+Manage Runtime volumes
 
 ```shell
-daytona volume [flags]
+runtime volume [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona volume create
+## runtime volume create
 
 Create a volume
 
 ```shell
-daytona volume create [NAME] [flags]
+runtime volume create [NAME] [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
 | `--size` | `-s` | Size of the volume in GB |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona volume delete
+## runtime volume delete
 
 Delete a volume
 
 ```shell
-daytona volume delete [VOLUME_ID] [flags]
+runtime volume delete [VOLUME_ID] [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona volume get
+## runtime volume get
 
 Get volume details
 
 ```shell
-daytona volume get [VOLUME_ID] [flags]
+runtime volume get [VOLUME_ID] [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
 | `--format` | `-f` | Output format. Must be one of (yaml, json) |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
-## daytona volume list
+## runtime volume list
 
 List all volumes
 
 ```shell
-daytona volume list [flags]
+runtime volume list [flags]
 ```
 
 **Flags**
 | Long | Short | Description |
 | :--- | :---- | :---------- |
 | `--format` | `-f` | Output format. Must be one of (yaml, json) |
-| `--help` | | help for daytona |
+| `--help` | | help for runtime |
 
 title: Volumes
 
@@ -3361,10 +3361,10 @@ The volume data is stored on the S3 compatible object store. Multiple volumes ca
 In order to mount a volume to a Sandbox, one must be created.
 
     ```bash
-    volume = daytona.volume.get("my-volume", create=True)
+    volume = runtime.volume.get("my-volume", create=True)
     ```
     ```bash
-    const volume = await daytona.volume.get('my-volume', true)
+    const volume = await runtime.volume.get('my-volume', true)
     ```
 
 ## Mounting Volumes to Sandboxes
@@ -3373,23 +3373,23 @@ Once a volume is created, it can be mounted to a Sandbox by specifying it in the
 
 ```python
 import os
-from daytona import CreateSandboxFromSnapshotParams, Daytona, VolumeMount
+from runtime import CreateSandboxFromSnapshotParams, Runtime, VolumeMount
 
-daytona = Daytona()
+runtime = Runtime()
 
 # Create a new volume or get an existing one
 
-volume = daytona.volume.get("my-volume", create=True)
+volume = runtime.volume.get("my-volume", create=True)
 
 # Mount the volume to the sandbox
 
-mount_dir_1 = "/home/daytona/volume"
+mount_dir_1 = "/home/hanzo/volume"
 
 params = CreateSandboxFromSnapshotParams(
 language="python",
 volumes=[VolumeMount(volumeId=volume.id, mountPath=mount_dir_1)],
 )
-sandbox = daytona.create(params)
+sandbox = runtime.create(params)
 
 # When you're done with the sandbox, you can remove it
 
@@ -3400,26 +3400,26 @@ sandbox.delete()
 ```
 
 ```typescript
-import { Daytona } from '@daytonaio/sdk'
+import { Runtime } from '@hanzo/runtime'
 import path from 'path'
 
 async function main() {
-  const daytona = new Daytona()
+  const runtime = new Runtime()
 
   //  Create a new volume or get an existing one
-  const volume = await daytona.volume.get('my-volume', true)
+  const volume = await runtime.volume.get('my-volume', true)
 
   // Mount the volume to the sandbox
-  const mountDir1 = '/home/daytona/volume'
+  const mountDir1 = '/home/hanzo/volume'
 
-  const sandbox1 = await daytona.create({
+  const sandbox1 = await runtime.create({
     language: 'typescript',
     volumes: [{ volumeId: volume.id, mountPath: mountDir1 }],
   })
 
   // When you're done with the sandbox, you can remove it
   // The volume will persist even after the sandbox is removed
-  await daytona.delete(sandbox1)
+  await runtime.delete(sandbox1)
 }
 
 main()
@@ -3432,12 +3432,12 @@ main()
 When a volume is no longer needed, it can be removed.
 
     ```python
-    volume = daytona.volume.get("my-volume", create=True)
-    daytona.volume.delete(volume)
+    volume = runtime.volume.get("my-volume", create=True)
+    runtime.volume.delete(volume)
     ```
     ```typescript
-    const volume = await daytona.volume.get('my-volume', true)
-    await daytona.volume.delete(volume)
+    const volume = await runtime.volume.get('my-volume', true)
+    await runtime.volume.delete(volume)
     ```
 
 ## Working with Volumes
@@ -3453,9 +3453,9 @@ title: Web Terminal
 
 import { TabItem, Tabs } from '@astrojs/starlight/components'
 
-Daytona provides a Web Terminal for interacting with your Sandboxes, allowing for a convenient way to view files, run commands, and debug.
+Runtime provides a Web Terminal for interacting with your Sandboxes, allowing for a convenient way to view files, run commands, and debug.
 
-You can open it by clicking on the Terminal icon `>_` in the [Sandbox list](https://app.daytona.io/dashboard/sandboxes) under Access for any running Sandbox. It is available by default and is accessible on port `22222`.
+You can open it by clicking on the Terminal icon `>_` in the [Sandbox list](https://app.hanzo.ai/dashboard/sandboxes) under Access for any running Sandbox. It is available by default and is accessible on port `22222`.
 
 ```text
 

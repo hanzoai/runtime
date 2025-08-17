@@ -1,18 +1,18 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package auth
 
 import (
-	"github.com/daytonaio/daytona/cli/config"
-	"github.com/daytonaio/daytona/cli/internal"
-	"github.com/daytonaio/daytona/cli/views/common"
+	"github.com/hanzoai/runtime/cli/config"
+	"github.com/hanzoai/runtime/cli/internal"
+	"github.com/hanzoai/runtime/cli/views/common"
 	"github.com/spf13/cobra"
 )
 
 var LogoutCmd = &cobra.Command{
 	Use:     "logout",
-	Short:   "Logout from Daytona",
+	Short:   "Logout from Runtime",
 	Args:    cobra.NoArgs,
 	GroupID: internal.USER_GROUP,
 	RunE: func(cmd *cobra.Command, args []string) error {

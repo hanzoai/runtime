@@ -1,17 +1,17 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package sandbox
 
 import (
-	"github.com/daytonaio/daytona/cli/internal"
+	"github.com/hanzoai/runtime/cli/internal"
 	"github.com/spf13/cobra"
 )
 
 var SandboxCmd = &cobra.Command{
 	Use:     "sandbox",
-	Short:   "Manage Daytona sandboxes",
-	Long:    "Commands for managing Daytona sandboxes",
+	Short:   "Manage Runtime sandboxes",
+	Long:    "Commands for managing Runtime sandboxes",
 	Aliases: []string{"sandboxes"},
 	GroupID: internal.SANDBOX_GROUP,
 }

@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package proxy
@@ -17,8 +17,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"golang.org/x/oauth2"
 
-	"github.com/daytonaio/apiclient"
-	common_errors "github.com/daytonaio/common-go/pkg/errors"
+	"github.com/hanzoai/apiclient"
+	common_errors "github.com/hanzoai/common-go/pkg/errors"
 )
 
 func (p *Proxy) AuthCallback(ctx *gin.Context) {
@@ -101,13 +101,13 @@ func (p *Proxy) AuthCallback(ctx *gin.Context) {
 	cookieDomain = strings.Split(cookieDomain, ":")[0]
 	cookieDomain = fmt.Sprintf(".%s", cookieDomain)
 
-	encoded, err := p.secureCookie.Encode(DAYTONA_SANDBOX_AUTH_COOKIE_NAME+sandboxId, sandboxId)
+	encoded, err := p.secureCookie.Encode(RUNTIME_SANDBOX_AUTH_COOKIE_NAME+sandboxId, sandboxId)
 	if err != nil {
 		ctx.Error(common_errors.NewBadRequestError(fmt.Errorf("failed to encode cookie: %w", err)))
 		return
 	}
 
-	ctx.SetCookie(DAYTONA_SANDBOX_AUTH_COOKIE_NAME+sandboxId, encoded, 3600, "/", cookieDomain, p.config.EnableTLS, true)
+	ctx.SetCookie(RUNTIME_SANDBOX_AUTH_COOKIE_NAME+sandboxId, encoded, 3600, "/", cookieDomain, p.config.EnableTLS, true)
 
 	// Redirect back to the original URL
 	ctx.Redirect(http.StatusFound, returnTo)
@@ -156,7 +156,7 @@ func (p *Proxy) hasSandboxAccess(ctx context.Context, sandboxId string, authToke
 	clientConfig := apiclient.NewConfiguration()
 	clientConfig.Servers = apiclient.ServerConfigurations{
 		{
-			URL: p.config.DaytonaApiUrl,
+			URL: p.config.RuntimeApiUrl,
 		},
 	}
 	clientConfig.AddDefaultHeader("Authorization", "Bearer "+authToken)

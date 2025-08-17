@@ -1,13 +1,13 @@
-## daytona snapshot list
+## runtime snapshot list
 
 List all snapshots
 
 ### Synopsis
 
-List all available Daytona snapshots
+List all available Runtime snapshots
 
 ```
-daytona snapshot list [flags]
+runtime snapshot list [flags]
 ```
 
 ### Options
@@ -21,9 +21,9 @@ daytona snapshot list [flags]
 ### Options inherited from parent commands
 
 ```
-      --help   help for daytona
+      --help   help for runtime
 ```
 
 ### SEE ALSO
 
-- [daytona snapshot](daytona_snapshot.md) - Manage Daytona snapshots
+- [runtime snapshot](runtime_snapshot.md) - Manage Runtime snapshots

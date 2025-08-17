@@ -1,21 +1,21 @@
-## daytona organization
+## runtime organization
 
-Manage Daytona organizations
+Manage Runtime organizations
 
 ### Synopsis
 
-Commands for managing Daytona organizations
+Commands for managing Runtime organizations
 
 ### Options inherited from parent commands
 
 ```
-      --help   help for daytona
+      --help   help for runtime
 ```
 
 ### SEE ALSO
 
-- [daytona](daytona.md) - Daytona CLI
-- [daytona organization create](daytona_organization_create.md) - Create a new organization and set it as active
-- [daytona organization delete](daytona_organization_delete.md) - Delete an organization
-- [daytona organization list](daytona_organization_list.md) - List all organizations
-- [daytona organization use](daytona_organization_use.md) - Set active organization
+- [runtime](runtime.md) - Runtime CLI
+- [runtime organization create](runtime_organization_create.md) - Create a new organization and set it as active
+- [runtime organization delete](runtime_organization_delete.md) - Delete an organization
+- [runtime organization list](runtime_organization_list.md) - List all organizations
+- [runtime organization use](runtime_organization_use.md) - Set active organization

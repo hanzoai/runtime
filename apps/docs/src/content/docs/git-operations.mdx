@@ -4,17 +4,17 @@ title: Git Operations
 
 import { TabItem, Tabs } from '@astrojs/starlight/components'
 
-The Daytona SDK provides built-in Git support through the `git` module in Sandboxes. This guide covers all available Git operations and best practices.
+The Runtime SDK provides built-in Git support through the `git` module in Sandboxes. This guide covers all available Git operations and best practices.
 
 ## Basic Operations
 
-Daytona SDK provides an option to clone, check status, and manage Git repositories in Sandboxes. You can interact with Git repositories using the `git` module.
+Runtime SDK provides an option to clone, check status, and manage Git repositories in Sandboxes. You can interact with Git repositories using the `git` module.
 
 Similarly to file operations the starting cloning dir is the current Sandbox user's root - e.g. `workspace/repo` implies `/home/[username]/workspace/repo`, but you are free to provide an absolute workdir path as well (by starting the path with `/`).
 
 ### Cloning Repositories
 
-Daytona SDK provides an option to clone Git repositories into Sandboxes using Python and TypeScript. You can clone public or private repositories, specific branches, and authenticate using personal access tokens.
+Runtime SDK provides an option to clone Git repositories into Sandboxes using Python and TypeScript. You can clone public or private repositories, specific branches, and authenticate using personal access tokens.
 
 <Tabs>
 <TabItem label="Python" icon="seti:python">
@@ -75,7 +75,7 @@ await sandbox.git.clone(
 
 ### Repository Status
 
-Daytona SDK provides an option to check the status of Git repositories in Sandboxes. You can get the current branch, modified files, number of commits ahead and behind main branch using Python and TypeScript.
+Runtime SDK provides an option to check the status of Git repositories in Sandboxes. You can get the current branch, modified files, number of commits ahead and behind main branch using Python and TypeScript.
 
 <Tabs>
 <TabItem label="Python" icon="seti:python">
@@ -119,11 +119,11 @@ response.branches.forEach(branch => {
 
 ## Branch Operations
 
-Daytona SDK provides an option to manage branches in Git repositories. You can create, switch, and delete branches.
+Runtime SDK provides an option to manage branches in Git repositories. You can create, switch, and delete branches.
 
 ### Managing Branches
 
-Daytona SDK provides an option to create, switch, and delete branches in Git repositories using Python and TypeScript.
+Runtime SDK provides an option to create, switch, and delete branches in Git repositories using Python and TypeScript.
 
 <Tabs>
 <TabItem label="Python" icon="seti:python">
@@ -158,7 +158,7 @@ await sandbox.git.deleteBranch("workspace/repo", "feature/old-feature");
 
 ## Staging and Committing
 
-Daytona SDK provides an option to stage and commit changes in Git repositories. You can stage specific files, all changes, and commit with a message using Python and TypeScript.
+Runtime SDK provides an option to stage and commit changes in Git repositories. You can stage specific files, all changes, and commit with a message using Python and TypeScript.
 
 ### Working with Changes
 
@@ -211,11 +211,11 @@ commits.forEach(commit => {
 
 ## Remote Operations
 
-Daytona SDK provides an option to work with remote repositories in Git. You can push changes, pull changes, and list remotes.
+Runtime SDK provides an option to work with remote repositories in Git. You can push changes, pull changes, and list remotes.
 
 ### Working with Remotes
 
-Daytona SDK provides an option to push, pull, and list remotes in Git repositories using Python and TypeScript.
+Runtime SDK provides an option to push, pull, and list remotes in Git repositories using Python and TypeScript.
 
 <Tabs>
 <TabItem label="Python" icon="seti:python">

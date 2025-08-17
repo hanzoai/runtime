@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -111,7 +111,7 @@ export function TierTable({
             <div className="grid gap-0 gap-y-4 py-2">
               <div>
                 <PhoneCall size={18} className="inline align-text-bottom" aria-label="Contact sales" />{' '}
-                <b>Contact sales at sales@daytona.io</b>
+                <b>Contact sales at sales@hanzo.ai</b>
               </div>
             </div>
           </TableCell>

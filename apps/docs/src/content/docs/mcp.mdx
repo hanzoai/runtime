@@ -1,63 +1,63 @@
 ---
-title: Daytona MCP Server
+title: Runtime MCP Server
 ---
 
 import { TabItem, Tabs } from '@astrojs/starlight/components'
 
-The Daytona Model Context Protocol (MCP) Server enables AI agents to interact with Daytona's features programmatically. This guide covers how to set up and use the MCP server with various AI agents.
+The Runtime Model Context Protocol (MCP) Server enables AI agents to interact with Runtime's features programmatically. This guide covers how to set up and use the MCP server with various AI agents.
 
 ## Prerequisites
 
 Before getting started, ensure you have:
 
-- A Daytona account
-- Daytona CLI installed
+- A Runtime account
+- Runtime CLI installed
 - A compatible AI agent (Claude Desktop App, Claude Code, Cursor, or Windsurf)
 
 ## Installation and Setup
 
-### 1. Install Daytona CLI
+### 1. Install Runtime CLI
 
 <Tabs>
 <TabItem label="Mac/Linux">
 ```bash
-brew install daytonaio/cli/daytona
+brew install hanzoai/cli/runtime
 ```
 
 </TabItem>
 <TabItem label="Windows">
 ```bash
-powershell -Command "irm https://get.daytona.io/windows | iex"
+powershell -Command "irm https://get.hanzo.ai/windows | iex"
 ```
 </TabItem>
 </Tabs>
 
-### 2. Authenticate with Daytona
+### 2. Authenticate with Runtime
 
 ```bash
-daytona login
+runtime login
 ```
 
 ### 3. Initialize MCP Server
 
-Initialize the Daytona MCP server with your preferred AI agent:
+Initialize the Runtime MCP server with your preferred AI agent:
 
 ```bash
-daytona mcp init [claude/cursor/windsurf]
+runtime mcp init [claude/cursor/windsurf]
 ```
 
 ### 4. Open Your AI Agent
 
-After initialization, open your AI agent application to begin using Daytona features.
+After initialization, open your AI agent application to begin using Runtime features.
 
 ## Integration with Other AI Agents
 
-To integrate Daytona MCP with other AI agents, follow these steps:
+To integrate Runtime MCP with other AI agents, follow these steps:
 
 1. Generate the MCP configuration:
 
 ```bash
-daytona mcp config
+runtime mcp config
 ```
 
 This command outputs a JSON configuration that you can copy into your agent's settings:
@@ -65,14 +65,14 @@ This command outputs a JSON configuration that you can copy into your agent's se
 ```json
 {
   "mcpServers": {
-    "daytona-mcp": {
-      "command": "daytona",
+    "runtime-mcp": {
+      "command": "runtime",
       "args": ["mcp", "start"],
       "env": {
         "HOME": "${HOME}",
         "PATH": "${HOME}:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin"
       },
-      "logFile": "${HOME}/Library/Logs/daytona/daytona-mcp-server.log"
+      "logFile": "${HOME}/Library/Logs/runtime/runtime-mcp-server.log"
     }
   }
 }
@@ -95,7 +95,7 @@ For Windows users, add the following to the `env` field:
 
 - **Create Sandbox**
 
-  - Creates a new Daytona sandbox
+  - Creates a new Runtime sandbox
   - Parameters:
     - `target` (default: "us"): Target region
     - `snapshot`: Snapshot for the sandbox (optional)
@@ -103,20 +103,20 @@ For Windows users, add the following to the `env` field:
     - `auto_archive_interval` (default: "10080"): Auto-archive interval in minutes (0 means the maximum interval will be used)
 
 - **Destroy Sandbox**
-  - Removes an existing Daytona sandbox
+  - Removes an existing Runtime sandbox
 
 ### File Operations
 
 - **Download File**
 
-  - Downloads a file from the Daytona sandbox
+  - Downloads a file from the Runtime sandbox
   - Returns content as text or base64 encoded image
   - Parameters:
     - `file_path`: Path to the file
 
 - **Upload File**
 
-  - Uploads a file to the Daytona sandbox
+  - Uploads a file to the Runtime sandbox
   - Supports text or base64-encoded binary content
   - Creates necessary parent directories automatically
   - Files persist during the session with appropriate permissions
@@ -186,7 +186,7 @@ For Windows users, add the following to the `env` field:
 ### Command Execution
 
 - **Execute Command**
-  - Runs shell commands in the Daytona environment
+  - Runs shell commands in the Runtime environment
   - Returns stdout, stderr, and exit code
   - Commands run with sandbox user permissions
   - Parameters:
@@ -198,7 +198,7 @@ Common issues and solutions:
 
 - **Authentication Issues**
 
-  - Run `daytona login` to refresh credentials
+  - Run `runtime login` to refresh credentials
 
 - **Connection Errors**
 
@@ -206,11 +206,11 @@ Common issues and solutions:
   - Check server status
 
 - **Sandbox Errors**
-  - Use `daytona sandbox list` to check sandbox status
+  - Use `runtime sandbox list` to check sandbox status
 
 ## Support
 
 For additional assistance:
 
-- Visit [daytona.io](https://daytona.io)
-- Contact support at support@daytona.io
+- Visit [hanzo.ai](https://hanzo.ai)
+- Contact support at support@hanzo.ai

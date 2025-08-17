@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package git
@@ -9,7 +9,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/daytonaio/daemon/pkg/gitprovider"
+	"github.com/hanzoai/daemon/pkg/gitprovider"
 	"gopkg.in/ini.v1"
 )
 
@@ -34,7 +34,7 @@ func (s *Service) SetGitConfig(userData *gitprovider.GitUser, providerConfig *gi
 		}
 	}
 
-	_, err = cfg.Section("credential").NewKey("helper", "/usr/local/bin/daytona git-cred")
+	_, err = cfg.Section("credential").NewKey("helper", "/usr/local/bin/runtime git-cred")
 	if err != nil {
 		return err
 	}

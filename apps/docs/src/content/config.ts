@@ -101,7 +101,7 @@ export const sidebarConfig: NavigationGroup[] = [
         href: '/docs/getting-started',
         label: 'Getting Started',
         description:
-          'Learn about Daytona SDK and how it can help you manage your development environments.',
+          'Learn about Runtime SDK and how it can help you manage your development environments.',
         attrs: {
           icon: 'bookmark.svg',
         },
@@ -111,7 +111,7 @@ export const sidebarConfig: NavigationGroup[] = [
         href: '/docs/configuration',
         label: 'Configuration',
         description:
-          'Get started with Daytona SDK and learn how to use and configure your development environments.',
+          'Get started with Runtime SDK and learn how to use and configure your development environments.',
         attrs: {
           icon: 'git-commit.svg',
         },
@@ -121,7 +121,7 @@ export const sidebarConfig: NavigationGroup[] = [
         href: '/docs/sandbox-management',
         label: 'Sandboxes',
         description:
-          'Learn how to create, manage, and remove Sandboxes using the Daytona SDK.',
+          'Learn how to create, manage, and remove Sandboxes using the Runtime SDK.',
         attrs: {
           icon: 'rectangle.svg',
         },
@@ -131,7 +131,7 @@ export const sidebarConfig: NavigationGroup[] = [
         href: '/docs/snapshots',
         label: 'Snapshots',
         description:
-          'Learn how to create, manage and remove Snapshots using the Daytona SDK.',
+          'Learn how to create, manage and remove Snapshots using the Runtime SDK.',
         attrs: {
           icon: 'layers.svg',
         },
@@ -141,7 +141,7 @@ export const sidebarConfig: NavigationGroup[] = [
         href: '/docs/declarative-builder',
         label: 'Declarative Builder',
         description:
-          'Learn how to dynamically build Snapshots from Docker/OCI compatible images using the Daytona SDK.',
+          'Learn how to dynamically build Snapshots from Docker/OCI compatible images using the Runtime SDK.',
         attrs: {
           icon: 'prebuilds.svg',
         },
@@ -150,7 +150,7 @@ export const sidebarConfig: NavigationGroup[] = [
         type: 'link',
         href: '/docs/volumes',
         label: 'Volumes',
-        description: 'Learn how to manage volumes in your Daytona Sandboxes.',
+        description: 'Learn how to manage volumes in your Runtime Sandboxes.',
         attrs: {
           icon: 'container-registries.svg',
         },
@@ -167,7 +167,7 @@ export const sidebarConfig: NavigationGroup[] = [
         type: 'link',
         href: '/docs/api-keys',
         label: 'API Keys',
-        description: 'Daytona API Key management and scopes.',
+        description: 'Runtime API Key management and scopes.',
         attrs: {
           icon: 'tag.svg',
         },
@@ -177,7 +177,7 @@ export const sidebarConfig: NavigationGroup[] = [
         href: '/docs/organizations',
         label: 'Organizations',
         description:
-          'Learn how to create, manage, and remove Organizations using the Daytona SDK.',
+          'Learn how to create, manage, and remove Organizations using the Runtime SDK.',
         attrs: {
           icon: 'building.svg',
         },
@@ -222,7 +222,7 @@ export const sidebarConfig: NavigationGroup[] = [
         href: '/docs/file-system-operations',
         label: 'File System',
         description:
-          'Learn how to manage files and directories in your Sandboxes using the Daytona SDK.',
+          'Learn how to manage files and directories in your Sandboxes using the Runtime SDK.',
         attrs: {
           icon: 'folder.svg',
         },
@@ -232,7 +232,7 @@ export const sidebarConfig: NavigationGroup[] = [
         href: '/docs/git-operations',
         label: 'Git Operations',
         description:
-          'Learn how to manage Git repositories in your Sandboxes using the Daytona SDK.',
+          'Learn how to manage Git repositories in your Sandboxes using the Runtime SDK.',
         attrs: {
           icon: 'git-branch.svg',
         },
@@ -242,7 +242,7 @@ export const sidebarConfig: NavigationGroup[] = [
         href: '/docs/language-server-protocol',
         label: 'Language Server Protocol',
         description:
-          'Learn how to use Language Server Protocol (LSP) support in your Sandboxes using the Daytona SDK.',
+          'Learn how to use Language Server Protocol (LSP) support in your Sandboxes using the Runtime SDK.',
         attrs: {
           icon: 'pulse.svg',
         },
@@ -252,7 +252,7 @@ export const sidebarConfig: NavigationGroup[] = [
         href: '/docs/process-code-execution',
         label: 'Process & Code Execution',
         description:
-          'Learn about running commands and code in isolated environments using the Daytona SDK.',
+          'Learn about running commands and code in isolated environments using the Runtime SDK.',
         attrs: {
           icon: 'computer.svg',
         },
@@ -262,7 +262,7 @@ export const sidebarConfig: NavigationGroup[] = [
         href: '/docs/log-streaming',
         label: 'Log Streaming',
         description:
-          'Learn how to stream logs from your Sandboxes using the Daytona SDK.',
+          'Learn how to stream logs from your Sandboxes using the Runtime SDK.',
         attrs: {
           icon: 'log.svg',
         },
@@ -279,7 +279,7 @@ export const sidebarConfig: NavigationGroup[] = [
         type: 'link',
         href: '/docs/web-terminal',
         label: 'Web Terminal',
-        description: 'Web Terminal access to Daytona Sandboxes.',
+        description: 'Web Terminal access to Runtime Sandboxes.',
         attrs: {
           icon: 'terminal.svg',
         },
@@ -297,7 +297,7 @@ export const sidebarConfig: NavigationGroup[] = [
         type: 'link',
         href: '/docs/regions',
         label: 'Regions',
-        description: 'Setting the region to spin up Daytona Sandboxes in.',
+        description: 'Setting the region to spin up Runtime Sandboxes in.',
         attrs: {
           icon: 'globe.svg',
         },
@@ -327,8 +327,8 @@ export const sidebarConfig: NavigationGroup[] = [
       },
       {
         type: 'link',
-        href: '/docs/typescript-sdk/daytona',
-        label: 'Daytona',
+        href: '/docs/typescript-sdk/runtime',
+        label: 'Runtime',
       },
       {
         type: 'link',
@@ -366,8 +366,8 @@ export const sidebarConfig: NavigationGroup[] = [
     entries: [
       {
         type: 'link',
-        href: '/docs/python-sdk/sync/daytona',
-        label: 'Daytona',
+        href: '/docs/python-sdk/sync/runtime',
+        label: 'Runtime',
       },
       {
         type: 'link',
@@ -385,8 +385,8 @@ export const sidebarConfig: NavigationGroup[] = [
     entries: [
       {
         type: 'link',
-        href: '/docs/python-sdk/async/async-daytona',
-        label: 'AsyncDaytona',
+        href: '/docs/python-sdk/async/async-runtime',
+        label: 'AsyncRuntime',
       },
       {
         type: 'link',

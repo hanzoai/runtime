@@ -18,7 +18,7 @@ const getCurrentDate = () => {
 
 const getVersionHeader = () => {
   return [
-    `# Daytona Documentation v${version}`,
+    `# Runtime Documentation v${version}`,
     `# Generated on: ${getCurrentDate()}`,
     '',
   ].join('\n')
@@ -115,13 +115,13 @@ const searchDocs = () => {
 const generateLlmsTxtFile = docsData => {
   const llmsContent = [
     getVersionHeader(),
-    '# Daytona',
+    '# Runtime',
     '',
     '> Secure and Elastic Infrastructure for Running Your Al-Generated Code.',
     '',
     '## Docs',
     '',
-    ...docsData.map(doc => `- [${doc.title}](https://daytona.io${doc.url})`),
+    ...docsData.map(doc => `- [${doc.title}](https://hanzo.ai${doc.url})`),
   ]
   fs.writeFileSync(
     path.join(__dirname, '../public/llms.txt'),

@@ -4,7 +4,7 @@ title: Declarative Builder
 
 import { TabItem, Tabs } from '@astrojs/starlight/components'
 
-Daytona's declarative builder provides a powerful, code-first approach to defining dependencies for Sandboxes. Instead of importing images from a container registry, you can programmatically define them using the SDK.
+Runtime's declarative builder provides a powerful, code-first approach to defining dependencies for Sandboxes. Instead of importing images from a container registry, you can programmatically define them using the SDK.
 
 ## Overview
 
@@ -45,7 +45,7 @@ For detailed method signatures and usage examples, refer to the [Python](/docs/p
 Create images on-the-fly when creating Sandboxes. This is useful when you want to create a new Sandbox with specific dependencies that are not part of any existing image.
 
 You can either define an entirely new image or append some specific dependencies to an existing one - e.g. a `pip` package or an `apt-get install` command.
-This eliminates the need to use your own compute for the build process and you can instead offload it to Daytona's infrastructure.
+This eliminates the need to use your own compute for the build process and you can instead offload it to Runtime's infrastructure.
 It doesn't require registering and validating a separate Snapshot for each version. Instead, it allows you to iterate on the dependency list quickly or to have slightly different versions for tens or hundreds of similar usecases/setups.
 
 <Tabs>
@@ -63,7 +63,7 @@ dynamic_image = (
 
 # Create a new Sandbox with the dynamic image and stream the build logs
 
-sandbox = daytona.create(
+sandbox = runtime.create(
 CreateSandboxFromImageParams(
 image=dynamic_image,
 ),
@@ -86,7 +86,7 @@ const dynamicImage = Image.debianSlim('3.13')
     .addLocalFile('file_example.txt', '/home/hanzo/project/file_example.txt')
 
 // Create a new Sandbox with the dynamic image and stream the build logs
-const sandbox = await daytona.create(
+const sandbox = await runtime.create(
   {
     image: dynamicImage,
   },
@@ -103,14 +103,14 @@ const sandbox = await daytona.create(
 :::tip
 Once you've run the Sandbox creation from a dynamic image a single time, the image will get cached for the next 24 hours and any subsequent Sandbox creation that lands on the same Runner will be almost instantaneous.
 
-This means you can use the same script every time and Daytona will take of caching the image properly.
+This means you can use the same script every time and Runtime will take of caching the image properly.
 :::
 
 ## Creating Pre-built Snapshots
 
-If you want to prepare a new Daytona Snapshot with specific dependencies and then use it instantly across multiple Sandboxes whenever necessary, you can create a pre-built Snapshot.
+If you want to prepare a new Runtime Snapshot with specific dependencies and then use it instantly across multiple Sandboxes whenever necessary, you can create a pre-built Snapshot.
 
-This Snapshot will stay visible in the Daytona dashboard and be permanently cached, ensuring that rebuilding it is not needed.
+This Snapshot will stay visible in the Runtime dashboard and be permanently cached, ensuring that rebuilding it is not needed.
 
 <Tabs>
 <TabItem label="Python" icon="seti:python">
@@ -130,10 +130,10 @@ Image.debian_slim("3.12")
 .pip_install(["numpy", "pandas", "matplotlib", "scipy", "scikit-learn", "jupyter"])
 .run_commands(
 "apt-get update && apt-get install -y git",
-"groupadd -r daytona && useradd -r -g daytona -m daytona",
+"groupadd -r runtime && useradd -r -g runtime -m runtime",
 "mkdir -p /home/hanzo/workspace",
 )
-.dockerfile_commands(["USER daytona"])
+.dockerfile_commands(["USER runtime"])
 .workdir("/home/hanzo/workspace")
 .env({"MY_ENV_VAR": "My Environment Variable"})
 .add_local_file("file_example.txt", "/home/hanzo/workspace/file_example.txt")
@@ -142,7 +142,7 @@ Image.debian_slim("3.12")
 # Create the Snapshot and stream the build logs
 
 print(f"=== Creating Snapshot: {snapshot_name} ===")
-daytona.snapshot.create(
+runtime.snapshot.create(
 CreateSnapshotParams(
 name=snapshot_name,
 image=image,
@@ -157,7 +157,7 @@ on_logs=print,
 
 # Create a new Sandbox using the pre-built Snapshot
 
-sandbox = daytona.create(
+sandbox = runtime.create(
 CreateSandboxFromSnapshotParams(
 snapshot=snapshot_name
 )
@@ -180,7 +180,7 @@ fs.writeFileSync(localFilePath, localFileContent)
 const image = Image.debianSlim('3.12')
     .pipInstall(['numpy', 'pandas', 'matplotlib', 'scipy', 'scikit-learn'])
     .runCommands('apt-get update && apt-get install -y git', 'mkdir -p /home/hanzo/workspace')
-    .dockerfileCommands(['USER daytona'])
+    .dockerfileCommands(['USER runtime'])
     .workdir('/home/hanzo/workspace')
     .env({
         MY_ENV_VAR: 'My Environment Variable',
@@ -189,7 +189,7 @@ const image = Image.debianSlim('3.12')
 
 // Create the Snapshot and stream the build logs
 console.log(`=== Creating Snapshot: ${snapshotName} ===`)
-await daytona.snapshot.create(
+await runtime.snapshot.create(
     {
       name: snapshotName,
       image,
@@ -205,7 +205,7 @@ await daytona.snapshot.create(
   )
 
 // Create a new Sandbox using the pre-built Snapshot
-const sandbox = await daytona.create({
+const sandbox = await runtime.create({
     snapshot: snapshotName,
 })
 ```

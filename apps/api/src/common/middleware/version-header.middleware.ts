@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -11,7 +11,7 @@ import { Request, Response, NextFunction } from 'express'
 export class VersionHeaderMiddleware implements NestMiddleware {
   use(req: Request, res: Response, next: NextFunction) {
     // TODO: Fetch version from package.json
-    // res.setHeader('X-Daytona-Api-Version', `v${version}`)
+    // res.setHeader('X-Runtime-Api-Version', `v${version}`)
     next()
   }
 }

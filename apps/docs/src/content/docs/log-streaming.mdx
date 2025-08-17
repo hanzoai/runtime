@@ -4,7 +4,7 @@ title: Log Streaming
 
 When executing long-running processes in a sandbox, you’ll often want to access and process their logs in **real time**.
 
-The Daytona SDK supports both:
+The Runtime SDK supports both:
 
 - `Fetching log snapshot` — retrieve all logs up to a certain point.
 - `Log streaming` — stream logs as they are being produced, while the process is still running.
@@ -29,11 +29,11 @@ import { TabItem, Tabs } from '@astrojs/starlight/components'
 <TabItem label="Python" icon="seti:python">
 ```python
 import asyncio
-from daytona import Daytona, SessionExecuteRequest
+from runtime import Runtime, SessionExecuteRequest
 
 async def main():
-daytona = Daytona()
-sandbox = daytona.create()
+runtime = Runtime()
+sandbox = runtime.create()
 
     try:
         session_id = "exec-session-1"
@@ -72,11 +72,11 @@ asyncio.run(main())
 </TabItem>
   <TabItem label="Typescript" icon="seti:typescript">
   ```typescript
-  import { Daytona, Sandbox } from '@daytonaio/sdk'
+  import { Runtime, Sandbox } from '@hanzo/runtime'
 
   async function main() {
-    const daytona = new Daytona()
-    const sandbox = await daytona.create()
+    const runtime = new Runtime()
+    const sandbox = await runtime.create()
 
     try {
       const sessionId = 'exec-session-async-logs'
@@ -121,11 +121,11 @@ you can process log stream synchronously. For example, you can write logs to a f
   ```python
   import asyncio
   import os
-  from daytona import Daytona, SessionExecuteRequest
+  from runtime import Runtime, SessionExecuteRequest
 
 async def main():
-daytona = Daytona()
-sandbox = daytona.create()
+runtime = Runtime()
+sandbox = runtime.create()
 
       try:
           session_id = "exec-session-1"
@@ -166,11 +166,11 @@ asyncio.run(main())
 </TabItem>
 <TabItem label="Typescript" icon="seti:typescript">
 ```typescript
-import { Daytona, Sandbox } from '@daytonaio/sdk'
+import { Runtime, Sandbox } from '@hanzo/runtime'
 
 async function main() {
-  const daytona = new Daytona()
-  const sandbox = await daytona.create()
+  const runtime = new Runtime()
+  const sandbox = await runtime.create()
 
   try {
     const sessionId = 'exec-session-async-logs'

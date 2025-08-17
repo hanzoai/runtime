@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package runner
@@ -6,9 +6,9 @@ package runner
 import (
 	"log"
 
-	"github.com/daytonaio/runner/pkg/cache"
-	"github.com/daytonaio/runner/pkg/docker"
-	"github.com/daytonaio/runner/pkg/services"
+	"github.com/hanzoai/runner/pkg/cache"
+	"github.com/hanzoai/runner/pkg/docker"
+	"github.com/hanzoai/runner/pkg/services"
 )
 
 type RunnerInstanceConfig struct {

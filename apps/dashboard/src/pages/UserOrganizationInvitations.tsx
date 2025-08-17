@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -7,7 +7,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { toast } from 'sonner'
 import { useApi } from '@/hooks/useApi'
-import { OrganizationInvitation } from '@daytonaio/api-client'
+import { OrganizationInvitation } from '@hanzo/api-client'
 import { useSelectedOrganization } from '@/hooks/useSelectedOrganization'
 import { UserOrganizationInvitationTable } from '@/components/UserOrganizationInvitations/UserOrganizationInvitationTable'
 import { useOrganizations } from '@/hooks/useOrganizations'

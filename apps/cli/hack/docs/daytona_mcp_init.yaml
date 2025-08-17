@@ -1,10 +1,10 @@
-name: daytona mcp init
+name: runtime mcp init
 synopsis: |
-  Initialize Daytona MCP Server with an agent (currently supported: claude, windsurf, cursor)
-usage: daytona mcp init [AGENT_NAME] [flags]
+  Initialize Runtime MCP Server with an agent (currently supported: claude, windsurf, cursor)
+usage: runtime mcp init [AGENT_NAME] [flags]
 inherited_options:
   - name: help
     default_value: 'false'
-    usage: help for daytona
+    usage: help for runtime
 see_also:
-  - daytona mcp - Manage Daytona MCP Server
+  - runtime mcp - Manage Runtime MCP Server

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { FileInfo, Match, ReplaceRequest, ReplaceResult, SearchFilesResponse, ToolboxApi } from '@hanzo/runtime-api-client'
+import { FileInfo, Match, ReplaceRequest, ReplaceResult, SearchFilesResponse, ToolboxApi } from '@hanzo/api-client'
 import { prefixRelativePath } from './utils/Path'
 import * as fs from 'fs'
 import { Readable } from 'stream'

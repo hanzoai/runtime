@@ -1,43 +1,43 @@
 ---
 title: Python SDK Reference
-description: Interact with Daytona Sandboxes using the Python SDK
-next: /docs/python-sdk/daytona
+description: Interact with Runtime Sandboxes using the Python SDK
+next: /docs/python-sdk/runtime
 ---
 
 import { TabItem, Tabs } from '@astrojs/starlight/components'
 
-The Daytona Python SDK provides a robust interface for programmatically interacting with Daytona Sandboxes.
+The Runtime Python SDK provides a robust interface for programmatically interacting with Runtime Sandboxes.
 
 ## Installation
 
-Install the Daytona Python SDK using pip:
+Install the Runtime Python SDK using pip:
 
 ```bash
-pip install daytona
+pip install runtime
 ```
 
 Or using poetry:
 
 ```bash
-poetry add daytona
+poetry add runtime
 ```
 
 ## Getting Started
 
-Here's a simple example to help you get started with the Daytona Python SDK:
+Here's a simple example to help you get started with the Runtime Python SDK:
 
 <Tabs>
 <TabItem label="Sync" icon="seti:python">
 
 ```python
-from daytona import Daytona
+from runtime import Runtime
 
 def main():
     # Initialize the SDK (uses environment variables by default)
-    daytona = Daytona()
+    runtime = Runtime()
 
     # Create a new sandbox
-    sandbox = daytona.create()
+    sandbox = runtime.create()
 
     # Execute a command
     response = sandbox.process.exec("echo 'Hello, World!'")
@@ -52,13 +52,13 @@ if __name__ == "__main__":
 
 ```python
 import asyncio
-from daytona import AsyncDaytona
+from runtime import AsyncRuntime
 
 async def main():
     # Initialize the SDK (uses environment variables by default)
-    async with AsyncDaytona() as daytona:
+    async with AsyncRuntime() as runtime:
         # Create a new sandbox
-        sandbox = await daytona.create()
+        sandbox = await runtime.create()
 
         # Execute a command
         response = await sandbox.process.exec("echo 'Hello, World!'")
@@ -79,18 +79,18 @@ The SDK can be configured using environment variables or by passing options to t
 <TabItem label="Sync" icon="seti:python">
 
 ```python
-from daytona import Daytona, DaytonaConfig
+from runtime import Runtime, RuntimeConfig
 
-# Using environment variables (DAYTONA_API_KEY, DAYTONA_API_URL, DAYTONA_TARGET)
-daytona = Daytona()
+# Using environment variables (RUNTIME_API_KEY, RUNTIME_API_URL, RUNTIME_TARGET)
+runtime = Runtime()
 
 # Using explicit configuration
-config = DaytonaConfig(
+config = RuntimeConfig(
     api_key="your-api-key",
-    api_url="https://app.daytona.io/api",
+    api_url="https://app.hanzo.ai/api",
     target="us"
 )
-daytona = Daytona(config)
+runtime = Runtime(config)
 ```
 
 </TabItem>
@@ -98,24 +98,24 @@ daytona = Daytona(config)
 
 ```python
 import asyncio
-from daytona import AsyncDaytona, DaytonaConfig
+from runtime import AsyncRuntime, RuntimeConfig
 
 async def main():
     try:
-        # Using environment variables (DAYTONA_API_KEY, DAYTONA_API_URL, DAYTONA_TARGET)
-        daytona = AsyncDaytona()
+        # Using environment variables (RUNTIME_API_KEY, RUNTIME_API_URL, RUNTIME_TARGET)
+        runtime = AsyncRuntime()
         # Your async code here
         pass
     finally:
-        await daytona.close()
+        await runtime.close()
 
     # Using explicit configuration
-    config = DaytonaConfig(
+    config = RuntimeConfig(
         api_key="your-api-key",
-        api_url="https://app.daytona.io/api",
+        api_url="https://app.hanzo.ai/api",
         target="us"
     )
-    async with AsyncDaytona(config) as daytona:
+    async with AsyncRuntime(config) as runtime:
         # Your code here
         pass
 

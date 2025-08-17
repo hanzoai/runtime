@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -13,7 +13,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
-import { OrganizationInvitation } from '@daytonaio/api-client'
+import { OrganizationInvitation } from '@hanzo/api-client'
 
 interface OrganizationInvitationActionDialogProps {
   invitation: OrganizationInvitation

@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package sandbox
@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/daytonaio/apiclient"
-	"github.com/daytonaio/daytona/cli/views/common"
-	"github.com/daytonaio/daytona/cli/views/util"
+	"github.com/hanzoai/apiclient"
+	"github.com/hanzoai/runtime/cli/views/common"
+	"github.com/hanzoai/runtime/cli/views/util"
 )
 
 type RowData struct {

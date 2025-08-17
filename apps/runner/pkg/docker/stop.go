@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package docker
@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/daytonaio/runner/pkg/models/enums"
+	"github.com/hanzoai/runner/pkg/models/enums"
 	"github.com/docker/docker/api/types/container"
 )
 

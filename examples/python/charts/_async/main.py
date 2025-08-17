@@ -4,7 +4,7 @@ import os
 import time
 
 from hanzo_runtime import (
-    AsyncDaytona,
+    AsyncRuntime,
     BarChart,
     BoxAndWhiskerChart,
     Chart,

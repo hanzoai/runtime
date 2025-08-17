@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -126,7 +126,7 @@ export class SandboxController {
   }
 
   @Post()
-  @HttpCode(200) //  for Daytona Api compatibility
+  @HttpCode(200) //  for Runtime Api compatibility
   @UseInterceptors(ContentTypeInterceptor)
   @ApiOperation({
     summary: 'Create a new sandbox',
@@ -266,7 +266,7 @@ export class SandboxController {
   }
 
   @Post(':sandboxId/stop')
-  @HttpCode(200) //  for Daytona Api compatibility
+  @HttpCode(200) //  for Runtime Api compatibility
   @ApiOperation({
     summary: 'Stop sandbox',
     operationId: 'stopSandbox',

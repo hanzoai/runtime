@@ -1,9 +1,9 @@
-## daytona volume create
+## runtime volume create
 
 Create a volume
 
 ```
-daytona volume create [NAME] [flags]
+runtime volume create [NAME] [flags]
 ```
 
 ### Options
@@ -15,9 +15,9 @@ daytona volume create [NAME] [flags]
 ### Options inherited from parent commands
 
 ```
-      --help   help for daytona
+      --help   help for runtime
 ```
 
 ### SEE ALSO
 
-- [daytona volume](daytona_volume.md) - Manage Daytona volumes
+- [runtime volume](runtime_volume.md) - Manage Runtime volumes

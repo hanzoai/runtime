@@ -1,8 +1,8 @@
 {
-  "name": "Daytona",
+  "name": "Runtime",
   "dockerComposeFile": "docker-compose.yaml",
   "service": "app",
-  "workspaceFolder": "/workspaces/daytona",
+  "workspaceFolder": "/workspaces/runtime",
   // Configure tool-specific properties.
   "containerEnv": {
     "COREPACK_ENABLE_DOWNLOAD_PROMPT": "0"
@@ -40,7 +40,7 @@
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2.5.3": {
       "installZsh": "true",
-      "username": "daytona",
+      "username": "runtime",
       "uid": "1000",
       "gid": "1000",
       "upgradePackages": "false"
@@ -71,5 +71,5 @@
   "postAttachCommand": "",
   "forwardPorts": [5556, "pgadmin:80", "registry-ui:5100", "maildev:1080", "minio:9000", "minio:9001", "jaeger:16686"],
   // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-  "remoteUser": "daytona"
+  "remoteUser": "runtime"
 }

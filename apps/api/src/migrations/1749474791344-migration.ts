@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -83,9 +83,9 @@ export class Migration1749474791344 implements MigrationInterface {
     // Add hideFromUsers column
     await queryRunner.query(`ALTER TABLE "snapshot" ADD "hideFromUsers" boolean NOT NULL DEFAULT false`)
 
-    // Set hideFromUsers to true for general snapshots with names starting with "daytonaio/"
+    // Set hideFromUsers to true for general snapshots with names starting with "hanzoai/"
     await queryRunner.query(
-      `UPDATE "snapshot" SET "hideFromUsers" = true WHERE "general" = true AND "name" LIKE 'daytonaio/%'`,
+      `UPDATE "snapshot" SET "hideFromUsers" = true WHERE "general" = true AND "name" LIKE 'hanzoai/%'`,
     )
   }
 

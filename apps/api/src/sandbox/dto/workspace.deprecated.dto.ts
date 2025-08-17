@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -45,7 +45,7 @@ export class WorkspaceDto extends SandboxDto {
 
   @ApiPropertyOptional({
     description: 'The image used for the workspace',
-    example: 'daytonaio/workspace:latest',
+    example: 'hanzoai/workspace:latest',
   })
   image: string
 

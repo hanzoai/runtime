@@ -16,12 +16,12 @@ In order to mount a volume to a Sandbox, one must be created.
 <Tabs>
   <TabItem label="Python" icon="seti:python">
     ```bash
-    volume = daytona.volume.get("my-volume", create=True)
+    volume = runtime.volume.get("my-volume", create=True)
     ```
   </TabItem>
   <TabItem label="TypeScript" icon="seti:typescript">
     ```bash
-    const volume = await daytona.volume.get('my-volume', true)
+    const volume = await runtime.volume.get('my-volume', true)
     ```
   </TabItem>
 </Tabs>
@@ -34,13 +34,13 @@ Once a volume is created, it can be mounted to a Sandbox by specifying it in the
 <TabItem label="Python" icon="seti:python">
 ```python
 import os
-from daytona import CreateSandboxFromSnapshotParams, Daytona, VolumeMount
+from runtime import CreateSandboxFromSnapshotParams, Runtime, VolumeMount
 
-daytona = Daytona()
+runtime = Runtime()
 
 # Create a new volume or get an existing one
 
-volume = daytona.volume.get("my-volume", create=True)
+volume = runtime.volume.get("my-volume", create=True)
 
 # Mount the volume to the sandbox
 
@@ -50,7 +50,7 @@ params = CreateSandboxFromSnapshotParams(
 language="python",
 volumes=[VolumeMount(volumeId=volume.id, mountPath=mount_dir_1)],
 )
-sandbox = daytona.create(params)
+sandbox = runtime.create(params)
 
 # When you're done with the sandbox, you can remove it
 
@@ -63,26 +63,26 @@ sandbox.delete()
 </TabItem>
 <TabItem label="TypeScript" icon="seti:typescript">
 ```typescript
-import { Daytona } from '@daytonaio/sdk'
+import { Runtime } from '@hanzo/runtime'
 import path from 'path'
 
 async function main() {
-  const daytona = new Daytona()
+  const runtime = new Runtime()
 
   //  Create a new volume or get an existing one
-  const volume = await daytona.volume.get('my-volume', true)
+  const volume = await runtime.volume.get('my-volume', true)
 
   // Mount the volume to the sandbox
   const mountDir1 = '/home/hanzo/volume'
 
-  const sandbox1 = await daytona.create({
+  const sandbox1 = await runtime.create({
     language: 'typescript',
     volumes: [{ volumeId: volume.id, mountPath: mountDir1 }],
   })
 
   // When you're done with the sandbox, you can remove it
   // The volume will persist even after the sandbox is removed
-  await daytona.delete(sandbox1)
+  await runtime.delete(sandbox1)
 }
 
 main()
@@ -99,14 +99,14 @@ When a volume is no longer needed, it can be removed.
 <Tabs>
   <TabItem label="Python" icon="seti:python">
     ```python
-    volume = daytona.volume.get("my-volume", create=True)
-    daytona.volume.delete(volume)
+    volume = runtime.volume.get("my-volume", create=True)
+    runtime.volume.delete(volume)
     ```
   </TabItem>
   <TabItem label="TypeScript" icon="seti:typescript">
     ```typescript
-    const volume = await daytona.volume.get('my-volume', true)
-    await daytona.volume.delete(volume)
+    const volume = await runtime.volume.get('my-volume', true)
+    await runtime.volume.delete(volume)
     ```
   </TabItem>
 </Tabs>

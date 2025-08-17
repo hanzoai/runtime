@@ -28,7 +28,7 @@ import {
   ProcessRestartResponse,
   ProcessLogsResponse,
   ProcessErrorsResponse,
-} from '@hanzo/runtime-api-client'
+} from '@hanzo/api-client'
 
 /**
  * Interface for region coordinates used in screenshot operations

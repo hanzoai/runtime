@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -12,7 +12,7 @@ import { SandboxState } from '../enums/sandbox-state.enum'
 import { SandboxDesiredState } from '../enums/sandbox-desired-state.enum'
 import { RunnerApiFactory } from '../runner-api/runnerApi'
 import { RunnerService } from '../services/runner.service'
-import { EnumsSandboxState as RunnerSandboxState } from '@daytonaio/runner-api-client'
+import { EnumsSandboxState as RunnerSandboxState } from '@hanzo/runner-api-client'
 import { RunnerState } from '../enums/runner-state.enum'
 import { DockerRegistryService } from '../../docker-registry/services/docker-registry.service'
 import { BackupState } from '../enums/backup-state.enum'
@@ -24,7 +24,7 @@ import { SANDBOX_WARM_POOL_UNASSIGNED_ORGANIZATION } from '../constants/sandbox.
 import { DockerProvider } from '../docker/docker-provider'
 import { SnapshotRunnerState } from '../enums/snapshot-runner-state.enum'
 import { BuildInfo } from '../entities/build-info.entity'
-import { CreateSandboxDTO } from '@daytonaio/runner-api-client'
+import { CreateSandboxDTO } from '@hanzo/runner-api-client'
 import { fromAxiosError } from '../../common/utils/from-axios-error'
 import { OnEvent } from '@nestjs/event-emitter'
 import { SandboxEvents } from '../constants/sandbox-events.constants'

@@ -1,9 +1,9 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
-//	@title			Daytona Runner API
+//	@title			Runtime Runner API
 //	@version		v0.0.0-dev
-//	@description	Daytona Runner API
+//	@description	Runtime Runner API
 
 //	@securityDefinitions.apikey	Bearer
 //	@in							header
@@ -21,10 +21,10 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/daytonaio/runner/cmd/runner/config"
-	"github.com/daytonaio/runner/pkg/api/controllers"
-	"github.com/daytonaio/runner/pkg/api/docs"
-	"github.com/daytonaio/runner/pkg/api/middlewares"
+	"github.com/hanzoai/runner/cmd/runner/config"
+	"github.com/hanzoai/runner/pkg/api/controllers"
+	"github.com/hanzoai/runner/pkg/api/docs"
+	"github.com/hanzoai/runner/pkg/api/middlewares"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 
 	"github.com/gin-gonic/gin"
@@ -61,8 +61,8 @@ type ApiServer struct {
 }
 
 func (a *ApiServer) Start() error {
-	docs.SwaggerInfo.Description = "Daytona Runner API"
-	docs.SwaggerInfo.Title = "Daytona Runner API"
+	docs.SwaggerInfo.Description = "Runtime Runner API"
+	docs.SwaggerInfo.Title = "Runtime Runner API"
 	docs.SwaggerInfo.BasePath = "/"
 
 	_, err := net.Dial("tcp", fmt.Sprintf(":%d", a.apiPort))

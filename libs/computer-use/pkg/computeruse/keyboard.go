@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package computeruse
@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/daytonaio/daemon/pkg/toolbox/computeruse"
+	"github.com/hanzoai/daemon/pkg/toolbox/computeruse"
 	"github.com/go-vgo/robotgo"
 )
 

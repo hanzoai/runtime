@@ -1,17 +1,17 @@
-## daytona docs
+## runtime docs
 
-Opens the Daytona documentation in your default browser.
+Opens the Runtime documentation in your default browser.
 
 ```
-daytona docs [flags]
+runtime docs [flags]
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --help   help for daytona
+      --help   help for runtime
 ```
 
 ### SEE ALSO
 
-- [daytona](daytona.md) - Daytona CLI
+- [runtime](runtime.md) - Runtime CLI

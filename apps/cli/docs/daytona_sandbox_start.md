@@ -1,9 +1,9 @@
-## daytona sandbox start
+## runtime sandbox start
 
 Start a sandbox
 
 ```
-daytona sandbox start [SANDBOX_ID] [flags]
+runtime sandbox start [SANDBOX_ID] [flags]
 ```
 
 ### Options
@@ -15,9 +15,9 @@ daytona sandbox start [SANDBOX_ID] [flags]
 ### Options inherited from parent commands
 
 ```
-      --help   help for daytona
+      --help   help for runtime
 ```
 
 ### SEE ALSO
 
-- [daytona sandbox](daytona_sandbox.md) - Manage Daytona sandboxes
+- [runtime sandbox](runtime_sandbox.md) - Manage Runtime sandboxes

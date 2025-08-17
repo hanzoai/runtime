@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package controllers
@@ -10,9 +10,9 @@ import (
 	"regexp"
 	"strings"
 
-	proxy "github.com/daytonaio/common-go/pkg/proxy"
-	"github.com/daytonaio/runner/pkg/common"
-	"github.com/daytonaio/runner/pkg/runner"
+	proxy "github.com/hanzoai/common-go/pkg/proxy"
+	"github.com/hanzoai/runner/pkg/common"
+	"github.com/hanzoai/runner/pkg/runner"
 	"github.com/gin-gonic/gin"
 )
 

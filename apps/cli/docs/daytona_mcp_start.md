@@ -1,17 +1,17 @@
-## daytona mcp start
+## runtime mcp start
 
-Start Daytona MCP Server
+Start Runtime MCP Server
 
 ```
-daytona mcp start [flags]
+runtime mcp start [flags]
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --help   help for daytona
+      --help   help for runtime
 ```
 
 ### SEE ALSO
 
-- [daytona mcp](daytona_mcp.md) - Manage Daytona MCP Server
+- [runtime mcp](runtime_mcp.md) - Manage Runtime MCP Server

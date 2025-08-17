@@ -1011,9 +1011,9 @@ files = [
 databind = ">=4.5.2,<5.0.0"
 
 [[package]]
-name = "daytona"
+name = "runtime"
 version = "0.0.0-dev"
-description = "Python SDK for Daytona"
+description = "Python SDK for Runtime"
 optional = false
 python-versions = ">=3.8,<4.0"
 groups = ["main"]
@@ -1034,9 +1034,9 @@ type = "directory"
 url = "libs/sdk-python"
 
 [[package]]
-name = "daytona-api-client"
+name = "runtime-api-client"
 version = "0.0.0-dev"
-description = "Daytona"
+description = "Runtime"
 optional = false
 python-versions = "^3.8"
 groups = ["main"]
@@ -1054,9 +1054,9 @@ type = "directory"
 url = "libs/api-client-python"
 
 [[package]]
-name = "daytona-api-client-async"
+name = "runtime-api-client-async"
 version = "0.0.0-dev"
-description = "Daytona"
+description = "Runtime"
 optional = false
 python-versions = "^3.8"
 groups = ["main"]

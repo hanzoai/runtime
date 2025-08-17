@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package session
@@ -13,7 +13,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/daytonaio/daemon/pkg/common"
+	"github.com/hanzoai/daemon/pkg/common"
 	"github.com/gin-gonic/gin"
 )
 

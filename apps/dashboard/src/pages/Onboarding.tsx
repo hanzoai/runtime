@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -7,14 +7,14 @@ import { useEffect, useState } from 'react'
 import { Check, ClipboardIcon, Eye, EyeOff, Loader2, Plus } from 'lucide-react'
 import { toast } from 'sonner'
 import { useNavigate } from 'react-router-dom'
-import { CreateApiKeyPermissionsEnum, ApiKeyResponse, OrganizationRolePermissionsEnum } from '@daytonaio/api-client'
+import { CreateApiKeyPermissionsEnum, ApiKeyResponse, OrganizationRolePermissionsEnum } from '@hanzo/api-client'
 import pythonIcon from '@/assets/python.svg'
 import typescriptIcon from '@/assets/typescript.svg'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import CodeBlock from '@/components/CodeBlock'
-import { DAYTONA_DOCS_URL } from '@/constants/ExternalLinks'
+import { RUNTIME_DOCS_URL } from '@/constants/ExternalLinks'
 import { RoutePath } from '@/enums/RoutePath'
 import { useApi } from '@/hooks/useApi'
 import { useOrganizations } from '@/hooks/useOrganizations'
@@ -149,7 +149,7 @@ const Onboarding: React.FC = () => {
                 </div>
                 <div>
                   <h2 className="text-xl font-semibold mb-4">Install the SDK</h2>
-                  <p className="mb-4">Run the following command in your terminal to install the Daytona SDK:</p>
+                  <p className="mb-4">Run the following command in your terminal to install the Runtime SDK:</p>
                   <div className="transition-all duration-500">
                     <CodeBlock code={codeExamples[language].install} language="bash" showCopy />
                   </div>
@@ -293,7 +293,7 @@ const Onboarding: React.FC = () => {
                   <h2 className="text-xl font-semibold mb-4">That's It</h2>
                   <p className="text-muted-foreground">
                     It's as easy as that. For more examples check out the{' '}
-                    <a href={DAYTONA_DOCS_URL} target="_blank" rel="noopener noreferrer" className="text-primary">
+                    <a href={RUNTIME_DOCS_URL} target="_blank" rel="noopener noreferrer" className="text-primary">
                       Docs
                     </a>
                     .
@@ -310,15 +310,15 @@ const Onboarding: React.FC = () => {
 
 const codeExamples = {
   typescript: {
-    install: `npm install @daytonaio/sdk`,
+    install: `npm install @hanzo/runtime`,
     run: `npx tsx index.mts`,
-    example: `import { Daytona } from '@daytonaio/sdk'
+    example: `import { Runtime } from '@hanzo/runtime'
   
-// Initialize the Daytona client
-const daytona = new Daytona({ apiKey: 'your-api-key' });
+// Initialize the Runtime client
+const runtime = new Runtime({ apiKey: 'your-api-key' });
 
 // Create the Sandbox instance
-const sandbox = await daytona.create({
+const sandbox = await runtime.create({
   language: 'typescript',
 });
 
@@ -328,18 +328,18 @@ console.log(response.result);
   `,
   },
   python: {
-    install: `pip install daytona`,
+    install: `pip install runtime`,
     run: `python main.py`,
-    example: `from daytona import Daytona, DaytonaConfig
+    example: `from runtime import Runtime, RuntimeConfig
   
 # Define the configuration
-config = DaytonaConfig(api_key="your-api-key")
+config = RuntimeConfig(api_key="your-api-key")
 
-# Initialize the Daytona client
-daytona = Daytona(config)
+# Initialize the Runtime client
+runtime = Runtime(config)
 
 # Create the Sandbox instance
-sandbox = daytona.create()
+sandbox = runtime.create()
 
 # Run the code securely inside the Sandbox
 response = sandbox.process.code_run('print("Hello World from code!")')

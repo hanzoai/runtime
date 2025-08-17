@@ -9,7 +9,7 @@ hideTitleOnPage: true
 class Volume(VolumeDto)
 ```
 
-Represents a Daytona Volume which is a shared storage volume for Sandboxes.
+Represents a Runtime Volume which is a shared storage volume for Sandboxes.
 
 **Attributes**:
 
@@ -28,7 +28,7 @@ Represents a Daytona Volume which is a shared storage volume for Sandboxes.
 class VolumeService()
 ```
 
-Service for managing Daytona Volumes. Can be used to list, get, create and delete Volumes.
+Service for managing Runtime Volumes. Can be used to list, get, create and delete Volumes.
 
 #### VolumeService.list
 
@@ -46,8 +46,8 @@ List all Volumes.
 **Example**:
 
 ```python
-daytona = Daytona()
-volumes = daytona.volume.list()
+runtime = Runtime()
+volumes = runtime.volume.list()
 for volume in volumes:
     print(f"{volume.name} ({volume.id})")
 ```
@@ -74,8 +74,8 @@ Get a Volume by name.
 **Example**:
 
 ```python
-daytona = Daytona()
-volume = daytona.volume.get("test-volume-name", create=True)
+runtime = Runtime()
+volume = runtime.volume.get("test-volume-name", create=True)
 print(f"{volume.name} ({volume.id})")
 ```
 
@@ -100,8 +100,8 @@ Create a new Volume.
 **Example**:
 
 ```python
-daytona = Daytona()
-volume = daytona.volume.create("test-volume")
+runtime = Runtime()
+volume = runtime.volume.create("test-volume")
 print(f"{volume.name} ({volume.id}); state: {volume.state}")
 ```
 
@@ -121,9 +121,9 @@ Delete a Volume.
 **Example**:
 
 ```python
-daytona = Daytona()
-volume = daytona.volume.get("test-volume")
-daytona.volume.delete(volume)
+runtime = Runtime()
+volume = runtime.volume.get("test-volume")
+runtime.volume.delete(volume)
 print("Volume deleted")
 ```
 

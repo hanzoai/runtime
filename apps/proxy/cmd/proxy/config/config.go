@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package config
@@ -19,7 +19,7 @@ type Config struct {
 	TLSCertFile   string       `envconfig:"TLS_CERT_FILE"`
 	TLSKeyFile    string       `envconfig:"TLS_KEY_FILE"`
 	EnableTLS     bool         `envconfig:"ENABLE_TLS"`
-	DaytonaApiUrl string       `envconfig:"DAYTONA_API_URL" validate:"required"`
+	RuntimeApiUrl string       `envconfig:"RUNTIME_API_URL" validate:"required"`
 	Oidc          OidcConfig   `envconfig:"OIDC"`
 	Redis         *RedisConfig `envconfig:"REDIS"`
 }

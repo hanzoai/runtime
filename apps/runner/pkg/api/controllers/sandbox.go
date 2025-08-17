@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package controllers
@@ -6,10 +6,10 @@ package controllers
 import (
 	"net/http"
 
-	"github.com/daytonaio/runner/pkg/api/dto"
-	"github.com/daytonaio/runner/pkg/common"
-	"github.com/daytonaio/runner/pkg/models/enums"
-	"github.com/daytonaio/runner/pkg/runner"
+	"github.com/hanzoai/runner/pkg/api/dto"
+	"github.com/hanzoai/runner/pkg/common"
+	"github.com/hanzoai/runner/pkg/models/enums"
+	"github.com/hanzoai/runner/pkg/runner"
 	"github.com/gin-gonic/gin"
 )
 

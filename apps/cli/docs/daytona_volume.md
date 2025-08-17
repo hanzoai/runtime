@@ -1,21 +1,21 @@
-## daytona volume
+## runtime volume
 
-Manage Daytona volumes
+Manage Runtime volumes
 
 ### Synopsis
 
-Commands for managing Daytona volumes
+Commands for managing Runtime volumes
 
 ### Options inherited from parent commands
 
 ```
-      --help   help for daytona
+      --help   help for runtime
 ```
 
 ### SEE ALSO
 
-- [daytona](daytona.md) - Daytona CLI
-- [daytona volume create](daytona_volume_create.md) - Create a volume
-- [daytona volume delete](daytona_volume_delete.md) - Delete a volume
-- [daytona volume get](daytona_volume_get.md) - Get volume details
-- [daytona volume list](daytona_volume_list.md) - List all volumes
+- [runtime](runtime.md) - Runtime CLI
+- [runtime volume create](runtime_volume_create.md) - Create a volume
+- [runtime volume delete](runtime_volume_delete.md) - Delete a volume
+- [runtime volume get](runtime_volume_get.md) - Get volume details
+- [runtime volume list](runtime_volume_list.md) - List all volumes

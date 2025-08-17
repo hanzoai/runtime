@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Command, Session, SessionExecuteRequest, SessionExecuteResponse, ToolboxApi } from '@hanzo/runtime-api-client'
+import { Command, Session, SessionExecuteRequest, SessionExecuteResponse, ToolboxApi } from '@hanzo/api-client'
 import { SandboxCodeToolbox } from './Sandbox'
 import { ExecuteResponse } from './types/ExecuteResponse'
 import { ArtifactParser } from './utils/ArtifactParser'

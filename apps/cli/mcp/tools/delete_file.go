@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package tools
@@ -7,8 +7,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/daytonaio/apiclient"
-	apiclient_cli "github.com/daytonaio/daytona/cli/apiclient"
+	"github.com/hanzoai/apiclient"
+	apiclient_cli "github.com/hanzoai/runtime/cli/apiclient"
 	"github.com/mark3labs/mcp-go/mcp"
 
 	log "github.com/sirupsen/logrus"
@@ -21,14 +21,14 @@ type DeleteFileArgs struct {
 
 func GetDeleteFileTool() mcp.Tool {
 	return mcp.NewTool("delete_file",
-		mcp.WithDescription("Delete a file or directory in the Daytona sandbox."),
+		mcp.WithDescription("Delete a file or directory in the Runtime sandbox."),
 		mcp.WithString("filePath", mcp.Required(), mcp.Description("Path to the file or directory to delete.")),
 		mcp.WithString("id", mcp.Required(), mcp.Description("ID of the sandbox to delete the file in.")),
 	)
 }
 
 func DeleteFile(ctx context.Context, request mcp.CallToolRequest, args DeleteFileArgs) (*mcp.CallToolResult, error) {
-	apiClient, err := apiclient_cli.GetApiClient(nil, daytonaMCPHeaders)
+	apiClient, err := apiclient_cli.GetApiClient(nil, runtimeMCPHeaders)
 	if err != nil {
 		return &mcp.CallToolResult{IsError: true}, err
 	}

@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package manager
@@ -12,7 +12,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/daytonaio/daemon/pkg/toolbox/computeruse"
+	"github.com/hanzoai/daemon/pkg/toolbox/computeruse"
 	"github.com/hashicorp/go-hclog"
 	"github.com/hashicorp/go-plugin"
 	log "github.com/sirupsen/logrus"
@@ -26,8 +26,8 @@ type pluginRef struct {
 
 var ComputerUseHandshakeConfig = plugin.HandshakeConfig{
 	ProtocolVersion:  1,
-	MagicCookieKey:   "DAYTONA_COMPUTER_USE_PLUGIN",
-	MagicCookieValue: "daytona_computer_use",
+	MagicCookieKey:   "RUNTIME_COMPUTER_USE_PLUGIN",
+	MagicCookieValue: "runtime_computer_use",
 }
 
 var computerUse = &pluginRef{}

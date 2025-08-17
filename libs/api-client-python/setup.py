@@ -21,8 +21,8 @@ from setuptools import setup, find_packages  # noqa: H301
 #
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
-NAME = "daytona_api_client"
-VERSION = "0.0.0-dev"
+NAME = "hanzo_runtime_api_client"
+VERSION = "0.7.0"
 PYTHON_REQUIRES = ">= 3.8"
 REQUIRES = [
     "urllib3 >= 1.25.3, < 3.0.0",
@@ -34,17 +34,17 @@ REQUIRES = [
 setup(
     name=NAME,
     version=VERSION,
-    description="Daytona",
-    author="Daytona Platforms Inc.",
-    author_email="support@daytona.com",
+    description="Runtime",
+    author="Hanzo Industries Inc.",
+    author_email="support@hanzo.ai",
     url="",
-    keywords=["OpenAPI", "OpenAPI-Generator", "Daytona"],
+    keywords=["OpenAPI", "OpenAPI-Generator", "Runtime"],
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),
     include_package_data=True,
     long_description_content_type='text/markdown',
     long_description="""\
-    Daytona AI platform API Docs
+    Runtime AI platform API Docs
     """,  # noqa: E501
-    package_data={"daytona_api_client": ["py.typed"]},
+    package_data={"runtime_api_client": ["py.typed"]},
 )

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -11,7 +11,7 @@ import {
   SnapshotState,
   OrganizationRolePermissionsEnum,
   PaginatedSnapshotsDto,
-} from '@daytonaio/api-client'
+} from '@hanzo/api-client'
 import { SnapshotTable } from '@/components/SnapshotTable'
 import {
   Dialog,

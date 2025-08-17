@@ -1,12 +1,12 @@
-name: daytona login
-synopsis: Log in to Daytona
-usage: daytona login [flags]
+name: runtime login
+synopsis: Log in to Runtime
+usage: runtime login [flags]
 options:
   - name: api-key
     usage: API key to use for authentication
 inherited_options:
   - name: help
     default_value: 'false'
-    usage: help for daytona
+    usage: help for runtime
 see_also:
-  - daytona - Daytona CLI
+  - runtime - Runtime CLI

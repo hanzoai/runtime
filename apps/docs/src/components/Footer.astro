@@ -8,7 +8,7 @@ import { major, minor, patch } from 'semver'
 const [maj, min] = [major(version), minor(version)]
 const release = `${maj}.${min}`
 // TODO: switch to SDK
-const releaseLink = `https://github.com/daytonaio/daytona/releases/tag/v${release}.0`
+const releaseLink = `https://github.com/hanzoai/runtime/releases/tag/v${release}.0`
 ---
 
 <Default {...Astro.props}>
@@ -18,33 +18,33 @@ const releaseLink = `https://github.com/daytonaio/daytona/releases/tag/v${releas
   <div class="docs-footer__container__support-links">
     <p>
       <Fragment set:html={textArrowIcon} />Need help? - <a
-        href="https://go.daytona.io/slack">Reach support</a
+        href="https://go.hanzo.ai/slack">Reach support</a
       >
     </p>
     <p>
       <Fragment set:html={textArrowIcon} />Latest project updates? - <a
-        href="https://github.com/daytonaio/daytona/commits/main/"
+        href="https://github.com/hanzoai/runtime/commits/main/"
         >View Changelog</a
       >
     </p>
     <p>
       <Fragment set:html={textArrowIcon} />Dotfiles Insider - <a
-        href="https://www.daytona.io/dotfiles/">Read our blog</a
+        href="https://www.hanzo.ai/dotfiles/">Read our blog</a
       >
     </p>
   </div>
 
   <div class="docs-footer__container__bottom">
     <div class="docs-footer__container__bottom-block">
-      <div><p>© {new Date().getFullYear()} Daytona Platforms, Inc.</p></div>
+      <div><p>© {new Date().getFullYear()} Hanzo Industries, Inc.</p></div>
       <div class="divider"></div>
     </div>
 
     <ThemeSelect />
 
     <div class="menu-list">
-      <a href="https://www.daytona.io/company/privacy-policy">Privacy policy</a>
-      <a href="https://www.daytona.io/company/terms-of-service"
+      <a href="https://www.hanzo.ai/company/privacy-policy">Privacy policy</a>
+      <a href="https://www.hanzo.ai/company/terms-of-service"
         >Terms of Service</a
       >
     </div>

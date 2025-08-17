@@ -2,7 +2,7 @@ import asyncio
 import time
 
 from hanzo_runtime import (
-    AsyncDaytona,
+    AsyncRuntime,
     CreateSandboxFromImageParams,
     CreateSandboxFromSnapshotParams,
     CreateSnapshotParams,
@@ -28,10 +28,10 @@ async def main():
             .pip_install(["numpy", "pandas", "matplotlib", "scipy", "scikit-learn", "jupyter"])
             .run_commands(
                 "apt-get update && apt-get install -y git",
-                "groupadd -r daytona && useradd -r -g daytona -m daytona",
+                "groupadd -r runtime && useradd -r -g runtime -m runtime",
                 "mkdir -p /home/hanzo/workspace",
             )
-            .dockerfile_commands(["USER daytona"])
+            .dockerfile_commands(["USER runtime"])
             .workdir("/home/hanzo/workspace")
             .env({"MY_ENV_VAR": "My Environment Variable"})
             .add_local_file("file_example.txt", "/home/hanzo/workspace/file_example.txt")

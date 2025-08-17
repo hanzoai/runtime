@@ -1,19 +1,19 @@
 ---
-title: "Daytona"
+title: "Runtime"
 hideTitleOnPage: true
 ---
 
 
-## Daytona
+## Runtime
 
-Main class for interacting with the Daytona API.
-Provides methods for creating, managing, and interacting with Daytona Sandboxes.
+Main class for interacting with the Runtime API.
+Provides methods for creating, managing, and interacting with Runtime Sandboxes.
 Can be initialized either with explicit configuration or using environment variables.
 
 **Properties**:
 
-- `snapshot` _SnapshotService_ - Service for managing Daytona Snapshots
-- `volume` _VolumeService_ - Service for managing Daytona Volumes
+- `snapshot` _SnapshotService_ - Service for managing Runtime Snapshots
+- `volume` _VolumeService_ - Service for managing Runtime Volumes
     
 
 
@@ -23,45 +23,45 @@ Can be initialized either with explicit configuration or using environment varia
 
 ```ts
 // Using environment variables
-// Uses DAYTONA_API_KEY, DAYTONA_API_URL, DAYTONA_TARGET
-const daytona = new Daytona();
-const sandbox = await daytona.create();
+// Uses RUNTIME_API_KEY, RUNTIME_API_URL, RUNTIME_TARGET
+const runtime = new Runtime();
+const sandbox = await runtime.create();
 ```
 
 ```ts
 // Using explicit configuration
-const config: DaytonaConfig = {
+const config: RuntimeConfig = {
     apiKey: "your-api-key",
     apiUrl: "https://your-api.com",
     target: "us"
 };
-const daytona = new Daytona(config);
+const runtime = new Runtime(config);
 
 @class
 ```
 
 ### Constructors
 
-#### new Daytona()
+#### new Runtime()
 
 ```ts
-new Daytona(config?: DaytonaConfig): Daytona
+new Runtime(config?: RuntimeConfig): Runtime
 ```
 
-Creates a new Daytona client instance.
+Creates a new Runtime client instance.
 
 **Parameters**:
 
-- `config?` _DaytonaConfig_ - Configuration options
+- `config?` _RuntimeConfig_ - Configuration options
 
 
 **Returns**:
 
-- `Daytona`
+- `Runtime`
 
 **Throws**:
 
-- `DaytonaError` - When API key is missing
+- `RuntimeError` - When API key is missing
 
 ### Methods
 
@@ -91,7 +91,7 @@ including language, image, environment variables, and volumes.
 **Examples:**
 
 ```ts
-const sandbox = await daytona.create();
+const sandbox = await runtime.create();
 ```
 
 ```ts
@@ -107,7 +107,7 @@ const params: CreateSandboxFromSnapshotParams = {
     autoArchiveInterval: 60,
     autoDeleteInterval: 120
 };
-const sandbox = await daytona.create(params, { timeout: 100 });
+const sandbox = await runtime.create(params, { timeout: 100 });
 ```
 
 ##### Call Signature
@@ -119,8 +119,8 @@ create(params?: CreateSandboxFromImageParams, options?: {
 }): Promise<Sandbox>
 ```
 
-Creates Sandboxes from specified image available on some registry or declarative Daytona Image. You can specify various parameters,
-including resources, language, image, environment variables, and volumes. Daytona creates snapshot from
+Creates Sandboxes from specified image available on some registry or declarative Runtime Image. You can specify various parameters,
+including resources, language, image, environment variables, and volumes. Runtime creates snapshot from
 provided image and uses it to create Sandbox.
 
 **Parameters**:
@@ -137,7 +137,7 @@ provided image and uses it to create Sandbox.
 **Examples:**
 
 ```ts
-const sandbox = await daytona.create({ image: 'debian:12.9' }, { timeout: 90, onSnapshotCreateLogs: console.log });
+const sandbox = await runtime.create({ image: 'debian:12.9' }, { timeout: 90, onSnapshotCreateLogs: console.log });
 ```
 
 ```ts
@@ -158,7 +158,7 @@ const params: CreateSandboxFromImageParams = {
     autoArchiveInterval: 60,
     autoDeleteInterval: 120
 };
-const sandbox = await daytona.create(params, { timeout: 100, onSnapshotCreateLogs: console.log });
+const sandbox = await runtime.create(params, { timeout: 100, onSnapshotCreateLogs: console.log });
 ```
 
 ***
@@ -184,8 +184,8 @@ Deletes a Sandbox.
 **Example:**
 
 ```ts
-const sandbox = await daytona.get('my-sandbox-id');
-await daytona.delete(sandbox);
+const sandbox = await runtime.get('my-sandbox-id');
+await runtime.delete(sandbox);
 ```
 
 ***
@@ -210,7 +210,7 @@ Finds a Sandbox by its ID or labels.
 **Example:**
 
 ```ts
-const sandbox = await daytona.findOne({ labels: { 'my-label': 'my-value' } });
+const sandbox = await runtime.findOne({ labels: { 'my-label': 'my-value' } });
 console.log(`Sandbox ID: ${sandbox.id}, State: ${sandbox.state}`);
 ```
 
@@ -236,7 +236,7 @@ Gets a Sandbox by its ID.
 **Example:**
 
 ```ts
-const sandbox = await daytona.get('my-sandbox-id');
+const sandbox = await runtime.get('my-sandbox-id');
 console.log(`Sandbox state: ${sandbox.state}`);
 ```
 
@@ -262,7 +262,7 @@ Lists all Sandboxes filtered by labels.
 **Example:**
 
 ```ts
-const sandboxes = await daytona.list({ 'my-label': 'my-value' });
+const sandboxes = await runtime.list({ 'my-label': 'my-value' });
 for (const sandbox of sandboxes) {
     console.log(`${sandbox.id}: ${sandbox.state}`);
 }
@@ -291,9 +291,9 @@ Starts a Sandbox and waits for it to be ready.
 **Example:**
 
 ```ts
-const sandbox = await daytona.get('my-sandbox-id');
+const sandbox = await runtime.get('my-sandbox-id');
 // Wait up to 60 seconds for the sandbox to start
-await daytona.start(sandbox, 60);
+await runtime.start(sandbox, 60);
 ```
 
 ***
@@ -318,8 +318,8 @@ Stops a Sandbox.
 **Example:**
 
 ```ts
-const sandbox = await daytona.get('my-sandbox-id');
-await daytona.stop(sandbox);
+const sandbox = await runtime.get('my-sandbox-id');
+await runtime.stop(sandbox);
 ```
 ## CodeLanguage
 
@@ -381,19 +381,19 @@ Parameters for creating a new Sandbox from a snapshot.
 - `snapshot?` _string_ - Name of the snapshot to use for the Sandbox.
 - `user?` _string_
 - `volumes?` _VolumeMount\[\]_
-## DaytonaConfig
+## RuntimeConfig
 
-Configuration options for initializing the Daytona client.
+Configuration options for initializing the Runtime client.
 
 **Properties**:
 
-- `apiKey?` _string_ - API key for authentication with the Daytona API
-- `apiUrl?` _string_ - URL of the Daytona API. Defaults to 'https://app.daytona.io/api'
-    if not set here and not set in environment variable DAYTONA_API_URL.
-- `jwtToken?` _string_ - JWT token for authentication with the Daytona API. If not set, it must be provided
-    via the environment variable `DAYTONA_JWT_TOKEN`, or an API key must be provided instead.
+- `apiKey?` _string_ - API key for authentication with the Runtime API
+- `apiUrl?` _string_ - URL of the Runtime API. Defaults to 'https://app.hanzo.ai/api'
+    if not set here and not set in environment variable RUNTIME_API_URL.
+- `jwtToken?` _string_ - JWT token for authentication with the Runtime API. If not set, it must be provided
+    via the environment variable `RUNTIME_JWT_TOKEN`, or an API key must be provided instead.
 - `organizationId?` _string_ - Organization ID used for JWT-based authentication. Required if a JWT token
-    is provided, and must be set either here or in the environment variable `DAYTONA_ORGANIZATION_ID`.
+    is provided, and must be set either here or in the environment variable `RUNTIME_ORGANIZATION_ID`.
 - ~~`serverUrl?`~~ _string_ - **_Deprecated_** - Use `apiUrl` instead. This property will be removed in future versions.
 - `target?` _string_ - Target location for Sandboxes
     
@@ -404,12 +404,12 @@ Configuration options for initializing the Daytona client.
 **Example:**
 
 ```ts
-const config: DaytonaConfig = {
+const config: RuntimeConfig = {
     apiKey: "your-api-key",
     apiUrl: "https://your-api.com",
     target: "us"
 };
-const daytona = new Daytona(config);
+const runtime = new Runtime(config);
 ```
 ## Resources
 

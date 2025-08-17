@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package docker
@@ -8,8 +8,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/daytonaio/runner/cmd/runner/config"
-	"github.com/daytonaio/runner/pkg/api/dto"
+	"github.com/hanzoai/runner/cmd/runner/config"
+	"github.com/hanzoai/runner/pkg/api/dto"
 	"github.com/docker/docker/api/types/network"
 
 	"github.com/docker/docker/api/types/container"
@@ -29,9 +29,9 @@ func (d *DockerClient) getContainerConfigs(ctx context.Context, sandboxDto dto.C
 
 func (d *DockerClient) getContainerCreateConfig(sandboxDto dto.CreateSandboxDTO) *container.Config {
 	envVars := []string{
-		"DAYTONA_SANDBOX_ID=" + sandboxDto.Id,
-		"DAYTONA_SANDBOX_SNAPSHOT=" + sandboxDto.Snapshot,
-		"DAYTONA_SANDBOX_USER=" + sandboxDto.OsUser,
+		"RUNTIME_SANDBOX_ID=" + sandboxDto.Id,
+		"RUNTIME_SANDBOX_SNAPSHOT=" + sandboxDto.Snapshot,
+		"RUNTIME_SANDBOX_USER=" + sandboxDto.OsUser,
 	}
 
 	for key, value := range sandboxDto.Env {
@@ -52,11 +52,11 @@ func (d *DockerClient) getContainerCreateConfig(sandboxDto dto.CreateSandboxDTO)
 func (d *DockerClient) getContainerHostConfig(ctx context.Context, sandboxDto dto.CreateSandboxDTO, volumeMountPathBinds []string) (*container.HostConfig, error) {
 	var binds []string
 
-	binds = append(binds, fmt.Sprintf("%s:/usr/local/bin/daytona:ro", d.daemonPath))
+	binds = append(binds, fmt.Sprintf("%s:/usr/local/bin/runtime:ro", d.daemonPath))
 
 	// Mount the plugin if available
 	if d.computerUsePluginPath != "" {
-		binds = append(binds, fmt.Sprintf("%s:/usr/local/lib/daytona-computer-use:ro", d.computerUsePluginPath))
+		binds = append(binds, fmt.Sprintf("%s:/usr/local/lib/runtime-computer-use:ro", d.computerUsePluginPath))
 	}
 
 	if len(volumeMountPathBinds) > 0 {

@@ -1,13 +1,13 @@
-## daytona snapshot push
+## runtime snapshot push
 
 Push local snapshot
 
 ### Synopsis
 
-Push a local Docker image to Daytona. To securely build it on our infrastructure, use 'daytona snapshot build'
+Push a local Docker image to Runtime. To securely build it on our infrastructure, use 'runtime snapshot build'
 
 ```
-daytona snapshot push [SNAPSHOT] [flags]
+runtime snapshot push [SNAPSHOT] [flags]
 ```
 
 ### Options
@@ -23,9 +23,9 @@ daytona snapshot push [SNAPSHOT] [flags]
 ### Options inherited from parent commands
 
 ```
-      --help   help for daytona
+      --help   help for runtime
 ```
 
 ### SEE ALSO
 
-- [daytona snapshot](daytona_snapshot.md) - Manage Daytona snapshots
+- [runtime snapshot](runtime_snapshot.md) - Manage Runtime snapshots

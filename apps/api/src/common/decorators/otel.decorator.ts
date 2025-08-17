@@ -1,11 +1,11 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
 import { trace, context } from '@opentelemetry/api'
 
-const tracer = trace.getTracer('daytona-api')
+const tracer = trace.getTracer('runtime-api')
 
 export function OtelSpan(name?: string) {
   return (target: object, propertyKey: string | symbol, descriptor: PropertyDescriptor) => {

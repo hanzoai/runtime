@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -10,7 +10,7 @@ import {
   ApiKeyResponse,
   CreateApiKeyPermissionsEnum,
   OrganizationUserRoleEnum,
-} from '@daytonaio/api-client'
+} from '@hanzo/api-client'
 import { ApiKeyTable } from '../components/ApiKeyTable'
 import { toast } from 'sonner'
 import { useSelectedOrganization } from '@/hooks/useSelectedOrganization'

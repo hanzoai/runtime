@@ -1,10 +1,10 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package tools
 
-import "github.com/daytonaio/daytona/cli/apiclient"
+import "github.com/hanzoai/runtime/cli/apiclient"
 
-var daytonaMCPHeaders map[string]string = map[string]string{
-	apiclient.DaytonaSourceHeader: "daytona-mcp",
+var runtimeMCPHeaders map[string]string = map[string]string{
+	apiclient.RuntimeSourceHeader: "runtime-mcp",
 }

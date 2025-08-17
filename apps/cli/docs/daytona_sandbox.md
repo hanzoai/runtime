@@ -1,23 +1,23 @@
-## daytona sandbox
+## runtime sandbox
 
-Manage Daytona sandboxes
+Manage Runtime sandboxes
 
 ### Synopsis
 
-Commands for managing Daytona sandboxes
+Commands for managing Runtime sandboxes
 
 ### Options inherited from parent commands
 
 ```
-      --help   help for daytona
+      --help   help for runtime
 ```
 
 ### SEE ALSO
 
-- [daytona](daytona.md) - Daytona CLI
-- [daytona sandbox create](daytona_sandbox_create.md) - Create a new sandbox
-- [daytona sandbox delete](daytona_sandbox_delete.md) - Delete a sandbox
-- [daytona sandbox info](daytona_sandbox_info.md) - Get sandbox info
-- [daytona sandbox list](daytona_sandbox_list.md) - List sandboxes
-- [daytona sandbox start](daytona_sandbox_start.md) - Start a sandbox
-- [daytona sandbox stop](daytona_sandbox_stop.md) - Stop a sandbox
+- [runtime](runtime.md) - Runtime CLI
+- [runtime sandbox create](runtime_sandbox_create.md) - Create a new sandbox
+- [runtime sandbox delete](runtime_sandbox_delete.md) - Delete a sandbox
+- [runtime sandbox info](runtime_sandbox_info.md) - Get sandbox info
+- [runtime sandbox list](runtime_sandbox_list.md) - List sandboxes
+- [runtime sandbox start](runtime_sandbox_start.md) - Start a sandbox
+- [runtime sandbox stop](runtime_sandbox_stop.md) - Stop a sandbox

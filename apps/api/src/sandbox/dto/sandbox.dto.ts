@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -43,13 +43,13 @@ export class SandboxDto {
 
   @ApiPropertyOptional({
     description: 'The snapshot used for the sandbox',
-    example: 'daytonaio/sandbox:latest',
+    example: 'hanzoai/sandbox:latest',
   })
   snapshot: string
 
   @ApiProperty({
     description: 'The user associated with the project',
-    example: 'daytona',
+    example: 'runtime',
   })
   user: string
 
@@ -65,7 +65,7 @@ export class SandboxDto {
     description: 'Labels for the sandbox',
     type: 'object',
     additionalProperties: { type: 'string' },
-    example: { 'daytona.io/public': 'true' },
+    example: { 'hanzo.ai/public': 'true' },
   })
   labels: { [key: string]: string }
 

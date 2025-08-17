@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -12,7 +12,7 @@ import { TierTable } from '@/components/TierTable'
 import { OrganizationWallet } from '@/billing-api/types/OrganizationWallet'
 import { useAuth } from 'react-oidc-context'
 import { AlertTriangle } from 'lucide-react'
-import { UsageOverview } from '@daytonaio/api-client'
+import { UsageOverview } from '@hanzo/api-client'
 import { handleApiError } from '@/lib/error-handling'
 import QuotaLine from '@/components/QuotaLine'
 import { Skeleton } from '@/components/ui/skeleton'

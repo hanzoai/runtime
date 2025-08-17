@@ -1,9 +1,9 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
-import { SnapshotDto, SnapshotState, OrganizationRolePermissionsEnum } from '@daytonaio/api-client'
+import { SnapshotDto, SnapshotState, OrganizationRolePermissionsEnum } from '@hanzo/api-client'
 import {
   ColumnDef,
   flexRender,
@@ -223,7 +223,7 @@ export function SnapshotTable({
                     <p>
                       Create one from the Dashboard, CLI, or SDK to get started. Read the{' '}
                       <a
-                        href="https://www.daytona.io/docs/snapshots"
+                        href="https://www.hanzo.ai/docs/snapshots"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-primary hover:underline font-medium"

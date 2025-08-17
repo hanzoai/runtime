@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright 2025 Daytona Platforms Inc.
+# Copyright 2025 Hanzo Industries Inc.
 # SPDX-License-Identifier: AGPL-3.0
 
 
@@ -12,7 +12,7 @@ PROJECT_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
 DIST_DIR="$(cd "${SCRIPT_DIR}/../../.." && pwd)"
 
 # Environment file precedence:
-# 1. DAYTONA_ENV_FILE environment variable if set
+# 1. RUNTIME_ENV_FILE environment variable if set
 # 2. .env file in CLI directory
 # 3. .env file in project root
 # 4. Default values
@@ -27,9 +27,9 @@ load_env_file() {
 }
 
 # Try loading environment files in order of precedence
-if [ -n "$DAYTONA_ENV_FILE" ]; then
-    if ! load_env_file "$DAYTONA_ENV_FILE"; then
-        echo "Warning: Environment file specified by DAYTONA_ENV_FILE ($DAYTONA_ENV_FILE) not found"
+if [ -n "$RUNTIME_ENV_FILE" ]; then
+    if ! load_env_file "$RUNTIME_ENV_FILE"; then
+        echo "Warning: Environment file specified by RUNTIME_ENV_FILE ($RUNTIME_ENV_FILE) not found"
     fi
 elif load_env_file "${SCRIPT_DIR}/../.env.local"; then
     : # Successfully loaded CLI .env
@@ -45,24 +45,24 @@ fi
 
 
 # Set default values
-: "${DAYTONA_VERSION:=v0.0.0-dev}"
+: "${RUNTIME_VERSION:=v0.0.0-dev}"
 : "${GOOS:=linux}"
 : "${GOARCH:=amd64}"
 : "${CGO_ENABLED:=0}"
 
 # Export for build
-export DAYTONA_VERSION
+export RUNTIME_VERSION
 export GOOS
 export GOARCH
 export CGO_ENABLED
 
 # Validate required variables
 REQUIRED_VARS=(
-    "DAYTONA_API_URL"
-    "DAYTONA_AUTH0_DOMAIN"
-    "DAYTONA_AUTH0_CLIENT_ID"
-    "DAYTONA_AUTH0_CALLBACK_PORT"
-    "DAYTONA_AUTH0_AUDIENCE"
+    "RUNTIME_API_URL"
+    "RUNTIME_AUTH0_DOMAIN"
+    "RUNTIME_AUTH0_CLIENT_ID"
+    "RUNTIME_AUTH0_CALLBACK_PORT"
+    "RUNTIME_AUTH0_AUDIENCE"
 )
 
 MISSING_VARS=()
@@ -82,15 +82,15 @@ fi
 mkdir -p "${DIST_DIR}/dist/apps/cli"
 
 # Build the binary
-echo "Building Daytona CLI with version: $DAYTONA_VERSION"
+echo "Building Runtime CLI with version: $RUNTIME_VERSION"
 go build \
-    -ldflags "-X 'github.com/daytonaio/daytona/cli/internal.Version=${DAYTONA_VERSION}' \
-    -X 'github.com/daytonaio/daytona/cli/internal.DaytonaApiUrl=${DAYTONA_API_URL}' \
-    -X 'github.com/daytonaio/daytona/cli/internal.Auth0Domain=${DAYTONA_AUTH0_DOMAIN}' \
-    -X 'github.com/daytonaio/daytona/cli/internal.Auth0ClientId=${DAYTONA_AUTH0_CLIENT_ID}' \
-    -X 'github.com/daytonaio/daytona/cli/internal.Auth0ClientSecret=${DAYTONA_AUTH0_CLIENT_SECRET}' \
-    -X 'github.com/daytonaio/daytona/cli/internal.Auth0CallbackPort=${DAYTONA_AUTH0_CALLBACK_PORT}' \
-    -X 'github.com/daytonaio/daytona/cli/internal.Auth0Audience=${DAYTONA_AUTH0_AUDIENCE}'" \
-    -o "${DIST_DIR}/dist/apps/cli/daytona-${GOOS}-${GOARCH}" main.go
+    -ldflags "-X 'github.com/hanzoai/runtime/cli/internal.Version=${RUNTIME_VERSION}' \
+    -X 'github.com/hanzoai/runtime/cli/internal.RuntimeApiUrl=${RUNTIME_API_URL}' \
+    -X 'github.com/hanzoai/runtime/cli/internal.Auth0Domain=${RUNTIME_AUTH0_DOMAIN}' \
+    -X 'github.com/hanzoai/runtime/cli/internal.Auth0ClientId=${RUNTIME_AUTH0_CLIENT_ID}' \
+    -X 'github.com/hanzoai/runtime/cli/internal.Auth0ClientSecret=${RUNTIME_AUTH0_CLIENT_SECRET}' \
+    -X 'github.com/hanzoai/runtime/cli/internal.Auth0CallbackPort=${RUNTIME_AUTH0_CALLBACK_PORT}' \
+    -X 'github.com/hanzoai/runtime/cli/internal.Auth0Audience=${RUNTIME_AUTH0_AUDIENCE}'" \
+    -o "${DIST_DIR}/dist/apps/cli/runtime-${GOOS}-${GOARCH}" main.go
 
-echo "Build complete: ${DIST_DIR}/dist/apps/cli/daytona-${GOOS}-${GOARCH}"
+echo "Build complete: ${DIST_DIR}/dist/apps/cli/runtime-${GOOS}-${GOARCH}"

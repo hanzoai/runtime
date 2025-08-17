@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package config
@@ -11,8 +11,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/daytonaio/daytona/cli/cmd"
-	"github.com/daytonaio/daytona/cli/internal"
+	"github.com/hanzoai/runtime/cli/cmd"
+	"github.com/hanzoai/runtime/cli/internal"
 )
 
 type Config struct {
@@ -72,7 +72,7 @@ func GetConfig() (*Config, error) {
 	return &c, nil
 }
 
-var ErrNoProfilesFound = errors.New("no profiles found. Run `daytona login` to authenticate")
+var ErrNoProfilesFound = errors.New("no profiles found. Run `runtime login` to authenticate")
 
 func (c *Config) GetActiveProfile() (Profile, error) {
 	if len(c.Profiles) == 0 {
@@ -88,8 +88,8 @@ func (c *Config) GetActiveProfile() (Profile, error) {
 	return Profile{}, ErrNoActiveProfile
 }
 
-var ErrNoActiveProfile = errors.New("no active profile found. Run `daytona login` to authenticate")
-var ErrNoActiveOrganization = errors.New("no active organization found. Run `daytona organization use` to select an organization")
+var ErrNoActiveProfile = errors.New("no active profile found. Run `runtime login` to authenticate")
+var ErrNoActiveOrganization = errors.New("no active organization found. Run `runtime organization use` to select an organization")
 
 func (c *Config) Save() error {
 	configFilePath, err := getConfigPath()
@@ -166,9 +166,9 @@ func getConfigPath() (string, error) {
 }
 
 func GetConfigDir() (string, error) {
-	daytonaConfigDir := os.Getenv("DAYTONA_CONFIG_DIR")
-	if daytonaConfigDir != "" {
-		return daytonaConfigDir, nil
+	runtimeConfigDir := os.Getenv("RUNTIME_CONFIG_DIR")
+	if runtimeConfigDir != "" {
+		return runtimeConfigDir, nil
 	}
 
 	userConfigDir, err := os.UserConfigDir()
@@ -176,7 +176,7 @@ func GetConfigDir() (string, error) {
 		return "", err
 	}
 
-	return filepath.Join(userConfigDir, "daytona"), nil
+	return filepath.Join(userConfigDir, "runtime"), nil
 }
 
 func DeleteConfigDir() error {
@@ -221,7 +221,7 @@ func IsApiKeyAuth() bool {
 }
 
 func GetAuth0Domain() string {
-	auth0Domain := os.Getenv("DAYTONA_AUTH0_DOMAIN")
+	auth0Domain := os.Getenv("RUNTIME_AUTH0_DOMAIN")
 	if auth0Domain == "" {
 		auth0Domain = internal.Auth0Domain
 	}
@@ -230,7 +230,7 @@ func GetAuth0Domain() string {
 }
 
 func GetAuth0ClientId() string {
-	auth0ClientId := os.Getenv("DAYTONA_AUTH0_CLIENT_ID")
+	auth0ClientId := os.Getenv("RUNTIME_AUTH0_CLIENT_ID")
 	if auth0ClientId == "" {
 		auth0ClientId = internal.Auth0ClientId
 	}
@@ -239,7 +239,7 @@ func GetAuth0ClientId() string {
 }
 
 func GetAuth0ClientSecret() string {
-	auth0ClientSecret := os.Getenv("DAYTONA_AUTH0_CLIENT_SECRET")
+	auth0ClientSecret := os.Getenv("RUNTIME_AUTH0_CLIENT_SECRET")
 	if auth0ClientSecret == "" {
 		auth0ClientSecret = internal.Auth0ClientSecret
 	}
@@ -248,7 +248,7 @@ func GetAuth0ClientSecret() string {
 }
 
 func GetAuth0CallbackPort() string {
-	auth0CallbackPort := os.Getenv("DAYTONA_AUTH0_CALLBACK_PORT")
+	auth0CallbackPort := os.Getenv("RUNTIME_AUTH0_CALLBACK_PORT")
 	if auth0CallbackPort == "" {
 		auth0CallbackPort = internal.Auth0CallbackPort
 	}
@@ -257,7 +257,7 @@ func GetAuth0CallbackPort() string {
 }
 
 func GetAuth0Audience() string {
-	auth0Audience := os.Getenv("DAYTONA_AUTH0_AUDIENCE")
+	auth0Audience := os.Getenv("RUNTIME_AUTH0_AUDIENCE")
 	if auth0Audience == "" {
 		auth0Audience = internal.Auth0Audience
 	}
@@ -265,11 +265,11 @@ func GetAuth0Audience() string {
 	return auth0Audience
 }
 
-func GetDaytonaApiUrl() string {
-	daytonaApiUrl := os.Getenv("DAYTONA_API_URL")
-	if daytonaApiUrl == "" {
-		daytonaApiUrl = internal.DaytonaApiUrl
+func GetRuntimeApiUrl() string {
+	runtimeApiUrl := os.Getenv("RUNTIME_API_URL")
+	if runtimeApiUrl == "" {
+		runtimeApiUrl = internal.RuntimeApiUrl
 	}
 
-	return daytonaApiUrl
+	return runtimeApiUrl
 }

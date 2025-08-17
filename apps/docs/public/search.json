@@ -1,7 +1,7 @@
 [
   {
     "title": "API Keys",
-    "description": "Daytona API keys are used to authenticate requests to the Daytona API.",
+    "description": "Runtime API keys are used to authenticate requests to the Runtime API.",
     "tag": "Documentation",
     "url": "/docs/api-keys",
     "slug": "/api-keys",
@@ -57,7 +57,7 @@
   },
   {
     "title": "Configuration",
-    "description": "To authenticate with Daytona, you need an API key.",
+    "description": "To authenticate with Runtime, you need an API key.",
     "tag": "Documentation",
     "url": "/docs/configuration",
     "slug": "/configuration",
@@ -65,7 +65,7 @@
   },
   {
     "title": "Set Up Your Environment Variables",
-    "description": "To authenticate with Daytona, you need an API key.",
+    "description": "To authenticate with Runtime, you need an API key.",
     "tag": "Documentation",
     "url": "/docs/configuration#set-up-your-environment-variables",
     "slug": "/configuration#set-up-your-environment-variables",
@@ -73,7 +73,7 @@
   },
   {
     "title": "Configuration Options",
-    "description": "Daytona SDK provides an option to configure settings using the `DaytonaConfig` class in Python and TypeScript.",
+    "description": "Runtime SDK provides an option to configure settings using the `RuntimeConfig` class in Python and TypeScript.",
     "tag": "Documentation",
     "url": "/docs/configuration#configuration-options",
     "slug": "/configuration#configuration-options",
@@ -81,7 +81,7 @@
   },
   {
     "title": "Environment Variables",
-    "description": "Daytona SDK supports environment variables for configuration.",
+    "description": "Runtime SDK supports environment variables for configuration.",
     "tag": "Documentation",
     "url": "/docs/configuration#environment-variables",
     "slug": "/configuration#environment-variables",
@@ -89,7 +89,7 @@
   },
   {
     "title": "Setting Environment Variables",
-    "description": "Daytona SDK can read configuration from environment variables.",
+    "description": "Runtime SDK can read configuration from environment variables.",
     "tag": "Documentation",
     "url": "/docs/configuration#setting-environment-variables",
     "slug": "/configuration#setting-environment-variables",
@@ -121,7 +121,7 @@
   },
   {
     "title": "Declarative Builder",
-    "description": "Daytona's declarative builder provides a powerful, code-first approach to defining dependencies for Sandboxes.",
+    "description": "Runtime's declarative builder provides a powerful, code-first approach to defining dependencies for Sandboxes.",
     "tag": "Documentation",
     "url": "/docs/declarative-builder",
     "slug": "/declarative-builder",
@@ -185,7 +185,7 @@
   },
   {
     "title": "Create a new Sandbox with the dynamic image and stream the build logs",
-    "description": "This means you can use the same script every time and Daytona will take of caching the image properly.",
+    "description": "This means you can use the same script every time and Runtime will take of caching the image properly.",
     "tag": "Documentation",
     "url": "/docs/declarative-builder#create-a-new-sandbox-with-the-dynamic-image-and-stream-the-build-logs",
     "slug": "/declarative-builder#create-a-new-sandbox-with-the-dynamic-image-and-stream-the-build-logs",
@@ -193,7 +193,7 @@
   },
   {
     "title": "Creating Pre-built Snapshots",
-    "description": "If you want to prepare a new Daytona Snapshot with specific dependencies and then use it instantly across multiple Sandboxes whenever necessary, you can create a pre-built Snapshot.",
+    "description": "If you want to prepare a new Runtime Snapshot with specific dependencies and then use it instantly across multiple Sandboxes whenever necessary, you can create a pre-built Snapshot.",
     "tag": "Documentation",
     "url": "/docs/declarative-builder#creating-pre-built-snapshots",
     "slug": "/declarative-builder#creating-pre-built-snapshots",
@@ -257,7 +257,7 @@
   },
   {
     "title": "File System Operations",
-    "description": "The Daytona SDK provides comprehensive file system operations through the `fs` module in Sandboxes.",
+    "description": "The Runtime SDK provides comprehensive file system operations through the `fs` module in Sandboxes.",
     "tag": "Documentation",
     "url": "/docs/file-system-operations",
     "slug": "/file-system-operations",
@@ -265,7 +265,7 @@
   },
   {
     "title": "Basic Operations",
-    "description": "Daytona SDK provides an option to interact with the file system in Sandboxes.",
+    "description": "Runtime SDK provides an option to interact with the file system in Sandboxes.",
     "tag": "Documentation",
     "url": "/docs/file-system-operations#basic-operations",
     "slug": "/file-system-operations#basic-operations",
@@ -273,7 +273,7 @@
   },
   {
     "title": "Listing Files and Directories",
-    "description": "Daytona SDK provides an option to list files and directories in a Sandbox using Python and TypeScript.",
+    "description": "Runtime SDK provides an option to list files and directories in a Sandbox using Python and TypeScript.",
     "tag": "Documentation",
     "url": "/docs/file-system-operations#listing-files-and-directories",
     "slug": "/file-system-operations#listing-files-and-directories",
@@ -289,7 +289,7 @@
   },
   {
     "title": "Creating Directories",
-    "description": "Daytona SDK provides an option to create directories with specific permissions using Python and TypeScript.",
+    "description": "Runtime SDK provides an option to create directories with specific permissions using Python and TypeScript.",
     "tag": "Documentation",
     "url": "/docs/file-system-operations#creating-directories",
     "slug": "/file-system-operations#creating-directories",
@@ -305,7 +305,7 @@
   },
   {
     "title": "Uploading Files",
-    "description": "Daytona SDK provides options to read, write, upload, download, and delete files in Sandboxes using Python and TypeScript.",
+    "description": "Runtime SDK provides options to read, write, upload, download, and delete files in Sandboxes using Python and TypeScript.",
     "tag": "Documentation",
     "url": "/docs/file-system-operations#uploading-files",
     "slug": "/file-system-operations#uploading-files",
@@ -361,7 +361,7 @@
   },
   {
     "title": "Advanced Operations",
-    "description": "Daytona SDK provides advanced file system operations like file permissions, search and replace, and more.",
+    "description": "Runtime SDK provides advanced file system operations like file permissions, search and replace, and more.",
     "tag": "Documentation",
     "url": "/docs/file-system-operations#advanced-operations",
     "slug": "/file-system-operations#advanced-operations",
@@ -369,7 +369,7 @@
   },
   {
     "title": "File Permissions",
-    "description": "Daytona SDK provides an option to set file permissions, get file permissions, and set directory permissions recursively using Python and TypeScript.",
+    "description": "Runtime SDK provides an option to set file permissions, get file permissions, and set directory permissions recursively using Python and TypeScript.",
     "tag": "Documentation",
     "url": "/docs/file-system-operations#file-permissions",
     "slug": "/file-system-operations#file-permissions",
@@ -393,7 +393,7 @@
   },
   {
     "title": "File Search and Replace",
-    "description": "Daytona SDK provides an option to search for text in files and replace text in files using Python and TypeScript.",
+    "description": "Runtime SDK provides an option to search for text in files and replace text in files using Python and TypeScript.",
     "tag": "Documentation",
     "url": "/docs/file-system-operations#file-search-and-replace",
     "slug": "/file-system-operations#file-search-and-replace",
@@ -417,18 +417,18 @@
   },
   {
     "title": "Getting Started",
-    "description": "The Daytona SDK provides official Python and TypeScript interfaces for interacting with Daytona, enabling you to programmatically manage development environments and execute code.",
+    "description": "The Runtime SDK provides official Python and TypeScript interfaces for interacting with Runtime, enabling you to programmatically manage development environments and execute code.",
     "tag": "Documentation",
     "url": "/docs/getting-started",
     "slug": "/getting-started",
     "objectID": 53
   },
   {
-    "title": "Install the Daytona SDK",
-    "description": "Daytona provides official Python and TypeScript SDKs for interacting with the Daytona platform.",
+    "title": "Install the Runtime SDK",
+    "description": "Runtime provides official Python and TypeScript SDKs for interacting with the Runtime platform.",
     "tag": "Documentation",
-    "url": "/docs/getting-started#install-the-daytona-sdk",
-    "slug": "/getting-started#install-the-daytona-sdk",
+    "url": "/docs/getting-started#install-the-runtime-sdk",
+    "slug": "/getting-started#install-the-runtime-sdk",
     "objectID": 54
   },
   {
@@ -457,18 +457,18 @@
   },
   {
     "title": "Run Code Inside a Sandbox",
-    "description": "Run the following code to create a Daytona Sandbox and execute commands:",
+    "description": "Run the following code to create a Runtime Sandbox and execute commands:",
     "tag": "Documentation",
     "url": "/docs/getting-started#run-code-inside-a-sandbox",
     "slug": "/getting-started#run-code-inside-a-sandbox",
     "objectID": 58
   },
   {
-    "title": "Initialize the Daytona client",
+    "title": "Initialize the Runtime client",
     "description": "",
     "tag": "Documentation",
-    "url": "/docs/getting-started#initialize-the-daytona-client",
-    "slug": "/getting-started#initialize-the-daytona-client",
+    "url": "/docs/getting-started#initialize-the-runtime-client",
+    "slug": "/getting-started#initialize-the-runtime-client",
     "objectID": 59
   },
   {
@@ -497,7 +497,7 @@
   },
   {
     "title": "Preview Your App",
-    "description": "The following snippet uploads a file containing a simple Flask app to a Daytona Sandbox.",
+    "description": "The following snippet uploads a file containing a simple Flask app to a Runtime Sandbox.",
     "tag": "Documentation",
     "url": "/docs/getting-started#preview-your-app",
     "slug": "/getting-started#preview-your-app",
@@ -529,7 +529,7 @@
   },
   {
     "title": "Connect to an LLM",
-    "description": "The following snippet connects to an LLM using the Anthropic API and asks Claude to generate code for getting the factorial of 25 and then executes it inside of a Daytona Sandbox:",
+    "description": "The following snippet connects to an LLM using the Anthropic API and asks Claude to generate code for getting the factorial of 25 and then executes it inside of a Runtime Sandbox:",
     "tag": "Documentation",
     "url": "/docs/getting-started#connect-to-an-llm",
     "slug": "/getting-started#connect-to-an-llm",
@@ -545,23 +545,23 @@
   },
   {
     "title": "Additional Examples",
-    "description": "Use the Daytona SDK [Python examples](https://github.",
+    "description": "Use the Runtime SDK [Python examples](https://github.",
     "tag": "Documentation",
     "url": "/docs/getting-started#additional-examples",
     "slug": "/getting-started#additional-examples",
     "objectID": 69
   },
   {
-    "title": "Setting up the Daytona CLI",
+    "title": "Setting up the Runtime CLI",
     "description": "If you want to use [images from your local device](/docs/snapshots",
     "tag": "Documentation",
-    "url": "/docs/getting-started#setting-up-the-daytona-cli",
-    "slug": "/getting-started#setting-up-the-daytona-cli",
+    "url": "/docs/getting-started#setting-up-the-runtime-cli",
+    "slug": "/getting-started#setting-up-the-runtime-cli",
     "objectID": 70
   },
   {
     "title": "Git Operations",
-    "description": "The Daytona SDK provides built-in Git support through the `git` module in Sandboxes.",
+    "description": "The Runtime SDK provides built-in Git support through the `git` module in Sandboxes.",
     "tag": "Documentation",
     "url": "/docs/git-operations",
     "slug": "/git-operations",
@@ -569,7 +569,7 @@
   },
   {
     "title": "Basic Operations",
-    "description": "Daytona SDK provides an option to clone, check status, and manage Git repositories in Sandboxes.",
+    "description": "Runtime SDK provides an option to clone, check status, and manage Git repositories in Sandboxes.",
     "tag": "Documentation",
     "url": "/docs/git-operations#basic-operations",
     "slug": "/git-operations#basic-operations",
@@ -577,7 +577,7 @@
   },
   {
     "title": "Cloning Repositories",
-    "description": "Daytona SDK provides an option to clone Git repositories into Sandboxes using Python and TypeScript.",
+    "description": "Runtime SDK provides an option to clone Git repositories into Sandboxes using Python and TypeScript.",
     "tag": "Documentation",
     "url": "/docs/git-operations#cloning-repositories",
     "slug": "/git-operations#cloning-repositories",
@@ -609,7 +609,7 @@
   },
   {
     "title": "Repository Status",
-    "description": "Daytona SDK provides an option to check the status of Git repositories in Sandboxes.",
+    "description": "Runtime SDK provides an option to check the status of Git repositories in Sandboxes.",
     "tag": "Documentation",
     "url": "/docs/git-operations#repository-status",
     "slug": "/git-operations#repository-status",
@@ -633,7 +633,7 @@
   },
   {
     "title": "Branch Operations",
-    "description": "Daytona SDK provides an option to manage branches in Git repositories.",
+    "description": "Runtime SDK provides an option to manage branches in Git repositories.",
     "tag": "Documentation",
     "url": "/docs/git-operations#branch-operations",
     "slug": "/git-operations#branch-operations",
@@ -641,7 +641,7 @@
   },
   {
     "title": "Managing Branches",
-    "description": "Daytona SDK provides an option to create, switch, and delete branches in Git repositories using Python and TypeScript.",
+    "description": "Runtime SDK provides an option to create, switch, and delete branches in Git repositories using Python and TypeScript.",
     "tag": "Documentation",
     "url": "/docs/git-operations#managing-branches",
     "slug": "/git-operations#managing-branches",
@@ -673,7 +673,7 @@
   },
   {
     "title": "Staging and Committing",
-    "description": "Daytona SDK provides an option to stage and commit changes in Git repositories.",
+    "description": "Runtime SDK provides an option to stage and commit changes in Git repositories.",
     "tag": "Documentation",
     "url": "/docs/git-operations#staging-and-committing",
     "slug": "/git-operations#staging-and-committing",
@@ -721,7 +721,7 @@
   },
   {
     "title": "Remote Operations",
-    "description": "Daytona SDK provides an option to work with remote repositories in Git.",
+    "description": "Runtime SDK provides an option to work with remote repositories in Git.",
     "tag": "Documentation",
     "url": "/docs/git-operations#remote-operations",
     "slug": "/git-operations#remote-operations",
@@ -729,7 +729,7 @@
   },
   {
     "title": "Working with Remotes",
-    "description": "Daytona SDK provides an option to push, pull, and list remotes in Git repositories using Python and TypeScript.",
+    "description": "Runtime SDK provides an option to push, pull, and list remotes in Git repositories using Python and TypeScript.",
     "tag": "Documentation",
     "url": "/docs/git-operations#working-with-remotes",
     "slug": "/git-operations#working-with-remotes",
@@ -761,7 +761,7 @@
   },
   {
     "title": "Language Server Protocol",
-    "description": "The Daytona SDK provides Language Server Protocol (LSP) support through Sandbox instances.",
+    "description": "The Runtime SDK provides Language Server Protocol (LSP) support through Sandbox instances.",
     "tag": "Documentation",
     "url": "/docs/language-server-protocol",
     "slug": "/language-server-protocol",
@@ -769,7 +769,7 @@
   },
   {
     "title": "Creating LSP Servers",
-    "description": "Daytona SDK provides an option to create LSP servers using Python and TypeScript.",
+    "description": "Runtime SDK provides an option to create LSP servers using Python and TypeScript.",
     "tag": "Documentation",
     "url": "/docs/language-server-protocol#creating-lsp-servers",
     "slug": "/language-server-protocol#creating-lsp-servers",
@@ -793,7 +793,7 @@
   },
   {
     "title": "Supported Languages",
-    "description": "Daytona SDK provides an option to create LSP servers for various languages through the `LspLanguageId` enum in Python and TypeScript.",
+    "description": "Runtime SDK provides an option to create LSP servers for various languages through the `LspLanguageId` enum in Python and TypeScript.",
     "tag": "Documentation",
     "url": "/docs/language-server-protocol#supported-languages",
     "slug": "/language-server-protocol#supported-languages",
@@ -809,7 +809,7 @@
   },
   {
     "title": "LSP Features",
-    "description": "Daytona SDK provides various LSP features for code analysis and editing.",
+    "description": "Runtime SDK provides various LSP features for code analysis and editing.",
     "tag": "Documentation",
     "url": "/docs/language-server-protocol#lsp-features",
     "slug": "/language-server-protocol#lsp-features",
@@ -817,7 +817,7 @@
   },
   {
     "title": "Code Completion",
-    "description": "Daytona SDK provides an option to get code completions for a specific position in a file using Python and TypeScript.",
+    "description": "Runtime SDK provides an option to get code completions for a specific position in a file using Python and TypeScript.",
     "tag": "Documentation",
     "url": "/docs/language-server-protocol#code-completion",
     "slug": "/language-server-protocol#code-completion",
@@ -825,7 +825,7 @@
   },
   {
     "title": "Limits",
-    "description": "Daytona enforces resource limits to ensure fair usage and stability across all organizations.",
+    "description": "Runtime enforces resource limits to ensure fair usage and stability across all organizations.",
     "tag": "Documentation",
     "url": "/docs/limits",
     "slug": "/limits",
@@ -849,7 +849,7 @@
   },
   {
     "title": "Need More?",
-    "description": "If you need higher or specialized limits, reach out to [support@daytona.",
+    "description": "If you need higher or specialized limits, reach out to [support@hanzo.",
     "tag": "Documentation",
     "url": "/docs/limits#need-more",
     "slug": "/limits#need-more",
@@ -857,7 +857,7 @@
   },
   {
     "title": "Linked Accounts",
-    "description": "Daytona supports the linking of user accounts from various identity providers.",
+    "description": "Runtime supports the linking of user accounts from various identity providers.",
     "tag": "Documentation",
     "url": "/docs/linked-accounts",
     "slug": "/linked-accounts",
@@ -889,7 +889,7 @@
   },
   {
     "title": "Need More?",
-    "description": "If you need support for other identity providers, reach out to [support@daytona.",
+    "description": "If you need support for other identity providers, reach out to [support@hanzo.",
     "tag": "Documentation",
     "url": "/docs/linked-accounts#need-more",
     "slug": "/linked-accounts#need-more",
@@ -920,8 +920,8 @@
     "objectID": 115
   },
   {
-    "title": "Daytona MCP Server",
-    "description": "The Daytona Model Context Protocol (MCP) Server enables AI agents to interact with Daytona's features programmatically.",
+    "title": "Runtime MCP Server",
+    "description": "The Runtime Model Context Protocol (MCP) Server enables AI agents to interact with Runtime's features programmatically.",
     "tag": "Documentation",
     "url": "/docs/mcp",
     "slug": "/mcp",
@@ -944,24 +944,24 @@
     "objectID": 118
   },
   {
-    "title": "1. Install Daytona CLI",
+    "title": "1. Install Runtime CLI",
     "description": "",
     "tag": "Documentation",
-    "url": "/docs/mcp#1-install-daytona-cli",
-    "slug": "/mcp#1-install-daytona-cli",
+    "url": "/docs/mcp#1-install-runtime-cli",
+    "slug": "/mcp#1-install-runtime-cli",
     "objectID": 119
   },
   {
-    "title": "2. Authenticate with Daytona",
+    "title": "2. Authenticate with Runtime",
     "description": "",
     "tag": "Documentation",
-    "url": "/docs/mcp#2-authenticate-with-daytona",
-    "slug": "/mcp#2-authenticate-with-daytona",
+    "url": "/docs/mcp#2-authenticate-with-runtime",
+    "slug": "/mcp#2-authenticate-with-runtime",
     "objectID": 120
   },
   {
     "title": "3. Initialize MCP Server",
-    "description": "Initialize the Daytona MCP server with your preferred AI agent:",
+    "description": "Initialize the Runtime MCP server with your preferred AI agent:",
     "tag": "Documentation",
     "url": "/docs/mcp#3-initialize-mcp-server",
     "slug": "/mcp#3-initialize-mcp-server",
@@ -969,7 +969,7 @@
   },
   {
     "title": "4. Open Your AI Agent",
-    "description": "After initialization, open your AI agent application to begin using Daytona features.",
+    "description": "After initialization, open your AI agent application to begin using Runtime features.",
     "tag": "Documentation",
     "url": "/docs/mcp#4-open-your-ai-agent",
     "slug": "/mcp#4-open-your-ai-agent",
@@ -977,7 +977,7 @@
   },
   {
     "title": "Integration with Other AI Agents",
-    "description": "To integrate Daytona MCP with other AI agents, follow these steps:",
+    "description": "To integrate Runtime MCP with other AI agents, follow these steps:",
     "tag": "Documentation",
     "url": "/docs/mcp#integration-with-other-ai-agents",
     "slug": "/mcp#integration-with-other-ai-agents",
@@ -1049,7 +1049,7 @@
   },
   {
     "title": "Organizations",
-    "description": "Organizations in Daytona are a way to group resources and easily collaborate with other users.",
+    "description": "Organizations in Runtime are a way to group resources and easily collaborate with other users.",
     "tag": "Documentation",
     "url": "/docs/organizations",
     "slug": "/organizations",
@@ -1113,7 +1113,7 @@
   },
   {
     "title": "Process and Code Execution",
-    "description": "The Daytona SDK provides powerful process and code execution capabilities through the `process` module in Sandboxes.",
+    "description": "The Runtime SDK provides powerful process and code execution capabilities through the `process` module in Sandboxes.",
     "tag": "Documentation",
     "url": "/docs/process-code-execution",
     "slug": "/process-code-execution",
@@ -1121,7 +1121,7 @@
   },
   {
     "title": "Code Execution",
-    "description": "Daytona SDK provides an option to execute code in Python and TypeScript.",
+    "description": "Runtime SDK provides an option to execute code in Python and TypeScript.",
     "tag": "Documentation",
     "url": "/docs/process-code-execution#code-execution",
     "slug": "/process-code-execution#code-execution",
@@ -1129,7 +1129,7 @@
   },
   {
     "title": "Running Code",
-    "description": "Daytona SDK provides an option to run code snippets in Python and TypeScript.",
+    "description": "Runtime SDK provides an option to run code snippets in Python and TypeScript.",
     "tag": "Documentation",
     "url": "/docs/process-code-execution#running-code",
     "slug": "/process-code-execution#running-code",
@@ -1145,7 +1145,7 @@
   },
   {
     "title": "Process Execution",
-    "description": "Daytona SDK provides an option to execute shell commands and manage background processes in Sandboxes.",
+    "description": "Runtime SDK provides an option to execute shell commands and manage background processes in Sandboxes.",
     "tag": "Documentation",
     "url": "/docs/process-code-execution#process-execution",
     "slug": "/process-code-execution#process-execution",
@@ -1153,7 +1153,7 @@
   },
   {
     "title": "Running Commands",
-    "description": "Daytona SDK provides an option to execute shell commands in Python and TypeScript.",
+    "description": "Runtime SDK provides an option to execute shell commands in Python and TypeScript.",
     "tag": "Documentation",
     "url": "/docs/process-code-execution#running-commands",
     "slug": "/process-code-execution#running-commands",
@@ -1185,7 +1185,7 @@
   },
   {
     "title": "Sessions (Background Processes)",
-    "description": "Daytona SDK provides an option to start, stop, and manage background process sessions in Sandboxes.",
+    "description": "Runtime SDK provides an option to start, stop, and manage background process sessions in Sandboxes.",
     "tag": "Documentation",
     "url": "/docs/process-code-execution#sessions-background-processes",
     "slug": "/process-code-execution#sessions-background-processes",
@@ -1193,7 +1193,7 @@
   },
   {
     "title": "Managing Long-Running Processes",
-    "description": "Daytona SDK provides an option to start and stop background processes.",
+    "description": "Runtime SDK provides an option to start and stop background processes.",
     "tag": "Documentation",
     "url": "/docs/process-code-execution#managing-long-running-processes",
     "slug": "/process-code-execution#managing-long-running-processes",
@@ -1217,7 +1217,7 @@
   },
   {
     "title": "Best Practices",
-    "description": "Daytona SDK provides best practices for process and code execution in Sandboxes.",
+    "description": "Runtime SDK provides best practices for process and code execution in Sandboxes.",
     "tag": "Documentation",
     "url": "/docs/process-code-execution#best-practices",
     "slug": "/process-code-execution#best-practices",
@@ -1225,7 +1225,7 @@
   },
   {
     "title": "Common Issues",
-    "description": "Daytona SDK provides an option to troubleshoot common issues related to process execution and code execution.",
+    "description": "Runtime SDK provides an option to troubleshoot common issues related to process execution and code execution.",
     "tag": "Documentation",
     "url": "/docs/process-code-execution#common-issues",
     "slug": "/process-code-execution#common-issues",
@@ -1257,7 +1257,7 @@
   },
   {
     "title": "Region Selection",
-    "description": "Daytona is currently available in the following regions:",
+    "description": "Runtime is currently available in the following regions:",
     "tag": "Documentation",
     "url": "/docs/regions",
     "slug": "/regions",
@@ -1265,7 +1265,7 @@
   },
   {
     "title": "Sandbox Management",
-    "description": "Sandboxes are isolated development environments managed by Daytona.",
+    "description": "Sandboxes are isolated development environments managed by Runtime.",
     "tag": "Documentation",
     "url": "/docs/sandbox-management",
     "slug": "/sandbox-management",
@@ -1273,7 +1273,7 @@
   },
   {
     "title": "Sandbox Lifecycle",
-    "description": "Throughout its lifecycle, a Daytona Sandbox can have several different states.",
+    "description": "Throughout its lifecycle, a Runtime Sandbox can have several different states.",
     "tag": "Documentation",
     "url": "/docs/sandbox-management#sandbox-lifecycle",
     "slug": "/sandbox-management#sandbox-lifecycle",
@@ -1281,7 +1281,7 @@
   },
   {
     "title": "Creating Sandboxes",
-    "description": "The Daytona SDK provides an option to create Sandboxes with default or custom configurations.",
+    "description": "The Runtime SDK provides an option to create Sandboxes with default or custom configurations.",
     "tag": "Documentation",
     "url": "/docs/sandbox-management#creating-sandboxes",
     "slug": "/sandbox-management#creating-sandboxes",
@@ -1289,7 +1289,7 @@
   },
   {
     "title": "Basic Sandbox Creation",
-    "description": "The Daytona SDK provides methods to create Sandboxes with default configurations, specific languages, or custom labels using Python and TypeScript.",
+    "description": "The Runtime SDK provides methods to create Sandboxes with default configurations, specific languages, or custom labels using Python and TypeScript.",
     "tag": "Documentation",
     "url": "/docs/sandbox-management#basic-sandbox-creation",
     "slug": "/sandbox-management#basic-sandbox-creation",
@@ -1321,7 +1321,7 @@
   },
   {
     "title": "Sandbox Resources",
-    "description": "Daytona Sandboxes come with **1 vCPU**, **1GB RAM**, and **3GiB disk** by default.",
+    "description": "Runtime Sandboxes come with **1 vCPU**, **1GB RAM**, and **3GiB disk** by default.",
     "tag": "Documentation",
     "url": "/docs/sandbox-management#sandbox-resources",
     "slug": "/sandbox-management#sandbox-resources",
@@ -1337,7 +1337,7 @@
   },
   {
     "title": "Sandbox Information",
-    "description": "The Daytona SDK provides methods to get information about a Sandbox, such as ID, root directory, and status using Python and TypeScript.",
+    "description": "The Runtime SDK provides methods to get information about a Sandbox, such as ID, root directory, and status using Python and TypeScript.",
     "tag": "Documentation",
     "url": "/docs/sandbox-management#sandbox-information",
     "slug": "/sandbox-management#sandbox-information",
@@ -1369,7 +1369,7 @@
   },
   {
     "title": "Stop and Start Sandbox",
-    "description": "The Daytona SDK provides methods to stop and start Sandboxes using Python and TypeScript.",
+    "description": "The Runtime SDK provides methods to stop and start Sandboxes using Python and TypeScript.",
     "tag": "Documentation",
     "url": "/docs/sandbox-management#stop-and-start-sandbox",
     "slug": "/sandbox-management#stop-and-start-sandbox",
@@ -1401,7 +1401,7 @@
   },
   {
     "title": "Archive Sandbox",
-    "description": "The Daytona SDK provides methods to archive Sandboxes using Python and TypeScript.",
+    "description": "The Runtime SDK provides methods to archive Sandboxes using Python and TypeScript.",
     "tag": "Documentation",
     "url": "/docs/sandbox-management#archive-sandbox",
     "slug": "/sandbox-management#archive-sandbox",
@@ -1409,7 +1409,7 @@
   },
   {
     "title": "Delete Sandbox",
-    "description": "The Daytona SDK provides methods to delete Sandboxes using Python and TypeScript.",
+    "description": "The Runtime SDK provides methods to delete Sandboxes using Python and TypeScript.",
     "tag": "Documentation",
     "url": "/docs/sandbox-management#delete-sandbox",
     "slug": "/sandbox-management#delete-sandbox",
@@ -1425,7 +1425,7 @@
   },
   {
     "title": "Automated Lifecycle Management",
-    "description": "Daytona Sandboxes can be automatically stopped, archived, and deleted based on user-defined intervals.",
+    "description": "Runtime Sandboxes can be automatically stopped, archived, and deleted based on user-defined intervals.",
     "tag": "Documentation",
     "url": "/docs/sandbox-management#automated-lifecycle-management",
     "slug": "/sandbox-management#automated-lifecycle-management",
@@ -1481,7 +1481,7 @@
   },
   {
     "title": "Snapshots",
-    "description": "Snapshots are pre-configured templates containing all dependencies, tools, environment settings and resource requirements for your Daytona Sandbox.",
+    "description": "Snapshots are pre-configured templates containing all dependencies, tools, environment settings and resource requirements for your Runtime Sandbox.",
     "tag": "Documentation",
     "url": "/docs/snapshots",
     "slug": "/snapshots",
@@ -1489,7 +1489,7 @@
   },
   {
     "title": "Creating Snapshots",
-    "description": "When spinning up a Sandbox, Daytona uses a Snapshot based on a simple image with some useful utilities pre-installed, such as `python`, `node`, `pip` as well as some common pip packages.",
+    "description": "When spinning up a Sandbox, Runtime uses a Snapshot based on a simple image with some useful utilities pre-installed, such as `python`, `node`, `pip` as well as some common pip packages.",
     "tag": "Documentation",
     "url": "/docs/snapshots#creating-snapshots",
     "slug": "/snapshots#creating-snapshots",
@@ -1497,7 +1497,7 @@
   },
   {
     "title": "Snapshot Resources",
-    "description": "Snapshots contain the resource requirements for Daytona Sandboxes.",
+    "description": "Snapshots contain the resource requirements for Runtime Sandboxes.",
     "tag": "Documentation",
     "url": "/docs/snapshots#snapshot-resources",
     "slug": "/snapshots#snapshot-resources",
@@ -1529,7 +1529,7 @@
   },
   {
     "title": "Using a Local Image",
-    "description": "In order to avoid having to manually set up a private container registry and push your image there, the [Daytona CLI](/docs/getting-started",
+    "description": "In order to avoid having to manually set up a private container registry and push your image there, the [Runtime CLI](/docs/getting-started",
     "tag": "Documentation",
     "url": "/docs/snapshots#using-a-local-image",
     "slug": "/snapshots#using-a-local-image",
@@ -1545,7 +1545,7 @@
   },
   {
     "title": "Default Snapshot",
-    "description": "The default Snapshot used by Daytona is based on an image that contains `python`, `node` and their respective LSP's, as well as these pre-installed `pip` packages:",
+    "description": "The default Snapshot used by Runtime is based on an image that contains `python`, `node` and their respective LSP's, as well as these pre-installed `pip` packages:",
     "tag": "Documentation",
     "url": "/docs/snapshots#default-snapshot",
     "slug": "/snapshots#default-snapshot",
@@ -1553,266 +1553,266 @@
   },
   {
     "title": "CLI",
-    "description": "The `daytona` command-line tool provides access to Daytona's core features including managing Snapshots and the lifecycle of Daytona Sandboxes.",
+    "description": "The `runtime` command-line tool provides access to Runtime's core features including managing Snapshots and the lifecycle of Runtime Sandboxes.",
     "tag": "Documentation",
     "url": "/docs/tools/cli",
     "slug": "/tools/cli",
     "objectID": 195
   },
   {
-    "title": "daytona",
-    "description": "Daytona CLI",
+    "title": "runtime",
+    "description": "Runtime CLI",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona",
-    "slug": "/tools/cli#daytona",
+    "url": "/docs/tools/cli#runtime",
+    "slug": "/tools/cli#runtime",
     "objectID": 196
   },
   {
-    "title": "daytona autocomplete",
+    "title": "runtime autocomplete",
     "description": "Adds a completion script for your shell environment",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-autocomplete",
-    "slug": "/tools/cli#daytona-autocomplete",
+    "url": "/docs/tools/cli#runtime-autocomplete",
+    "slug": "/tools/cli#runtime-autocomplete",
     "objectID": 197
   },
   {
-    "title": "daytona docs",
-    "description": "Opens the Daytona documentation in your default browser.",
+    "title": "runtime docs",
+    "description": "Opens the Runtime documentation in your default browser.",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-docs",
-    "slug": "/tools/cli#daytona-docs",
+    "url": "/docs/tools/cli#runtime-docs",
+    "slug": "/tools/cli#runtime-docs",
     "objectID": 198
   },
   {
-    "title": "daytona login",
-    "description": "Log in to Daytona",
+    "title": "runtime login",
+    "description": "Log in to Runtime",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-login",
-    "slug": "/tools/cli#daytona-login",
+    "url": "/docs/tools/cli#runtime-login",
+    "slug": "/tools/cli#runtime-login",
     "objectID": 199
   },
   {
-    "title": "daytona logout",
-    "description": "Logout from Daytona",
+    "title": "runtime logout",
+    "description": "Logout from Runtime",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-logout",
-    "slug": "/tools/cli#daytona-logout",
+    "url": "/docs/tools/cli#runtime-logout",
+    "slug": "/tools/cli#runtime-logout",
     "objectID": 200
   },
   {
-    "title": "daytona mcp",
-    "description": "Manage Daytona MCP Server",
+    "title": "runtime mcp",
+    "description": "Manage Runtime MCP Server",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-mcp",
-    "slug": "/tools/cli#daytona-mcp",
+    "url": "/docs/tools/cli#runtime-mcp",
+    "slug": "/tools/cli#runtime-mcp",
     "objectID": 201
   },
   {
-    "title": "daytona mcp config",
-    "description": "Outputs JSON configuration for Daytona MCP Server",
+    "title": "runtime mcp config",
+    "description": "Outputs JSON configuration for Runtime MCP Server",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-mcp-config",
-    "slug": "/tools/cli#daytona-mcp-config",
+    "url": "/docs/tools/cli#runtime-mcp-config",
+    "slug": "/tools/cli#runtime-mcp-config",
     "objectID": 202
   },
   {
-    "title": "daytona mcp init",
-    "description": "Initialize Daytona MCP Server with an agent (currently supported: claude, windsurf, cursor)",
+    "title": "runtime mcp init",
+    "description": "Initialize Runtime MCP Server with an agent (currently supported: claude, windsurf, cursor)",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-mcp-init",
-    "slug": "/tools/cli#daytona-mcp-init",
+    "url": "/docs/tools/cli#runtime-mcp-init",
+    "slug": "/tools/cli#runtime-mcp-init",
     "objectID": 203
   },
   {
-    "title": "daytona mcp start",
-    "description": "Start Daytona MCP Server",
+    "title": "runtime mcp start",
+    "description": "Start Runtime MCP Server",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-mcp-start",
-    "slug": "/tools/cli#daytona-mcp-start",
+    "url": "/docs/tools/cli#runtime-mcp-start",
+    "slug": "/tools/cli#runtime-mcp-start",
     "objectID": 204
   },
   {
-    "title": "daytona organization",
-    "description": "Manage Daytona organizations",
+    "title": "runtime organization",
+    "description": "Manage Runtime organizations",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-organization",
-    "slug": "/tools/cli#daytona-organization",
+    "url": "/docs/tools/cli#runtime-organization",
+    "slug": "/tools/cli#runtime-organization",
     "objectID": 205
   },
   {
-    "title": "daytona organization create",
+    "title": "runtime organization create",
     "description": "Create a new organization and set it as active",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-organization-create",
-    "slug": "/tools/cli#daytona-organization-create",
+    "url": "/docs/tools/cli#runtime-organization-create",
+    "slug": "/tools/cli#runtime-organization-create",
     "objectID": 206
   },
   {
-    "title": "daytona organization delete",
+    "title": "runtime organization delete",
     "description": "Delete an organization",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-organization-delete",
-    "slug": "/tools/cli#daytona-organization-delete",
+    "url": "/docs/tools/cli#runtime-organization-delete",
+    "slug": "/tools/cli#runtime-organization-delete",
     "objectID": 207
   },
   {
-    "title": "daytona organization list",
+    "title": "runtime organization list",
     "description": "List all organizations",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-organization-list",
-    "slug": "/tools/cli#daytona-organization-list",
+    "url": "/docs/tools/cli#runtime-organization-list",
+    "slug": "/tools/cli#runtime-organization-list",
     "objectID": 208
   },
   {
-    "title": "daytona organization use",
+    "title": "runtime organization use",
     "description": "Set active organization",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-organization-use",
-    "slug": "/tools/cli#daytona-organization-use",
+    "url": "/docs/tools/cli#runtime-organization-use",
+    "slug": "/tools/cli#runtime-organization-use",
     "objectID": 209
   },
   {
-    "title": "daytona sandbox",
-    "description": "Manage Daytona sandboxes",
+    "title": "runtime sandbox",
+    "description": "Manage Runtime sandboxes",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-sandbox",
-    "slug": "/tools/cli#daytona-sandbox",
+    "url": "/docs/tools/cli#runtime-sandbox",
+    "slug": "/tools/cli#runtime-sandbox",
     "objectID": 210
   },
   {
-    "title": "daytona sandbox create",
+    "title": "runtime sandbox create",
     "description": "Create a new sandbox",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-sandbox-create",
-    "slug": "/tools/cli#daytona-sandbox-create",
+    "url": "/docs/tools/cli#runtime-sandbox-create",
+    "slug": "/tools/cli#runtime-sandbox-create",
     "objectID": 211
   },
   {
-    "title": "daytona sandbox delete",
+    "title": "runtime sandbox delete",
     "description": "Delete a sandbox",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-sandbox-delete",
-    "slug": "/tools/cli#daytona-sandbox-delete",
+    "url": "/docs/tools/cli#runtime-sandbox-delete",
+    "slug": "/tools/cli#runtime-sandbox-delete",
     "objectID": 212
   },
   {
-    "title": "daytona sandbox info",
+    "title": "runtime sandbox info",
     "description": "Get sandbox info",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-sandbox-info",
-    "slug": "/tools/cli#daytona-sandbox-info",
+    "url": "/docs/tools/cli#runtime-sandbox-info",
+    "slug": "/tools/cli#runtime-sandbox-info",
     "objectID": 213
   },
   {
-    "title": "daytona sandbox list",
+    "title": "runtime sandbox list",
     "description": "List sandboxes",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-sandbox-list",
-    "slug": "/tools/cli#daytona-sandbox-list",
+    "url": "/docs/tools/cli#runtime-sandbox-list",
+    "slug": "/tools/cli#runtime-sandbox-list",
     "objectID": 214
   },
   {
-    "title": "daytona sandbox start",
+    "title": "runtime sandbox start",
     "description": "Start a sandbox",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-sandbox-start",
-    "slug": "/tools/cli#daytona-sandbox-start",
+    "url": "/docs/tools/cli#runtime-sandbox-start",
+    "slug": "/tools/cli#runtime-sandbox-start",
     "objectID": 215
   },
   {
-    "title": "daytona sandbox stop",
+    "title": "runtime sandbox stop",
     "description": "Stop a sandbox",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-sandbox-stop",
-    "slug": "/tools/cli#daytona-sandbox-stop",
+    "url": "/docs/tools/cli#runtime-sandbox-stop",
+    "slug": "/tools/cli#runtime-sandbox-stop",
     "objectID": 216
   },
   {
-    "title": "daytona snapshot",
-    "description": "Manage Daytona snapshots",
+    "title": "runtime snapshot",
+    "description": "Manage Runtime snapshots",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-snapshot",
-    "slug": "/tools/cli#daytona-snapshot",
+    "url": "/docs/tools/cli#runtime-snapshot",
+    "slug": "/tools/cli#runtime-snapshot",
     "objectID": 217
   },
   {
-    "title": "daytona snapshot create",
+    "title": "runtime snapshot create",
     "description": "Create a snapshot",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-snapshot-create",
-    "slug": "/tools/cli#daytona-snapshot-create",
+    "url": "/docs/tools/cli#runtime-snapshot-create",
+    "slug": "/tools/cli#runtime-snapshot-create",
     "objectID": 218
   },
   {
-    "title": "daytona snapshot delete",
+    "title": "runtime snapshot delete",
     "description": "Delete a snapshot",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-snapshot-delete",
-    "slug": "/tools/cli#daytona-snapshot-delete",
+    "url": "/docs/tools/cli#runtime-snapshot-delete",
+    "slug": "/tools/cli#runtime-snapshot-delete",
     "objectID": 219
   },
   {
-    "title": "daytona snapshot list",
+    "title": "runtime snapshot list",
     "description": "List all snapshots",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-snapshot-list",
-    "slug": "/tools/cli#daytona-snapshot-list",
+    "url": "/docs/tools/cli#runtime-snapshot-list",
+    "slug": "/tools/cli#runtime-snapshot-list",
     "objectID": 220
   },
   {
-    "title": "daytona snapshot push",
+    "title": "runtime snapshot push",
     "description": "Push local snapshot",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-snapshot-push",
-    "slug": "/tools/cli#daytona-snapshot-push",
+    "url": "/docs/tools/cli#runtime-snapshot-push",
+    "slug": "/tools/cli#runtime-snapshot-push",
     "objectID": 221
   },
   {
-    "title": "daytona version",
+    "title": "runtime version",
     "description": "Print the version number",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-version",
-    "slug": "/tools/cli#daytona-version",
+    "url": "/docs/tools/cli#runtime-version",
+    "slug": "/tools/cli#runtime-version",
     "objectID": 222
   },
   {
-    "title": "daytona volume",
-    "description": "Manage Daytona volumes",
+    "title": "runtime volume",
+    "description": "Manage Runtime volumes",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-volume",
-    "slug": "/tools/cli#daytona-volume",
+    "url": "/docs/tools/cli#runtime-volume",
+    "slug": "/tools/cli#runtime-volume",
     "objectID": 223
   },
   {
-    "title": "daytona volume create",
+    "title": "runtime volume create",
     "description": "Create a volume",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-volume-create",
-    "slug": "/tools/cli#daytona-volume-create",
+    "url": "/docs/tools/cli#runtime-volume-create",
+    "slug": "/tools/cli#runtime-volume-create",
     "objectID": 224
   },
   {
-    "title": "daytona volume delete",
+    "title": "runtime volume delete",
     "description": "Delete a volume",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-volume-delete",
-    "slug": "/tools/cli#daytona-volume-delete",
+    "url": "/docs/tools/cli#runtime-volume-delete",
+    "slug": "/tools/cli#runtime-volume-delete",
     "objectID": 225
   },
   {
-    "title": "daytona volume get",
+    "title": "runtime volume get",
     "description": "Get volume details",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-volume-get",
-    "slug": "/tools/cli#daytona-volume-get",
+    "url": "/docs/tools/cli#runtime-volume-get",
+    "slug": "/tools/cli#runtime-volume-get",
     "objectID": 226
   },
   {
-    "title": "daytona volume list",
+    "title": "runtime volume list",
     "description": "List all volumes",
     "tag": "Documentation",
-    "url": "/docs/tools/cli#daytona-volume-list",
-    "slug": "/tools/cli#daytona-volume-list",
+    "url": "/docs/tools/cli#runtime-volume-list",
+    "slug": "/tools/cli#runtime-volume-list",
     "objectID": 227
   },
   {
@@ -1897,7 +1897,7 @@
   },
   {
     "title": "Web Terminal",
-    "description": "Daytona provides a Web Terminal for interacting with your Sandboxes, allowing for a convenient way to view files, run commands, and debug.",
+    "description": "Runtime provides a Web Terminal for interacting with your Sandboxes, allowing for a convenient way to view files, run commands, and debug.",
     "tag": "Documentation",
     "url": "/docs/web-terminal",
     "slug": "/web-terminal",

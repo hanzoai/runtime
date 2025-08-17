@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package middlewares
@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/daytonaio/runner/internal/util"
-	"github.com/daytonaio/runner/pkg/common"
+	"github.com/hanzoai/runner/internal/util"
+	"github.com/hanzoai/runner/pkg/common"
 	"github.com/docker/docker/errdefs"
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"

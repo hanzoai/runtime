@@ -1,9 +1,9 @@
-name: daytona logout
-synopsis: Logout from Daytona
-usage: daytona logout [flags]
+name: runtime logout
+synopsis: Logout from Runtime
+usage: runtime logout [flags]
 inherited_options:
   - name: help
     default_value: 'false'
-    usage: help for daytona
+    usage: help for runtime
 see_also:
-  - daytona - Daytona CLI
+  - runtime - Runtime CLI

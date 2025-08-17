@@ -1,6 +1,6 @@
 # Hanzo Runtime Sandbox Image
 
-[Dockerfile](./Dockerfile) contains the definition for [daytonaio/sandbox](https://hub.docker.com/r/daytonaio/sandbox) which is used as the default sandbox image in Daytona Cloud.
+[Dockerfile](./Dockerfile) contains the definition for [hanzoai/sandbox](https://hub.docker.com/r/hanzoai/sandbox) which is used as the default sandbox image in Runtime Cloud.
 
 The default sandbox image contains Python, Node and their most popular dependencies, including:
 
@@ -22,7 +22,7 @@ The default sandbox image contains Python, Node and their most popular dependenc
 - opencv-python
 - pillow
 - sqlalchemy
-- daytona
+- runtime
 - pydantic-ai
 - langchain
 - transformers

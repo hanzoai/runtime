@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -209,7 +209,7 @@ export class DockerRegistryService {
     }
 
     // Parse fully qualified image name
-    // Example: harbor-test.internal.daytona.app/daytona/busybox:1.36.1
+    // Example: harbor-test.internal.runtime.app/runtime/busybox:1.36.1
     const [nameWithTag, tag] = imageName.split(':')
 
     // Remove registry hostname if present

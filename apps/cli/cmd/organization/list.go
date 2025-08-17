@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package organization
@@ -6,10 +6,10 @@ package organization
 import (
 	"context"
 
-	"github.com/daytonaio/daytona/cli/apiclient"
-	"github.com/daytonaio/daytona/cli/cmd/common"
-	"github.com/daytonaio/daytona/cli/config"
-	"github.com/daytonaio/daytona/cli/views/organization"
+	"github.com/hanzoai/runtime/cli/apiclient"
+	"github.com/hanzoai/runtime/cli/cmd/common"
+	"github.com/hanzoai/runtime/cli/config"
+	"github.com/hanzoai/runtime/cli/views/organization"
 	"github.com/spf13/cobra"
 )
 

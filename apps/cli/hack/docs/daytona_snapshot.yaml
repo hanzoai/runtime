@@ -1,13 +1,13 @@
-name: daytona snapshot
-synopsis: Manage Daytona snapshots
-description: Commands for managing Daytona snapshots
+name: runtime snapshot
+synopsis: Manage Runtime snapshots
+description: Commands for managing Runtime snapshots
 inherited_options:
   - name: help
     default_value: 'false'
-    usage: help for daytona
+    usage: help for runtime
 see_also:
-  - daytona - Daytona CLI
-  - daytona snapshot create - Create a snapshot
-  - daytona snapshot delete - Delete a snapshot
-  - daytona snapshot list - List all snapshots
-  - daytona snapshot push - Push local snapshot
+  - runtime - Runtime CLI
+  - runtime snapshot create - Create a snapshot
+  - runtime snapshot delete - Delete a snapshot
+  - runtime snapshot list - List all snapshots
+  - runtime snapshot push - Push local snapshot

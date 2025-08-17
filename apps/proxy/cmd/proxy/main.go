@@ -1,11 +1,11 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package main
 
 import (
-	"github.com/daytonaio/proxy/cmd/proxy/config"
-	"github.com/daytonaio/proxy/pkg/proxy"
+	"github.com/hanzoai/proxy/cmd/proxy/config"
+	"github.com/hanzoai/proxy/pkg/proxy"
 
 	log "github.com/sirupsen/logrus"
 )

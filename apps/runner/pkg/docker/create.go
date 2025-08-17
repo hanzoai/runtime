@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package docker
@@ -9,11 +9,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/daytonaio/common-go/pkg/timer"
-	"github.com/daytonaio/runner/internal/constants"
-	"github.com/daytonaio/runner/pkg/api/dto"
-	"github.com/daytonaio/runner/pkg/common"
-	"github.com/daytonaio/runner/pkg/models/enums"
+	"github.com/hanzoai/common-go/pkg/timer"
+	"github.com/hanzoai/runner/internal/constants"
+	"github.com/hanzoai/runner/pkg/api/dto"
+	"github.com/hanzoai/runner/pkg/common"
+	"github.com/hanzoai/runner/pkg/models/enums"
 	"github.com/docker/docker/errdefs"
 
 	log "github.com/sirupsen/logrus"

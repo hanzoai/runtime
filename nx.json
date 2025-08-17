@@ -37,7 +37,7 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/daytona-e2e/**/*"]
+      "exclude": ["apps/runtime-e2e/**/*"]
     },
     {
       "plugin": "@nx/vite/plugin",

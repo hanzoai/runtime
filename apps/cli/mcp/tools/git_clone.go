@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package tools
@@ -7,8 +7,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/daytonaio/apiclient"
-	apiclient_cli "github.com/daytonaio/daytona/cli/apiclient"
+	"github.com/hanzoai/apiclient"
+	apiclient_cli "github.com/hanzoai/runtime/cli/apiclient"
 	"github.com/mark3labs/mcp-go/mcp"
 
 	log "github.com/sirupsen/logrus"
@@ -26,7 +26,7 @@ type GitCloneArgs struct {
 
 func GetGitCloneTool() mcp.Tool {
 	return mcp.NewTool("git_clone",
-		mcp.WithDescription("Clone a Git repository into the Daytona sandbox."),
+		mcp.WithDescription("Clone a Git repository into the Runtime sandbox."),
 		mcp.WithString("url", mcp.Required(), mcp.Description("URL of the Git repository to clone.")),
 		mcp.WithString("path", mcp.Description("Directory to clone the repository into (defaults to current directory).")),
 		mcp.WithString("branch", mcp.Description("Branch to clone.")),
@@ -38,7 +38,7 @@ func GetGitCloneTool() mcp.Tool {
 }
 
 func GitClone(ctx context.Context, request mcp.CallToolRequest, args GitCloneArgs) (*mcp.CallToolResult, error) {
-	apiClient, err := apiclient_cli.GetApiClient(nil, daytonaMCPHeaders)
+	apiClient, err := apiclient_cli.GetApiClient(nil, runtimeMCPHeaders)
 	if err != nil {
 		return &mcp.CallToolResult{IsError: true}, err
 	}

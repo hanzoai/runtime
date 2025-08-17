@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -16,8 +16,8 @@ export class DockerProvider implements OnModuleInit {
   public docker: Docker
 
   private readonly logger = new Logger(DockerProvider.name)
-  private readonly DAYTONA_BINARY_PATH = path.join(process.cwd(), '.tmp', 'binaries', 'daytona')
-  private readonly daytonaBinaryUrl: string
+  private readonly RUNTIME_BINARY_PATH = path.join(process.cwd(), '.tmp', 'binaries', 'runtime')
+  private readonly runtimeBinaryUrl: string
   private readonly TERMINAL_BINARY_PATH = path.join(process.cwd(), '.tmp', 'binaries', 'terminal')
   private readonly terminalBinaryUrl: string
 
@@ -33,7 +33,7 @@ export class DockerProvider implements OnModuleInit {
     } else {
       this.docker = new Docker({ socketPath: '/var/run/docker.sock' })
     }
-    this.daytonaBinaryUrl = this.configService.get<string>('DAYTONA_BINARY_URL')
+    this.runtimeBinaryUrl = this.configService.get<string>('RUNTIME_BINARY_URL')
     this.terminalBinaryUrl = this.configService.get<string>('TERMINAL_BINARY_URL')
   }
 
@@ -92,39 +92,39 @@ export class DockerProvider implements OnModuleInit {
     }
   }
 
-  private async startDaytonaAgent(container: Docker.Container): Promise<void> {
+  private async startRuntimeAgent(container: Docker.Container): Promise<void> {
     try {
-      const execDaytona = await container.exec({
-        Cmd: ['daytona', 'agent'],
+      const execRuntime = await container.exec({
+        Cmd: ['runtime', 'agent'],
         //  Cmd: ['python3', '-m', 'http.server', '2280'],
         AttachStdout: true,
         AttachStderr: true,
         Tty: true,
       })
 
-      await execDaytona.start(
+      await execRuntime.start(
         {
           Detach: false,
         },
         (err, stream) => {
           if (err) {
-            this.logger.error('Error in Daytona agent stream:', err)
+            this.logger.error('Error in Runtime agent stream:', err)
             return
           }
 
           stream.on('data', (chunk) => {
-            this.logger.log('Daytona agent output:', chunk.toString())
+            this.logger.log('Runtime agent output:', chunk.toString())
           })
 
           stream.on('error', (err) => {
-            this.logger.error('Daytona agent stream error:', err)
+            this.logger.error('Runtime agent stream error:', err)
           })
         },
       )
 
       return
     } catch (error) {
-      this.logger.error('Error starting Daytona agent process:', error)
+      this.logger.error('Error starting Runtime agent process:', error)
       // Don't throw the error to prevent breaking the sandbox creation
     }
   }
@@ -151,12 +151,12 @@ export class DockerProvider implements OnModuleInit {
       //  name: sandbox.id,
       Image: imageName,
       // Remove Volumes configuration since we're using direct binding
-      Env: ['DAYTONA_SANDBOX_ID=init-image', 'DAYTONA_SANDBOX_USER=root', `DAYTONA_SANDBOX_SNAPSHOT=${imageName}`],
+      Env: ['RUNTIME_SANDBOX_ID=init-image', 'RUNTIME_SANDBOX_USER=root', `RUNTIME_SANDBOX_SNAPSHOT=${imageName}`],
       Entrypoint: entrypoint,
       HostConfig: {
         Binds: [
           //  `${dirPath}:${osHome}/project`,  // Direct path binding
-          ...(this.daytonaBinaryUrl ? [`${this.DAYTONA_BINARY_PATH}:/usr/local/bin/daytona`] : []),
+          ...(this.runtimeBinaryUrl ? [`${this.RUNTIME_BINARY_PATH}:/usr/local/bin/runtime`] : []),
           ...(this.terminalBinaryUrl ? [`${this.TERMINAL_BINARY_PATH}:/usr/local/bin/terminal`] : []),
         ],
         // StorageOpt: {
@@ -169,8 +169,8 @@ export class DockerProvider implements OnModuleInit {
     await container.start()
 
     // Start both processes in parallel without waiting
-    if (this.daytonaBinaryUrl) {
-      this.startDaytonaAgent(container).catch((err) => this.logger.error('Failed to start Daytona agent:', err))
+    if (this.runtimeBinaryUrl) {
+      this.startRuntimeAgent(container).catch((err) => this.logger.error('Failed to start Runtime agent:', err))
     }
 
     if (this.terminalBinaryUrl) {
@@ -579,8 +579,8 @@ export class DockerProvider implements OnModuleInit {
       await container.start()
 
       // Start both processes in parallel without waiting
-      if (this.daytonaBinaryUrl) {
-        this.startDaytonaAgent(container).catch((err) => this.logger.error('Failed to start Daytona agent:', err))
+      if (this.runtimeBinaryUrl) {
+        this.startRuntimeAgent(container).catch((err) => this.logger.error('Failed to start Runtime agent:', err))
       }
 
       if (this.terminalBinaryUrl) {

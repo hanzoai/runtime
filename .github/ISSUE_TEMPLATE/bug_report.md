@@ -26,7 +26,7 @@ If applicable, add screenshots to help explain your problem.
 **Environment (required fields):**
 
 - Deployment: [Production/OSS/Staging]
-- Daytona client: [e.g. Python SDK v0.0.1 or Daytona CLI v0.0.1]
+- Runtime client: [e.g. Python SDK v0.0.1 or Runtime CLI v0.0.1]
 
 **Additional context**
 Add any other context about the problem here.

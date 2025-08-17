@@ -1,7 +1,7 @@
-name: daytona snapshot list
+name: runtime snapshot list
 synopsis: List all snapshots
-description: List all available Daytona snapshots
-usage: daytona snapshot list [flags]
+description: List all available Runtime snapshots
+usage: runtime snapshot list [flags]
 options:
   - name: format
     shorthand: f
@@ -17,6 +17,6 @@ options:
 inherited_options:
   - name: help
     default_value: 'false'
-    usage: help for daytona
+    usage: help for runtime
 see_also:
-  - daytona snapshot - Manage Daytona snapshots
+  - runtime snapshot - Manage Runtime snapshots

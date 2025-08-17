@@ -1,15 +1,15 @@
-name: daytona sandbox
-synopsis: Manage Daytona sandboxes
-description: Commands for managing Daytona sandboxes
+name: runtime sandbox
+synopsis: Manage Runtime sandboxes
+description: Commands for managing Runtime sandboxes
 inherited_options:
   - name: help
     default_value: 'false'
-    usage: help for daytona
+    usage: help for runtime
 see_also:
-  - daytona - Daytona CLI
-  - daytona sandbox create - Create a new sandbox
-  - daytona sandbox delete - Delete a sandbox
-  - daytona sandbox info - Get sandbox info
-  - daytona sandbox list - List sandboxes
-  - daytona sandbox start - Start a sandbox
-  - daytona sandbox stop - Stop a sandbox
+  - runtime - Runtime CLI
+  - runtime sandbox create - Create a new sandbox
+  - runtime sandbox delete - Delete a sandbox
+  - runtime sandbox info - Get sandbox info
+  - runtime sandbox list - List sandboxes
+  - runtime sandbox start - Start a sandbox
+  - runtime sandbox stop - Stop a sandbox

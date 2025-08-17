@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package controllers
@@ -9,8 +9,8 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/daytonaio/common-go/pkg/errors"
-	"github.com/daytonaio/common-go/pkg/proxy"
+	"github.com/hanzoai/common-go/pkg/errors"
+	"github.com/hanzoai/common-go/pkg/proxy"
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
 

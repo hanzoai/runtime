@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -12,7 +12,7 @@ import {
   SandboxDesiredState,
   SandboxState,
   SnapshotDto,
-} from '@daytonaio/api-client'
+} from '@hanzo/api-client'
 import { SandboxTable } from '@/components/SandboxTable'
 import { Button, buttonVariants } from '@/components/ui/button'
 import { toast } from 'sonner'
@@ -24,7 +24,7 @@ import { RoutePath } from '@/enums/RoutePath'
 import { useAuth } from 'react-oidc-context'
 import { LocalStorageKey } from '@/enums/LocalStorageKey'
 import { getLocalStorageItem, setLocalStorageItem } from '@/lib/local-storage'
-import { DAYTONA_DOCS_URL } from '@/constants/ExternalLinks'
+import { RUNTIME_DOCS_URL } from '@/constants/ExternalLinks'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -414,7 +414,7 @@ const Sandboxes: React.FC = () => {
                   <div>Computer-use dependencies are missing in the runtime environment.</div>
                   <div className="mt-2">
                     <a
-                      href={`${DAYTONA_DOCS_URL}/getting-started/computer-use`}
+                      href={`${RUNTIME_DOCS_URL}/getting-started/computer-use`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary hover:underline"
@@ -478,7 +478,7 @@ const Sandboxes: React.FC = () => {
               Onboarding guide
             </Button>
             <Button variant="link" className="text-primary" asChild>
-              <a href={DAYTONA_DOCS_URL} target="_blank" rel="noopener noreferrer" className="text-primary">
+              <a href={RUNTIME_DOCS_URL} target="_blank" rel="noopener noreferrer" className="text-primary">
                 Docs
               </a>
             </Button>

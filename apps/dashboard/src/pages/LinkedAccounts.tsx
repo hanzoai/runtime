@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -15,7 +15,7 @@ import { useApi } from '@/hooks/useApi'
 import { handleApiError } from '@/lib/error-handling'
 import { useLocation } from 'react-router-dom'
 import { AccountProviderIcon } from '@/components/AccountProviderIcon'
-import { AccountProvider as AccountProviderApi } from '@daytonaio/api-client'
+import { AccountProvider as AccountProviderApi } from '@hanzo/api-client'
 import { UserManager } from 'oidc-client-ts'
 
 const linkingUserManager = new UserManager({

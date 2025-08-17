@@ -119,7 +119,7 @@ function Search() {
         <InstantSearch indexName="docs" searchClient={searchClient}>
           <div className="search-bar-container">
             <SearchBox
-              translations={{ placeholder: 'Search daytona.io' }}
+              translations={{ placeholder: 'Search hanzo.ai' }}
               autoFocus
               onChange={event => setSearchQuery(event.currentTarget.value)}
               value={searchQuery}
@@ -192,9 +192,9 @@ function Hit({ hit, setIsSearchVisible, indexName }) {
     let hitUrl = hit.url
 
     if (indexName === 'blogs_test') {
-      hitUrl = `https://www.daytona.io/dotfiles/${hit.slug}`
+      hitUrl = `https://www.hanzo.ai/dotfiles/${hit.slug}`
     } else if (indexName === 'website') {
-      hitUrl = `https://www.daytona.io/${hit.slug}`
+      hitUrl = `https://www.hanzo.ai/${hit.slug}`
     }
 
     const currentUrl = window.location.href

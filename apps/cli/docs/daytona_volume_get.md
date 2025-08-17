@@ -1,9 +1,9 @@
-## daytona volume get
+## runtime volume get
 
 Get volume details
 
 ```
-daytona volume get [VOLUME_ID] [flags]
+runtime volume get [VOLUME_ID] [flags]
 ```
 
 ### Options
@@ -15,9 +15,9 @@ daytona volume get [VOLUME_ID] [flags]
 ### Options inherited from parent commands
 
 ```
-      --help   help for daytona
+      --help   help for runtime
 ```
 
 ### SEE ALSO
 
-- [daytona volume](daytona_volume.md) - Manage Daytona volumes
+- [runtime volume](runtime_volume.md) - Manage Runtime volumes

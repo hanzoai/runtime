@@ -1,6 +1,6 @@
-name: daytona sandbox list
+name: runtime sandbox list
 synopsis: List sandboxes
-usage: daytona sandbox list [flags]
+usage: runtime sandbox list [flags]
 options:
   - name: format
     shorthand: f
@@ -20,6 +20,6 @@ options:
 inherited_options:
   - name: help
     default_value: 'false'
-    usage: help for daytona
+    usage: help for runtime
 see_also:
-  - daytona sandbox - Manage Daytona sandboxes
+  - runtime sandbox - Manage Runtime sandboxes

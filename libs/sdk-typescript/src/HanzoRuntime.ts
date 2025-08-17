@@ -13,7 +13,7 @@ import {
   ToolboxApi,
   VolumesApi,
   SandboxVolume,
-} from '@hanzo/runtime-api-client'
+} from '@hanzo/api-client'
 import axios, { AxiosError } from 'axios'
 import * as dotenv from 'dotenv'
 import { SandboxPythonCodeToolbox } from './code-toolbox/SandboxPythonCodeToolbox'
