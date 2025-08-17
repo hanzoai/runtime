@@ -7,13 +7,13 @@ A TypeScript SDK for interacting with the Hanzo Runtime API, providing a simple 
 You can install the package using npm:
 
 ```bash
-npm install @daytonaio/sdk
+npm install @hanzo/runtime
 ```
 
 Or using yarn:
 
 ```bash
-yarn add @daytonaio/sdk
+yarn add @hanzo/runtime
 ```
 
 ## Quick Start
@@ -21,7 +21,7 @@ yarn add @daytonaio/sdk
 Here's a simple example of using the SDK:
 
 ```typescript
-import { Daytona } from '@daytonaio/sdk'
+import { Runtime } from '@hanzo/runtime'
 
 // Initialize using environment variables
 const hanzo_runtime = new HanzoRuntime()
@@ -42,7 +42,7 @@ await hanzo_runtime.delete(sandbox)
 The SDK can be configured using environment variables or by passing a configuration object:
 
 ```typescript
-import { Daytona } from '@daytonaio/sdk'
+import { Runtime } from '@hanzo/runtime'
 
 // Initialize with configuration
 const hanzo_runtime = new HanzoRuntime({

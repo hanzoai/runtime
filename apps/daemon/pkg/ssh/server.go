@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package ssh
@@ -9,8 +9,8 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/daytonaio/daemon/pkg/common"
-	"github.com/daytonaio/daemon/pkg/ssh/config"
+	"github.com/hanzoai/daemon/pkg/common"
+	"github.com/hanzoai/daemon/pkg/ssh/config"
 	"github.com/gliderlabs/ssh"
 	"github.com/pkg/sftp"
 	"golang.org/x/sys/unix"

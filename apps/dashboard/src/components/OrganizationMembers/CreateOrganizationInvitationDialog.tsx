@@ -1,11 +1,11 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
 import React, { useEffect, useState } from 'react'
 import { Plus } from 'lucide-react'
-import { CreateOrganizationInvitationRoleEnum, OrganizationRole } from '@daytonaio/api-client'
+import { CreateOrganizationInvitationRoleEnum, OrganizationRole } from '@hanzo/api-client'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import {

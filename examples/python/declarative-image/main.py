@@ -4,7 +4,7 @@ from hanzo_runtime import (
     CreateSandboxFromImageParams,
     CreateSandboxFromSnapshotParams,
     CreateSnapshotParams,
-    Daytona,
+    Runtime,
     Image,
     Resources,
 )
@@ -26,7 +26,7 @@ def main():
         .pip_install(["numpy", "pandas", "matplotlib", "scipy", "scikit-learn", "jupyter"])
         .run_commands(
             "apt-get update && apt-get install -y git",
-            "groupadd -r daytona && useradd -r -g daytona -m daytona",
+            "groupadd -r runtime && useradd -r -g runtime -m runtime",
             "mkdir -p /home/hanzo/workspace",
         )
         .workdir("/home/hanzo/workspace")

@@ -5,17 +5,17 @@ title: Snapshots
 import { TabItem, Tabs } from '@astrojs/starlight/components'
 import Label from '@components/Label.astro'
 
-Snapshots are pre-configured templates containing all dependencies, tools, environment settings and resource requirements for your Daytona Sandbox. Daytona supports creating Snapshots from all standard [Docker](https://www.docker.com/) or [OCI](https://opencontainers.org/) compatible images.
+Snapshots are pre-configured templates containing all dependencies, tools, environment settings and resource requirements for your Runtime Sandbox. Runtime supports creating Snapshots from all standard [Docker](https://www.docker.com/) or [OCI](https://opencontainers.org/) compatible images.
 
 ## Creating Snapshots
 
-When spinning up a Sandbox, Daytona uses a Snapshot based on a simple image with some useful utilities pre-installed, such as `python`, `node`, `pip` as well as some common pip packages. More information [below](#default-snapshot).
+When spinning up a Sandbox, Runtime uses a Snapshot based on a simple image with some useful utilities pre-installed, such as `python`, `node`, `pip` as well as some common pip packages. More information [below](#default-snapshot).
 
-It is possible to override this behavior and create custom Snapshots by visiting the Dashboard, clicking on [Snapshots](https://app.daytona.io/dashboard/snapshots) and on `Create Snapshot`.
+It is possible to override this behavior and create custom Snapshots by visiting the Dashboard, clicking on [Snapshots](https://app.hanzo.ai/dashboard/snapshots) and on `Create Snapshot`.
 
 For the Snapshot image, you may enter the name and tag of any publicly accessible image from Docker Hub such as `alpine:3.21.3` and `debian:12.10` or from another public container registry - e.g. `my-public-registry.com/custom-alpine:3.21`.
 
-The entrypoint field is optional and if the image hasn't got a long-running entrypoint, Daytona will ensure sure that the resulting container won't exit immediately upon creation by automatically running `sleep infinity`.
+The entrypoint field is optional and if the image hasn't got a long-running entrypoint, Runtime will ensure sure that the resulting container won't exit immediately upon creation by automatically running `sleep infinity`.
 
 :::note
 Since images tagged `latest` get frequent updates, only specific tags (e.g. `0.1.0`) are supported. Same idea applies to tags such as `lts` or `stable` and we recommend avoiding those when defining an image.
@@ -26,14 +26,14 @@ Once the Snapshot is pulled, validated and has an `Active` state, it is ready to
 <Tabs>
 <TabItem label="Python" icon="seti:python">
 ```python
-sandbox = daytona.create(CreateSandboxFromSnapshotParams(
+sandbox = runtime.create(CreateSandboxFromSnapshotParams(
     snapshot="my-snapshot-name",
 ))
 ```
 </TabItem>
 <TabItem label="TypeScript" icon="seti:typescript">
 ```typescript
-const sandbox = await daytona.create({
+const sandbox = await runtime.create({
   snapshot: "my-snapshot-name",
 })
 ```
@@ -45,11 +45,11 @@ Full example:
 <Tabs>
 <TabItem label="Python" icon="seti:python">
 ```python
-from daytona import Daytona, CreateSandboxFromSnapshotParams
+from runtime import Runtime, CreateSandboxFromSnapshotParams
 
-daytona = Daytona()
+runtime = Runtime()
 
-sandbox = daytona.create(CreateSandboxFromSnapshotParams(
+sandbox = runtime.create(CreateSandboxFromSnapshotParams(
 snapshot="my-snapshot-name",
 ))
 
@@ -66,15 +66,15 @@ sandbox.delete()
 </TabItem>
 <TabItem label="TypeScript" icon="seti:typescript">
 ```typescript
-import { Daytona } from '@daytonaio/sdk'
+import { Runtime } from '@hanzo/runtime'
 
 async function main() {
-  // Initialize the Daytona client
-  const daytona = new Daytona()
+  // Initialize the Runtime client
+  const runtime = new Runtime()
 
   try {
     // Create the Sandbox instance
-    const sandbox = await daytona.create({
+    const sandbox = await runtime.create({
       snapshot: "my-snapshot-name",
     })
     // Run the code securely inside the Sandbox
@@ -102,28 +102,28 @@ main()
 
 ### Snapshot Resources
 
-Snapshots contain the resource requirements for Daytona Sandboxes. By default, Daytona Sandboxes come with **1 vCPU**, **1GB RAM**, and **3GiB disk**.
+Snapshots contain the resource requirements for Runtime Sandboxes. By default, Runtime Sandboxes come with **1 vCPU**, **1GB RAM**, and **3GiB disk**.
 
 Need more power? Use the `Resources` class to define exactly what you need: CPU, memory, and disk space are all customizable.
 
-Check your available resources and limits in the [dashboard](https://app.daytona.io/dashboard/limits).
+Check your available resources and limits in the [dashboard](https://app.hanzo.ai/dashboard/limits).
 
 <Tabs>
 <TabItem label="Python" icon="seti:python">
 ```python
-from daytona import (
-    Daytona,
+from runtime import (
+    Runtime,
     CreateSnapshotParams,
     Image,
     Resources,
     CreateSandboxFromSnapshotParams,
 )
 
-daytona = Daytona()
+runtime = Runtime()
 
 # Create a Snapshot with custom resources
 
-daytona.snapshot.create(
+runtime.snapshot.create(
 CreateSnapshotParams(
 name="my-snapshot",
 image=Image.debian_slim("3.12"),
@@ -138,7 +138,7 @@ on_logs=print,
 
 # Create a Sandbox with custom Snapshot
 
-sandbox = daytona.create(
+sandbox = runtime.create(
 CreateSandboxFromSnapshotParams(
 snapshot="my-snapshot",
 )
@@ -148,13 +148,13 @@ snapshot="my-snapshot",
 </TabItem>
 <TabItem label="TypeScript" icon="seti:typescript">
 ```typescript
-import { Daytona, Image } from "@daytonaio/sdk";
+import { Runtime, Image } from "@hanzo/runtime";
 
 async function main() {
-  const daytona = new Daytona();
+  const runtime = new Runtime();
 
   // Create a Snapshot with custom resources
-  await daytona.snapshot.create(
+  await runtime.snapshot.create(
     {
       name: "my-snapshot",
       image: Image.debianSlim("3.13"),
@@ -168,7 +168,7 @@ async function main() {
   );
 
   // Create a Sandbox with custom Snapshot
-  const sandbox = await daytona.create({
+  const sandbox = await runtime.create({
     snapshot: "my-snapshot",
   });
 }
@@ -180,45 +180,45 @@ main();
 </Tabs>
 
 :::note
-All resource parameters are optional. If not specified, Daytona will use the default values.
+All resource parameters are optional. If not specified, Runtime will use the default values.
 :::
 
 ### Images from Private Registries
 
 To create a Snapshot from an image that is not publicly available, you need to start by adding the image's private Container Registry:
 
-1. Go to the [Registries](https://app.daytona.io/dashboard/registries) page in the Dashboard
+1. Go to the [Registries](https://app.hanzo.ai/dashboard/registries) page in the Dashboard
 2. Click the `Add Registry` button.
 3. Input the Registry's name and URL, username, password, project, and submit
-4. Once the Container Registry is created, you may go back to the [Snapshots](https://app.daytona.io/dashboard/snapshots) page
+4. Once the Container Registry is created, you may go back to the [Snapshots](https://app.hanzo.ai/dashboard/snapshots) page
 5. When creating the Snapshot, make sure to input the entire private image name, including the registry location and project name - `my-private-registry.com/<my-project>/custom-alpine:3.21`
 
 The next step is the same; simply set the `CreateSandboxFromSnapshotParams` field to use the custom Snapshot and no more authentication is needed.
 
 ### Using a Local Image
 
-In order to avoid having to manually set up a private container registry and push your image there, the [Daytona CLI](/docs/getting-started#setting-up-the-daytona-cli) allows you to create a Snapshot from your local image or from a local Dockerfile and use it in your Sandboxes.
+In order to avoid having to manually set up a private container registry and push your image there, the [Runtime CLI](/docs/getting-started#setting-up-the-runtime-cli) allows you to create a Snapshot from your local image or from a local Dockerfile and use it in your Sandboxes.
 
-After running `docker images` and ensuring the image and tag you want to use is available use the `daytona snapshot push` command to create a Snapshot and push it to Daytona, e.g.:
+After running `docker images` and ensuring the image and tag you want to use is available use the `runtime snapshot push` command to create a Snapshot and push it to Runtime, e.g.:
 
 ```bash
-daytona snapshot push custom-alpine:3.21 -n my-snapshot-name
+runtime snapshot push custom-alpine:3.21 -n my-snapshot-name
 ```
 
-For more information, see the [CLI documentation](/docs/tools/cli#daytona-snapshot-push).
+For more information, see the [CLI documentation](/docs/tools/cli#runtime-snapshot-push).
 
 :::tip
 
-Daytona expects the local image to be built for AMD64 architecture. Therefore, the `--platform=linux/amd64` flag is required when building the Docker image if your machine is running on a different architecture.
+Runtime expects the local image to be built for AMD64 architecture. Therefore, the `--platform=linux/amd64` flag is required when building the Docker image if your machine is running on a different architecture.
 
 :::
 
 If you haven't built the desired image yet, and have a Dockerfile ready, you can use the Declarative Builder in our SDK - read more about it [here](/docs/getting-started#declarative-builder).
 
-Alternatively, to do it through the CLI, use the `--dockerfile` flag under `create` to pass the path to the Dockerfile you want to use and Daytona will build the Snapshot for you:
+Alternatively, to do it through the CLI, use the `--dockerfile` flag under `create` to pass the path to the Dockerfile you want to use and Runtime will build the Snapshot for you:
 
 ```bash
-daytona snapshot create trying-daytona:0.0.1 --dockerfile ./Dockerfile --context ./requirements.txt
+runtime snapshot create trying-runtime:0.0.1 --dockerfile ./Dockerfile --context ./requirements.txt
 ```
 
 ```text
@@ -231,13 +231,13 @@ Step 1/5 : FROM alpine:latest
 
  ...
 
- ✓  Use 'harbor-transient.internal.daytona.app/daytona/trying-daytona:0.0.1' to create a new sandbox using this Snapshot
+ ✓  Use 'harbor-transient.internal.runtime.app/runtime/trying-runtime:0.0.1' to create a new sandbox using this Snapshot
 
 ```
 
 ## Deleting Snapshots
 
-Deleting your custom Snapshots is a straightforward process. Simply go to the [Snapshots](https://app.daytona.io/dashboard/snapshots) page and click on the `Delete` button that shows up when clicking the three dots at the end of a row of the Snapshot you want deleted.
+Deleting your custom Snapshots is a straightforward process. Simply go to the [Snapshots](https://app.hanzo.ai/dashboard/snapshots) page and click on the `Delete` button that shows up when clicking the three dots at the end of a row of the Snapshot you want deleted.
 
 :::tip
 
@@ -247,7 +247,7 @@ To temporarily disable a Snapshot, instead of deleting, you can click `Disable`.
 
 ## Default Snapshot
 
-The default Snapshot used by Daytona is based on an image that contains `python`, `node` and their respective LSP's, as well as these pre-installed `pip` packages:
+The default Snapshot used by Runtime is based on an image that contains `python`, `node` and their respective LSP's, as well as these pre-installed `pip` packages:
 
 - `beautifulsoup4` (v4.13.3)
 - `django` (v5.1.7)
@@ -267,7 +267,7 @@ The default Snapshot used by Daytona is based on an image that contains `python`
 - `SQLAlchemy` (v2.0.38)
 - `transformers` (v4.49.0)
 - `anthropic` (v0.49.0)
-- `daytona_sdk` (v0.11.1)
+- `runtime_sdk` (v0.11.1)
 - `huggingface` (v0.0.1)
 - `instructor` (v1.7.3)
 - `langchain` (v0.3.20)

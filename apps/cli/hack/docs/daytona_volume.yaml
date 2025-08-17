@@ -1,13 +1,13 @@
-name: daytona volume
-synopsis: Manage Daytona volumes
-description: Commands for managing Daytona volumes
+name: runtime volume
+synopsis: Manage Runtime volumes
+description: Commands for managing Runtime volumes
 inherited_options:
   - name: help
     default_value: 'false'
-    usage: help for daytona
+    usage: help for runtime
 see_also:
-  - daytona - Daytona CLI
-  - daytona volume create - Create a volume
-  - daytona volume delete - Delete a volume
-  - daytona volume get - Get volume details
-  - daytona volume list - List all volumes
+  - runtime - Runtime CLI
+  - runtime volume create - Create a volume
+  - runtime volume delete - Delete a volume
+  - runtime volume get - Get volume details
+  - runtime volume list - List all volumes

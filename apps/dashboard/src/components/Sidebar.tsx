@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -45,13 +45,13 @@ import { useMemo } from 'react'
 import { OrganizationPicker } from '@/components/Organizations/OrganizationPicker'
 import { useSelectedOrganization } from '@/hooks/useSelectedOrganization'
 import { useUserOrganizationInvitations } from '@/hooks/useUserOrganizationInvitations'
-import { OrganizationRolePermissionsEnum, OrganizationUserRoleEnum } from '@daytonaio/api-client'
+import { OrganizationRolePermissionsEnum, OrganizationUserRoleEnum } from '@hanzo/api-client'
 import { Card, CardHeader, CardTitle } from './ui/card'
 import { Tooltip, TooltipContent } from './ui/tooltip'
 import { TooltipProvider, TooltipTrigger } from './ui/tooltip'
 import { addHours, formatRelative } from 'date-fns'
 import { RoutePath } from '@/enums/RoutePath'
-import { DAYTONA_DOCS_URL, DAYTONA_SLACK_URL } from '@/constants/ExternalLinks'
+import { RUNTIME_DOCS_URL, RUNTIME_SLACK_URL } from '@/constants/ExternalLinks'
 import { Logo, LogoText } from '@/assets/Logo'
 interface SidebarProps {
   isBannerVisible: boolean
@@ -228,7 +228,7 @@ export function Sidebar({ isBannerVisible }: SidebarProps) {
           </SidebarMenuItem>
           <SidebarMenuItem key="slack">
             <SidebarMenuButton asChild>
-              <a href={DAYTONA_SLACK_URL} className=" h-8 py-0" target="_blank" rel="noopener noreferrer">
+              <a href={RUNTIME_SLACK_URL} className=" h-8 py-0" target="_blank" rel="noopener noreferrer">
                 <Slack size={16} strokeWidth={1.5} />
                 <span>Slack</span>
               </a>
@@ -236,7 +236,7 @@ export function Sidebar({ isBannerVisible }: SidebarProps) {
           </SidebarMenuItem>
           <SidebarMenuItem key="docs">
             <SidebarMenuButton asChild>
-              <a href={DAYTONA_DOCS_URL} className=" h-8 py-0" target="_blank" rel="noopener noreferrer">
+              <a href={RUNTIME_DOCS_URL} className=" h-8 py-0" target="_blank" rel="noopener noreferrer">
                 <BookOpen size={16} strokeWidth={1.5} />
                 <span>Docs</span>
               </a>

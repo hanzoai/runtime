@@ -16,7 +16,7 @@ fi
 poetry build
 
 mv src/hanzo_runtime src/hanzo_runtime_sdk
-sed -i 's/^name = "[^"]*"/name = "hanzo_runtime_sdk"/' pyproject.toml
+sed -i '' 's/^name = "[^"]*"/name = "hanzo_runtime_sdk"/' pyproject.toml
 poetry build
 mv src/hanzo_runtime_sdk src/hanzo_runtime
-sed -i 's/^name = "[^"]*"/name = "hanzo_runtime"/' pyproject.toml
+sed -i '' 's/^name = "[^"]*"/name = "hanzo_runtime"/' pyproject.toml

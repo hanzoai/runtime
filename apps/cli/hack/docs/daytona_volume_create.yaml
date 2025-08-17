@@ -1,6 +1,6 @@
-name: daytona volume create
+name: runtime volume create
 synopsis: Create a volume
-usage: daytona volume create [NAME] [flags]
+usage: runtime volume create [NAME] [flags]
 options:
   - name: size
     shorthand: s
@@ -9,6 +9,6 @@ options:
 inherited_options:
   - name: help
     default_value: 'false'
-    usage: help for daytona
+    usage: help for runtime
 see_also:
-  - daytona volume - Manage Daytona volumes
+  - runtime volume - Manage Runtime volumes

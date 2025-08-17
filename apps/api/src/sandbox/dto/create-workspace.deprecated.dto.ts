@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -14,7 +14,7 @@ import { CreateBuildInfoDto } from './create-build-info.dto'
 export class CreateWorkspaceDto {
   @ApiPropertyOptional({
     description: 'The image used for the workspace',
-    example: 'daytonaio/workspace:latest',
+    example: 'hanzoai/workspace:latest',
   })
   @IsOptional()
   @IsString()
@@ -22,7 +22,7 @@ export class CreateWorkspaceDto {
 
   @ApiPropertyOptional({
     description: 'The user associated with the project',
-    example: 'daytona',
+    example: 'runtime',
   })
   @IsOptional()
   @IsString()
@@ -42,7 +42,7 @@ export class CreateWorkspaceDto {
     description: 'Labels for the workspace',
     type: 'object',
     additionalProperties: { type: 'string' },
-    example: { 'daytona.io/public': 'true' },
+    example: { 'hanzo.ai/public': 'true' },
   })
   @IsOptional()
   @IsObject()

@@ -1,0 +1,101 @@
+# Hanzo Runtime Service Dockerfile
+# Based on the existing runtime project structure
+
+# Build stage
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+
+# Install build dependencies
+RUN apk add --no-cache python3 make g++ git
+
+# Copy package files
+COPY package*.json ./
+COPY pnpm-lock.yaml* ./
+COPY .npmrc* ./
+COPY nx.json ./
+COPY tsconfig*.json ./
+
+# Install pnpm
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
+# Install dependencies
+RUN pnpm install --frozen-lockfile
+
+# Copy source code
+COPY . .
+
+# Build the API application
+RUN pnpm nx build api --configuration=production || npm run build:production
+
+# Development stage
+FROM node:20-alpine AS development
+
+WORKDIR /app
+
+# Install runtime dependencies including Docker CLI for sandbox management
+RUN apk add --no-cache python3 make g++ git docker-cli docker-compose curl
+
+# Install pnpm
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
+# Copy package files
+COPY package*.json ./
+COPY pnpm-lock.yaml* ./
+COPY .npmrc* ./
+COPY nx.json ./
+COPY tsconfig*.json ./
+
+# Install all dependencies (including dev)
+RUN pnpm install
+
+# Copy source code
+COPY . .
+
+# Expose API port
+EXPOSE 8000
+
+# Development command with hot reload
+CMD ["pnpm", "nx", "serve", "api"]
+
+# Production stage
+FROM node:20-alpine AS production
+
+WORKDIR /app
+
+# Install runtime dependencies including Docker CLI
+RUN apk add --no-cache tini docker-cli curl
+
+# Create runtime user
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S nodejs -u 1001
+
+# Copy built application from builder
+COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/pnpm-lock.yaml* ./
+COPY --from=builder /app/.npmrc* ./
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/apps/api/dist ./apps/api/dist
+
+# Set up permissions
+RUN chown -R nodejs:nodejs /app
+
+# Switch to runtime user (Note: may need root for Docker socket access)
+# USER nodejs
+
+# Expose API port
+EXPOSE 8000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=60s --retries=3 \
+  CMD curl -f http://localhost:8000/health || exit 1
+
+# Use tini for proper signal handling
+ENTRYPOINT ["/sbin/tini", "--"]
+
+# Production command
+CMD ["node", "apps/api/dist/main.js"]
+
+# Default to production stage
+FROM production

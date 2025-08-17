@@ -1,31 +1,31 @@
-## daytona
+## runtime
 
-Daytona CLI
+Runtime CLI
 
 ### Synopsis
 
-Command line interface for Daytona Sandboxes
+Command line interface for Runtime Sandboxes
 
 ```
-daytona [flags]
+runtime [flags]
 ```
 
 ### Options
 
 ```
-      --help      help for daytona
-  -v, --version   Display the version of Daytona
+      --help      help for runtime
+  -v, --version   Display the version of Runtime
 ```
 
 ### SEE ALSO
 
-- [daytona autocomplete](daytona_autocomplete.md) - Adds a completion script for your shell environment
-- [daytona docs](daytona_docs.md) - Opens the Daytona documentation in your default browser.
-- [daytona login](daytona_login.md) - Log in to Daytona
-- [daytona logout](daytona_logout.md) - Logout from Daytona
-- [daytona mcp](daytona_mcp.md) - Manage Daytona MCP Server
-- [daytona organization](daytona_organization.md) - Manage Daytona organizations
-- [daytona sandbox](daytona_sandbox.md) - Manage Daytona sandboxes
-- [daytona snapshot](daytona_snapshot.md) - Manage Daytona snapshots
-- [daytona version](daytona_version.md) - Print the version number
-- [daytona volume](daytona_volume.md) - Manage Daytona volumes
+- [runtime autocomplete](runtime_autocomplete.md) - Adds a completion script for your shell environment
+- [runtime docs](runtime_docs.md) - Opens the Runtime documentation in your default browser.
+- [runtime login](runtime_login.md) - Log in to Runtime
+- [runtime logout](runtime_logout.md) - Logout from Runtime
+- [runtime mcp](runtime_mcp.md) - Manage Runtime MCP Server
+- [runtime organization](runtime_organization.md) - Manage Runtime organizations
+- [runtime sandbox](runtime_sandbox.md) - Manage Runtime sandboxes
+- [runtime snapshot](runtime_snapshot.md) - Manage Runtime snapshots
+- [runtime version](runtime_version.md) - Print the version number
+- [runtime volume](runtime_volume.md) - Manage Runtime volumes

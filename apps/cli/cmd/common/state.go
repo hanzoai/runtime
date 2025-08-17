@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package common
@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/daytonaio/apiclient"
-	apiclient_cli "github.com/daytonaio/daytona/cli/apiclient"
+	"github.com/hanzoai/apiclient"
+	apiclient_cli "github.com/hanzoai/runtime/cli/apiclient"
 )
 
 func AwaitSnapshotState(ctx context.Context, apiClient *apiclient.APIClient, targetImage string, state apiclient.SnapshotState) error {

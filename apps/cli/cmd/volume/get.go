@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package volume
@@ -6,9 +6,9 @@ package volume
 import (
 	"context"
 
-	"github.com/daytonaio/daytona/cli/apiclient"
-	"github.com/daytonaio/daytona/cli/cmd/common"
-	"github.com/daytonaio/daytona/cli/views/volume"
+	"github.com/hanzoai/runtime/cli/apiclient"
+	"github.com/hanzoai/runtime/cli/cmd/common"
+	"github.com/hanzoai/runtime/cli/views/volume"
 	"github.com/spf13/cobra"
 )
 

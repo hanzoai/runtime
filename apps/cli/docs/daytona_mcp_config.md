@@ -1,17 +1,17 @@
-## daytona mcp config
+## runtime mcp config
 
-Outputs JSON configuration for Daytona MCP Server
+Outputs JSON configuration for Runtime MCP Server
 
 ```
-daytona mcp config [AGENT_NAME] [flags]
+runtime mcp config [AGENT_NAME] [flags]
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --help   help for daytona
+      --help   help for runtime
 ```
 
 ### SEE ALSO
 
-- [daytona mcp](daytona_mcp.md) - Manage Daytona MCP Server
+- [runtime mcp](runtime_mcp.md) - Manage Runtime MCP Server

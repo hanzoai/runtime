@@ -8,8 +8,8 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "yarn run openapi-generator-cli generate --git-repo-id=daytona --git-user-id=daytonaio -i dist/apps/api/openapi.json -g python --additional-properties=packageName=daytona_api_client_async,projectName=daytona_api_client_async,packageVersion=$DEFAULT_PACKAGE_VERSION,pythonPackageName=daytona_api_client_async,disallowAdditionalPropertiesIfNotPresent=false,library=asyncio -o {projectRoot}",
-          "sed -i 's/^license = \".*\"/license = \"Apache-2.0\"/' {projectRoot}/pyproject.toml"
+          "yarn run openapi-generator-cli generate --git-repo-id=runtime --git-user-id=hanzoai -i dist/apps/api/openapi.json -g python --additional-properties=packageName=runtime_api_client_async,projectName=runtime_api_client_async,packageVersion=$DEFAULT_PACKAGE_VERSION,pythonPackageName=runtime_api_client_async,disallowAdditionalPropertiesIfNotPresent=false,library=asyncio -o {projectRoot}",
+          "sed -i '' 's/^license = \".*\"/license = \"Apache-2.0\"/' {projectRoot}/pyproject.toml"
         ],
         "parallel": false
       },
@@ -26,7 +26,7 @@
         "cwd": "{projectRoot}",
         "commands": [
           "rm -rf dist",
-          "if [ -n \"$PYPI_PKG_VERSION\" ] || [ -n \"$DEFAULT_PACKAGE_VERSION\" ]; then VER=${PYPI_PKG_VERSION:-$DEFAULT_PACKAGE_VERSION}; sed -i \"s/^VERSION = \\\".*\\\"$/VERSION = \\\"$VER\\\"/\" setup.py && poetry version \"$VER\"; fi && poetry build"
+          "if [ -n \"$PYPI_PKG_VERSION\" ] || [ -n \"$DEFAULT_PACKAGE_VERSION\" ]; then VER=${PYPI_PKG_VERSION:-$DEFAULT_PACKAGE_VERSION}; sed -i '' \"s/^VERSION = \\\".*\\\"$/VERSION = \\\"$VER\\\"/\" setup.py && poetry version \"$VER\"; fi && poetry build"
         ],
         "parallel": false,
         "dependsOn": ["deps-check"]
@@ -39,7 +39,7 @@
         "cwd": "{projectRoot}",
         "commands": [
           "poetry publish --username __token__ --password $PYPI_TOKEN --no-interaction",
-          "for i in $(seq 1 20); do if pip download daytona_api_client_async==${PYPI_PKG_VERSION} -q -d /tmp; then echo \"daytona_api_client_async==${PYPI_PKG_VERSION} is now downloadable from PyPI\" && sleep 5 && exit 0; else printf '.\n' && sleep 5; fi; done; echo \"Timeout waiting for daytona_api_client_async==${PYPI_PKG_VERSION} on PyPI\" >&2; exit 1"
+          "for i in $(seq 1 20); do if pip download runtime_api_client_async==${PYPI_PKG_VERSION} -q -d /tmp; then echo \"runtime_api_client_async==${PYPI_PKG_VERSION} is now downloadable from PyPI\" && sleep 5 && exit 0; else printf '.\n' && sleep 5; fi; done; echo \"Timeout waiting for runtime_api_client_async==${PYPI_PKG_VERSION} on PyPI\" >&2; exit 1"
         ],
         "parallel": false
       }

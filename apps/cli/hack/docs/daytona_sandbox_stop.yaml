@@ -1,6 +1,6 @@
-name: daytona sandbox stop
+name: runtime sandbox stop
 synopsis: Stop a sandbox
-usage: daytona sandbox stop [SANDBOX_ID] [flags]
+usage: runtime sandbox stop [SANDBOX_ID] [flags]
 options:
   - name: all
     shorthand: a
@@ -9,6 +9,6 @@ options:
 inherited_options:
   - name: help
     default_value: 'false'
-    usage: help for daytona
+    usage: help for runtime
 see_also:
-  - daytona sandbox - Manage Daytona sandboxes
+  - runtime sandbox - Manage Runtime sandboxes

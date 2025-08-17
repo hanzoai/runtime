@@ -1,38 +1,38 @@
 ---
 title: TypeScript SDK Reference
-description: Interact with Daytona Sandboxes using the TypeScript SDK
-next: /docs/typescript-sdk/daytona
+description: Interact with Runtime Sandboxes using the TypeScript SDK
+next: /docs/typescript-sdk/runtime
 ---
 
-The Daytona TypeScript SDK provides a powerful interface for programmatically interacting with Daytona Sandboxes.
+The Runtime TypeScript SDK provides a powerful interface for programmatically interacting with Runtime Sandboxes.
 
 ## Installation
 
-Install the Daytona TypeScript SDK using npm:
+Install the Runtime TypeScript SDK using npm:
 
 ```bash
-npm install @daytonaio/sdk
+npm install @hanzo/runtime
 ```
 
 Or using yarn:
 
 ```bash
-yarn add @daytonaio/sdk
+yarn add @hanzo/runtime
 ```
 
 ## Getting Started
 
-Here's a simple example to help you get started with the Daytona TypeScript SDK:
+Here's a simple example to help you get started with the Runtime TypeScript SDK:
 
 ```typescript
-import { Daytona } from '@daytonaio/sdk'
+import { Runtime } from '@hanzo/runtime'
 
 async function main() {
   // Initialize the SDK (uses environment variables by default)
-  const daytona = new Daytona()
+  const runtime = new Runtime()
 
   // Create a new sandbox
-  const sandbox = await daytona.create({
+  const sandbox = await runtime.create({
     language: 'typescript',
     envVars: { NODE_ENV: 'development' },
   })
@@ -50,15 +50,15 @@ main().catch(console.error)
 The SDK can be configured using environment variables or by passing options to the constructor:
 
 ```typescript
-import { Daytona } from '@daytonaio/sdk';
+import { Runtime } from '@hanzo/runtime';
 
-// Using environment variables (DAYTONA_API_KEY, DAYTONA_API_URL, DAYTONA_TARGET)
-const daytona = new Daytona();
+// Using environment variables (RUNTIME_API_KEY, RUNTIME_API_URL, RUNTIME_TARGET)
+const runtime = new Runtime();
 
 // Using explicit configuration
-const daytona = new Daytona({
+const runtime = new Runtime({
   apiKey: 'your-api-key',
-  apiUrl: 'https://app.daytona.io/api',
+  apiUrl: 'https://app.hanzo.ai/api',
   target: 'us'
 });
 ```

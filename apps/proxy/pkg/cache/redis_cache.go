@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package cache
@@ -10,7 +10,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/daytonaio/proxy/cmd/proxy/config"
+	"github.com/hanzoai/proxy/cmd/proxy/config"
 	"github.com/redis/go-redis/v9"
 )
 

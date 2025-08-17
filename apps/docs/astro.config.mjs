@@ -9,11 +9,11 @@ import { loadEnv } from 'vite'
 const { PUBLIC_WEB_URL } = loadEnv(import.meta.env.MODE, process.cwd(), '')
 
 const jsonDarkString = fs.readFileSync(
-  new URL(`src/assets/themes/daytona-code-dark.json`, import.meta.url),
+  new URL(`src/assets/themes/runtime-code-dark.json`, import.meta.url),
   'utf-8'
 )
 const jsonLightString = fs.readFileSync(
-  new URL(`src/assets/themes/daytona-code-light.json`, import.meta.url),
+  new URL(`src/assets/themes/runtime-code-light.json`, import.meta.url),
   'utf-8'
 )
 const myThemeDark = ExpressiveCodeTheme.fromJSONString(jsonDarkString)
@@ -27,12 +27,12 @@ export default defineConfig({
     react(),
     starlight({
       favicon: '/favicon.ico',
-      title: 'Daytona',
+      title: 'Runtime',
       social: {
-        github: 'https://github.com/daytonaio',
+        github: 'https://github.com/hanzoai',
       },
       editLink: {
-        baseUrl: 'https://github.com/daytonaio/docs/blob/main/',
+        baseUrl: 'https://github.com/hanzoai/docs/blob/main/',
       },
       tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 4 },
       customCss: ['./src/fonts/font-face.css', './src/styles/style.scss'],

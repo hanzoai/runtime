@@ -1,6 +1,6 @@
-name: daytona sandbox info
+name: runtime sandbox info
 synopsis: Get sandbox info
-usage: daytona sandbox info [SANDBOX_ID] [flags]
+usage: runtime sandbox info [SANDBOX_ID] [flags]
 options:
   - name: format
     shorthand: f
@@ -12,6 +12,6 @@ options:
 inherited_options:
   - name: help
     default_value: 'false'
-    usage: help for daytona
+    usage: help for runtime
 see_also:
-  - daytona sandbox - Manage Daytona sandboxes
+  - runtime sandbox - Manage Runtime sandboxes

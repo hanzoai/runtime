@@ -1,4 +1,4 @@
-module github.com/daytonaio/daytona/cli
+module github.com/hanzoai/runtime/cli
 
 go 1.23.0
 

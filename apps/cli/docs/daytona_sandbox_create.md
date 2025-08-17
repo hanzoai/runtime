@@ -1,9 +1,9 @@
-## daytona sandbox create
+## runtime sandbox create
 
 Create a new sandbox
 
 ```
-daytona sandbox create [flags]
+runtime sandbox create [flags]
 ```
 
 ### Options
@@ -31,9 +31,9 @@ daytona sandbox create [flags]
 ### Options inherited from parent commands
 
 ```
-      --help   help for daytona
+      --help   help for runtime
 ```
 
 ### SEE ALSO
 
-- [daytona sandbox](daytona_sandbox.md) - Manage Daytona sandboxes
+- [runtime sandbox](runtime_sandbox.md) - Manage Runtime sandboxes

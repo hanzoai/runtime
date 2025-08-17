@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package auth
@@ -8,11 +8,11 @@ import (
 	"fmt"
 
 	"github.com/coreos/go-oidc/v3/oidc"
-	"github.com/daytonaio/daytona/cli/auth"
-	"github.com/daytonaio/daytona/cli/cmd/common"
-	"github.com/daytonaio/daytona/cli/config"
-	"github.com/daytonaio/daytona/cli/internal"
-	view_common "github.com/daytonaio/daytona/cli/views/common"
+	"github.com/hanzoai/runtime/cli/auth"
+	"github.com/hanzoai/runtime/cli/cmd/common"
+	"github.com/hanzoai/runtime/cli/config"
+	"github.com/hanzoai/runtime/cli/internal"
+	view_common "github.com/hanzoai/runtime/cli/views/common"
 	"github.com/pkg/browser"
 	"github.com/spf13/cobra"
 	"golang.org/x/oauth2"
@@ -20,7 +20,7 @@ import (
 
 var LoginCmd = &cobra.Command{
 	Use:     "login",
-	Short:   "Log in to Daytona",
+	Short:   "Log in to Runtime",
 	Args:    cobra.NoArgs,
 	GroupID: internal.USER_GROUP,
 	RunE: func(cmd *cobra.Command, args []string) error {
@@ -32,7 +32,7 @@ var LoginCmd = &cobra.Command{
 
 		items := []view_common.SelectItem{
 			{Title: "Login with Browser", Desc: "Authenticate using OAuth in your browser"},
-			{Title: "Set Daytona API Key", Desc: "Authenticate using Daytona API key"},
+			{Title: "Set Runtime API Key", Desc: "Authenticate using Runtime API key"},
 		}
 
 		choice, err := view_common.Select("Select Authentication Method", items)
@@ -45,11 +45,11 @@ var LoginCmd = &cobra.Command{
 		}
 
 		var tokenConfig *config.Token
-		setApiKey := choice == "Set Daytona API Key"
+		setApiKey := choice == "Set Runtime API Key"
 
 		if setApiKey {
 			// Prompt for API key
-			apiKey, err := view_common.PromptForInput("", "Enter your Daytona API key", "You can find it in the Daytona dashboard - https://app.daytona.io/dashboard")
+			apiKey, err := view_common.PromptForInput("", "Enter your Runtime API key", "You can find it in the Runtime dashboard - https://app.hanzo.ai/dashboard")
 			if err != nil {
 				return err
 			}
@@ -101,7 +101,7 @@ func updateProfileWithLogin(tokenConfig *config.Token, apiKey *string) error {
 		activeProfile.Api.Token = nil
 		activeProfile.Api.Key = apiKey
 
-		view_common.RenderInfoMessageBold("Successfully set Daytona API key!")
+		view_common.RenderInfoMessageBold("Successfully set Runtime API key!")
 	}
 
 	if tokenConfig != nil {
@@ -131,7 +131,7 @@ func createInitialProfile(c *config.Config) (config.Profile, error) {
 		Id:   "initial",
 		Name: "initial",
 		Api: config.ServerApi{
-			Url: config.GetDaytonaApiUrl(),
+			Url: config.GetRuntimeApiUrl(),
 		},
 	}
 

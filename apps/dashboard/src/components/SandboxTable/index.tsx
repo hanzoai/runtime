@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -24,7 +24,7 @@ import { SandboxTableProps } from './types'
 import { useSandboxTable } from './useSandboxTable'
 import { SandboxTableHeader } from './SandboxTableHeader'
 import { useSelectedOrganization } from '@/hooks/useSelectedOrganization'
-import { OrganizationRolePermissionsEnum } from '@daytonaio/api-client'
+import { OrganizationRolePermissionsEnum } from '@hanzo/api-client'
 import { cn } from '@/lib/utils'
 import { Container, Trash2 } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
@@ -167,7 +167,7 @@ export function SandboxTable({
               description={
                 <div className="space-y-2">
                   <p>Spin up a Sandbox to run code in an isolated environment.</p>
-                  <p>Use the Daytona SDK or CLI to create one.</p>
+                  <p>Use the Runtime SDK or CLI to create one.</p>
                   <p>
                     <button
                       onClick={() => navigate(RoutePath.ONBOARDING)}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -10,7 +10,7 @@ import {
   DockerRegistryRegistryTypeEnum,
   OrganizationRolePermissionsEnum,
   type DockerRegistry,
-} from '@daytonaio/api-client'
+} from '@hanzo/api-client'
 import { RegistryTable } from '@/components/RegistryTable'
 import {
   Dialog,

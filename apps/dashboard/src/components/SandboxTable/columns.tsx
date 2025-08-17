@@ -1,10 +1,10 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
 import React from 'react'
-import { Sandbox, SandboxState } from '@daytonaio/api-client'
+import { Sandbox, SandboxState } from '@hanzo/api-client'
 import { ColumnDef } from '@tanstack/react-table'
 import { ArrowUp, ArrowDown } from 'lucide-react'
 import { Checkbox } from '../ui/checkbox'

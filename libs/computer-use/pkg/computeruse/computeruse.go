@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package computeruse
@@ -14,7 +14,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/daytonaio/daemon/pkg/toolbox/computeruse"
+	"github.com/hanzoai/daemon/pkg/toolbox/computeruse"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -50,7 +50,7 @@ func (c *ComputerUse) Initialize() (*computeruse.Empty, error) {
 	if err != nil {
 		return new(computeruse.Empty), fmt.Errorf("failed to get home directory: %v", err)
 	}
-	c.configDir = filepath.Join(homeDir, ".daytona", "computeruse")
+	c.configDir = filepath.Join(homeDir, ".runtime", "computeruse")
 	err = os.MkdirAll(c.configDir, 0755)
 	if err != nil {
 		return new(computeruse.Empty), fmt.Errorf("failed to create config directory: %v", err)
@@ -131,10 +131,10 @@ func (c *ComputerUse) initializeProcesses(homeDir string) {
 		display = ":0"
 	}
 
-	// Get user from environment, fallback to DAYTONA_SANDBOX_USER or default to "root" (just in case, but should not happen)
+	// Get user from environment, fallback to RUNTIME_SANDBOX_USER or default to "root" (just in case, but should not happen)
 	user := os.Getenv("VNC_USER")
 	if user == "" {
-		user = os.Getenv("DAYTONA_SANDBOX_USER")
+		user = os.Getenv("RUNTIME_SANDBOX_USER")
 		if user == "" {
 			user = "root"
 		}

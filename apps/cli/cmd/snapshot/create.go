@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package snapshot
@@ -9,13 +9,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/daytonaio/apiclient"
-	apiclient_cli "github.com/daytonaio/daytona/cli/apiclient"
-	"github.com/daytonaio/daytona/cli/cmd/common"
-	"github.com/daytonaio/daytona/cli/config"
-	"github.com/daytonaio/daytona/cli/util"
-	view_common "github.com/daytonaio/daytona/cli/views/common"
-	views_util "github.com/daytonaio/daytona/cli/views/util"
+	"github.com/hanzoai/apiclient"
+	apiclient_cli "github.com/hanzoai/runtime/cli/apiclient"
+	"github.com/hanzoai/runtime/cli/cmd/common"
+	"github.com/hanzoai/runtime/cli/config"
+	"github.com/hanzoai/runtime/cli/util"
+	view_common "github.com/hanzoai/runtime/cli/views/common"
+	views_util "github.com/hanzoai/runtime/cli/views/util"
 	"github.com/spf13/cobra"
 )
 
@@ -119,7 +119,7 @@ var CreateCmd = &cobra.Command{
 		}
 
 		view_common.RenderInfoMessageBold(fmt.Sprintf("Snapshot %s successfully created", snapshotName))
-		view_common.RenderInfoMessage(fmt.Sprintf("%s Run 'daytona sandbox create --snapshot %s' to create a new sandbox using this snapshot", view_common.Checkmark, snapshotName))
+		view_common.RenderInfoMessage(fmt.Sprintf("%s Run 'runtime sandbox create --snapshot %s' to create a new sandbox using this snapshot", view_common.Checkmark, snapshotName))
 		return nil
 	},
 }

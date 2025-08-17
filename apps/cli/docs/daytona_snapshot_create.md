@@ -1,9 +1,9 @@
-## daytona snapshot create
+## runtime snapshot create
 
 Create a snapshot
 
 ```
-daytona snapshot create [SNAPSHOT] [flags]
+runtime snapshot create [SNAPSHOT] [flags]
 ```
 
 ### Options
@@ -21,9 +21,9 @@ daytona snapshot create [SNAPSHOT] [flags]
 ### Options inherited from parent commands
 
 ```
-      --help   help for daytona
+      --help   help for runtime
 ```
 
 ### SEE ALSO
 
-- [daytona snapshot](daytona_snapshot.md) - Manage Daytona snapshots
+- [runtime snapshot](runtime_snapshot.md) - Manage Runtime snapshots

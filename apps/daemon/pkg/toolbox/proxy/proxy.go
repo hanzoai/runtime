@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package proxy
@@ -9,7 +9,7 @@ import (
 	"net/url"
 	"strings"
 
-	common_errors "github.com/daytonaio/common-go/pkg/errors"
+	common_errors "github.com/hanzoai/common-go/pkg/errors"
 	"github.com/gin-gonic/gin"
 )
 

@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package main
@@ -13,9 +13,9 @@ import (
 
 	golog "log"
 
-	"github.com/daytonaio/daemon/cmd/daemon/config"
-	"github.com/daytonaio/daemon/pkg/terminal"
-	"github.com/daytonaio/daemon/pkg/toolbox"
+	"github.com/hanzoai/daemon/cmd/daemon/config"
+	"github.com/hanzoai/daemon/pkg/terminal"
+	"github.com/hanzoai/daemon/pkg/toolbox"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -26,7 +26,7 @@ func main() {
 	}
 	c.ProjectDir = filepath.Join(os.Getenv("HOME"))
 
-	if projectDir := os.Getenv("DAYTONA_PROJECT_DIR"); projectDir != "" {
+	if projectDir := os.Getenv("RUNTIME_PROJECT_DIR"); projectDir != "" {
 		c.ProjectDir = projectDir
 	}
 

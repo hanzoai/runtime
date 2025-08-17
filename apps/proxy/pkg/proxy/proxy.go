@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package proxy
@@ -11,15 +11,15 @@ import (
 	"net/http"
 	"slices"
 
-	apiclient "github.com/daytonaio/apiclient"
-	"github.com/daytonaio/proxy/cmd/proxy/config"
-	"github.com/daytonaio/proxy/pkg/cache"
+	apiclient "github.com/hanzoai/apiclient"
+	"github.com/hanzoai/proxy/cmd/proxy/config"
+	"github.com/hanzoai/proxy/pkg/cache"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/securecookie"
 
-	common_errors "github.com/daytonaio/common-go/pkg/errors"
-	common_proxy "github.com/daytonaio/common-go/pkg/proxy"
+	common_errors "github.com/hanzoai/common-go/pkg/errors"
+	common_proxy "github.com/hanzoai/common-go/pkg/proxy"
 
 	log "github.com/sirupsen/logrus"
 )
@@ -29,9 +29,9 @@ type RunnerInfo struct {
 	ApiKey string `json:"apiKey"`
 }
 
-const DAYTONA_SANDBOX_AUTH_KEY_HEADER = "X-Daytona-Preview-Token"
-const DAYTONA_SANDBOX_AUTH_KEY_QUERY_PARAM = "DAYTONA_SANDBOX_AUTH_KEY"
-const DAYTONA_SANDBOX_AUTH_COOKIE_NAME = "daytona-sandbox-auth-"
+const RUNTIME_SANDBOX_AUTH_KEY_HEADER = "X-Runtime-Preview-Token"
+const RUNTIME_SANDBOX_AUTH_KEY_QUERY_PARAM = "RUNTIME_SANDBOX_AUTH_KEY"
+const RUNTIME_SANDBOX_AUTH_COOKIE_NAME = "runtime-sandbox-auth-"
 
 type Proxy struct {
 	config       *config.Config
@@ -53,7 +53,7 @@ func StartProxy(config *config.Config) error {
 	clientConfig := apiclient.NewConfiguration()
 	clientConfig.Servers = apiclient.ServerConfigurations{
 		{
-			URL: config.DaytonaApiUrl,
+			URL: config.RuntimeApiUrl,
 		},
 	}
 
@@ -89,8 +89,8 @@ func StartProxy(config *config.Config) error {
 	router.Use(gin.Recovery())
 
 	router.Use(func(ctx *gin.Context) {
-		if ctx.Request.Header.Get("X-Daytona-Disable-CORS") == "true" {
-			ctx.Request.Header.Del("X-Daytona-Disable-CORS")
+		if ctx.Request.Header.Get("X-Runtime-Disable-CORS") == "true" {
+			ctx.Request.Header.Del("X-Runtime-Disable-CORS")
 			return
 		}
 

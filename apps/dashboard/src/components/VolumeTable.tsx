@@ -1,11 +1,11 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
 import { Loader2, AlertTriangle, MoreHorizontal, CheckCircle, Timer, HardDrive } from 'lucide-react'
 import { useMemo, useState } from 'react'
-import { OrganizationRolePermissionsEnum, VolumeDto, VolumeState } from '@daytonaio/api-client'
+import { OrganizationRolePermissionsEnum, VolumeDto, VolumeState } from '@hanzo/api-client'
 import {
   ColumnDef,
   ColumnFiltersState,
@@ -145,7 +145,7 @@ export function VolumeTable({ data, loading, processingVolumeAction, onDelete, o
                     <p>
                       Create one via the SDK or CLI.{' '}
                       <a
-                        href="https://www.daytona.io/docs/volumes"
+                        href="https://www.hanzo.ai/docs/volumes"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-primary hover:underline font-medium"

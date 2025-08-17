@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package middlewares
@@ -8,19 +8,19 @@ import (
 	"os"
 	"strings"
 
-	"github.com/daytonaio/runner/internal/constants"
-	"github.com/daytonaio/runner/pkg/common"
+	"github.com/hanzoai/runner/internal/constants"
+	"github.com/hanzoai/runner/pkg/common"
 	"github.com/gin-gonic/gin"
 )
 
 func AuthMiddleware() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
-		authHeader := ctx.GetHeader(constants.DAYTONA_AUTHORIZATION_HEADER)
+		authHeader := ctx.GetHeader(constants.RUNTIME_AUTHORIZATION_HEADER)
 		if authHeader == "" {
 			authHeader = ctx.GetHeader(constants.AUTHORIZATION_HEADER)
 		}
 
-		ctx.Request.Header.Del(constants.DAYTONA_AUTHORIZATION_HEADER)
+		ctx.Request.Header.Del(constants.RUNTIME_AUTHORIZATION_HEADER)
 
 		if authHeader == "" {
 			ctx.Error(common.NewUnauthorizedError(errors.New("authorization header required")))

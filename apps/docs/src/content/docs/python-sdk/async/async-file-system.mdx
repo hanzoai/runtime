@@ -12,7 +12,7 @@ class AsyncFileSystem()
 Provides file system operations within a Sandbox.
 
 This class implements a high-level interface to file system operations that can
-be performed within a Daytona Sandbox.
+be performed within a Runtime Sandbox.
 
 #### AsyncFileSystem.\_\_init\_\_
 
@@ -415,8 +415,8 @@ await sandbox.fs.set_file_permissions(
 # Change file owner
 await sandbox.fs.set_file_permissions(
     path="workspace/data/file.txt",
-    owner="daytona",
-    group="daytona"
+    owner="runtime",
+    group="runtime"
 )
 ```
 

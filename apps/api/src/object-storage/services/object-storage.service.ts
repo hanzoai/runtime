@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -135,7 +135,7 @@ export class ObjectStorageService {
 
       const command = new AssumeRoleCommand({
         RoleArn: `arn:aws:iam::${config.accountId}:role/${config.roleName}`,
-        RoleSessionName: `daytona-${config.organizationId}-${Date.now()}`,
+        RoleSessionName: `runtime-${config.organizationId}-${Date.now()}`,
         DurationSeconds: 3600, // One hour
         Policy: JSON.stringify(config.policy),
       })

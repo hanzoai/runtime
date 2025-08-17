@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { ObjectStorageApi, SnapshotDto, SnapshotsApi, SnapshotState, CreateSnapshot } from '@hanzo/runtime-api-client'
+import { ObjectStorageApi, SnapshotDto, SnapshotsApi, SnapshotState, CreateSnapshot } from '@hanzo/api-client'
 import { HanzoRuntimeError } from './errors/HanzoRuntimeError'
 import { ObjectStorage } from './ObjectStorage'
 import { Image } from './Image'

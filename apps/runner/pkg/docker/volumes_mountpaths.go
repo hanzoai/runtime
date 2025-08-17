@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package docker
@@ -12,9 +12,9 @@ import (
 	"path/filepath"
 	"sync"
 
-	"github.com/daytonaio/runner/cmd/runner/config"
-	"github.com/daytonaio/runner/internal/util"
-	"github.com/daytonaio/runner/pkg/api/dto"
+	"github.com/hanzoai/runner/cmd/runner/config"
+	"github.com/hanzoai/runner/internal/util"
+	"github.com/hanzoai/runner/pkg/api/dto"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -22,7 +22,7 @@ func (d *DockerClient) getVolumesMountPathBinds(ctx context.Context, volumes []d
 	volumeMountPathBinds := make([]string, 0)
 
 	for _, vol := range volumes {
-		volumeIdPrefixed := fmt.Sprintf("daytona-volume-%s", vol.VolumeId)
+		volumeIdPrefixed := fmt.Sprintf("runtime-volume-%s", vol.VolumeId)
 		runnerVolumeMountPath := d.getRunnerVolumeMountPath(volumeIdPrefixed)
 
 		// Get or create mutex for this volume

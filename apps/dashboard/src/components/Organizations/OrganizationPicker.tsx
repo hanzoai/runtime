@@ -1,12 +1,12 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
 import { useEffect, useMemo, useState } from 'react'
 import { toast } from 'sonner'
 import { Building2, ChevronsUpDown, PlusCircle, SquareUserRound } from 'lucide-react'
-import { Organization } from '@daytonaio/api-client'
+import { Organization } from '@hanzo/api-client'
 import { useApi } from '@/hooks/useApi'
 import {
   DropdownMenu,

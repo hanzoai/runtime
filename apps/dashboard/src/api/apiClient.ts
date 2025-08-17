@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -14,9 +14,9 @@ import {
   VolumesApi,
   SandboxApi,
   ToolboxApi,
-} from '@daytonaio/api-client'
+} from '@hanzo/api-client'
 import axios, { AxiosError } from 'axios'
-import { DaytonaError } from './errors'
+import { RuntimeError } from './errors'
 
 export class ApiClient {
   private config: Configuration
@@ -50,7 +50,7 @@ export class ApiClient {
           errorMessage = error.response?.data?.message || error.response?.data || error.message || String(error)
         }
 
-        throw DaytonaError.fromString(String(errorMessage))
+        throw RuntimeError.fromString(String(errorMessage))
       },
     )
 

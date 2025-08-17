@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package services
@@ -6,10 +6,10 @@ package services
 import (
 	"context"
 
-	"github.com/daytonaio/runner/pkg/cache"
-	"github.com/daytonaio/runner/pkg/docker"
-	"github.com/daytonaio/runner/pkg/models"
-	"github.com/daytonaio/runner/pkg/models/enums"
+	"github.com/hanzoai/runner/pkg/cache"
+	"github.com/hanzoai/runner/pkg/docker"
+	"github.com/hanzoai/runner/pkg/models"
+	"github.com/hanzoai/runner/pkg/models/enums"
 )
 
 type SandboxService struct {

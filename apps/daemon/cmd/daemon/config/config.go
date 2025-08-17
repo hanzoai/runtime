@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package config
@@ -15,10 +15,10 @@ import (
 
 type Config struct {
 	ProjectDir  string
-	LogFilePath *string `envconfig:"DAYTONA_DAEMON_LOG_FILE_PATH"`
+	LogFilePath *string `envconfig:"RUNTIME_DAEMON_LOG_FILE_PATH"`
 }
 
-var DEFAULT_LOG_FILE_PATH = "/tmp/daytona-daemon.log"
+var DEFAULT_LOG_FILE_PATH = "/tmp/runtime-daemon.log"
 
 var config *Config
 
@@ -47,7 +47,7 @@ func GetConfig() (*Config, error) {
 }
 
 func GetLogFilePath() *string {
-	logFilePath, ok := os.LookupEnv("DAYTONA_DAEMON_LOG_FILE_PATH")
+	logFilePath, ok := os.LookupEnv("RUNTIME_DAEMON_LOG_FILE_PATH")
 	if !ok {
 		return &DEFAULT_LOG_FILE_PATH
 	}

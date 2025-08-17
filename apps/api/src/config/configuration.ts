@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -41,7 +41,7 @@ const configuration = {
     user: process.env.SMTP_USER,
     password: process.env.SMTP_PASSWORD,
     secure: process.env.SMTP_SECURE === 'true',
-    from: process.env.SMTP_EMAIL_FROM || 'noreply@mail.daytona.io',
+    from: process.env.SMTP_EMAIL_FROM || 'noreply@mail.hanzo.ai',
   },
   defaultSnapshot: process.env.DEFAULT_SNAPSHOT,
   dashboardUrl: process.env.DASHBOARD_URL,

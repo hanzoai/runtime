@@ -1,11 +1,11 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
 import React, { useState, useEffect, useMemo } from 'react'
 import { Check, Copy, Plus } from 'lucide-react'
-import { CreateApiKeyPermissionsEnum, ApiKeyResponse } from '@daytonaio/api-client'
+import { CreateApiKeyPermissionsEnum, ApiKeyResponse } from '@hanzo/api-client'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import {

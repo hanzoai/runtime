@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -89,7 +89,7 @@ async function bootstrap() {
     swaggerOptions: {
       initOAuth: {
         clientId: configService.get('oidc.clientId'),
-        appName: 'Daytona AI',
+        appName: 'Runtime AI',
         scopes: ['openid', 'profile', 'email'],
         additionalQueryStringParams: {
           audience: configService.get('oidc.audience'),
@@ -131,7 +131,7 @@ async function bootstrap() {
   const host = '0.0.0.0'
   const port = configService.get('port')
   await app.listen(port, host)
-  Logger.log(`🚀 Daytona API is running on: http://${host}:${port}/${globalPrefix}`)
+  Logger.log(`🚀 Runtime API is running on: http://${host}:${port}/${globalPrefix}`)
 }
 
 bootstrap()

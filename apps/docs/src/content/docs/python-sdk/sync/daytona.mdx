@@ -1,17 +1,17 @@
 ---
-title: "Daytona"
+title: "Runtime"
 hideTitleOnPage: true
 ---
 
-## Daytona
+## Runtime
 
 ```python
-class Daytona()
+class Runtime()
 ```
 
-Main class for interacting with the Daytona API.
+Main class for interacting with the Runtime API.
 
-This class provides methods to create, manage, and interact with Daytona Sandboxes.
+This class provides methods to create, manage, and interact with Runtime Sandboxes.
 It can be initialized either with explicit configuration or using environment variables.
 
 **Attributes**:
@@ -24,62 +24,62 @@ It can be initialized either with explicit configuration or using environment va
 
   Using environment variables:
 ```python
-daytona = Daytona()  # Uses DAYTONA_API_KEY, DAYTONA_API_URL
-sandbox = daytona.create()
+runtime = Runtime()  # Uses RUNTIME_API_KEY, RUNTIME_API_URL
+sandbox = runtime.create()
 ```
   
   Using explicit configuration:
 ```python
-config = DaytonaConfig(
+config = RuntimeConfig(
     api_key="your-api-key",
     api_url="https://your-api.com",
     target="us"
 )
-daytona = Daytona(config)
-sandbox = daytona.create()
+runtime = Runtime(config)
+sandbox = runtime.create()
 ```
 
-#### Daytona.\_\_init\_\_
+#### Runtime.\_\_init\_\_
 
 ```python
-def __init__(config: Optional[DaytonaConfig] = None)
+def __init__(config: Optional[RuntimeConfig] = None)
 ```
 
-Initializes Daytona instance with optional configuration.
+Initializes Runtime instance with optional configuration.
 
 If no config is provided, reads from environment variables:
-- `DAYTONA_API_KEY`: Required API key for authentication
-- `DAYTONA_API_URL`: Required api URL
-- `DAYTONA_TARGET`: Optional target environment (defaults to 'us')
+- `RUNTIME_API_KEY`: Required API key for authentication
+- `RUNTIME_API_URL`: Required api URL
+- `RUNTIME_TARGET`: Optional target environment (defaults to 'us')
 
 **Arguments**:
 
-- `config` _Optional[DaytonaConfig]_ - Object containing api_key, api_url, and target.
+- `config` _Optional[RuntimeConfig]_ - Object containing api_key, api_url, and target.
   
 
 **Raises**:
 
-- `DaytonaError` - If API key is not provided either through config or environment variables
+- `RuntimeError` - If API key is not provided either through config or environment variables
   
 
 **Example**:
 
 ```python
-from daytona import Daytona, DaytonaConfig
+from runtime import Runtime, RuntimeConfig
 # Using environment variables
-daytona1 = Daytona()
+runtime1 = Runtime()
 
 # Using explicit configuration
-config = DaytonaConfig(
+config = RuntimeConfig(
     api_key="your-api-key",
     api_url="https://your-api.com",
     target="us"
 )
-daytona2 = Daytona(config)
+runtime2 = Runtime(config)
 
 ```
 
-#### Daytona.create
+#### Runtime.create
 
 ```python
 @overload
@@ -94,7 +94,7 @@ including language, image, environment variables, and volumes.
 **Arguments**:
 
 - `params` _Optional[CreateSandboxFromSnapshotParams]_ - Parameters for Sandbox creation. If not provided,
-  defaults to default Daytona snapshot and Python language.
+  defaults to default Runtime snapshot and Python language.
 - `timeout` _Optional[float]_ - Timeout (in seconds) for sandbox creation. 0 means no timeout.
   Default is 60 seconds.
   
@@ -106,7 +106,7 @@ including language, image, environment variables, and volumes.
 
 **Raises**:
 
-- `DaytonaError` - If timeout, auto_stop_interval or auto_archive_interval is negative;
+- `RuntimeError` - If timeout, auto_stop_interval or auto_archive_interval is negative;
   If sandbox fails to start or times out
   
 
@@ -114,7 +114,7 @@ including language, image, environment variables, and volumes.
 
   Create a default Python Sandbox:
 ```python
-sandbox = daytona.create()
+sandbox = runtime.create()
 ```
   
   Create a custom Sandbox:
@@ -127,10 +127,10 @@ params = CreateSandboxFromSnapshotParams(
     auto_archive_interval=60,
     auto_delete_interval=120
 )
-sandbox = daytona.create(params, timeout=40)
+sandbox = runtime.create(params, timeout=40)
 ```
 
-#### Daytona.create
+#### Runtime.create
 
 ```python
 @overload
@@ -140,9 +140,9 @@ def create(params: Optional[CreateSandboxFromImageParams] = None,
            on_snapshot_create_logs: Callable[[str], None] = None) -> Sandbox
 ```
 
-Creates Sandboxes from specified image available on some registry or declarative Daytona Image.
+Creates Sandboxes from specified image available on some registry or declarative Runtime Image.
 You can specify various parameters, including resources, language, image, environment variables,
-and volumes. Daytona creates snapshot from provided image and uses it to create Sandbox.
+and volumes. Runtime creates snapshot from provided image and uses it to create Sandbox.
 
 **Arguments**:
 
@@ -159,7 +159,7 @@ and volumes. Daytona creates snapshot from provided image and uses it to create 
 
 **Raises**:
 
-- `DaytonaError` - If timeout, auto_stop_interval or auto_archive_interval is negative;
+- `RuntimeError` - If timeout, auto_stop_interval or auto_archive_interval is negative;
   If sandbox fails to start or times out
   
 
@@ -167,7 +167,7 @@ and volumes. Daytona creates snapshot from provided image and uses it to create 
 
   Create a default Python Sandbox from image:
 ```python
-sandbox = daytona.create(CreateSandboxFromImageParams(image="debian:12.9"))
+sandbox = runtime.create(CreateSandboxFromImageParams(image="debian:12.9"))
 ```
   
   Create a custom Sandbox from declarative Image definition:
@@ -186,14 +186,14 @@ params = CreateSandboxFromImageParams(
     auto_archive_interval=60,
     auto_delete_interval=120
 )
-sandbox = daytona.create(
+sandbox = runtime.create(
     params,
     timeout=40,
     on_snapshot_create_logs=lambda chunk: print(chunk, end=""),
 )
 ```
 
-#### Daytona.delete
+#### Runtime.delete
 
 ```python
 def delete(sandbox: Sandbox, timeout: Optional[float] = 60) -> None
@@ -210,18 +210,18 @@ Deletes a Sandbox.
 
 **Raises**:
 
-- `DaytonaError` - If sandbox fails to delete or times out
+- `RuntimeError` - If sandbox fails to delete or times out
   
 
 **Example**:
 
 ```python
-sandbox = daytona.create()
+sandbox = runtime.create()
 # ... use sandbox ...
-daytona.delete(sandbox)  # Clean up when done
+runtime.delete(sandbox)  # Clean up when done
 ```
 
-#### Daytona.get
+#### Runtime.get
 
 ```python
 @intercept_errors(message_prefix="Failed to get sandbox: ")
@@ -242,17 +242,17 @@ Gets a Sandbox by its ID.
 
 **Raises**:
 
-- `DaytonaError` - If sandbox_id is not provided.
+- `RuntimeError` - If sandbox_id is not provided.
   
 
 **Example**:
 
 ```python
-sandbox = daytona.get("my-sandbox-id")
+sandbox = runtime.get("my-sandbox-id")
 print(sandbox.status)
 ```
 
-#### Daytona.find\_one
+#### Runtime.find\_one
 
 ```python
 @intercept_errors(message_prefix="Failed to find sandbox: ")
@@ -275,17 +275,17 @@ Finds a Sandbox by its ID or labels.
 
 **Raises**:
 
-- `DaytonaError` - If no Sandbox is found.
+- `RuntimeError` - If no Sandbox is found.
   
 
 **Example**:
 
 ```python
-sandbox = daytona.find_one(labels={"my-label": "my-value"})
+sandbox = runtime.find_one(labels={"my-label": "my-value"})
 print(f"Sandbox ID: {sandbox.id} State: {sandbox.state}")
 ```
 
-#### Daytona.list
+#### Runtime.list
 
 ```python
 @intercept_errors(message_prefix="Failed to list sandboxes: ")
@@ -307,12 +307,12 @@ Lists Sandboxes filtered by labels.
 **Example**:
 
 ```python
-sandboxes = daytona.list(labels={"my-label": "my-value"})
+sandboxes = runtime.list(labels={"my-label": "my-value"})
 for sandbox in sandboxes:
     print(f"{sandbox.id}: {sandbox.status}")
 ```
 
-#### Daytona.start
+#### Runtime.start
 
 ```python
 def start(sandbox: Sandbox, timeout: Optional[float] = 60) -> None
@@ -329,9 +329,9 @@ Starts a Sandbox and waits for it to be ready.
 
 **Raises**:
 
-- `DaytonaError` - If timeout is negative; If Sandbox fails to start or times out
+- `RuntimeError` - If timeout is negative; If Sandbox fails to start or times out
 
-#### Daytona.stop
+#### Runtime.stop
 
 ```python
 def stop(sandbox: Sandbox, timeout: Optional[float] = 60) -> None
@@ -348,7 +348,7 @@ Stops a Sandbox and waits for it to be stopped.
 
 **Raises**:
 
-- `DaytonaError` - If timeout is negative; If Sandbox fails to stop or times out
+- `RuntimeError` - If timeout is negative; If Sandbox fails to stop or times out
 
 
 ## CodeLanguage
@@ -358,44 +358,44 @@ Stops a Sandbox and waits for it to be stopped.
 class CodeLanguage(Enum)
 ```
 
-Programming languages supported by Daytona
+Programming languages supported by Runtime
 
 **Enum Members**:
     - `PYTHON` ("python")
     - `TYPESCRIPT` ("typescript")
     - `JAVASCRIPT` ("javascript")
 
-## DaytonaConfig
+## RuntimeConfig
 
 ```python
-class DaytonaConfig(BaseModel)
+class RuntimeConfig(BaseModel)
 ```
 
-Configuration options for initializing the Daytona client.
+Configuration options for initializing the Runtime client.
 
 **Attributes**:
 
-- `api_key` _Optional[str]_ - API key for authentication with the Daytona API. If not set, it must be provided
-  via the environment variable `DAYTONA_API_KEY`, or a JWT token must be provided instead.
-- `jwt_token` _Optional[str]_ - JWT token for authentication with the Daytona API. If not set, it must be provided
-  via the environment variable `DAYTONA_JWT_TOKEN`, or an API key must be provided instead.
+- `api_key` _Optional[str]_ - API key for authentication with the Runtime API. If not set, it must be provided
+  via the environment variable `RUNTIME_API_KEY`, or a JWT token must be provided instead.
+- `jwt_token` _Optional[str]_ - JWT token for authentication with the Runtime API. If not set, it must be provided
+  via the environment variable `RUNTIME_JWT_TOKEN`, or an API key must be provided instead.
 - `organization_id` _Optional[str]_ - Organization ID used for JWT-based authentication. Required if a JWT token
-  is provided, and must be set either here or in the environment variable `DAYTONA_ORGANIZATION_ID`.
-- `api_url` _Optional[str]_ - URL of the Daytona API. Defaults to `'https://app.daytona.io/api'` if not set
-  here or in the environment variable `DAYTONA_API_URL`.
+  is provided, and must be set either here or in the environment variable `RUNTIME_ORGANIZATION_ID`.
+- `api_url` _Optional[str]_ - URL of the Runtime API. Defaults to `'https://app.hanzo.ai/api'` if not set
+  here or in the environment variable `RUNTIME_API_URL`.
 - `server_url` _Optional[str]_ - Deprecated. Use `api_url` instead. This property will be removed
   in a future version.
 - `target` _Optional[str]_ - Target runner location for the Sandbox. Defaults to `'us'` if not set here
-  or in the environment variable `DAYTONA_TARGET`.
+  or in the environment variable `RUNTIME_TARGET`.
   
 
 **Example**:
 
 ```python
-config = DaytonaConfig(api_key="your-api-key")
+config = RuntimeConfig(api_key="your-api-key")
 ```
 ```python
-config = DaytonaConfig(jwt_token="your-jwt-token", organization_id="your-organization-id")
+config = RuntimeConfig(jwt_token="your-jwt-token", organization_id="your-organization-id")
 ```
 
 ## CreateSandboxBaseParams

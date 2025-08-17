@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package snapshot
@@ -7,10 +7,10 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/daytonaio/daytona/cli/apiclient"
-	"github.com/daytonaio/daytona/cli/cmd/common"
-	"github.com/daytonaio/daytona/cli/config"
-	"github.com/daytonaio/daytona/cli/views/snapshot"
+	"github.com/hanzoai/runtime/cli/apiclient"
+	"github.com/hanzoai/runtime/cli/cmd/common"
+	"github.com/hanzoai/runtime/cli/config"
+	"github.com/hanzoai/runtime/cli/views/snapshot"
 	"github.com/spf13/cobra"
 )
 
@@ -22,7 +22,7 @@ var (
 var ListCmd = &cobra.Command{
 	Use:     "list",
 	Short:   "List all snapshots",
-	Long:    "List all available Daytona snapshots",
+	Long:    "List all available Runtime snapshots",
 	Aliases: common.GetAliases("list"),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		ctx := context.Background()

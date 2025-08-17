@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package snapshot
@@ -8,9 +8,9 @@ import (
 	"os"
 
 	"github.com/charmbracelet/lipgloss"
-	apiclient "github.com/daytonaio/apiclient"
-	"github.com/daytonaio/daytona/cli/views/common"
-	"github.com/daytonaio/daytona/cli/views/util"
+	apiclient "github.com/hanzoai/apiclient"
+	"github.com/hanzoai/runtime/cli/views/common"
+	"github.com/hanzoai/runtime/cli/views/util"
 	"golang.org/x/term"
 )
 

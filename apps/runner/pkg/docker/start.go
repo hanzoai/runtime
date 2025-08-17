@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package docker
@@ -10,9 +10,9 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/daytonaio/common-go/pkg/timer"
-	"github.com/daytonaio/runner/pkg/common"
-	"github.com/daytonaio/runner/pkg/models/enums"
+	"github.com/hanzoai/common-go/pkg/timer"
+	"github.com/hanzoai/runner/pkg/common"
+	"github.com/hanzoai/runner/pkg/models/enums"
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/container"
 
@@ -66,8 +66,8 @@ func (d *DockerClient) Start(ctx context.Context, containerId string) error {
 
 	processesCtx := context.Background()
 	go func() {
-		if err := d.startDaytonaDaemon(processesCtx, containerId); err != nil {
-			log.Errorf("Failed to start Daytona daemon: %s\n", err.Error())
+		if err := d.startRuntimeDaemon(processesCtx, containerId); err != nil {
+			log.Errorf("Failed to start Runtime daemon: %s\n", err.Error())
 		}
 	}()
 

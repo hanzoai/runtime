@@ -1,6 +1,6 @@
-name: daytona snapshot create
+name: runtime snapshot create
 synopsis: Create a snapshot
-usage: daytona snapshot create [SNAPSHOT] [flags]
+usage: runtime snapshot create [SNAPSHOT] [flags]
 options:
   - name: context
     shorthand: c
@@ -31,6 +31,6 @@ options:
 inherited_options:
   - name: help
     default_value: 'false'
-    usage: help for daytona
+    usage: help for runtime
 see_also:
-  - daytona snapshot - Manage Daytona snapshots
+  - runtime snapshot - Manage Runtime snapshots

@@ -1,17 +1,17 @@
-## daytona logout
+## runtime logout
 
-Logout from Daytona
+Logout from Runtime
 
 ```
-daytona logout [flags]
+runtime logout [flags]
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --help   help for daytona
+      --help   help for runtime
 ```
 
 ### SEE ALSO
 
-- [daytona](daytona.md) - Daytona CLI
+- [runtime](runtime.md) - Runtime CLI

@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -7,7 +7,7 @@ import { ReactNode, useCallback, useMemo, useState } from 'react'
 import { suspend } from 'suspend-react'
 import { useApi } from '@/hooks/useApi'
 import { OrganizationsContext, IOrganizationsContext } from '@/contexts/OrganizationsContext'
-import { Organization } from '@daytonaio/api-client'
+import { Organization } from '@hanzo/api-client'
 import { handleApiError } from '@/lib/error-handling'
 
 type Props = {

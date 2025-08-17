@@ -1,12 +1,12 @@
-name: daytona mcp
-synopsis: Manage Daytona MCP Server
-description: Commands for managing Daytona MCP Server
+name: runtime mcp
+synopsis: Manage Runtime MCP Server
+description: Commands for managing Runtime MCP Server
 inherited_options:
   - name: help
     default_value: 'false'
-    usage: help for daytona
+    usage: help for runtime
 see_also:
-  - daytona - Daytona CLI
-  - daytona mcp config - Outputs JSON configuration for Daytona MCP Server
-  - 'daytona mcp init - Initialize Daytona MCP Server with an agent (currently supported: claude, windsurf, cursor)'
-  - daytona mcp start - Start Daytona MCP Server
+  - runtime - Runtime CLI
+  - runtime mcp config - Outputs JSON configuration for Runtime MCP Server
+  - 'runtime mcp init - Initialize Runtime MCP Server with an agent (currently supported: claude, windsurf, cursor)'
+  - runtime mcp start - Start Runtime MCP Server

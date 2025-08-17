@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package apiclient
@@ -7,14 +7,14 @@ import (
 	"context"
 	"net/http"
 
-	apiclient "github.com/daytonaio/apiclient"
-	"github.com/daytonaio/daytona/cli/auth"
-	"github.com/daytonaio/daytona/cli/config"
+	apiclient "github.com/hanzoai/apiclient"
+	"github.com/hanzoai/runtime/cli/auth"
+	"github.com/hanzoai/runtime/cli/config"
 )
 
 var apiClient *apiclient.APIClient
 
-const DaytonaSourceHeader = "X-Daytona-Source"
+const RuntimeSourceHeader = "X-Runtime-Source"
 
 func GetApiClient(profile *config.Profile, defaultHeaders map[string]string) (*apiclient.APIClient, error) {
 	c, err := config.GetConfig()
@@ -59,11 +59,11 @@ func GetApiClient(profile *config.Profile, defaultHeaders map[string]string) (*a
 		clientConfig.AddDefaultHeader("Authorization", "Bearer "+activeProfile.Api.Token.AccessToken)
 
 		if activeProfile.ActiveOrganizationId != nil {
-			clientConfig.AddDefaultHeader("X-Daytona-Organization-ID", *activeProfile.ActiveOrganizationId)
+			clientConfig.AddDefaultHeader("X-Runtime-Organization-ID", *activeProfile.ActiveOrganizationId)
 		}
 	}
 
-	clientConfig.AddDefaultHeader(DaytonaSourceHeader, "cli")
+	clientConfig.AddDefaultHeader(RuntimeSourceHeader, "cli")
 
 	for headerKey, headerValue := range defaultHeaders {
 		clientConfig.AddDefaultHeader(headerKey, headerValue)

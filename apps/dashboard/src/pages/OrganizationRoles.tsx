@@ -1,12 +1,12 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
 import React, { useState } from 'react'
 import { toast } from 'sonner'
 import { useApi } from '@/hooks/useApi'
-import { OrganizationRolePermissionsEnum } from '@daytonaio/api-client'
+import { OrganizationRolePermissionsEnum } from '@hanzo/api-client'
 import { OrganizationRoleTable } from '@/components/OrganizationRoles/OrganizationRoleTable'
 import { CreateOrganizationRoleDialog } from '@/components/OrganizationRoles/CreateOrganizationRoleDialog'
 import { useSelectedOrganization } from '@/hooks/useSelectedOrganization'

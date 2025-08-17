@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package mcp
@@ -9,8 +9,8 @@ import (
 
 var MCPCmd = &cobra.Command{
 	Use:   "mcp",
-	Short: "Manage Daytona MCP Server",
-	Long:  "Commands for managing Daytona MCP Server",
+	Short: "Manage Runtime MCP Server",
+	Long:  "Commands for managing Runtime MCP Server",
 }
 
 func init() {

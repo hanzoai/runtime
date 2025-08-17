@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -29,7 +29,7 @@ import { useSelectedOrganization } from '@/hooks/useSelectedOrganization'
 import OrganizationMembers from '@/pages/OrganizationMembers'
 import OrganizationSettings from '@/pages/OrganizationSettings'
 import UserOrganizationInvitations from '@/pages/UserOrganizationInvitations'
-import { OrganizationRolePermissionsEnum, OrganizationUserRoleEnum } from '@daytonaio/api-client'
+import { OrganizationRolePermissionsEnum, OrganizationUserRoleEnum } from '@hanzo/api-client'
 import Limits from './pages/Limits'
 import Billing from './pages/Billing'
 import { NotificationSocketProvider } from '@/providers/NotificationSocketProvider'
@@ -37,7 +37,7 @@ import { ApiProvider } from './providers/ApiProvider'
 import LandingPage from './pages/LandingPage'
 import Logout from './pages/Logout'
 import { RoutePath, getRouteSubPath } from './enums/RoutePath'
-import { DAYTONA_DOCS_URL, DAYTONA_SLACK_URL } from './constants/ExternalLinks'
+import { RUNTIME_DOCS_URL, RUNTIME_SLACK_URL } from './constants/ExternalLinks'
 import Onboarding from '@/pages/Onboarding'
 import LinkedAccounts from '@/pages/LinkedAccounts'
 import { Button } from './components/ui/button'
@@ -47,7 +47,7 @@ import NotFound from './pages/NotFound'
 // Simple redirection components for external URLs
 const DocsRedirect = () => {
   React.useEffect(() => {
-    window.open(DAYTONA_DOCS_URL, '_blank')
+    window.open(RUNTIME_DOCS_URL, '_blank')
     window.location.href = RoutePath.DASHBOARD
   }, [])
   return null
@@ -55,7 +55,7 @@ const DocsRedirect = () => {
 
 const SlackRedirect = () => {
   React.useEffect(() => {
-    window.open(DAYTONA_SLACK_URL, '_blank')
+    window.open(RUNTIME_SLACK_URL, '_blank')
     window.location.href = RoutePath.DASHBOARD
   }, [])
   return null

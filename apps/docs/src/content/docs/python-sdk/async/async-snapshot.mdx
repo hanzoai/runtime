@@ -9,7 +9,7 @@ hideTitleOnPage: true
 class Snapshot(SnapshotDto)
 ```
 
-Represents a Daytona Snapshot which is a pre-configured sandbox.
+Represents a Runtime Snapshot which is a pre-configured sandbox.
 
 **Attributes**:
 
@@ -38,7 +38,7 @@ Represents a Daytona Snapshot which is a pre-configured sandbox.
 class AsyncSnapshotService()
 ```
 
-Service for managing Daytona Snapshots. Can be used to list, get, create and delete Snapshots.
+Service for managing Runtime Snapshots. Can be used to list, get, create and delete Snapshots.
 
 #### AsyncSnapshotService.list
 
@@ -57,8 +57,8 @@ List all Snapshots.
 **Example**:
 
 ```python
-async with AsyncDaytona() as daytona:
-    snapshots = await daytona.snapshot.list()
+async with AsyncRuntime() as runtime:
+    snapshots = await runtime.snapshot.list()
     for snapshot in snapshots:
         print(f"{snapshot.name} ({snapshot.image_name})")
 ```
@@ -80,9 +80,9 @@ Delete a Snapshot.
 **Example**:
 
 ```python
-async with AsyncDaytona() as daytona:
-    snapshot = await daytona.snapshot.get("test-snapshot")
-    await daytona.snapshot.delete(snapshot)
+async with AsyncRuntime() as runtime:
+    snapshot = await runtime.snapshot.get("test-snapshot")
+    await runtime.snapshot.delete(snapshot)
     print("Snapshot deleted")
 ```
 
@@ -108,8 +108,8 @@ Get a Snapshot by name.
 **Example**:
 
 ```python
-async with AsyncDaytona() as daytona:
-    snapshot = await daytona.snapshot.get("test-snapshot-name")
+async with AsyncRuntime() as runtime:
+    snapshot = await runtime.snapshot.get("test-snapshot-name")
     print(f"{snapshot.name} ({snapshot.image_name})")
 ```
 
@@ -137,7 +137,7 @@ Creates and registers a new snapshot from the given Image definition.
 
 ```python
 image = Image.debianSlim('3.12').pipInstall('numpy')
-daytona.snapshot.create(
+runtime.snapshot.create(
     CreateSnapshotParams(name='my-snapshot', image=image),
     on_logs=lambda chunk: print(chunk, end=""),
 )
@@ -174,7 +174,7 @@ Parameters for creating a new snapshot.
 - `name` _Optional[str]_ - Name of the snapshot.
 - `image` _Union[str, Image]_ - Image of the snapshot. If a string is provided,
   it should be available on some registry. If an Image instance is provided,
-  it will be used to create a new image in Daytona.
+  it will be used to create a new image in Runtime.
 - `resources` _Optional[Resources]_ - Resources of the snapshot.
 - `entrypoint` _Optional[List[str]]_ - Entrypoint of the snapshot.
 

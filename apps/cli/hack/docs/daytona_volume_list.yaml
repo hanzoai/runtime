@@ -1,6 +1,6 @@
-name: daytona volume list
+name: runtime volume list
 synopsis: List all volumes
-usage: daytona volume list [flags]
+usage: runtime volume list [flags]
 options:
   - name: format
     shorthand: f
@@ -8,6 +8,6 @@ options:
 inherited_options:
   - name: help
     default_value: 'false'
-    usage: help for daytona
+    usage: help for runtime
 see_also:
-  - daytona volume - Manage Daytona volumes
+  - runtime volume - Manage Runtime volumes

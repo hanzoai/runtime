@@ -9,7 +9,7 @@ from hanzo_runtime import (
     ChartType,
     CompositeChart,
     CreateSandboxFromImageParams,
-    Daytona,
+    Runtime,
     Image,
     LineChart,
     PieChart,

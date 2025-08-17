@@ -4,9 +4,9 @@ hideTitleOnPage: true
 ---
 
 
-## DaytonaError
+## RuntimeError
 
-Base error for Daytona SDK.
+Base error for Runtime SDK.
 
 **Extends:**
 
@@ -14,16 +14,16 @@ Base error for Daytona SDK.
 
 ### Extended by
 
-- `DaytonaNotFoundError`
+- `RuntimeNotFoundError`
 
 ### Constructors
 
-#### new DaytonaError()
+#### new RuntimeError()
 
 _Inherited from_: `Error.constructor`
 
 ```ts
-new DaytonaError(message?: string): DaytonaError
+new RuntimeError(message?: string): RuntimeError
 ```
 
 **Parameters**:
@@ -33,14 +33,14 @@ new DaytonaError(message?: string): DaytonaError
 
 **Returns**:
 
-- `DaytonaError`
+- `RuntimeError`
 
-#### new DaytonaError()
+#### new RuntimeError()
 
 _Inherited from_: `Error.constructor`
 
 ```ts
-new DaytonaError(message?: string, options?: ErrorOptions): DaytonaError
+new RuntimeError(message?: string, options?: ErrorOptions): RuntimeError
 ```
 
 **Parameters**:
@@ -51,27 +51,27 @@ new DaytonaError(message?: string, options?: ErrorOptions): DaytonaError
 
 **Returns**:
 
-- `DaytonaError`
+- `RuntimeError`
 
 ***
 
 
-## DaytonaNotFoundError
+## RuntimeNotFoundError
 
-Base error for Daytona SDK.
+Base error for Runtime SDK.
 
 **Extends:**
 
-- `DaytonaError`
+- `RuntimeError`
 
 ### Constructors
 
-#### new DaytonaNotFoundError()
+#### new RuntimeNotFoundError()
 
-_Inherited from_: `DaytonaError.constructor`
+_Inherited from_: `RuntimeError.constructor`
 
 ```ts
-new DaytonaNotFoundError(message?: string): DaytonaNotFoundError
+new RuntimeNotFoundError(message?: string): RuntimeNotFoundError
 ```
 
 **Parameters**:
@@ -81,14 +81,14 @@ new DaytonaNotFoundError(message?: string): DaytonaNotFoundError
 
 **Returns**:
 
-- `DaytonaNotFoundError`
+- `RuntimeNotFoundError`
 
-#### new DaytonaNotFoundError()
+#### new RuntimeNotFoundError()
 
-_Inherited from_: `DaytonaError.constructor`
+_Inherited from_: `RuntimeError.constructor`
 
 ```ts
-new DaytonaNotFoundError(message?: string, options?: ErrorOptions): DaytonaNotFoundError
+new RuntimeNotFoundError(message?: string, options?: ErrorOptions): RuntimeNotFoundError
 ```
 
 **Parameters**:
@@ -99,5 +99,5 @@ new DaytonaNotFoundError(message?: string, options?: ErrorOptions): DaytonaNotFo
 
 **Returns**:
 
-- `DaytonaNotFoundError`
+- `RuntimeNotFoundError`
 

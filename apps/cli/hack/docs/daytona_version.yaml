@@ -1,9 +1,9 @@
-name: daytona version
+name: runtime version
 synopsis: Print the version number
-usage: daytona version [flags]
+usage: runtime version [flags]
 inherited_options:
   - name: help
     default_value: 'false'
-    usage: help for daytona
+    usage: help for runtime
 see_also:
-  - daytona - Daytona CLI
+  - runtime - Runtime CLI

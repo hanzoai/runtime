@@ -1,12 +1,12 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
 import { Plus } from 'lucide-react'
 import React, { useEffect, useState, useCallback, useMemo } from 'react'
 import { toast } from 'sonner'
-import { OrganizationRolePermissionsEnum, VolumeDto, VolumeState } from '@daytonaio/api-client'
+import { OrganizationRolePermissionsEnum, VolumeDto, VolumeState } from '@hanzo/api-client'
 import { Button } from '@/components/ui/button'
 import {
   Dialog,

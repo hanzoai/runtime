@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package controllers
@@ -13,10 +13,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/daytonaio/runner/cmd/runner/config"
-	"github.com/daytonaio/runner/pkg/api/dto"
-	"github.com/daytonaio/runner/pkg/common"
-	"github.com/daytonaio/runner/pkg/runner"
+	"github.com/hanzoai/runner/cmd/runner/config"
+	"github.com/hanzoai/runner/pkg/api/dto"
+	"github.com/hanzoai/runner/pkg/common"
+	"github.com/hanzoai/runner/pkg/runner"
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
 )
@@ -254,8 +254,8 @@ func GetBuildLogs(ctx *gin.Context) {
 	checkSnapshotRef := snapshotRef
 
 	// Fixed tag for instances where we are not looking for an entry with snapshot ID
-	if strings.HasPrefix(snapshotRef, "daytona") {
-		checkSnapshotRef = snapshotRef + ":daytona"
+	if strings.HasPrefix(snapshotRef, "runtime") {
+		checkSnapshotRef = snapshotRef + ":runtime"
 	}
 
 	flusher, ok := ctx.Writer.(http.Flusher)

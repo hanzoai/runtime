@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package toolbox
@@ -11,19 +11,19 @@ import (
 	"os"
 	"path"
 
-	common_proxy "github.com/daytonaio/common-go/pkg/proxy"
-	"github.com/daytonaio/daemon/internal"
-	"github.com/daytonaio/daemon/pkg/toolbox/computeruse"
-	"github.com/daytonaio/daemon/pkg/toolbox/computeruse/manager"
-	"github.com/daytonaio/daemon/pkg/toolbox/config"
-	"github.com/daytonaio/daemon/pkg/toolbox/fs"
-	"github.com/daytonaio/daemon/pkg/toolbox/git"
-	"github.com/daytonaio/daemon/pkg/toolbox/lsp"
-	"github.com/daytonaio/daemon/pkg/toolbox/middlewares"
-	"github.com/daytonaio/daemon/pkg/toolbox/port"
-	"github.com/daytonaio/daemon/pkg/toolbox/process"
-	"github.com/daytonaio/daemon/pkg/toolbox/process/session"
-	"github.com/daytonaio/daemon/pkg/toolbox/proxy"
+	common_proxy "github.com/hanzoai/common-go/pkg/proxy"
+	"github.com/hanzoai/daemon/internal"
+	"github.com/hanzoai/daemon/pkg/toolbox/computeruse"
+	"github.com/hanzoai/daemon/pkg/toolbox/computeruse/manager"
+	"github.com/hanzoai/daemon/pkg/toolbox/config"
+	"github.com/hanzoai/daemon/pkg/toolbox/fs"
+	"github.com/hanzoai/daemon/pkg/toolbox/git"
+	"github.com/hanzoai/daemon/pkg/toolbox/lsp"
+	"github.com/hanzoai/daemon/pkg/toolbox/middlewares"
+	"github.com/hanzoai/daemon/pkg/toolbox/port"
+	"github.com/hanzoai/daemon/pkg/toolbox/process"
+	"github.com/hanzoai/daemon/pkg/toolbox/process/session"
+	"github.com/hanzoai/daemon/pkg/toolbox/proxy"
 
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
@@ -73,7 +73,7 @@ func (s *Server) Start() error {
 		log.Fatal(err)
 	}
 
-	configDir := path.Join(dirname, ".daytona")
+	configDir := path.Join(dirname, ".runtime")
 	err = os.MkdirAll(configDir, 0755)
 	if err != nil {
 		log.Fatal(err)
@@ -151,10 +151,10 @@ func (s *Server) Start() error {
 	}
 
 	// Initialize plugin-based computer use
-	pluginPath := "/usr/local/lib/daytona-computer-use"
+	pluginPath := "/usr/local/lib/runtime-computer-use"
 	// Fallback to local config directory for development
 	if _, err := os.Stat(pluginPath); os.IsNotExist(err) {
-		pluginPath = path.Join(configDir, "daytona-computer-use")
+		pluginPath = path.Join(configDir, "runtime-computer-use")
 	}
 	s.ComputerUse, err = manager.GetComputerUse(pluginPath)
 	if err != nil {

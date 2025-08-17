@@ -1,12 +1,12 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
 import axios, { AxiosInstance } from 'axios'
 import { OrganizationUsage } from './types/OrganizationUsage'
 import { AutomaticTopUp, OrganizationWallet } from './types/OrganizationWallet'
-import { DaytonaError } from '@/api/errors'
+import { RuntimeError } from '@/api/errors'
 
 export type OrganizationTier = {
   tier: number
@@ -31,7 +31,7 @@ export class BillingApiClient {
       (error) => {
         const errorMessage = error.response?.data?.message || error.response?.data || error.message || String(error)
 
-        throw DaytonaError.fromString(String(errorMessage))
+        throw RuntimeError.fromString(String(errorMessage))
       },
     )
   }

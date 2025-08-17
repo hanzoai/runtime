@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package apiclient
@@ -10,12 +10,12 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/daytonaio/daytona/cli/internal"
+	"github.com/hanzoai/runtime/cli/internal"
 
 	log "github.com/sirupsen/logrus"
 )
 
-const API_VERSION_HEADER = "X-Daytona-Api-Version"
+const API_VERSION_HEADER = "X-Runtime-Api-Version"
 
 type ApiErrorResponse struct {
 	Error   string `json:"error"`
@@ -62,7 +62,7 @@ func HandleErrorResponse(res *http.Response, requestErr error) error {
 	}
 
 	if res.StatusCode == http.StatusUnauthorized {
-		errMessage += " - run 'daytona login' to reauthenticate"
+		errMessage += " - run 'runtime login' to reauthenticate"
 	}
 
 	return errors.New(errMessage)
@@ -74,6 +74,6 @@ func checkVersionsMismatch(res *http.Response) {
 		return
 	}
 	if internal.Version != "v0.0.0-dev" && internal.Version != serverVersion {
-		log.Warn(fmt.Sprintf("Version mismatch detected. Daytona CLI is on version %s and API is on version %s. To ensure maximum compatibility, please make sure the versions are aligned.", internal.Version, serverVersion))
+		log.Warn(fmt.Sprintf("Version mismatch detected. Runtime CLI is on version %s and API is on version %s. To ensure maximum compatibility, please make sure the versions are aligned.", internal.Version, serverVersion))
 	}
 }

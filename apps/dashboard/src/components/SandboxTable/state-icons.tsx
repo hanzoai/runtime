@@ -1,9 +1,9 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
-import { SandboxState } from '@daytonaio/api-client'
+import { SandboxState } from '@hanzo/api-client'
 import { Loader2 } from 'lucide-react'
 
 interface SquareProps {

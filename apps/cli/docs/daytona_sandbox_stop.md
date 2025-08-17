@@ -1,9 +1,9 @@
-## daytona sandbox stop
+## runtime sandbox stop
 
 Stop a sandbox
 
 ```
-daytona sandbox stop [SANDBOX_ID] [flags]
+runtime sandbox stop [SANDBOX_ID] [flags]
 ```
 
 ### Options
@@ -15,9 +15,9 @@ daytona sandbox stop [SANDBOX_ID] [flags]
 ### Options inherited from parent commands
 
 ```
-      --help   help for daytona
+      --help   help for runtime
 ```
 
 ### SEE ALSO
 
-- [daytona sandbox](daytona_sandbox.md) - Manage Daytona sandboxes
+- [runtime sandbox](runtime_sandbox.md) - Manage Runtime sandboxes

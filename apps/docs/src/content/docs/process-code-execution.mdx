@@ -4,15 +4,15 @@ title: Process and Code Execution
 
 import { TabItem, Tabs } from '@astrojs/starlight/components'
 
-The Daytona SDK provides powerful process and code execution capabilities through the `process` module in Sandboxes. This guide covers all available process operations and best practices.
+The Runtime SDK provides powerful process and code execution capabilities through the `process` module in Sandboxes. This guide covers all available process operations and best practices.
 
 ## Code Execution
 
-Daytona SDK provides an option to execute code in Python and TypeScript.
+Runtime SDK provides an option to execute code in Python and TypeScript.
 
 ### Running Code
 
-Daytona SDK provides an option to run code snippets in Python and TypeScript. You can execute code with input, timeout, and environment variables.
+Runtime SDK provides an option to run code snippets in Python and TypeScript. You can execute code with input, timeout, and environment variables.
 
 <Tabs>
 <TabItem label="Python" icon="seti:python">
@@ -22,7 +22,7 @@ response = sandbox.process.code_run('''
 def greet(name):
     return f"Hello, {name}!"
 
-print(greet("Daytona"))
+print(greet("Runtime"))
 ''')
 
 print(response.result)
@@ -37,7 +37,7 @@ function greet(name: string): string {
     return \`Hello, \${name}!\`;
 }
 
-console.log(greet("Daytona"));
+console.log(greet("Runtime"));
 `);
 console.log(response.result);
 
@@ -48,7 +48,7 @@ response = await sandbox.process.codeRun(
     console.log(\`FOO: \${process.env.FOO}\`);
     `,
     {
-      argv: ["Daytona"],
+      argv: ["Runtime"],
       env: { FOO: "BAR" }
     }
 );
@@ -68,11 +68,11 @@ console.log(response.result);
 
 ## Process Execution
 
-Daytona SDK provides an option to execute shell commands and manage background processes in Sandboxes. The workdir for executing defaults to the current Sandbox user's root - e.g. `workspace/repo` implies `/home/[username]/workspace/repo`, but you can override it with an absolute path (by starting the path with `/`).
+Runtime SDK provides an option to execute shell commands and manage background processes in Sandboxes. The workdir for executing defaults to the current Sandbox user's root - e.g. `workspace/repo` implies `/home/[username]/workspace/repo`, but you can override it with an absolute path (by starting the path with `/`).
 
 ### Running Commands
 
-Daytona SDK provides an option to execute shell commands in Python and TypeScript. You can run commands with input, timeout, and environment variables.
+Runtime SDK provides an option to execute shell commands in Python and TypeScript. You can run commands with input, timeout, and environment variables.
 
 <Tabs>
 <TabItem label="Python" icon="seti:python">
@@ -89,7 +89,7 @@ print(response.result)
 # Passing environment variables
 
 response = sandbox.process.exec("echo $CUSTOM_SECRET", env={
-"CUSTOM_SECRET": "DAYTONA"
+"CUSTOM_SECRET": "RUNTIME"
 }
 )
 print(response.result)
@@ -109,7 +109,7 @@ console.log(response2.result);
 
 // Passing environment variables
 const response3 = await sandbox.process.executeCommand("echo $CUSTOM_SECRET", "~", {
-        "CUSTOM_SECRET": "DAYTONA"
+        "CUSTOM_SECRET": "RUNTIME"
     }
 );
 console.log(response3.result);
@@ -121,11 +121,11 @@ console.log(response3.result);
 
 ## Sessions (Background Processes)
 
-Daytona SDK provides an option to start, stop, and manage background process sessions in Sandboxes. You can run long-running commands, monitor process status, and list all running processes.
+Runtime SDK provides an option to start, stop, and manage background process sessions in Sandboxes. You can run long-running commands, monitor process status, and list all running processes.
 
 ### Managing Long-Running Processes
 
-Daytona SDK provides an option to start and stop background processes. You can run long-running commands and monitor process status.
+Runtime SDK provides an option to start and stop background processes. You can run long-running commands and monitor process status.
 
 <Tabs>
 <TabItem label="Python" icon="seti:python">
@@ -166,7 +166,7 @@ for (const session of sessions) {
 
 ## Best Practices
 
-Daytona SDK provides best practices for process and code execution in Sandboxes.
+Runtime SDK provides best practices for process and code execution in Sandboxes.
 
 1. **Resource Management**
 
@@ -236,7 +236,7 @@ try {
 
 ## Common Issues
 
-Daytona SDK provides an option to troubleshoot common issues related to process execution and code execution.
+Runtime SDK provides an option to troubleshoot common issues related to process execution and code execution.
 
 ### Process Execution Failed
 

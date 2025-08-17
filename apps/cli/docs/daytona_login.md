@@ -1,9 +1,9 @@
-## daytona login
+## runtime login
 
-Log in to Daytona
+Log in to Runtime
 
 ```
-daytona login [flags]
+runtime login [flags]
 ```
 
 ### Options
@@ -15,9 +15,9 @@ daytona login [flags]
 ### Options inherited from parent commands
 
 ```
-      --help   help for daytona
+      --help   help for runtime
 ```
 
 ### SEE ALSO
 
-- [daytona](daytona.md) - Daytona CLI
+- [runtime](runtime.md) - Runtime CLI

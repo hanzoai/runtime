@@ -1,17 +1,17 @@
-## daytona version
+## runtime version
 
 Print the version number
 
 ```
-daytona version [flags]
+runtime version [flags]
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --help   help for daytona
+      --help   help for runtime
 ```
 
 ### SEE ALSO
 
-- [daytona](daytona.md) - Daytona CLI
+- [runtime](runtime.md) - Runtime CLI

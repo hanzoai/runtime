@@ -1,9 +1,9 @@
-## daytona sandbox list
+## runtime sandbox list
 
 List sandboxes
 
 ```
-daytona sandbox list [flags]
+runtime sandbox list [flags]
 ```
 
 ### Options
@@ -18,9 +18,9 @@ daytona sandbox list [flags]
 ### Options inherited from parent commands
 
 ```
-      --help   help for daytona
+      --help   help for runtime
 ```
 
 ### SEE ALSO
 
-- [daytona sandbox](daytona_sandbox.md) - Manage Daytona sandboxes
+- [runtime sandbox](runtime_sandbox.md) - Manage Runtime sandboxes

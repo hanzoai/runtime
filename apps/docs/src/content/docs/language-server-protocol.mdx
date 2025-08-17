@@ -4,21 +4,21 @@ title: Language Server Protocol
 
 import { TabItem, Tabs } from '@astrojs/starlight/components'
 
-The Daytona SDK provides Language Server Protocol (LSP) support through Sandbox instances. This enables advanced language features like code completion, diagnostics, and more.
+The Runtime SDK provides Language Server Protocol (LSP) support through Sandbox instances. This enables advanced language features like code completion, diagnostics, and more.
 
 ## Creating LSP Servers
 
-Daytona SDK provides an option to create LSP servers using Python and TypeScript. The `path_to_project` starting point defaults to the current Sandbox user's root - e.g. `workspace/project` implies `/home/[username]/workspace/project`, but by starting with `/`, you may define an absolute path as well.
+Runtime SDK provides an option to create LSP servers using Python and TypeScript. The `path_to_project` starting point defaults to the current Sandbox user's root - e.g. `workspace/project` implies `/home/[username]/workspace/project`, but by starting with `/`, you may define an absolute path as well.
 
 <Tabs>
 <TabItem label="Python" icon="seti:python">
 ```python
-from daytona import Daytona, LspLanguageId
+from runtime import Runtime, LspLanguageId
 
 # Create Sandbox
 
-daytona = Daytona()
-sandbox = daytona.create()
+runtime = Runtime()
+sandbox = runtime.create()
 
 # Create LSP server for Python
 
@@ -31,11 +31,11 @@ path_to_project="workspace/project"
 </TabItem>
 <TabItem label="TypeScript" icon="seti:typescript">
 ```typescript
-import { Daytona, LspLanguageId } from '@daytonaio/sdk'
+import { Runtime, LspLanguageId } from '@hanzo/runtime'
 
 // Create sandbox
-const daytona = new Daytona()
-const sandbox = await daytona.create({
+const runtime = new Runtime()
+const sandbox = await runtime.create({
     language: 'typescript'
 })
 
@@ -51,12 +51,12 @@ const lspServer = await sandbox.createLspServer(
 
 ## Supported Languages
 
-Daytona SDK provides an option to create LSP servers for various languages through the `LspLanguageId` enum in Python and TypeScript.
+Runtime SDK provides an option to create LSP servers for various languages through the `LspLanguageId` enum in Python and TypeScript.
 
 <Tabs>
 <TabItem label="Python" icon="seti:python">
 ```python
-from daytona import LspLanguageId
+from runtime import LspLanguageId
 
 # Available language IDs
 
@@ -67,7 +67,7 @@ LspLanguageId.TYPESCRIPT
 </TabItem>
 <TabItem label="TypeScript" icon="seti:typescript">
 ```typescript
-import { LspLanguageId } from '@daytonaio/sdk'
+import { LspLanguageId } from '@hanzo/runtime'
 
 // Available language IDs
 LspLanguageId.PYTHON
@@ -82,11 +82,11 @@ LspLanguageId.TYPESCRIPT
 
 ## LSP Features
 
-Daytona SDK provides various LSP features for code analysis and editing.
+Runtime SDK provides various LSP features for code analysis and editing.
 
 ### Code Completion
 
-Daytona SDK provides an option to get code completions for a specific position in a file using Python and TypeScript.
+Runtime SDK provides an option to get code completions for a specific position in a file using Python and TypeScript.
 
 <Tabs>
 <TabItem label="Python" icon="seti:python">

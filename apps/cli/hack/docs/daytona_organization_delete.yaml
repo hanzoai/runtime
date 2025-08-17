@@ -1,9 +1,9 @@
-name: daytona organization delete
+name: runtime organization delete
 synopsis: Delete an organization
-usage: daytona organization delete [ORGANIZATION] [flags]
+usage: runtime organization delete [ORGANIZATION] [flags]
 inherited_options:
   - name: help
     default_value: 'false'
-    usage: help for daytona
+    usage: help for runtime
 see_also:
-  - daytona organization - Manage Daytona organizations
+  - runtime organization - Manage Runtime organizations

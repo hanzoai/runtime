@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package common
@@ -6,9 +6,9 @@ package common
 import (
 	"context"
 
-	"github.com/daytonaio/apiclient"
-	apiclient_cli "github.com/daytonaio/daytona/cli/apiclient"
-	"github.com/daytonaio/daytona/cli/config"
+	"github.com/hanzoai/apiclient"
+	apiclient_cli "github.com/hanzoai/runtime/cli/apiclient"
+	"github.com/hanzoai/runtime/cli/config"
 )
 
 func GetPersonalOrganizationId(profile config.Profile) (string, error) {

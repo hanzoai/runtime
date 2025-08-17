@@ -1,9 +1,9 @@
-## daytona organization list
+## runtime organization list
 
 List all organizations
 
 ```
-daytona organization list [flags]
+runtime organization list [flags]
 ```
 
 ### Options
@@ -15,9 +15,9 @@ daytona organization list [flags]
 ### Options inherited from parent commands
 
 ```
-      --help   help for daytona
+      --help   help for runtime
 ```
 
 ### SEE ALSO
 
-- [daytona organization](daytona_organization.md) - Manage Daytona organizations
+- [runtime organization](runtime_organization.md) - Manage Runtime organizations

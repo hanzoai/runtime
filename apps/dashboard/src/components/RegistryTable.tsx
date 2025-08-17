@@ -1,9 +1,9 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
-import { DockerRegistry, OrganizationRolePermissionsEnum } from '@daytonaio/api-client'
+import { DockerRegistry, OrganizationRolePermissionsEnum } from '@hanzo/api-client'
 import {
   ColumnDef,
   flexRender,

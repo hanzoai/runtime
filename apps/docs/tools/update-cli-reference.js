@@ -9,24 +9,24 @@ const __dirname = import.meta.dirname
 // content to appear above the commands outline
 const prepend = `---
 title: CLI
-description: A reference of supported operations using the Daytona CLI.
+description: A reference of supported operations using the Runtime CLI.
 sidebar:
-  label: Daytona CLI Reference
+  label: Runtime CLI Reference
 ---
 import Aside from "@components/Aside.astro";
 import Label from "@components/Label.astro";
 
-The \`daytona\` command-line tool provides access to Daytona's core features including managing Snapshots and the lifecycle of Daytona Sandboxes. View the installation instructions by clicking [here](/docs/getting-started#setting-up-the-daytona-cli).
+The \`runtime\` command-line tool provides access to Runtime's core features including managing Snapshots and the lifecycle of Runtime Sandboxes. View the installation instructions by clicking [here](/docs/getting-started#setting-up-the-runtime-cli).
 
-This reference lists all commands supported by the \`daytona\` command-line tool complete with a description of their behaviour, and any supported flags.
-You can access this documentation on a per-command basis by appending the \`--help\`/\`-h\` flag when invoking \`daytona\`.
+This reference lists all commands supported by the \`runtime\` command-line tool complete with a description of their behaviour, and any supported flags.
+You can access this documentation on a per-command basis by appending the \`--help\`/\`-h\` flag when invoking \`runtime\`.
 `
 
 // content to appear below the commands outline
 const append = ``
 
 const notes = {
-  'daytona autocomplete': `\n<Aside type="note">
+  'runtime autocomplete': `\n<Aside type="note">
 If using bash shell environment, make sure you have bash-completion installed in order to get full autocompletion functionality.
 Linux Installation: \`\`\`sudo apt-get install bash-completion\`\`\`
 macOS Installation: \`\`\`brew install bash-completion\`\`\`
@@ -35,7 +35,7 @@ macOS Installation: \`\`\`brew install bash-completion\`\`\`
 
 async function fetchRawDocs(ref) {
   const url =
-    'https://api.github.com/repos/daytonaio/daytona/contents/apps/cli/hack/docs'
+    'https://api.github.com/repos/hanzoai/runtime/contents/apps/cli/hack/docs'
   const request = await fetch(`${url}?ref=${ref}`)
   const response = await request.json()
 

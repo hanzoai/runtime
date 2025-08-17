@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -14,7 +14,7 @@ import { SnapshotService } from './sandbox/services/snapshot.service'
 import { SystemRole } from './user/enums/system-role.enum'
 import { TypedConfigService } from './config/typed-config.service'
 
-const DAYTONA_ADMIN_USER_ID = 'daytona-admin'
+const RUNTIME_ADMIN_USER_ID = 'runtime-admin'
 
 @Injectable()
 export class AppService implements OnApplicationBootstrap {
@@ -38,14 +38,14 @@ export class AppService implements OnApplicationBootstrap {
   }
 
   private async initializeAdminUser(): Promise<void> {
-    if (await this.userService.findOne(DAYTONA_ADMIN_USER_ID)) {
+    if (await this.userService.findOne(RUNTIME_ADMIN_USER_ID)) {
       return
     }
 
     await this.eventEmitterReadinessWatcher.waitUntilReady()
     const user = await this.userService.create({
-      id: DAYTONA_ADMIN_USER_ID,
-      name: 'Daytona Admin',
+      id: RUNTIME_ADMIN_USER_ID,
+      name: 'Runtime Admin',
       personalOrganizationQuota: {
         totalCpuQuota: 0,
         totalMemoryQuota: 0,
@@ -60,7 +60,7 @@ export class AppService implements OnApplicationBootstrap {
       role: SystemRole.ADMIN,
     })
     const personalOrg = await this.organizationService.findPersonal(user.id)
-    await this.apiKeyService.createApiKey(personalOrg.id, user.id, DAYTONA_ADMIN_USER_ID, [])
+    await this.apiKeyService.createApiKey(personalOrg.id, user.id, RUNTIME_ADMIN_USER_ID, [])
   }
 
   private async initializeTransientRegistry(): Promise<void> {
@@ -130,7 +130,7 @@ export class AppService implements OnApplicationBootstrap {
   }
 
   private async initializeDefaultSnapshot(): Promise<void> {
-    const adminPersonalOrg = await this.organizationService.findPersonal(DAYTONA_ADMIN_USER_ID)
+    const adminPersonalOrg = await this.organizationService.findPersonal(RUNTIME_ADMIN_USER_ID)
 
     try {
       const existingSnapshot = await this.snapshotService.getSnapshotByName(

@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package volume
@@ -7,10 +7,10 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/daytonaio/apiclient"
-	apiclient_cli "github.com/daytonaio/daytona/cli/apiclient"
-	"github.com/daytonaio/daytona/cli/cmd/common"
-	view_common "github.com/daytonaio/daytona/cli/views/common"
+	"github.com/hanzoai/apiclient"
+	apiclient_cli "github.com/hanzoai/runtime/cli/apiclient"
+	"github.com/hanzoai/runtime/cli/cmd/common"
+	view_common "github.com/hanzoai/runtime/cli/views/common"
 	"github.com/spf13/cobra"
 )
 

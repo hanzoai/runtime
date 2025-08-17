@@ -36,25 +36,25 @@ RUN python3 -m pip install python-lsp-server
 RUN python3 -m pip install \
     numpy pandas scikit-learn keras torch scipy seaborn matplotlib \
     django flask beautifulsoup4 requests opencv-python pillow sqlalchemy \
-    daytona pydantic-ai langchain transformers openai anthropic llama-index instructor huggingface ollama
+    runtime pydantic-ai langchain transformers openai anthropic llama-index instructor huggingface ollama
 
-# Create the Daytona user and configure sudo access
-RUN useradd -m daytona && echo "daytona ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/91-daytona
+# Create the Runtime user and configure sudo access
+RUN useradd -m runtime && echo "runtime ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/91-runtime
 
 # Install latest Node.js using nvm
 RUN bash -c "source /usr/local/share/nvm/nvm.sh && nvm install node && nvm use node" \
-  && chown -R daytona:daytona /usr/local/share/nvm
+  && chown -R runtime:runtime /usr/local/share/nvm
 
 RUN npm install -g ts-node typescript typescript-language-server
 
 # Create directory for computer use plugin
-RUN mkdir -p /usr/local/lib && chown daytona:daytona /usr/local/lib
+RUN mkdir -p /usr/local/lib && chown runtime:runtime /usr/local/lib
 
 ENV LANG=en_US.UTF-8 \
     LC_ALL=en_US.UTF-8
 
-# Switch to Daytona user
-USER daytona
+# Switch to Runtime user
+USER runtime
 
 # Create .zshrc to suppress zsh-newuser-install prompt
 RUN touch ~/.zshrc

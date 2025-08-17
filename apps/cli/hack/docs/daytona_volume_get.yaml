@@ -1,6 +1,6 @@
-name: daytona volume get
+name: runtime volume get
 synopsis: Get volume details
-usage: daytona volume get [VOLUME_ID] [flags]
+usage: runtime volume get [VOLUME_ID] [flags]
 options:
   - name: format
     shorthand: f
@@ -8,6 +8,6 @@ options:
 inherited_options:
   - name: help
     default_value: 'false'
-    usage: help for daytona
+    usage: help for runtime
 see_also:
-  - daytona volume - Manage Daytona volumes
+  - runtime volume - Manage Runtime volumes

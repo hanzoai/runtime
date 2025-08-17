@@ -6,7 +6,7 @@ hideTitleOnPage: true
 
 ## Sandbox
 
-Represents a Daytona Sandbox.
+Represents a Runtime Sandbox.
 
 **Properties**:
 
@@ -140,7 +140,7 @@ Represents a Daytona Sandbox.
     ```ts
     SandboxDto.runnerDomain
     ```
-- `snapshot?` _string_ - Daytona snapshot used to create the Sandbox
+- `snapshot?` _string_ - Runtime snapshot used to create the Sandbox
     
     ##### Implementation of
     
@@ -381,7 +381,7 @@ The Sandbox will automatically archive after being continuously stopped for the 
 
 **Throws**:
 
-- `DaytonaError` - If interval is not a non-negative integer
+- `RuntimeError` - If interval is not a non-negative integer
 
 **Example:**
 
@@ -452,7 +452,7 @@ Interactions using Sandbox Previews are not included.
 
 **Throws**:
 
-- `DaytonaError` - If interval is not a non-negative integer
+- `RuntimeError` - If interval is not a non-negative integer
 
 **Example:**
 
@@ -519,12 +519,12 @@ This method starts the Sandbox and waits for it to be ready.
 
 **Throws**:
 
-- `DaytonaError` - If Sandbox fails to start or times out
+- `RuntimeError` - If Sandbox fails to start or times out
 
 **Example:**
 
 ```ts
-const sandbox = await daytona.getCurrentSandbox('my-sandbox');
+const sandbox = await runtime.getCurrentSandbox('my-sandbox');
 await sandbox.start(40);  // Wait up to 40 seconds
 console.log('Sandbox started successfully');
 ```
@@ -554,7 +554,7 @@ This method stops the Sandbox and waits for it to be fully stopped.
 **Example:**
 
 ```ts
-const sandbox = await daytona.getCurrentSandbox('my-sandbox');
+const sandbox = await runtime.getCurrentSandbox('my-sandbox');
 await sandbox.stop();
 console.log('Sandbox stopped successfully');
 ```
@@ -584,7 +584,7 @@ or encounters an error.
 
 **Throws**:
 
-- `DaytonaError` - If the sandbox ends up in an error state or fails to start within the timeout period.
+- `RuntimeError` - If the sandbox ends up in an error state or fails to start within the timeout period.
 
 ***
 
@@ -611,7 +611,7 @@ or encounters an error.
 
 **Throws**:
 
-- `DaytonaError` - If the sandbox fails to stop within the timeout period.
+- `RuntimeError` - If the sandbox fails to stop within the timeout period.
 ## SandboxCodeToolbox
 
 Interface defining methods that a code toolbox must implement

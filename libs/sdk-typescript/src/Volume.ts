@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { VolumeDto, VolumesApi } from '@hanzo/runtime-api-client'
+import { VolumeDto, VolumesApi } from '@hanzo/api-client'
 import { HanzoRuntimeNotFoundError } from './errors/HanzoRuntimeError'
 
 /**

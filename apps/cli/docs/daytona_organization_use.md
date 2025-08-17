@@ -1,17 +1,17 @@
-## daytona organization use
+## runtime organization use
 
 Set active organization
 
 ```
-daytona organization use [ORGANIZATION] [flags]
+runtime organization use [ORGANIZATION] [flags]
 ```
 
 ### Options inherited from parent commands
 
 ```
-      --help   help for daytona
+      --help   help for runtime
 ```
 
 ### SEE ALSO
 
-- [daytona organization](daytona_organization.md) - Manage Daytona organizations
+- [runtime organization](runtime_organization.md) - Manage Runtime organizations

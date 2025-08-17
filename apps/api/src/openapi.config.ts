@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -7,10 +7,10 @@ import { DocumentBuilder } from '@nestjs/swagger'
 
 const getOpenApiConfig = (oidcIssuer: string) =>
   new DocumentBuilder()
-    .setTitle('Daytona')
+    .setTitle('Runtime')
     .addServer('http://localhost:3000')
-    .setDescription('Daytona AI platform API Docs')
-    .setContact('Daytona Platforms Inc.', 'https://www.daytona.io', 'support@daytona.com')
+    .setDescription('Runtime AI platform API Docs')
+    .setContact('Hanzo Industries Inc.', 'https://www.hanzo.ai', 'support@runtime.com')
     .setVersion('1.0')
     .addBearerAuth({
       type: 'http',

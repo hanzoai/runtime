@@ -1,10 +1,10 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
 import React from 'react'
-import { Sandbox, SandboxState } from '@daytonaio/api-client'
+import { Sandbox, SandboxState } from '@hanzo/api-client'
 import { SandboxState as SandboxStateComponent } from './SandboxTable/SandboxState'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet'

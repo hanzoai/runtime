@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
@@ -8,7 +8,7 @@ import {
   CreateOrganizationInvitationRoleEnum,
   OrganizationUserRoleEnum,
   UpdateOrganizationMemberRoleRoleEnum,
-} from '@daytonaio/api-client'
+} from '@hanzo/api-client'
 import { Button } from '@/components/ui/button'
 import {
   Dialog,

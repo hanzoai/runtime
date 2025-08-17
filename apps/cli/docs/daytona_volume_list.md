@@ -1,9 +1,9 @@
-## daytona volume list
+## runtime volume list
 
 List all volumes
 
 ```
-daytona volume list [flags]
+runtime volume list [flags]
 ```
 
 ### Options
@@ -15,9 +15,9 @@ daytona volume list [flags]
 ### Options inherited from parent commands
 
 ```
-      --help   help for daytona
+      --help   help for runtime
 ```
 
 ### SEE ALSO
 
-- [daytona volume](daytona_volume.md) - Manage Daytona volumes
+- [runtime volume](runtime_volume.md) - Manage Runtime volumes

@@ -1,20 +1,20 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
 import { Action, toast } from 'sonner'
-import { DaytonaError } from '@/api/errors'
+import { RuntimeError } from '@/api/errors'
 
 export function handleApiError(error: unknown, message: string, toastAction?: React.ReactNode | Action) {
-  const isDaytonaError = error instanceof DaytonaError
+  const isRuntimeError = error instanceof RuntimeError
 
   toast.error(message, {
-    description: isDaytonaError ? error.message : 'Please try again or check the console for more details',
+    description: isRuntimeError ? error.message : 'Please try again or check the console for more details',
     action: toastAction,
   })
 
-  if (!isDaytonaError) {
+  if (!isRuntimeError) {
     console.error(message, error)
   }
 }

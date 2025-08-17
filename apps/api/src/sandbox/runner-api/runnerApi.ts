@@ -1,9 +1,9 @@
 /*
- * Copyright 2025 Daytona Platforms Inc.
+ * Copyright 2025 Hanzo Industries Inc.
  * SPDX-License-Identifier: AGPL-3.0
  */
 
-import { SandboxApi, DefaultApi, SnapshotsApi, Configuration, ToolboxApi } from '@daytonaio/runner-api-client'
+import { SandboxApi, DefaultApi, SnapshotsApi, Configuration, ToolboxApi } from '@hanzo/runner-api-client'
 import { Runner } from '../entities/runner.entity'
 import { Injectable } from '@nestjs/common'
 import axios from 'axios'

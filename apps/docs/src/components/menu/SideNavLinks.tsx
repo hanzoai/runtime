@@ -11,7 +11,7 @@ export const SideNavLinks = () => {
   useEffect(() => {
     const storedStars = sessionStorage.getItem('stargazers')
     if (!storedStars || isNaN(Number(storedStars))) {
-      fetch('https://api.github.com/repos/daytonaio/daytona')
+      fetch('https://api.github.com/repos/hanzoai/runtime')
         .then(response => response.json())
         .then(data => {
           setStars(data.stargazers_count)
@@ -30,7 +30,7 @@ export const SideNavLinks = () => {
     <>
       <div className="nav-item call">
         <a
-          href="https://www.daytona.io/contact"
+          href="https://www.hanzo.ai/contact"
           target="_blank"
           className="nav__link"
           rel="noreferrer"
@@ -40,7 +40,7 @@ export const SideNavLinks = () => {
       </div>
       <div className="nav-item github">
         <a
-          href="https://github.com/daytonaio"
+          href="https://github.com/hanzoai"
           target="_blank"
           className="nav__link"
           rel="noreferrer"

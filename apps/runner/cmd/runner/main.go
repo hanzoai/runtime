@@ -1,4 +1,4 @@
-// Copyright 2025 Daytona Platforms Inc.
+// Copyright 2025 Hanzo Industries Inc.
 // SPDX-License-Identifier: AGPL-3.0
 
 package main
@@ -13,15 +13,15 @@ import (
 
 	golog "log"
 
-	"github.com/daytonaio/runner/cmd/runner/config"
-	"github.com/daytonaio/runner/internal/util"
-	"github.com/daytonaio/runner/pkg/api"
-	"github.com/daytonaio/runner/pkg/cache"
-	"github.com/daytonaio/runner/pkg/daemon"
-	"github.com/daytonaio/runner/pkg/docker"
-	"github.com/daytonaio/runner/pkg/models"
-	"github.com/daytonaio/runner/pkg/runner"
-	"github.com/daytonaio/runner/pkg/services"
+	"github.com/hanzoai/runner/cmd/runner/config"
+	"github.com/hanzoai/runner/internal/util"
+	"github.com/hanzoai/runner/pkg/api"
+	"github.com/hanzoai/runner/pkg/cache"
+	"github.com/hanzoai/runner/pkg/daemon"
+	"github.com/hanzoai/runner/pkg/docker"
+	"github.com/hanzoai/runner/pkg/models"
+	"github.com/hanzoai/runner/pkg/runner"
+	"github.com/hanzoai/runner/pkg/services"
 	"github.com/docker/docker/client"
 
 	"github.com/rs/zerolog"
@@ -67,7 +67,7 @@ func main() {
 		return
 	}
 
-	pluginPath, err := daemon.WriteStaticBinary("daytona-computer-use")
+	pluginPath, err := daemon.WriteStaticBinary("runtime-computer-use")
 	if err != nil {
 		log.Error(err)
 		return
@@ -96,7 +96,7 @@ func main() {
 	apiServerErrChan := make(chan error)
 
 	go func() {
-		log.Infof("Starting Daytona Runner on port %d", cfg.ApiPort)
+		log.Infof("Starting Runtime Runner on port %d", cfg.ApiPort)
 		apiServerErrChan <- apiServer.Start()
 	}()
 
@@ -108,7 +108,7 @@ func main() {
 		log.Error(err)
 		return
 	case <-interruptChannel:
-		log.Info("Shutting down Daytona Runner")
+		log.Info("Shutting down Runtime Runner")
 		apiServer.Stop()
 	}
 }
