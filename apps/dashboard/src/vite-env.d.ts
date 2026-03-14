@@ -16,8 +16,8 @@ interface ImportMetaEnv {
   readonly VITE_OIDC_AUDIENCE: string
   readonly VITE_API_URL: string
   readonly VITE_BILLING_API_URL: string | undefined
-  readonly VITE_POSTHOG_KEY: string | undefined
-  readonly VITE_POSTHOG_HOST: string | undefined
+  readonly VITE_INSIGHTS_KEY: string | undefined
+  readonly VITE_INSIGHTS_HOST: string | undefined
   readonly VITE_LINKED_ACCOUNTS_ENABLED: string | undefined
   readonly VITE_ANNOUNCEMENT_BANNER_TEXT: string | undefined
   readonly VITE_ANNOUNCEMENT_BANNER_LEARN_MORE_URL: string | undefined

@@ -20,9 +20,9 @@ const configuration = {
     port: parseInt(process.env.REDIS_PORT || '6379', 10),
     tls: process.env.REDIS_TLS === 'true' ? {} : undefined,
   },
-  posthog: {
-    apiKey: process.env.POSTHOG_API_KEY,
-    host: process.env.POSTHOG_HOST,
+  insights: {
+    apiKey: process.env.INSIGHTS_API_KEY,
+    host: process.env.INSIGHTS_HOST,
   },
   oidc: {
     clientId: process.env.OIDC_CLIENT_ID || process.env.OID_CLIENT_ID,
