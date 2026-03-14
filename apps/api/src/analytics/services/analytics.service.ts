@@ -13,7 +13,7 @@ import { SandboxPublicStatusUpdatedEvent } from '../../sandbox/events/sandbox-pu
 import { SandboxStartedEvent } from '../../sandbox/events/sandbox-started.event'
 import { SandboxStateUpdatedEvent } from '../../sandbox/events/sandbox-state-updated.event'
 import { SandboxStoppedEvent } from '../../sandbox/events/sandbox-stopped.event'
-import { PostHog } from 'posthog-node'
+import { PostHog as Insights } from '@hanzo/insights-node'
 import { OnAsyncEvent } from '../../common/decorators/on-async-event.decorator'
 import { Organization } from '../../organization/entities/organization.entity'
 import { OrganizationEvents } from '../../organization/constants/organization-events.constant'
@@ -21,21 +21,19 @@ import { OrganizationEvents } from '../../organization/constants/organization-ev
 @Injectable()
 export class AnalyticsService {
   private readonly logger = new Logger(AnalyticsService.name)
-  private readonly posthog?: PostHog
+  private readonly insights?: Insights
 
   constructor() {
-    if (!process.env.POSTHOG_API_KEY) {
+    if (!process.env.INSIGHTS_API_KEY) {
       return
     }
 
-    if (!process.env.POSTHOG_HOST) {
+    if (!process.env.INSIGHTS_HOST) {
       return
     }
 
-    // Initialize PostHog client
-    // Make sure to set POSTHOG_API_KEY in your environment variables
-    this.posthog = new PostHog(process.env.POSTHOG_API_KEY, {
-      host: process.env.POSTHOG_HOST,
+    this.insights = new Insights(process.env.INSIGHTS_API_KEY, {
+      host: process.env.INSIGHTS_HOST,
     })
   }
 
@@ -82,11 +80,11 @@ export class AnalyticsService {
       return
     }
 
-    if (!this.posthog) {
+    if (!this.insights) {
       return
     }
 
-    this.posthog.groupIdentify({
+    this.insights.groupIdentify({
       groupType: 'organization',
       groupKey: payload.id,
       properties: {
