@@ -13,7 +13,7 @@ import {
 } from '@nestjs/common'
 import { Observable } from 'rxjs'
 import { tap } from 'rxjs/operators'
-import { PostHog as Insights } from '@hanzo/insights-node'
+import { Insights } from '@hanzo/insights-node'
 import { SandboxDto } from '../sandbox/dto/sandbox.dto'
 import { DockerRegistryDto } from '../docker-registry/dto/docker-registry.dto'
 import { CreateSandboxDto } from '../sandbox/dto/create-sandbox.dto'
