@@ -4,7 +4,7 @@
  */
 
 import { FC, ReactNode } from 'react'
-import { PostHogProvider } from 'posthog-js/react'
+import { PostHogProvider as InsightsProvider } from '@hanzo/insights/react'
 
 const insightsKey = import.meta.env.VITE_INSIGHTS_KEY
 const insightsHost = import.meta.env.VITE_INSIGHTS_HOST
@@ -24,7 +24,7 @@ export const InsightsProviderWrapper: FC<InsightsProviderWrapperProps> = ({ chil
   }
 
   return (
-    <PostHogProvider
+    <InsightsProvider
       apiKey={insightsKey}
       options={{
         api_host: insightsHost,
@@ -35,6 +35,6 @@ export const InsightsProviderWrapper: FC<InsightsProviderWrapperProps> = ({ chil
       }}
     >
       {children}
-    </PostHogProvider>
+    </InsightsProvider>
   )
 }
