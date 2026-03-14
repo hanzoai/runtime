@@ -6,28 +6,28 @@
 import { FC, ReactNode } from 'react'
 import { PostHogProvider } from 'posthog-js/react'
 
-const posthogKey = import.meta.env.VITE_POSTHOG_KEY
-const posthogHost = import.meta.env.VITE_POSTHOG_HOST
+const insightsKey = import.meta.env.VITE_INSIGHTS_KEY
+const insightsHost = import.meta.env.VITE_INSIGHTS_HOST
 
-interface PostHogProviderWrapperProps {
+interface InsightsProviderWrapperProps {
   children: ReactNode
 }
 
-export const PostHogProviderWrapper: FC<PostHogProviderWrapperProps> = ({ children }) => {
+export const InsightsProviderWrapper: FC<InsightsProviderWrapperProps> = ({ children }) => {
   if (!import.meta.env.PROD) {
     return children
   }
 
-  if (!posthogKey || !posthogHost) {
-    console.error('Invalid PostHog configuration')
+  if (!insightsKey || !insightsHost) {
+    console.error('Invalid Insights configuration')
     return children
   }
 
   return (
     <PostHogProvider
-      apiKey={posthogKey}
+      apiKey={insightsKey}
       options={{
-        api_host: posthogHost,
+        api_host: insightsHost,
         person_profiles: 'always',
         autocapture: false, // ignore default frontend events
         capture_pageview: false, // initial pageview (handled in App.tsx)

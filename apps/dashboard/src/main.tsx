@@ -6,7 +6,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
-import { PostHogProviderWrapper } from './components/PostHogProviderWrapper'
+import { InsightsProviderWrapper } from './components/InsightsProviderWrapper'
 import { oidcConfig } from './auth/oidc-config'
 import { AuthProvider } from 'react-oidc-context'
 import App from './App'
@@ -19,13 +19,13 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <ErrorBoundary FallbackComponent={ErrorBoundaryFallback}>
-      <PostHogProviderWrapper>
+      <InsightsProviderWrapper>
         <AuthProvider {...oidcConfig}>
           <BrowserRouter>
             <App />
           </BrowserRouter>
         </AuthProvider>
-      </PostHogProviderWrapper>
+      </InsightsProviderWrapper>
     </ErrorBoundary>
   </React.StrictMode>,
 )
