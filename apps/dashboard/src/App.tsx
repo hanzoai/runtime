@@ -13,7 +13,7 @@ import { useAuth } from 'react-oidc-context'
 import LoadingFallback from './components/LoadingFallback'
 import Snapshots from './pages/Snapshots'
 import Registries from './pages/Registries'
-import { usePostHog } from 'posthog-js/react'
+import { useInsights } from '@hanzo/insights/react'
 import {
   Dialog,
   DialogContent,
@@ -63,12 +63,12 @@ const SlackRedirect = () => {
 
 function App() {
   const location = useLocation()
-  const posthog = usePostHog()
+  const insights = useInsights()
   const { error: authError, isAuthenticated, user, signoutRedirect } = useAuth()
 
   useEffect(() => {
-    if (import.meta.env.PROD && isAuthenticated && user && posthog?.get_distinct_id() !== user.profile.sub) {
-      posthog?.identify(user.profile.sub, {
+    if (import.meta.env.PROD && isAuthenticated && user && insights?.get_distinct_id() !== user.profile.sub) {
+      insights?.identify(user.profile.sub, {
         email: user.profile.email,
         name: user.profile.name,
       })
@@ -84,16 +84,16 @@ function App() {
         },
       }
     }
-  }, [isAuthenticated, user, posthog])
+  }, [isAuthenticated, user, insights])
 
-  // Hack for tracking PostHog pageviews in SPAs
+  // Track pageviews in SPAs
   useEffect(() => {
     if (import.meta.env.PROD) {
-      posthog?.capture('$pageview', {
+      insights?.capture('$pageview', {
         $current_url: window.location.href,
       })
     }
-  }, [location, posthog])
+  }, [location, insights])
 
   if (authError) {
     return (

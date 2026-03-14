@@ -13,7 +13,7 @@ import {
 } from '@nestjs/common'
 import { Observable } from 'rxjs'
 import { tap } from 'rxjs/operators'
-import { PostHog } from 'posthog-node'
+import { PostHog as Insights } from '@hanzo/insights-node'
 import { SandboxDto } from '../sandbox/dto/sandbox.dto'
 import { DockerRegistryDto } from '../docker-registry/dto/docker-registry.dto'
 import { CreateSandboxDto } from '../sandbox/dto/create-sandbox.dto'
@@ -51,29 +51,27 @@ type CommonCaptureProps = {
 
 @Injectable()
 export class MetricsInterceptor implements NestInterceptor, OnApplicationShutdown {
-  private readonly posthog?: PostHog
+  private readonly insights?: Insights
   private readonly logger = new Logger(MetricsInterceptor.name)
 
   constructor() {
-    if (!process.env.POSTHOG_API_KEY) {
-      this.logger.warn('POSTHOG_API_KEY is not set, metrics will not be recorded')
+    if (!process.env.INSIGHTS_API_KEY) {
+      this.logger.warn('INSIGHTS_API_KEY is not set, metrics will not be recorded')
       return
     }
 
-    if (!process.env.POSTHOG_HOST) {
-      this.logger.warn('POSTHOG_HOST is not set, metrics will not be recorded')
+    if (!process.env.INSIGHTS_HOST) {
+      this.logger.warn('INSIGHTS_HOST is not set, metrics will not be recorded')
       return
     }
 
-    // Initialize PostHog client
-    // Make sure to set POSTHOG_API_KEY in your environment variables
-    this.posthog = new PostHog(process.env.POSTHOG_API_KEY, {
-      host: process.env.POSTHOG_HOST,
+    this.insights = new Insights(process.env.INSIGHTS_API_KEY, {
+      host: process.env.INSIGHTS_HOST,
     })
   }
 
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
-    if (!this.posthog) {
+    if (!this.insights) {
       return next.handle()
     }
 
@@ -625,11 +623,11 @@ export class MetricsInterceptor implements NestInterceptor, OnApplicationShutdow
     request: CreateOrganizationDto,
     response: OrganizationDto,
   ) {
-    if (!this.posthog) {
+    if (!this.insights) {
       return
     }
 
-    this.posthog.groupIdentify({
+    this.insights.groupIdentify({
       groupType: 'organization',
       groupKey: response.id,
       properties: {
@@ -813,11 +811,11 @@ export class MetricsInterceptor implements NestInterceptor, OnApplicationShutdow
   }
 
   private capture(event: string, props: CommonCaptureProps, errorEvent?: string, extraProps?: Record<string, any>) {
-    if (!this.posthog) {
+    if (!this.insights) {
       return
     }
 
-    this.posthog.capture({
+    this.insights.capture({
       distinctId: props.distinctId,
       event: props.error ? errorEvent || event : event,
       groups: this.captureCommonGroups(props),
@@ -842,8 +840,8 @@ export class MetricsInterceptor implements NestInterceptor, OnApplicationShutdow
   }
 
   onApplicationShutdown(/*signal?: string*/) {
-    if (this.posthog) {
-      this.posthog.shutdown()
+    if (this.insights) {
+      this.insights.shutdown()
     }
   }
 }

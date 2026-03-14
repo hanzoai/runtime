@@ -12,7 +12,7 @@ import { useApi } from '@/hooks/useApi'
 import { ISelectedOrganizationContext, SelectedOrganizationContext } from '@/contexts/SelectedOrganizationContext'
 import { LocalStorageKey } from '@/enums/LocalStorageKey'
 import { useOrganizations } from '@/hooks/useOrganizations'
-import { usePostHog } from 'posthog-js/react'
+import { useInsights } from '@hanzo/insights/react'
 import { handleApiError } from '@/lib/error-handling'
 
 type Props = {
@@ -22,7 +22,7 @@ type Props = {
 export function SelectedOrganizationProvider(props: Props) {
   const { user } = useAuth()
   const { organizationsApi } = useApi()
-  const posthog = usePostHog()
+  const insights = useInsights()
 
   const { organizations } = useOrganizations()
 
@@ -59,12 +59,12 @@ export function SelectedOrganizationProvider(props: Props) {
   }, [organizations, selectedOrganizationId])
 
   useEffect(() => {
-    if (!posthog || !selectedOrganizationId) {
+    if (!insights || !selectedOrganizationId) {
       return
     }
 
-    posthog.group('organization', selectedOrganizationId)
-  }, [posthog, selectedOrganizationId])
+    insights.group('organization', selectedOrganizationId)
+  }, [insights, selectedOrganizationId])
 
   const getOrganizationMembers = useCallback(
     async (selectedOrganizationId: string | null) => {
