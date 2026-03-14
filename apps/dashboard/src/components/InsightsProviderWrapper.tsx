@@ -4,7 +4,7 @@
  */
 
 import { FC, ReactNode } from 'react'
-import { PostHogProvider as InsightsProvider } from '@hanzo/insights/react'
+import { InsightsProvider } from '@hanzo/insights/react'
 
 const insightsKey = import.meta.env.VITE_INSIGHTS_KEY
 const insightsHost = import.meta.env.VITE_INSIGHTS_HOST

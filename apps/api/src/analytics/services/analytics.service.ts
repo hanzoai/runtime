@@ -13,7 +13,7 @@ import { SandboxPublicStatusUpdatedEvent } from '../../sandbox/events/sandbox-pu
 import { SandboxStartedEvent } from '../../sandbox/events/sandbox-started.event'
 import { SandboxStateUpdatedEvent } from '../../sandbox/events/sandbox-state-updated.event'
 import { SandboxStoppedEvent } from '../../sandbox/events/sandbox-stopped.event'
-import { PostHog as Insights } from '@hanzo/insights-node'
+import { Insights } from '@hanzo/insights-node'
 import { OnAsyncEvent } from '../../common/decorators/on-async-event.decorator'
 import { Organization } from '../../organization/entities/organization.entity'
 import { OrganizationEvents } from '../../organization/constants/organization-events.constant'
