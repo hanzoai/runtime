@@ -1,6 +1,6 @@
 module github.com/hanzoai/computer-use
 
-go 1.23.0
+go 1.26.3
 
 require (
 	github.com/go-vgo/robotgo v0.110.8

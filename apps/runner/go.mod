@@ -1,6 +1,6 @@
 module github.com/hanzoai/runner
 
-go 1.23.2
+go 1.26.3
 
 require (
 	github.com/docker/docker v27.5.1+incompatible

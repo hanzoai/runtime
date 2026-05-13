@@ -1,6 +1,6 @@
 module github.com/hanzoai/daemon
 
-go 1.23.0
+go 1.26.3
 
 // v0.5.0 breaks tailscale-connected docker clients so we need to pin it to v0.4.0
 replace github.com/docker/go-connections => github.com/docker/go-connections v0.4.0
