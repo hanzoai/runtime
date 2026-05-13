@@ -1,8 +1,8 @@
 module github.com/hanzoai/runtime/cli
 
-go 1.23.0
+go 1.26.3
 
-toolchain go1.23.5
+toolchain go1.26.3
 
 require (
 	github.com/charmbracelet/bubbletea v1.1.0
