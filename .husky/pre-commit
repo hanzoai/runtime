@@ -1,6 +1,6 @@
 #!/bin/sh
 
-yarn lint-staged
+pnpm exec lint-staged
 
 # Run sync generator check for Python SDK
 ./.husky/pre-commit-sdk-py-sync-check.sh
