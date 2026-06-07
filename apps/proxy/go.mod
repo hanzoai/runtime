@@ -1,6 +1,6 @@
 module github.com/hanzoai/proxy
 
-go 1.26.3
+go 1.26.4
 
 require (
 	github.com/coreos/go-oidc/v3 v3.12.0

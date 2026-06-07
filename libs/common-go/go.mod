@@ -1,6 +1,6 @@
 module github.com/hanzoai/common-go
 
-go 1.26.3
+go 1.26.4
 
 require (
 	github.com/gin-gonic/gin v1.10.1
