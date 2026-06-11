@@ -14,9 +14,9 @@ from hanzo_runtime import HanzoRuntime
 from hanzo_runtime._async import HanzoRuntime as AsyncHanzoRuntime
 
 # Configuration
-IAM_BASE_URL = os.getenv('HANZO_IAM_URL', 'https://iam.hanzo.ai')
-IAM_CLIENT_ID = os.getenv('HANZO_IAM_CLIENT_ID', 'your-client-id')
-IAM_CLIENT_SECRET = os.getenv('HANZO_IAM_CLIENT_SECRET', 'your-client-secret')
+IAM_BASE_URL = os.getenv('IAM_ENDPOINT', 'https://iam.hanzo.ai')
+IAM_CLIENT_ID = os.getenv('IAM_CLIENT_ID', 'your-client-id')
+IAM_CLIENT_SECRET = os.getenv('IAM_CLIENT_SECRET', 'your-client-secret')
 RUNTIME_API_URL = os.getenv('HANZO_RUNTIME_API_URL', 'https://api.hanzo.ai')
 
 
@@ -36,7 +36,7 @@ class HanzoIAMAuth:
         """Authenticate with Hanzo IAM using OAuth2 Client Credentials flow"""
         with httpx.Client() as client:
             response = client.post(
-                f"{self.base_url}/api/login/oauth/access_token",
+                f"{self.base_url}/oauth/token",
                 data={
                     'grant_type': 'client_credentials',
                     'client_id': self.client_id,
@@ -60,7 +60,7 @@ class HanzoIAMAuth:
         """Validate token with IAM (optional - for service-to-service validation)"""
         with httpx.Client() as client:
             response = client.post(
-                f"{self.base_url}/api/login/oauth/introspect",
+                f"{self.base_url}/oauth/introspect",
                 data={
                     'token': token,
                     'token_type_hint': 'access_token'

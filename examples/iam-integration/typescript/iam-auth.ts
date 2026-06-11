@@ -9,9 +9,9 @@ import { HanzoRuntime } from '@hanzo/runtime';
 import axios from 'axios';
 
 // Configuration
-const IAM_BASE_URL = process.env.HANZO_IAM_URL || 'https://iam.hanzo.ai';
-const IAM_CLIENT_ID = process.env.HANZO_IAM_CLIENT_ID || 'your-client-id';
-const IAM_CLIENT_SECRET = process.env.HANZO_IAM_CLIENT_SECRET || 'your-client-secret';
+const IAM_BASE_URL = process.env.IAM_ENDPOINT || 'https://iam.hanzo.ai';
+const IAM_CLIENT_ID = process.env.IAM_CLIENT_ID || 'your-client-id';
+const IAM_CLIENT_SECRET = process.env.IAM_CLIENT_SECRET || 'your-client-secret';
 const RUNTIME_API_URL = process.env.HANZO_RUNTIME_API_URL || 'https://api.hanzo.ai';
 
 /**
@@ -48,7 +48,7 @@ async function authenticateWithIAM(): Promise<string> {
 async function validateToken(token: string): Promise<boolean> {
   try {
     const introspectResponse = await axios.post(
-      `${IAM_BASE_URL}/api/login/oauth/introspect`,
+      `${IAM_BASE_URL}/oauth/introspect`,
       new URLSearchParams({
         token: token,
         token_type_hint: 'access_token'
@@ -147,7 +147,7 @@ class IAMTokenRefresher {
 
   private async refreshToken(): Promise<void> {
     const tokenResponse = await axios.post(
-      `${IAM_BASE_URL}/api/login/oauth/access_token`,
+      `${IAM_BASE_URL}/oauth/token`,
       new URLSearchParams({
         grant_type: 'client_credentials',
         client_id: IAM_CLIENT_ID,
