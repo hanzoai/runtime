@@ -50,13 +50,13 @@ Set environment variables for Runtime API:
 
 ```bash
 # IAM Integration
-HANZO_IAM_URL=https://iam.hanzo.ai
-HANZO_IAM_CLIENT_ID=runtime-client
-HANZO_IAM_CLIENT_SECRET=your-secret-here
-HANZO_IAM_VALIDATE_TOKENS=true
+IAM_ENDPOINT=https://iam.hanzo.ai
+IAM_CLIENT_ID=runtime-client
+IAM_CLIENT_SECRET=your-secret-here
+IAM_VALIDATE_TOKENS=true
 
 # Token validation cache (optional)
-HANZO_IAM_CACHE_TTL=300  # 5 minutes
+IAM_CACHE_TTL=300  # 5 minutes
 ```
 
 ### 3. Configure Scopes and Permissions
@@ -120,7 +120,7 @@ print(result.output)
 
 ```bash
 # Get token from IAM
-TOKEN=$(curl -X POST https://iam.hanzo.ai/api/login/oauth/access_token \
+TOKEN=$(curl -X POST https://iam.hanzo.ai/oauth/token \
   -d "grant_type=client_credentials" \
   -d "client_id=runtime-client" \
   -d "client_secret=$CLIENT_SECRET" \
@@ -233,7 +233,7 @@ Enable debug logging:
 
 ```bash
 # Runtime API
-HANZO_IAM_DEBUG=true
+IAM_DEBUG=true
 
 # Client SDK
 export DEBUG=hanzo:*

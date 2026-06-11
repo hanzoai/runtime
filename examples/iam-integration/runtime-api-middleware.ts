@@ -46,7 +46,7 @@ class IAMTokenValidator {
     try {
       // Introspect token with IAM
       const response = await axios.post(
-        `${this.config.baseUrl}/api/login/oauth/introspect`,
+        `${this.config.baseUrl}/oauth/introspect`,
         new URLSearchParams({
           token: token,
           token_type_hint: 'access_token'
@@ -170,9 +170,9 @@ export function requireScope(scope: string) {
 export function setupRuntimeAPIWithIAM(app: any) {
   // Configure IAM integration
   const iamConfig: IAMConfig = {
-    baseUrl: process.env.HANZO_IAM_URL || 'https://iam.hanzo.ai',
-    clientId: process.env.HANZO_IAM_CLIENT_ID!,
-    clientSecret: process.env.HANZO_IAM_CLIENT_SECRET!,
+    baseUrl: process.env.IAM_ENDPOINT || 'https://iam.hanzo.ai',
+    clientId: process.env.IAM_CLIENT_ID!,
+    clientSecret: process.env.IAM_CLIENT_SECRET!,
     cacheTTL: 300 // Cache validations for 5 minutes
   };
 
