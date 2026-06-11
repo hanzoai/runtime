@@ -4,8 +4,7 @@
 package common
 
 import (
-	"github.com/prometheus/client_golang/prometheus"
-	"github.com/prometheus/client_golang/prometheus/promauto"
+	metric "github.com/luxfi/metric"
 )
 
 type PrometheusOperationStatus string
@@ -18,8 +17,8 @@ const (
 // Define your metrics
 var (
 	// Histogram to track duration of container operations
-	ContainerOperationDuration = promauto.NewHistogramVec(
-		prometheus.HistogramOpts{
+	ContainerOperationDuration = metric.NewHistogramVec(
+		metric.HistogramOpts{
 			Name: "container_operation_duration_seconds",
 			Help: "Time taken for container operations in seconds",
 			// Buckets optimized for detecting anomalies in operation durations
@@ -29,8 +28,8 @@ var (
 	)
 
 	// Counter to track occurrence of container operations with status
-	ContainerOperationCount = promauto.NewCounterVec(
-		prometheus.CounterOpts{
+	ContainerOperationCount = metric.NewCounterVec(
+		metric.CounterOpts{
 			Name: "container_operation_total",
 			Help: "Total number of container operations",
 		},

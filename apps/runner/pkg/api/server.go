@@ -25,7 +25,7 @@ import (
 	"github.com/hanzoai/runner/pkg/api/controllers"
 	"github.com/hanzoai/runner/pkg/api/docs"
 	"github.com/hanzoai/runner/pkg/api/middlewares"
-	"github.com/prometheus/client_golang/prometheus/promhttp"
+	metric "github.com/luxfi/metric"
 
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
@@ -85,7 +85,7 @@ func (a *ApiServer) Start() error {
 
 	public := a.router.Group("/")
 	public.GET("", controllers.HealthCheck)
-	public.GET("/metrics", gin.WrapH(promhttp.Handler()))
+	public.GET("/metrics", gin.WrapH(metric.NewHTTPHandler(metric.DefaultGatherer, metric.HandlerOpts{})))
 
 	if config.GetEnvironment() == "development" {
 		public.GET("/api/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
