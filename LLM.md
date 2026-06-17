@@ -1,7 +1,10 @@
-# runtime — AI Assistant Context
+# runtime
 
-<div align="center">
+Hanzo Runtime — secure sandbox infrastructure for executing AI-generated code. Sub-90ms sandbox creation, isolated per-run, OCI/Docker image support, with File/Git/LSP/Execute APIs and optional persistence.
 
-[![Documentation](https://img.shields.io/github/v/release/hanzoai/runtime?label=Docs&color=23cc71)](https://github.com/hanzoai/runtime)
-![License](https://img.shields.io/badge/License-AGPL--3-blue)
-[![Go Report Card](https://goreportcard.com/badge/github.com/hanzoai/runtime)](https://goreportcard.com/report/github.com/hanzoai/runtime)
+Monorepo (Poetry, `package-mode = false`): SDKs under `libs/` — `sdk-python` (`hanzo-runtime`), `api-client-python`, `api-client-python-async`. TypeScript SDK published as `@hanzo/runtime`.
+
+- Python SDK: `pip install hanzo-runtime`
+- TS SDK: `npm install @hanzo/runtime`
+
+Full docs: README.md
