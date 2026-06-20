@@ -16,7 +16,7 @@ concurrency:
 jobs:
   go-work:
     name: Go work
-    runs-on: ubuntu-latest
+    runs-on: hanzo-build-linux-amd64
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
@@ -31,7 +31,7 @@ jobs:
 
   golangci:
     name: Go lint
-    runs-on: ubuntu-latest
+    runs-on: hanzo-build-linux-amd64
     strategy:
       matrix:
         working-directory: [apps/daemon, apps/runner, apps/cli, apps/proxy]
@@ -55,7 +55,7 @@ jobs:
 
   lint-computer-use:
     name: Go lint (Computer Use)
-    runs-on: ubuntu-latest
+    runs-on: hanzo-build-linux-amd64
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
@@ -77,7 +77,7 @@ jobs:
 
   format-lint-api-clients:
     name: Format, lint and generate API clients
-    runs-on: ubuntu-latest
+    runs-on: hanzo-build-linux-amd64
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
@@ -110,7 +110,7 @@ jobs:
           git diff --exit-code || (echo "Code not formatted or linting errors! Hint: 'yarn generate:api-client', 'yarn sdk-python:generate-sync', 'yarn lint:fix' and commit" && exit 1)
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: hanzo-build-linux-amd64
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
@@ -132,7 +132,7 @@ jobs:
           yarn build
 
   license-check:
-    runs-on: ubuntu-latest
+    runs-on: hanzo-build-linux-amd64
     steps:
       - uses: actions/checkout@v4
 
