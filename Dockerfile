@@ -1,7 +1,7 @@
 # Hanzo Runtime Service Dockerfile
 
 # Build stage
-FROM node:20-alpine AS builder
+FROM ghcr.io/hanzoai/nodejs:v24.18.0 AS builder
 
 WORKDIR /app
 
@@ -23,7 +23,7 @@ COPY . .
 RUN pnpm build || npm run build || true
 
 # Development stage
-FROM node:20-alpine AS development
+FROM ghcr.io/hanzoai/nodejs:v24.18.0 AS development
 
 WORKDIR /app
 
@@ -48,7 +48,7 @@ EXPOSE 3000
 CMD ["pnpm", "dev"]
 
 # Production stage
-FROM node:20-alpine AS production
+FROM ghcr.io/hanzoai/nodejs:v24.18.0 AS production
 
 WORKDIR /app
 
