@@ -73,7 +73,7 @@ function loginToRuntime() {
     state: JSON.stringify({ returnTo: '/dashboard' })
   });
   
-  window.location.href = `/oauth/authorize?${params}`;
+  window.location.href = `/v1/iam/oauth/authorize?${params}`;
 }
 </script>
 ```
@@ -100,8 +100,8 @@ export const iamEnhancedConfig: AuthProviderProps = {
   // Custom metadata for IAM
   metadata: {
     // IAM-specific endpoints
-    end_session_endpoint: `${import.meta.env.VITE_OIDC_DOMAIN}/oauth/logout`,
-    revocation_endpoint: `${import.meta.env.VITE_OIDC_DOMAIN}/oauth/revoke`,
+    end_session_endpoint: `${import.meta.env.VITE_OIDC_DOMAIN}/v1/iam/oauth/logout`,
+    revocation_endpoint: `${import.meta.env.VITE_OIDC_DOMAIN}/v1/iam/oauth/revoke`,
   },
   
   // Handle post-login redirect
@@ -144,7 +144,7 @@ export class IamJwtStrategy extends PassportStrategy(Strategy, 'iam-jwt') {
         cache: true,
         rateLimit: true,
         jwksRequestsPerMinute: 5,
-        jwksUri: `${process.env.IAM_ENDPOINT}/.well-known/jwks`
+        jwksUri: `${process.env.IAM_ENDPOINT}/v1/iam/.well-known/jwks`
       }),
       
       // Validate issuer and audience
@@ -245,7 +245,7 @@ export function IamIntegration() {
 3. **Test API Access**:
    ```bash
    # Get token from IAM
-   TOKEN=$(curl -X POST http://localhost:8000/oauth/token \
+   TOKEN=$(curl -X POST http://localhost:8000/v1/iam/oauth/token \
      -d "grant_type=password" \
      -d "username=admin" \
      -d "password=admin" | jq -r .access_token)

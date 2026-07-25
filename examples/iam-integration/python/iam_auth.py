@@ -36,7 +36,7 @@ class HanzoIAMAuth:
         """Authenticate with Hanzo IAM using OAuth2 Client Credentials flow"""
         with httpx.Client() as client:
             response = client.post(
-                f"{self.base_url}/oauth/token",
+                f"{self.base_url}/v1/iam/oauth/token",
                 data={
                     'grant_type': 'client_credentials',
                     'client_id': self.client_id,
@@ -60,7 +60,7 @@ class HanzoIAMAuth:
         """Validate token with IAM (optional - for service-to-service validation)"""
         with httpx.Client() as client:
             response = client.post(
-                f"{self.base_url}/oauth/introspect",
+                f"{self.base_url}/v1/iam/oauth/introspect",
                 data={
                     'token': token,
                     'token_type_hint': 'access_token'
