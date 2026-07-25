@@ -120,7 +120,7 @@ print(result.output)
 
 ```bash
 # Get token from IAM
-TOKEN=$(curl -X POST https://iam.hanzo.ai/oauth/token \
+TOKEN=$(curl -X POST https://iam.hanzo.ai/v1/iam/oauth/token \
   -d "grant_type=client_credentials" \
   -d "client_id=runtime-client" \
   -d "client_secret=$CLIENT_SECRET" \

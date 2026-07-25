@@ -46,7 +46,7 @@ class IAMTokenValidator {
     try {
       // Introspect token with IAM
       const response = await axios.post(
-        `${this.config.baseUrl}/oauth/introspect`,
+        `${this.config.baseUrl}/v1/iam/oauth/introspect`,
         new URLSearchParams({
           token: token,
           token_type_hint: 'access_token'
