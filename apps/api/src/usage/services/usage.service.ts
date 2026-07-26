@@ -12,7 +12,7 @@ import { SandboxStateUpdatedEvent } from '../../sandbox/events/sandbox-state-upd
 import { SandboxState } from '../../sandbox/enums/sandbox-state.enum'
 import { SandboxEvents } from './../../sandbox/constants/sandbox-events.constants'
 import { Cron, CronExpression } from '@nestjs/schedule'
-import { RedisLockProvider } from '../../sandbox/common/redis-lock.provider'
+import { KVLockProvider } from '../../sandbox/common/kv-lock.provider'
 import { SANDBOX_WARM_POOL_UNASSIGNED_ORGANIZATION } from '../../sandbox/constants/sandbox.constants'
 import { Sandbox } from '../../sandbox/entities/sandbox.entity'
 
@@ -23,7 +23,7 @@ export class UsageService {
   constructor(
     @InjectRepository(SandboxUsagePeriod)
     private sandboxUsagePeriodRepository: Repository<SandboxUsagePeriod>,
-    private readonly redisLockProvider: RedisLockProvider,
+    private readonly kvLockProvider: KVLockProvider,
     @InjectRepository(Sandbox)
     private readonly sandboxRepository: Repository<Sandbox>,
   ) {}
@@ -98,7 +98,7 @@ export class UsageService {
 
   @Cron(CronExpression.EVERY_MINUTE, { name: 'close-and-reopen-usage-periods' })
   async closeAndReopenUsagePeriods() {
-    if (!(await this.redisLockProvider.lock('close-and-reopen-usage-periods', 60))) {
+    if (!(await this.kvLockProvider.lock('close-and-reopen-usage-periods', 60))) {
       return
     }
 
@@ -149,7 +149,7 @@ export class UsageService {
       }
     }
 
-    await this.redisLockProvider.unlock('close-and-reopen-usage-periods')
+    await this.kvLockProvider.unlock('close-and-reopen-usage-periods')
   }
 
   private async waitForLock(sandboxId: string) {
@@ -159,10 +159,10 @@ export class UsageService {
   }
 
   private async aquireLock(sandboxId: string): Promise<boolean> {
-    return await this.redisLockProvider.lock(`usage-period-${sandboxId}`, 60)
+    return await this.kvLockProvider.lock(`usage-period-${sandboxId}`, 60)
   }
 
   private async releaseLock(sandboxId: string) {
-    await this.redisLockProvider.unlock(`usage-period-${sandboxId}`)
+    await this.kvLockProvider.unlock(`usage-period-${sandboxId}`)
   }
 }

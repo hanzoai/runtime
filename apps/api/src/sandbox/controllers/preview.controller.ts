@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: AGPL-3.0
  */
 
-import Redis from 'ioredis'
+import KV from '@hanzo/kv'
 import { Controller, Get, Param, Logger, NotFoundException, UseGuards, Req } from '@nestjs/common'
 import { SandboxService } from '../services/sandbox.service'
 import { ApiResponse, ApiOperation, ApiParam, ApiTags, ApiOAuth2, ApiBearerAuth } from '@nestjs/swagger'
-import { InjectRedis } from '@nestjs-modules/ioredis'
+import { InjectKV } from '../../common/kv.module'
 import { CombinedAuthGuard } from '../../auth/combined-auth.guard'
 import { OrganizationService } from '../../organization/services/organization.service'
 
@@ -17,7 +17,7 @@ export class PreviewController {
   private readonly logger = new Logger(PreviewController.name)
 
   constructor(
-    @InjectRedis() private readonly redis: Redis,
+    @InjectKV() private readonly kv: KV,
     private readonly sandboxService: SandboxService,
     private readonly organizationService: OrganizationService,
   ) {}
@@ -38,7 +38,7 @@ export class PreviewController {
     type: Boolean,
   })
   async isSandboxPublic(@Param('sandboxId') sandboxId: string): Promise<boolean> {
-    const cached = await this.redis.get(`preview:public:${sandboxId}`)
+    const cached = await this.kv.get(`preview:public:${sandboxId}`)
     if (cached) {
       if (cached === '1') {
         return true
@@ -52,18 +52,18 @@ export class PreviewController {
       //  to prevent using the method to check if a sandbox exists
       if (!isPublic) {
         //  cache the result for 3 seconds to avoid unnecessary requests to the database
-        await this.redis.setex(`preview:public:${sandboxId}`, 3, '0')
+        await this.kv.setex(`preview:public:${sandboxId}`, 3, '0')
 
         throw new NotFoundException(`Sandbox with ID ${sandboxId} not found`)
       }
       //  cache the result for 3 seconds to avoid unnecessary requests to the database
-      await this.redis.setex(`preview:public:${sandboxId}`, 3, '1')
+      await this.kv.setex(`preview:public:${sandboxId}`, 3, '1')
       return true
     } catch (ex) {
       if (ex instanceof NotFoundException) {
         //  cache the not found sandbox as well
         //  as it is the same case as for the private sandboxes
-        await this.redis.setex(`preview:public:${sandboxId}`, 3, '0')
+        await this.kv.setex(`preview:public:${sandboxId}`, 3, '0')
         throw ex
       }
       throw ex
@@ -94,7 +94,7 @@ export class PreviewController {
     @Param('sandboxId') sandboxId: string,
     @Param('authToken') authToken: string,
   ): Promise<boolean> {
-    const cached = await this.redis.get(`preview:token:${sandboxId}:${authToken}`)
+    const cached = await this.kv.get(`preview:token:${sandboxId}:${authToken}`)
     if (cached) {
       if (cached === '1') {
         return true
@@ -103,14 +103,14 @@ export class PreviewController {
     }
     const sandbox = await this.sandboxService.findOne(sandboxId)
     if (!sandbox) {
-      await this.redis.setex(`preview:token:${sandboxId}:${authToken}`, 3, '0')
+      await this.kv.setex(`preview:token:${sandboxId}:${authToken}`, 3, '0')
       throw new NotFoundException(`Sandbox with ID ${sandboxId} not found`)
     }
     if (sandbox.authToken === authToken) {
-      await this.redis.setex(`preview:token:${sandboxId}:${authToken}`, 3, '1')
+      await this.kv.setex(`preview:token:${sandboxId}:${authToken}`, 3, '1')
       return true
     }
-    await this.redis.setex(`preview:token:${sandboxId}:${authToken}`, 3, '0')
+    await this.kv.setex(`preview:token:${sandboxId}:${authToken}`, 3, '0')
     throw new NotFoundException(`Sandbox with ID ${sandboxId} not found`)
   }
 
@@ -127,7 +127,7 @@ export class PreviewController {
     // @ts-ignore
     const userId = req.user?.userId
 
-    const cached = await this.redis.get(`preview:access:${sandboxId}:${userId}`)
+    const cached = await this.kv.get(`preview:access:${sandboxId}:${userId}`)
     if (cached) {
       if (cached === '1') {
         return true
@@ -139,11 +139,11 @@ export class PreviewController {
     const sandbox = await this.sandboxService.findOne(sandboxId)
     const hasAccess = organizations.find((org) => org.id === sandbox.organizationId)
     if (!hasAccess) {
-      await this.redis.setex(`preview:token:${sandboxId}:${userId}`, 3, '0')
+      await this.kv.setex(`preview:token:${sandboxId}:${userId}`, 3, '0')
       throw new NotFoundException(`Sandbox with ID ${sandboxId} not found`)
     }
     //  if user has access, keep it in cache longer
-    await this.redis.setex(`preview:access:${sandboxId}:${userId}`, 30, '1')
+    await this.kv.setex(`preview:access:${sandboxId}:${userId}`, 30, '1')
     return true
   }
 }

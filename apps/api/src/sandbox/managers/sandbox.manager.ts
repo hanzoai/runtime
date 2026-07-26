@@ -16,10 +16,10 @@ import { EnumsSandboxState as RunnerSandboxState } from '@hanzo/runner-api-clien
 import { RunnerState } from '../enums/runner-state.enum'
 import { DockerRegistryService } from '../../docker-registry/services/docker-registry.service'
 import { BackupState } from '../enums/backup-state.enum'
-import { InjectRedis } from '@nestjs-modules/ioredis'
-import { Redis } from 'ioredis'
+import { InjectKV } from '../../common/kv.module'
+import { KV } from '@hanzo/kv'
 import { SnapshotService } from '../services/snapshot.service'
-import { RedisLockProvider } from '../common/redis-lock.provider'
+import { KVLockProvider } from '../common/kv-lock.provider'
 import { SANDBOX_WARM_POOL_UNASSIGNED_ORGANIZATION } from '../constants/sandbox.constants'
 import { DockerProvider } from '../docker/docker-provider'
 import { SnapshotRunnerState } from '../enums/snapshot-runner-state.enum'
@@ -54,9 +54,9 @@ export class SandboxManager {
     private readonly runnerService: RunnerService,
     private readonly runnerApiFactory: RunnerApiFactory,
     private readonly dockerRegistryService: DockerRegistryService,
-    @InjectRedis() private readonly redis: Redis,
+    @InjectKV() private readonly kv: KV,
     private readonly snapshotService: SnapshotService,
-    private readonly redisLockProvider: RedisLockProvider,
+    private readonly kvLockProvider: KVLockProvider,
     private readonly dockerProvider: DockerProvider,
   ) {}
 
@@ -65,7 +65,7 @@ export class SandboxManager {
   async autostopCheck(): Promise<void> {
     const lockKey = 'auto-stop-check-worker-selected'
     //  lock the sync to only run one instance at a time
-    if (!(await this.redisLockProvider.lock(lockKey, 60))) {
+    if (!(await this.kvLockProvider.lock(lockKey, 60))) {
       return
     }
 
@@ -97,7 +97,7 @@ export class SandboxManager {
           await Promise.all(
             sandboxes.map(async (sandbox) => {
               const lockKey = SYNC_INSTANCE_STATE_LOCK_KEY + sandbox.id
-              const acquired = await this.redisLockProvider.lock(lockKey, 30)
+              const acquired = await this.kvLockProvider.lock(lockKey, 30)
               if (!acquired) {
                 return
               }
@@ -115,14 +115,14 @@ export class SandboxManager {
               } catch (error) {
                 this.logger.error(`Error processing auto-stop state for sandbox ${sandbox.id}:`, fromAxiosError(error))
               } finally {
-                await this.redisLockProvider.unlock(lockKey)
+                await this.kvLockProvider.unlock(lockKey)
               }
             }),
           )
         }),
       )
     } finally {
-      await this.redisLockProvider.unlock(lockKey)
+      await this.kvLockProvider.unlock(lockKey)
     }
   }
 
@@ -130,7 +130,7 @@ export class SandboxManager {
   async autoArchiveCheck(): Promise<void> {
     const lockKey = 'auto-archive-check-worker-selected'
     //  lock the sync to only run one instance at a time
-    if (!(await this.redisLockProvider.lock(lockKey, 60))) {
+    if (!(await this.kvLockProvider.lock(lockKey, 60))) {
       return
     }
 
@@ -162,7 +162,7 @@ export class SandboxManager {
           await Promise.all(
             sandboxes.map(async (sandbox) => {
               const lockKey = SYNC_INSTANCE_STATE_LOCK_KEY + sandbox.id
-              const acquired = await this.redisLockProvider.lock(lockKey, 30)
+              const acquired = await this.kvLockProvider.lock(lockKey, 30)
               if (!acquired) {
                 return
               }
@@ -178,14 +178,14 @@ export class SandboxManager {
                   fromAxiosError(error),
                 )
               } finally {
-                await this.redisLockProvider.unlock(lockKey)
+                await this.kvLockProvider.unlock(lockKey)
               }
             }),
           )
         }),
       )
     } finally {
-      await this.redisLockProvider.unlock(lockKey)
+      await this.kvLockProvider.unlock(lockKey)
     }
   }
 
@@ -193,7 +193,7 @@ export class SandboxManager {
   async autoDeleteCheck(): Promise<void> {
     const lockKey = 'auto-delete-check-worker-selected'
     //  lock the sync to only run one instance at a time
-    if (!(await this.redisLockProvider.lock(lockKey, 60))) {
+    if (!(await this.kvLockProvider.lock(lockKey, 60))) {
       return
     }
 
@@ -224,7 +224,7 @@ export class SandboxManager {
           await Promise.all(
             sandboxes.map(async (sandbox) => {
               const lockKey = SYNC_INSTANCE_STATE_LOCK_KEY + sandbox.id
-              const acquired = await this.redisLockProvider.lock(lockKey, 30)
+              const acquired = await this.kvLockProvider.lock(lockKey, 30)
               if (!acquired) {
                 return
               }
@@ -240,14 +240,14 @@ export class SandboxManager {
                   fromAxiosError(error),
                 )
               } finally {
-                await this.redisLockProvider.unlock(lockKey)
+                await this.kvLockProvider.unlock(lockKey)
               }
             }),
           )
         }),
       )
     } finally {
-      await this.redisLockProvider.unlock(lockKey)
+      await this.kvLockProvider.unlock(lockKey)
     }
   }
 
@@ -255,7 +255,7 @@ export class SandboxManager {
   @OtelSpan()
   async syncStates(): Promise<void> {
     const lockKey = 'sync-states'
-    if (!(await this.redisLockProvider.lock(lockKey, 30))) {
+    if (!(await this.kvLockProvider.lock(lockKey, 30))) {
       return
     }
 
@@ -278,13 +278,13 @@ export class SandboxManager {
         this.syncInstanceState(sandbox.id)
       }),
     )
-    await this.redisLockProvider.unlock(lockKey)
+    await this.kvLockProvider.unlock(lockKey)
   }
 
   @Cron(CronExpression.EVERY_10_SECONDS, { name: 'sync-archived-desired-states' })
   async syncArchivedDesiredStates(): Promise<void> {
     const lockKey = 'sync-archived-desired-states'
-    if (!(await this.redisLockProvider.lock(lockKey, 30))) {
+    if (!(await this.kvLockProvider.lock(lockKey, 30))) {
       return
     }
 
@@ -321,13 +321,13 @@ export class SandboxManager {
         this.syncInstanceState(sandbox.id)
       }),
     )
-    await this.redisLockProvider.unlock(lockKey)
+    await this.kvLockProvider.unlock(lockKey)
   }
 
   async syncInstanceState(sandboxId: string): Promise<void> {
     //  prevent syncState cron from running multiple instances of the same sandbox
     const lockKey = SYNC_INSTANCE_STATE_LOCK_KEY + sandboxId
-    const acquired = await this.redisLockProvider.lock(lockKey, 360)
+    const acquired = await this.kvLockProvider.lock(lockKey, 360)
     if (!acquired) {
       return
     }
@@ -337,7 +337,7 @@ export class SandboxManager {
     })
 
     if ([SandboxState.DESTROYED, SandboxState.ERROR, SandboxState.BUILD_FAILED].includes(sandbox.state)) {
-      await this.redisLockProvider.unlock(lockKey)
+      await this.kvLockProvider.unlock(lockKey)
       return
     }
 
@@ -380,7 +380,7 @@ export class SandboxManager {
       }
     }
 
-    await this.redisLockProvider.unlock(lockKey)
+    await this.kvLockProvider.unlock(lockKey)
     if (syncState === SYNC_AGAIN) {
       this.syncInstanceState(sandboxId)
     }
@@ -490,7 +490,7 @@ export class SandboxManager {
 
   private async handleSandboxDesiredStateArchived(sandbox: Sandbox): Promise<SyncState> {
     const lockKey = 'archive-lock-' + sandbox.runnerId
-    if (!(await this.redisLockProvider.lock(lockKey, 10))) {
+    if (!(await this.kvLockProvider.lock(lockKey, 10))) {
       return DONT_SYNC_AGAIN
     }
 
@@ -510,7 +510,7 @@ export class SandboxManager {
       //  max 3 sandboxes can be archived at the same time on the same runner
       //  this is to prevent the runner from being overloaded
       if (inProgressOnRunner.length > 2) {
-        await this.redisLockProvider.unlock(lockKey)
+        await this.kvLockProvider.unlock(lockKey)
         return
       }
     }
@@ -521,20 +521,20 @@ export class SandboxManager {
         //  fallthrough to archiving state
       }
       case SandboxState.ARCHIVING: {
-        await this.redisLockProvider.unlock(lockKey)
+        await this.kvLockProvider.unlock(lockKey)
 
         //  if the backup state is error, we need to retry the backup
         if (sandbox.backupState === BackupState.ERROR) {
           const archiveErrorRetryKey = 'archive-error-retry-' + sandbox.id
-          const archiveErrorRetryCountRaw = await this.redis.get(archiveErrorRetryKey)
+          const archiveErrorRetryCountRaw = await this.kv.get(archiveErrorRetryKey)
           const archiveErrorRetryCount = archiveErrorRetryCountRaw ? parseInt(archiveErrorRetryCountRaw) : 0
           //  if the archive error retry count is greater than 3, we need to mark the sandbox as error
           if (archiveErrorRetryCount > 3) {
             await this.updateSandboxState(sandbox.id, SandboxState.ERROR, undefined, 'Failed to archive sandbox')
-            await this.redis.del(archiveErrorRetryKey)
+            await this.kv.del(archiveErrorRetryKey)
             return DONT_SYNC_AGAIN
           }
-          await this.redis.setex('archive-error-retry-' + sandbox.id, 720, String(archiveErrorRetryCount + 1))
+          await this.kv.setex('archive-error-retry-' + sandbox.id, 720, String(archiveErrorRetryCount + 1))
 
           //  reset the backup state to pending to retry the backup
           await this.sandboxRepository.update(sandbox.id, {

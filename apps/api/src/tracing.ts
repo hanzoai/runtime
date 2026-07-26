@@ -56,6 +56,10 @@ if (process.env.OTEL_ENABLED === 'true') {
     instrumentations: [
       new HttpInstrumentation({ requireParentforOutgoingSpans: true, requireParentforIncomingSpans: true }),
       new NestInstrumentation(),
+      // NOTE: this instrumentation hooks the module named 'ioredis' and this
+      // service now uses '@hanzo/kv', so it currently patches nothing. Left in
+      // place, and inert, until an instrumentation targeting '@hanzo/kv' exists
+      // — removing it would hide that KV calls are no longer traced.
       new IORedisInstrumentation({ requireParentSpan: true }),
       new PgInstrumentation({ requireParentSpan: true }),
     ],

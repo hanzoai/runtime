@@ -37,8 +37,8 @@ import { RequiredOrganizationResourcePermissions } from '../../organization/deco
 import { OrganizationResourcePermission } from '../../organization/enums/organization-resource-permission.enum'
 import { OrganizationResourceActionGuard } from '../../organization/guards/organization-resource-action.guard'
 import { VolumeDto } from '../dto/volume.dto'
-import { InjectRedis } from '@nestjs-modules/ioredis'
-import Redis from 'ioredis'
+import { InjectKV } from '../../common/kv.module'
+import KV from '@hanzo/kv'
 import { ForbiddenException } from '@nestjs/common'
 
 @ApiTags('volumes')
@@ -51,7 +51,7 @@ export class VolumeController {
   private readonly logger = new Logger(VolumeController.name)
 
   constructor(
-    @InjectRedis() private readonly redis: Redis,
+    @InjectKV() private readonly kv: KV,
     private readonly volumeService: VolumeService,
   ) {}
 
@@ -103,9 +103,9 @@ export class VolumeController {
     //  protect against race condition on volume create abuse
     //  not 100% correct when close to quota limit
     const concurrentCreateKey = `volume-concurrent-create-${organization.id}`
-    let concurrentCreateCount = parseInt(await this.redis.get(concurrentCreateKey)) || 0
+    let concurrentCreateCount = parseInt(await this.kv.get(concurrentCreateKey)) || 0
     concurrentCreateCount++
-    await this.redis.setex(concurrentCreateKey, 1, concurrentCreateCount)
+    await this.kv.setex(concurrentCreateKey, 1, concurrentCreateCount)
 
     const activeVolumeCount = await this.volumeService.countActive(organization.id)
 

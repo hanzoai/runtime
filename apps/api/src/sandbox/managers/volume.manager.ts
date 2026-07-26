@@ -10,9 +10,9 @@ import { Volume } from '../entities/volume.entity'
 import { VolumeState } from '../enums/volume-state.enum'
 import { Cron, CronExpression } from '@nestjs/schedule'
 import { S3Client, CreateBucketCommand, ListBucketsCommand, PutBucketTaggingCommand } from '@aws-sdk/client-s3'
-import { InjectRedis } from '@nestjs-modules/ioredis'
-import { Redis } from 'ioredis'
-import { RedisLockProvider } from '../common/redis-lock.provider'
+import { InjectKV } from '../../common/kv.module'
+import { KV } from '@hanzo/kv'
+import { KVLockProvider } from '../common/kv-lock.provider'
 import { TypedConfigService } from '../../config/typed-config.service'
 import { deleteS3Bucket } from '../../common/utils/delete-s3-bucket'
 
@@ -29,8 +29,8 @@ export class VolumeManager implements OnModuleInit {
     @InjectRepository(Volume)
     private readonly volumeRepository: Repository<Volume>,
     private readonly configService: TypedConfigService,
-    @InjectRedis() private readonly redis: Redis,
-    private readonly redisLockProvider: RedisLockProvider,
+    @InjectKV() private readonly kv: KV,
+    private readonly kvLockProvider: KVLockProvider,
   ) {
     const endpoint = this.configService.getOrThrow('s3.endpoint')
     const region = this.configService.getOrThrow('s3.region')
@@ -75,7 +75,7 @@ export class VolumeManager implements OnModuleInit {
     try {
       // Lock the entire process
       const lockKey = 'process-pending-volumes'
-      if (!(await this.redisLockProvider.lock(lockKey, 30))) {
+      if (!(await this.kvLockProvider.lock(lockKey, 30))) {
         return
       }
 
@@ -93,7 +93,7 @@ export class VolumeManager implements OnModuleInit {
 
           // Get lock for this specific volume
           const volumeLockKey = `${VOLUME_STATE_LOCK_KEY}${volume.id}`
-          const acquired = await this.redisLockProvider.lock(volumeLockKey, 30)
+          const acquired = await this.kvLockProvider.lock(volumeLockKey, 30)
           if (!acquired) {
             return
           }
@@ -103,12 +103,12 @@ export class VolumeManager implements OnModuleInit {
             await this.processVolumeState(volume)
           } finally {
             this.processingVolumes.delete(volume.id)
-            await this.redisLockProvider.unlock(volumeLockKey)
+            await this.kvLockProvider.unlock(volumeLockKey)
           }
         }),
       )
 
-      await this.redisLockProvider.unlock(lockKey)
+      await this.kvLockProvider.unlock(lockKey)
     } catch (error) {
       this.logger.error('Error processing pending volumes:', error)
     }
@@ -138,7 +138,7 @@ export class VolumeManager implements OnModuleInit {
   private async handlePendingCreate(volume: Volume, lockKey: string): Promise<void> {
     try {
       // Refresh lock before state change
-      await this.redis.setex(lockKey, 30, '1')
+      await this.kv.setex(lockKey, 30, '1')
 
       // Update state to CREATING
       await this.volumeRepository.save({
@@ -147,7 +147,7 @@ export class VolumeManager implements OnModuleInit {
       })
 
       // Refresh lock before S3 operation
-      await this.redis.setex(lockKey, 30, '1')
+      await this.kv.setex(lockKey, 30, '1')
 
       // Create bucket in Minio/S3
       const createBucketCommand = new CreateBucketCommand({
@@ -179,7 +179,7 @@ export class VolumeManager implements OnModuleInit {
       )
 
       // Refresh lock before final state update
-      await this.redis.setex(lockKey, 30, '1')
+      await this.kv.setex(lockKey, 30, '1')
 
       // Update volume state to READY
       await this.volumeRepository.save({
@@ -200,7 +200,7 @@ export class VolumeManager implements OnModuleInit {
   private async handlePendingDelete(volume: Volume, lockKey: string): Promise<void> {
     try {
       // Refresh lock before state change
-      await this.redis.setex(lockKey, 30, '1')
+      await this.kv.setex(lockKey, 30, '1')
 
       // Update state to DELETING
       await this.volumeRepository.save({
@@ -209,13 +209,13 @@ export class VolumeManager implements OnModuleInit {
       })
 
       // Refresh lock before S3 operation
-      await this.redis.setex(lockKey, 30, '1')
+      await this.kv.setex(lockKey, 30, '1')
 
       // Delete bucket from Minio/S3
       await deleteS3Bucket(this.s3Client, volume.getBucketName())
 
       // Refresh lock before final state update
-      await this.redis.setex(lockKey, 30, '1')
+      await this.kv.setex(lockKey, 30, '1')
 
       // Delete any existing volume record with the deleted state and the same name in the same organization
       await this.volumeRepository.delete({

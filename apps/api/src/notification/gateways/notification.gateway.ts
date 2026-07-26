@@ -14,8 +14,8 @@ import { SandboxDto } from '../../sandbox/dto/sandbox.dto'
 import { SnapshotDto } from '../../sandbox/dto/snapshot.dto'
 import { SnapshotEvents } from '../../sandbox/constants/snapshot-events'
 import { SnapshotState } from '../../sandbox/enums/snapshot-state.enum'
-import { InjectRedis } from '@nestjs-modules/ioredis'
-import Redis from 'ioredis'
+import { InjectKV } from '../../common/kv.module'
+import KV from '@hanzo/kv'
 import { JwtStrategy } from '../../auth/jwt.strategy'
 import { VolumeEvents } from '../../sandbox/constants/volume-events'
 import { VolumeDto } from '../../sandbox/dto/volume.dto'
@@ -35,14 +35,14 @@ export class NotificationGateway implements OnGatewayInit, OnModuleInit {
   constructor(
     private readonly jwtStrategy: JwtStrategy,
     private readonly organizationService: OrganizationService,
-    @InjectRedis() private readonly redis: Redis,
+    @InjectKV() private readonly kv: KV,
   ) {}
 
   onModuleInit() {
-    const pubClient = this.redis.duplicate()
+    const pubClient = this.kv.duplicate()
     const subClient = pubClient.duplicate()
     this.server.adapter(createAdapter(pubClient, subClient))
-    this.logger.debug('Socket.io initialized with Redis adapter')
+    this.logger.debug('Socket.io initialized with KV adapter')
   }
 
   afterInit(server: Server) {

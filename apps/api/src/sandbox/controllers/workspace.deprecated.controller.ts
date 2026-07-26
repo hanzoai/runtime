@@ -24,7 +24,7 @@ import {
   Next,
   ParseBoolPipe,
 } from '@nestjs/common'
-import Redis from 'ioredis'
+import KV from '@hanzo/kv'
 import { CombinedAuthGuard } from '../../auth/combined-auth.guard'
 import { SandboxService as WorkspaceService } from '../services/sandbox.service'
 import {
@@ -45,7 +45,7 @@ import { Sandbox as WorkspaceEntity } from '../entities/sandbox.entity'
 import { ContentTypeInterceptor } from '../../common/interceptors/content-type.interceptors'
 import { Throttle } from '@nestjs/throttler'
 import { Runner } from '../entities/runner.entity'
-import { InjectRedis } from '@nestjs-modules/ioredis'
+import { InjectKV } from '../../common/kv.module'
 import { Sandbox as Workspace } from '../decorators/sandbox.decorator'
 import { SandboxAccessGuard as WorkspaceAccessGuard } from '../guards/sandbox-access.guard'
 import { CustomHeaders } from '../../common/constants/header.constants'
@@ -72,7 +72,7 @@ export class WorkspaceController {
   private readonly logger = new Logger(WorkspaceController.name)
 
   constructor(
-    @InjectRedis() private readonly redis: Redis,
+    @InjectKV() private readonly kv: KV,
     private readonly runnerService: RunnerService,
     private readonly workspaceService: WorkspaceService,
     private readonly configService: TypedConfigService,

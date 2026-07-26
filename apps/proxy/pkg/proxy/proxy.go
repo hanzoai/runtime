@@ -65,17 +65,17 @@ func StartProxy(config *config.Config) error {
 		Transport: http.DefaultTransport,
 	}
 
-	if config.Redis != nil {
+	if config.KV != nil {
 		var err error
-		proxy.runnerCache, err = cache.NewRedisCache[RunnerInfo](config.Redis, "proxy:sandbox-runner-info:")
+		proxy.runnerCache, err = cache.NewKVCache[RunnerInfo](config.KV, "proxy:sandbox-runner-info:")
 		if err != nil {
 			return err
 		}
-		proxy.sandboxPublicCache, err = cache.NewRedisCache[bool](config.Redis, "proxy:sandbox-public:")
+		proxy.sandboxPublicCache, err = cache.NewKVCache[bool](config.KV, "proxy:sandbox-public:")
 		if err != nil {
 			return err
 		}
-		proxy.sandboxAuthKeyValidCache, err = cache.NewRedisCache[bool](config.Redis, "proxy:sandbox-auth-key-valid:")
+		proxy.sandboxAuthKeyValidCache, err = cache.NewKVCache[bool](config.KV, "proxy:sandbox-auth-key-valid:")
 		if err != nil {
 			return err
 		}

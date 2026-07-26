@@ -15,10 +15,10 @@ const configuration = {
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
   },
-  redis: {
-    host: process.env.REDIS_HOST,
-    port: parseInt(process.env.REDIS_PORT || '6379', 10),
-    tls: process.env.REDIS_TLS === 'true' ? {} : undefined,
+  kv: {
+    host: process.env.KV_HOST,
+    port: parseInt(process.env.KV_PORT || '6379', 10),
+    tls: process.env.KV_TLS === 'true' ? {} : undefined,
   },
   insights: {
     apiKey: process.env.INSIGHTS_API_KEY,

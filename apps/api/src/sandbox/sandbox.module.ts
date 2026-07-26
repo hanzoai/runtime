@@ -27,7 +27,7 @@ import { DockerProvider } from './docker/docker-provider'
 import { SnapshotRunner } from './entities/snapshot-runner.entity'
 import { DockerRegistry } from '../docker-registry/entities/docker-registry.entity'
 import { SandboxSubscriber } from './subscribers/sandbox.subscriber'
-import { RedisLockProvider } from './common/redis-lock.provider'
+import { KVLockProvider } from './common/kv-lock.provider'
 import { OrganizationModule } from '../organization/organization.module'
 import { SandboxWarmPoolService } from './services/sandbox-warm-pool.service'
 import { WarmPool } from './entities/warm-pool.entity'
@@ -72,7 +72,7 @@ import { SnapshotRunnerService } from './services/snapshot-runner.service'
     SnapshotManager,
     DockerProvider,
     SandboxSubscriber,
-    RedisLockProvider,
+    KVLockProvider,
     SnapshotSubscriber,
     VolumeService,
     VolumeManager,
@@ -82,7 +82,7 @@ import { SnapshotRunnerService } from './services/snapshot-runner.service'
   exports: [
     SandboxService,
     RunnerService,
-    RedisLockProvider,
+    KVLockProvider,
     SnapshotService,
     VolumeService,
     VolumeManager,

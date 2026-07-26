@@ -7,7 +7,7 @@ import { Inject, Injectable, Logger } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import { Cron, CronExpression } from '@nestjs/schedule'
 import { FindOptionsWhere, In, MoreThan, Not, Repository } from 'typeorm'
-import { RedisLockProvider } from '../common/redis-lock.provider'
+import { KVLockProvider } from '../common/kv-lock.provider'
 import { Sandbox } from '../entities/sandbox.entity'
 import { SANDBOX_WARM_POOL_UNASSIGNED_ORGANIZATION } from '../constants/sandbox.constants'
 import { WarmPool } from '../entities/warm-pool.entity'
@@ -24,8 +24,8 @@ import { SandboxState } from '../enums/sandbox-state.enum'
 import { Runner } from '../entities/runner.entity'
 import { WarmPoolTopUpRequested } from '../events/warmpool-topup-requested.event'
 import { WarmPoolEvents } from '../constants/warmpool-events.constants'
-import { InjectRedis } from '@nestjs-modules/ioredis'
-import { Redis } from 'ioredis'
+import { InjectKV } from '../../common/kv.module'
+import { KV } from '@hanzo/kv'
 import { SandboxDesiredState } from '../enums/sandbox-desired-state.enum'
 import { isValidUuid } from '../../common/utils/uuid'
 
@@ -55,11 +55,11 @@ export class SandboxWarmPoolService {
     private readonly snapshotRepository: Repository<Snapshot>,
     @InjectRepository(Runner)
     private readonly runnerRepository: Repository<Runner>,
-    private readonly redisLockProvider: RedisLockProvider,
+    private readonly kvLockProvider: KVLockProvider,
     private readonly configService: ConfigService,
     @Inject(EventEmitter2)
     private eventEmitter: EventEmitter2,
-    @InjectRedis() private readonly redis: Redis,
+    @InjectKV() private readonly kv: KV,
   ) {}
 
   //  on init
@@ -133,7 +133,7 @@ export class SandboxWarmPoolService {
       let warmPoolSandbox: Sandbox | null = null
       for (const sandbox of warmPoolSandboxes) {
         const lockKey = `sandbox-warm-pool-${sandbox.id}`
-        if (!(await this.redisLockProvider.lock(lockKey, 10))) {
+        if (!(await this.kvLockProvider.lock(lockKey, 10))) {
           continue
         }
 
@@ -155,7 +155,7 @@ export class SandboxWarmPoolService {
     await Promise.all(
       warmPoolItems.map(async (warmPoolItem) => {
         const lockKey = `warm-pool-lock-${warmPoolItem.id}`
-        if (!(await this.redisLockProvider.lock(lockKey, 720))) {
+        if (!(await this.kvLockProvider.lock(lockKey, 720))) {
           return
         }
 
@@ -191,7 +191,7 @@ export class SandboxWarmPoolService {
           await Promise.allSettled(promises)
         }
 
-        await this.redisLockProvider.unlock(lockKey)
+        await this.kvLockProvider.unlock(lockKey)
       }),
     )
   }

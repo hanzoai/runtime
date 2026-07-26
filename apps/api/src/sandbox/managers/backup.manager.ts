@@ -16,12 +16,12 @@ import { ResourceNotFoundError } from '../../exceptions/not-found.exception'
 import { BadRequestError } from '../../exceptions/bad-request.exception'
 import { DockerRegistryService } from '../../docker-registry/services/docker-registry.service'
 import { BackupState } from '../enums/backup-state.enum'
-import { InjectRedis } from '@nestjs-modules/ioredis'
-import { Redis } from 'ioredis'
+import { InjectKV } from '../../common/kv.module'
+import { KV } from '@hanzo/kv'
 import { SANDBOX_WARM_POOL_UNASSIGNED_ORGANIZATION } from '../constants/sandbox.constants'
 import { DockerProvider } from '../docker/docker-provider'
 import { fromAxiosError } from '../../common/utils/from-axios-error'
-import { RedisLockProvider } from '../common/redis-lock.provider'
+import { KVLockProvider } from '../common/kv-lock.provider'
 import { OnEvent } from '@nestjs/event-emitter'
 import { SandboxEvents } from '../constants/sandbox-events.constants'
 import { SandboxDestroyedEvent } from '../events/sandbox-destroyed.event'
@@ -38,9 +38,9 @@ export class BackupManager {
     private readonly runnerService: RunnerService,
     private readonly runnerApiFactory: RunnerApiFactory,
     private readonly dockerRegistryService: DockerRegistryService,
-    @InjectRedis() private readonly redis: Redis,
+    @InjectKV() private readonly kv: KV,
     private readonly dockerProvider: DockerProvider,
-    private readonly redisLockProvider: RedisLockProvider,
+    private readonly kvLockProvider: KVLockProvider,
   ) {}
 
   //  on init
@@ -79,7 +79,7 @@ export class BackupManager {
             )
             .map(async (sandbox) => {
               const lockKey = `sandbox-backup-${sandbox.id}`
-              const hasLock = await this.redisLockProvider.lock(lockKey, 60)
+              const hasLock = await this.kvLockProvider.lock(lockKey, 60)
               if (!hasLock) {
                 return
               }
@@ -105,7 +105,7 @@ export class BackupManager {
   async syncBackupStates(): Promise<void> {
     //  lock the sync to only run one instance at a time
     const lockKey = 'sync-backup-states'
-    const hasLock = await this.redisLockProvider.lock(lockKey, 10)
+    const hasLock = await this.kvLockProvider.lock(lockKey, 10)
     if (!hasLock) {
       return
     }
@@ -120,7 +120,7 @@ export class BackupManager {
     await Promise.all(
       sandboxes.map(async (s) => {
         const lockKey = `sandbox-backup-${s.id}`
-        const hasLock = await this.redisLockProvider.lock(lockKey, 60)
+        const hasLock = await this.kvLockProvider.lock(lockKey, 60)
         if (!hasLock) {
           return
         }
@@ -149,14 +149,14 @@ export class BackupManager {
         } catch (error) {
           //  if error, retry 10 times
           const errorRetryKey = `${lockKey}-error-retry`
-          const errorRetryCount = await this.redis.get(errorRetryKey)
+          const errorRetryCount = await this.kv.get(errorRetryKey)
           if (!errorRetryCount) {
-            await this.redis.setex(errorRetryKey, 300, '1')
+            await this.kv.setex(errorRetryKey, 300, '1')
           } else if (parseInt(errorRetryCount) > 10) {
             this.logger.error(`Error processing backup for sandbox ${sandbox.id}:`, fromAxiosError(error))
             await this.updateWorkspacBackupState(sandbox.id, BackupState.ERROR)
           } else {
-            await this.redis.setex(errorRetryKey, 300, errorRetryCount + 1)
+            await this.kv.setex(errorRetryKey, 300, errorRetryCount + 1)
           }
         }
       }),
@@ -318,7 +318,7 @@ export class BackupManager {
   @Cron(CronExpression.EVERY_30_SECONDS, { name: 'sync-stop-state-create-backups' }) // Run every 30 seconds
   async syncStopStateCreateBackups(): Promise<void> {
     const lockKey = 'sync-stop-state-create-backups'
-    const hasLock = await this.redisLockProvider.lock(lockKey, 30)
+    const hasLock = await this.kvLockProvider.lock(lockKey, 30)
     if (!hasLock) {
       return
     }
@@ -337,7 +337,7 @@ export class BackupManager {
         .filter((sandbox) => sandbox.runnerId !== null)
         .map(async (sandbox) => {
           const lockKey = `sandbox-backup-${sandbox.id}`
-          const hasLock = await this.redisLockProvider.lock(lockKey, 30)
+          const hasLock = await this.kvLockProvider.lock(lockKey, 30)
           if (!hasLock) {
             return
           }

@@ -21,7 +21,7 @@ type Config struct {
 	EnableTLS     bool         `envconfig:"ENABLE_TLS"`
 	RuntimeApiUrl string       `envconfig:"RUNTIME_API_URL" validate:"required"`
 	Oidc          OidcConfig   `envconfig:"OIDC"`
-	Redis         *RedisConfig `envconfig:"REDIS"`
+	KV         *KVConfig `envconfig:"KV"`
 }
 
 type OidcConfig struct {
@@ -31,7 +31,7 @@ type OidcConfig struct {
 	Audience     string `envconfig:"AUDIENCE" validate:"required"`
 }
 
-type RedisConfig struct {
+type KVConfig struct {
 	Host     *string `envconfig:"HOST"`
 	Port     *int    `envconfig:"PORT"`
 	Password *string `envconfig:"PASSWORD"`
@@ -70,9 +70,9 @@ func GetConfig() (*Config, error) {
 		config.ProxyPort = DEFAULT_PROXY_PORT
 	}
 
-	if config.Redis != nil {
-		if config.Redis.Host == nil && config.Redis.Port == nil && config.Redis.Password == nil {
-			config.Redis = nil
+	if config.KV != nil {
+		if config.KV.Host == nil && config.KV.Port == nil && config.KV.Password == nil {
+			config.KV = nil
 		}
 	}
 
