@@ -27,9 +27,9 @@ import { ConfigService } from '@nestjs/config'
 import { UserEmailVerifiedEvent } from '../../user/events/user-email-verified.event'
 import { Volume } from '../../sandbox/entities/volume.entity'
 import { Cron, CronExpression } from '@nestjs/schedule'
-import { InjectRedis } from '@nestjs-modules/ioredis'
-import { Redis } from 'ioredis'
-import { RedisLockProvider } from '../../sandbox/common/redis-lock.provider'
+import { InjectKV } from '../../common/kv.module'
+import { KV } from '@hanzo/kv'
+import { KVLockProvider } from '../../sandbox/common/kv-lock.provider'
 import { OrganizationSuspendedSandboxStoppedEvent } from '../events/organization-suspended-sandbox-stopped.event'
 import { SandboxDesiredState } from '../../sandbox/enums/sandbox-desired-state.enum'
 import { SnapshotRunner } from '../../sandbox/entities/snapshot-runner.entity'
@@ -41,7 +41,7 @@ export class OrganizationService implements OnModuleInit {
   private readonly logger = new Logger(OrganizationService.name)
 
   constructor(
-    @InjectRedis() private readonly redis: Redis,
+    @InjectKV() private readonly kv: KV,
     @InjectRepository(Organization)
     private readonly organizationRepository: Repository<Organization>,
     @InjectRepository(Sandbox)
@@ -54,7 +54,7 @@ export class OrganizationService implements OnModuleInit {
     private readonly volumeRepository: Repository<Volume>,
     private readonly eventEmitter: EventEmitter2,
     private readonly configService: ConfigService,
-    private readonly redisLockProvider: RedisLockProvider,
+    private readonly kvLockProvider: KVLockProvider,
   ) {}
 
   async onModuleInit(): Promise<void> {
@@ -305,7 +305,7 @@ export class OrganizationService implements OnModuleInit {
   async stopSuspendedOrganizationSandboxes(): Promise<void> {
     //  lock the sync to only run one instance at a time
     const lockKey = 'stop-suspended-organization-sandboxes'
-    if (!(await this.redisLockProvider.lock(lockKey, 60))) {
+    if (!(await this.kvLockProvider.lock(lockKey, 60))) {
       return
     }
 
@@ -320,7 +320,7 @@ export class OrganizationService implements OnModuleInit {
 
     // Skip if no suspended organizations found to avoid empty IN clause
     if (suspendedOrganizationIds.length === 0) {
-      await this.redis.del(lockKey)
+      await this.kv.del(lockKey)
       return
     }
 
@@ -339,14 +339,14 @@ export class OrganizationService implements OnModuleInit {
       ),
     )
 
-    await this.redis.del(lockKey)
+    await this.kv.del(lockKey)
   }
 
   @Cron(CronExpression.EVERY_10_MINUTES, { name: 'remove-suspended-organization-snapshot-runners' })
   async removeSuspendedOrganizationSnapshotRunners(): Promise<void> {
     //  lock the sync to only run one instance at a time
     const lockKey = 'remove-suspended-organization-snapshot-runners'
-    if (!(await this.redisLockProvider.lock(lockKey, 60))) {
+    if (!(await this.kvLockProvider.lock(lockKey, 60))) {
       return
     }
 
@@ -359,7 +359,7 @@ export class OrganizationService implements OnModuleInit {
 
     // Skip if no suspended organizations found to avoid empty IN clause
     if (suspendedOrganizationIds.length === 0) {
-      await this.redis.del(lockKey)
+      await this.kv.del(lockKey)
       return
     }
 
@@ -378,7 +378,7 @@ export class OrganizationService implements OnModuleInit {
       ),
     )
 
-    await this.redis.del(lockKey)
+    await this.kv.del(lockKey)
   }
 
   @OnAsyncEvent({

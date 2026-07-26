@@ -21,7 +21,7 @@ import { UserModule } from '../user/user.module'
 import { Sandbox } from '../sandbox/entities/sandbox.entity'
 import { Snapshot } from '../sandbox/entities/snapshot.entity'
 import { Volume } from '../sandbox/entities/volume.entity'
-import { RedisLockProvider } from '../sandbox/common/redis-lock.provider'
+import { KVLockProvider } from '../sandbox/common/kv-lock.provider'
 import { SnapshotRunner } from '../sandbox/entities/snapshot-runner.entity'
 
 @Module({
@@ -49,7 +49,7 @@ import { SnapshotRunner } from '../sandbox/entities/snapshot-runner.entity'
     OrganizationRoleService,
     OrganizationUserService,
     OrganizationInvitationService,
-    RedisLockProvider,
+    KVLockProvider,
   ],
   exports: [OrganizationService, OrganizationRoleService, OrganizationUserService, OrganizationInvitationService],
 })

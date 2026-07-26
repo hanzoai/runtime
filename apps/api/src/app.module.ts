@@ -15,7 +15,7 @@ import { join } from 'path'
 import { ApiKeyModule } from './api-key/api-key.module'
 import { ThrottlerModule } from '@nestjs/throttler'
 import { DockerRegistryModule } from './docker-registry/docker-registry.module'
-import { RedisModule } from '@nestjs-modules/ioredis'
+import { KVModule } from './common/kv.module'
 import { ScheduleModule } from '@nestjs/schedule'
 import { EventEmitterModule } from '@nestjs/event-emitter'
 import { UsageModule } from './usage/usage.module'
@@ -66,20 +66,7 @@ import { MaintenanceMiddleware } from './common/middleware/maintenance.middlewar
         limit: 10,
       },
     ]),
-    RedisModule.forRootAsync({
-      inject: [TypedConfigService],
-      useFactory: (configService: TypedConfigService) => {
-        return {
-          type: 'single',
-          options: {
-            host: configService.getOrThrow('redis.host'),
-            port: configService.getOrThrow('redis.port'),
-            tls: configService.get('redis.tls'),
-            lazyConnect: configService.get('skipConnections'),
-          },
-        }
-      },
-    }),
+    KVModule,
     EventEmitterModule.forRoot(),
     ApiKeyModule,
     AuthModule,

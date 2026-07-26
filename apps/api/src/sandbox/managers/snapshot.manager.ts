@@ -19,13 +19,13 @@ import { RunnerApiFactory } from '../runner-api/runnerApi'
 import { v4 as uuidv4 } from 'uuid'
 import { RunnerNotReadyError } from '../errors/runner-not-ready.error'
 import { RegistryType } from '../../docker-registry/enums/registry-type.enum'
-import { RedisLockProvider } from '../common/redis-lock.provider'
+import { KVLockProvider } from '../common/kv-lock.provider'
 import { OrganizationService } from '../../organization/services/organization.service'
 import { DockerRegistry } from '../../docker-registry/entities/docker-registry.entity'
 import { BuildInfo } from '../entities/build-info.entity'
 import { fromAxiosError } from '../../common/utils/from-axios-error'
-import { InjectRedis } from '@nestjs-modules/ioredis'
-import { Redis } from 'ioredis'
+import { InjectKV } from '../../common/kv.module'
+import { KV } from '@hanzo/kv'
 import { RunnerService } from '../services/runner.service'
 @Injectable()
 export class SnapshotManager {
@@ -35,7 +35,7 @@ export class SnapshotManager {
   private readonly instanceId = uuidv4()
 
   constructor(
-    @InjectRedis() private readonly redis: Redis,
+    @InjectKV() private readonly kv: KV,
     @InjectRepository(Snapshot)
     private readonly snapshotRepository: Repository<Snapshot>,
     @InjectRepository(SnapshotRunner)
@@ -48,18 +48,18 @@ export class SnapshotManager {
     private readonly dockerRegistryService: DockerRegistryService,
     private readonly dockerProvider: DockerProvider,
     private readonly runnerApiFactory: RunnerApiFactory,
-    private readonly redisLockProvider: RedisLockProvider,
+    private readonly kvLockProvider: KVLockProvider,
     private readonly organizationService: OrganizationService,
   ) {}
 
   @Cron(CronExpression.EVERY_5_SECONDS)
   async syncRunnerSnapshots() {
     const lockKey = 'sync-runner-snapshots-lock'
-    if (!(await this.redisLockProvider.lock(lockKey, 30))) {
+    if (!(await this.kvLockProvider.lock(lockKey, 30))) {
       return
     }
 
-    const skip = (await this.redis.get('sync-runner-snapshots-skip')) || 0
+    const skip = (await this.kv.get('sync-runner-snapshots-skip')) || 0
 
     const totalRunners = await this.runnerRepository.count({
       where: {
@@ -79,11 +79,11 @@ export class SnapshotManager {
       .getMany()
 
     if (snapshots.length === 0) {
-      await this.redis.set('sync-runner-snapshots-skip', 0)
+      await this.kv.set('sync-runner-snapshots-skip', 0)
       return
     }
 
-    await this.redis.set('sync-runner-snapshots-skip', Number(skip) + snapshots.length)
+    await this.kv.set('sync-runner-snapshots-skip', Number(skip) + snapshots.length)
 
     const snapshotRunners = await this.snapshotRunnerRepository.count({
       where: {
@@ -104,7 +104,7 @@ export class SnapshotManager {
       }),
     )
 
-    await this.redisLockProvider.unlock(lockKey)
+    await this.kvLockProvider.unlock(lockKey)
   }
 
   @Cron(CronExpression.EVERY_10_SECONDS)
@@ -114,7 +114,7 @@ export class SnapshotManager {
     //  todo: find a better approach
 
     const lockKey = 'sync-runner-snapshot-states-lock'
-    if (!(await this.redisLockProvider.lock(lockKey, 30))) {
+    if (!(await this.kvLockProvider.lock(lockKey, 30))) {
       return
     }
 
@@ -151,7 +151,7 @@ export class SnapshotManager {
       }),
     )
 
-    await this.redisLockProvider.unlock(lockKey)
+    await this.kvLockProvider.unlock(lockKey)
   }
 
   async syncRunnerSnapshotState(snapshotRunner: SnapshotRunner): Promise<void> {
@@ -351,7 +351,7 @@ export class SnapshotManager {
   @Cron(CronExpression.EVERY_10_SECONDS)
   async checkSnapshotCleanup() {
     const lockKey = 'check-snapshot-cleanup-lock'
-    if (!(await this.redisLockProvider.lock(lockKey, 30))) {
+    if (!(await this.kvLockProvider.lock(lockKey, 30))) {
       return
     }
 
@@ -377,7 +377,7 @@ export class SnapshotManager {
       }),
     )
 
-    await this.redisLockProvider.unlock(lockKey)
+    await this.kvLockProvider.unlock(lockKey)
   }
 
   @Cron(CronExpression.EVERY_10_SECONDS)
@@ -396,7 +396,7 @@ export class SnapshotManager {
     await Promise.all(
       snapshots.map(async (snapshot) => {
         const lockKey = `check-snapshot-state-lock-${snapshot.id}`
-        if (!(await this.redisLockProvider.lock(lockKey, 720))) {
+        if (!(await this.kvLockProvider.lock(lockKey, 720))) {
           return
         }
 
@@ -422,7 +422,7 @@ export class SnapshotManager {
                   imageName = snapshot.internalName
                 }
                 if (!(await this.dockerProvider.imageExists(imageName))) {
-                  await this.redisLockProvider.unlock(lockKey)
+                  await this.kvLockProvider.unlock(lockKey)
                   return
                 }
               }
@@ -438,7 +438,7 @@ export class SnapshotManager {
           }
         } catch (error) {
           if (error.code === 'ECONNRESET') {
-            await this.redisLockProvider.unlock(lockKey)
+            await this.kvLockProvider.unlock(lockKey)
             this.checkSnapshotState()
             return
           }
@@ -447,7 +447,7 @@ export class SnapshotManager {
           await this.updateSnapshotState(snapshot.id, SnapshotState.ERROR, message)
         }
 
-        await this.redisLockProvider.unlock(lockKey)
+        await this.kvLockProvider.unlock(lockKey)
       }),
     )
   }
@@ -819,7 +819,7 @@ export class SnapshotManager {
     const snapshotApi = this.runnerApiFactory.createSnapshotApi(runner)
 
     const dockerRegistry = await this.dockerRegistryService.getDefaultInternalRegistry()
-    //  await this.redis.setex(lockKey, 360, this.instanceId)
+    //  await this.kv.setex(lockKey, 360, this.instanceId)
 
     await snapshotApi.pullSnapshot({
       snapshot: snapshotRunner.snapshotRef,
@@ -847,7 +847,7 @@ export class SnapshotManager {
   @Cron(CronExpression.EVERY_HOUR)
   async cleanupOldBuildInfoSnapshotRunners() {
     const lockKey = 'cleanup-old-buildinfo-snapshots-lock'
-    if (!(await this.redisLockProvider.lock(lockKey, 300))) {
+    if (!(await this.kvLockProvider.lock(lockKey, 300))) {
       return
     }
 
@@ -879,14 +879,14 @@ export class SnapshotManager {
     } catch (error) {
       this.logger.error(`Failed to mark old BuildInfo SnapshotRunners for removal: ${fromAxiosError(error)}`)
     } finally {
-      await this.redisLockProvider.unlock(lockKey)
+      await this.kvLockProvider.unlock(lockKey)
     }
   }
 
   @Cron(CronExpression.EVERY_10_MINUTES)
   async deactivateOldSnapshots() {
     const lockKey = 'deactivate-old-snapshots-lock'
-    if (!(await this.redisLockProvider.lock(lockKey, 300))) {
+    if (!(await this.kvLockProvider.lock(lockKey, 300))) {
       return
     }
 
@@ -931,7 +931,7 @@ export class SnapshotManager {
     } catch (error) {
       this.logger.error(`Failed to deactivate old snapshots: ${fromAxiosError(error)}`)
     } finally {
-      await this.redisLockProvider.unlock(lockKey)
+      await this.kvLockProvider.unlock(lockKey)
     }
   }
 }

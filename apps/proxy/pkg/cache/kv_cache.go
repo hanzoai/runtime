@@ -11,11 +11,11 @@ import (
 	"time"
 
 	"github.com/hanzoai/proxy/cmd/proxy/config"
-	"github.com/redis/go-redis/v9"
+	"github.com/hanzokv/go/v9"
 )
 
-type RedisCache[T any] struct {
-	redis     *redis.Client
+type KVCache[T any] struct {
+	kv        *kv.Client
 	keyPrefix string
 }
 
@@ -23,31 +23,31 @@ type ValueObject[T any] struct {
 	Value T `json:"value"`
 }
 
-var client *redis.Client
+var client *kv.Client
 
-func (c *RedisCache[T]) Set(ctx context.Context, key string, value T, expiration time.Duration) error {
+func (c *KVCache[T]) Set(ctx context.Context, key string, value T, expiration time.Duration) error {
 	jsonValue, err := json.Marshal(ValueObject[T]{Value: value})
 	if err != nil {
 		return err
 	}
-	return c.redis.Set(ctx, c.keyPrefix+key, string(jsonValue), expiration).Err()
+	return c.kv.Set(ctx, c.keyPrefix+key, string(jsonValue), expiration).Err()
 }
 
-func (c *RedisCache[T]) Has(ctx context.Context, key string) (bool, error) {
-	err := c.redis.Get(ctx, c.keyPrefix+key).Err()
+func (c *KVCache[T]) Has(ctx context.Context, key string) (bool, error) {
+	err := c.kv.Get(ctx, c.keyPrefix+key).Err()
 	if err == nil {
 		return true, nil
 	}
 
-	if err == redis.Nil {
+	if err == kv.Nil {
 		return false, nil
 	}
 
 	return false, err
 }
 
-func (c *RedisCache[T]) Get(ctx context.Context, key string) (*T, error) {
-	value, err := c.redis.Get(ctx, c.keyPrefix+key).Result()
+func (c *KVCache[T]) Get(ctx context.Context, key string) (*T, error) {
+	value, err := c.kv.Get(ctx, c.keyPrefix+key).Result()
 	if err != nil {
 		return nil, err
 	}
@@ -59,11 +59,11 @@ func (c *RedisCache[T]) Get(ctx context.Context, key string) (*T, error) {
 	return &result.Value, nil
 }
 
-func (c *RedisCache[T]) Delete(ctx context.Context, key string) error {
-	return c.redis.Del(ctx, c.keyPrefix+key).Err()
+func (c *KVCache[T]) Delete(ctx context.Context, key string) error {
+	return c.kv.Del(ctx, c.keyPrefix+key).Err()
 }
 
-func NewRedisCache[T any](config *config.RedisConfig, keyPrefix string) (*RedisCache[T], error) {
+func NewKVCache[T any](config *config.KVConfig, keyPrefix string) (*KVCache[T], error) {
 	if config.Host == nil || config.Port == nil {
 		return nil, errors.New("host and port are required")
 	}
@@ -74,14 +74,14 @@ func NewRedisCache[T any](config *config.RedisConfig, keyPrefix string) (*RedisC
 	}
 
 	if client == nil {
-		client = redis.NewClient(&redis.Options{
+		client = kv.NewClient(&kv.Options{
 			Addr:     fmt.Sprintf("%s:%d", *config.Host, *config.Port),
 			Password: password,
 		})
 	}
 
-	return &RedisCache[T]{
-		redis:     client,
+	return &KVCache[T]{
+		kv:        client,
 		keyPrefix: keyPrefix,
 	}, nil
 }

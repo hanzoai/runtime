@@ -3,30 +3,30 @@
  * SPDX-License-Identifier: AGPL-3.0
  */
 
-import { InjectRedis } from '@nestjs-modules/ioredis'
+import { InjectKV } from '../../common/kv.module'
 import { Injectable } from '@nestjs/common'
-import { Redis } from 'ioredis'
+import { KV } from '@hanzo/kv'
 
 type Acquired = boolean
 
 @Injectable()
-export class RedisLockProvider {
-  constructor(@InjectRedis() private readonly redis: Redis) {}
+export class KVLockProvider {
+  constructor(@InjectKV() private readonly kv: KV) {}
 
   async lock(key: string, ttl: number): Promise<Acquired> {
-    const acquired = await this.redis.set(key, '1', 'EX', ttl, 'NX')
+    const acquired = await this.kv.set(key, '1', 'EX', ttl, 'NX')
     return !!acquired
   }
 
   async unlock(key: string): Promise<void> {
-    await this.redis.del(key)
+    await this.kv.del(key)
   }
 
   async waitForLock(key: string, ttl: number): Promise<void> {
-    while (await this.redis.get(key)) {
+    while (await this.kv.get(key)) {
       await new Promise((resolve) => setTimeout(resolve, 50))
     }
 
-    await this.redis.setex(key, ttl, '1')
+    await this.kv.setex(key, ttl, '1')
   }
 }
