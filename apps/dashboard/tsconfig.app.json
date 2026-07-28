@@ -12,7 +12,9 @@
       "vite/client"
     ],
     "paths": {
-      "@/*": ["src/*"],
+      "@/*": [
+        "./src/*"
+      ],
       "@hanzo/*": ["../../libs/*"] // Re-declare the monorepo library paths
     }
   },
