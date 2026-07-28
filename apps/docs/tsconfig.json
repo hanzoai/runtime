@@ -7,10 +7,18 @@
     "allowImportingTsExtensions": true,
     "moduleResolution": "bundler",
     "paths": {
-      "@assets/*": ["src/assets/*"],
-      "@styles/*": ["src/styles/*"],
-      "@components/*": ["src/components/*"],
-      "@helpers/*": ["src/helpers/*"]
+      "@assets/*": [
+        "./src/assets/*"
+      ],
+      "@styles/*": [
+        "./src/styles/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@helpers/*": [
+        "./src/helpers/*"
+      ]
     }
   }
 }

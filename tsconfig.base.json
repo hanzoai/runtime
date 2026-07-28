@@ -9,14 +9,20 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",
-    "module": "commonjs",
+    "module": "node16",
     "lib": ["es2022", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "paths": {
-      "@hanzo/api-client": ["libs/api-client/src/index.ts"],
-      "@hanzo/runner-api-client": ["libs/runner-api-client/src/index.ts"],
-      "@hanzo/runtime": ["libs/sdk-typescript/src/index.ts"]
+      "@hanzo/api-client": [
+        "./libs/api-client/src/index.ts"
+      ],
+      "@hanzo/runner-api-client": [
+        "./libs/runner-api-client/src/index.ts"
+      ],
+      "@hanzo/runtime": [
+        "./libs/sdk-typescript/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
