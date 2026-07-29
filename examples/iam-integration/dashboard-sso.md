@@ -4,7 +4,7 @@ This guide shows how to integrate the Runtime Dashboard with Hanzo IAM for Singl
 
 ## Overview
 
-The Runtime Dashboard uses OIDC (OpenID Connect) for authentication, which integrates seamlessly with Hanzo IAM (Casdoor).
+The Runtime Dashboard uses OIDC (OpenID Connect) for authentication, which integrates seamlessly with Hanzo IAM.
 
 ## Configuration Steps
 

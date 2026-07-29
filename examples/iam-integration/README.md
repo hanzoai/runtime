@@ -1,6 +1,6 @@
 # Hanzo IAM + Runtime Integration Guide
 
-This guide shows how to integrate Hanzo IAM (Casdoor) with Hanzo Runtime for unified authentication and authorization.
+This guide shows how to integrate Hanzo IAM with Hanzo Runtime for unified authentication and authorization.
 
 ## Overview
 
@@ -16,7 +16,7 @@ Hanzo IAM provides centralized identity and access management, while Hanzo Runti
 ```
 ┌─────────────┐      ┌─────────────┐      ┌──────────────┐
 │   Client    │─────▶│  Hanzo IAM  │◀────▶│Hanzo Runtime │
-│ Application │      │  (Casdoor)  │      │     API      │
+│ Application │      │   (OIDC)    │      │     API      │
 └─────────────┘      └─────────────┘      └──────────────┘
       │                     │                      │
       │                     ▼                      ▼
