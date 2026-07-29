@@ -106,7 +106,7 @@ client = HanzoRuntime(api_key=iam.get_token())
 ```
 ┌─────────────┐     ┌─────────────┐     ┌──────────────┐
 │  Hanzo IAM  │────▶│  Dashboard  │────▶│ Runtime API  │
-│  (Casdoor)  │     │   (React)   │     │  (NestJS)    │
+│   (OIDC)    │     │   (React)   │     │  (NestJS)    │
 └─────────────┘     └─────────────┘     └──────────────┘
        │                                         │
        │                                         ▼

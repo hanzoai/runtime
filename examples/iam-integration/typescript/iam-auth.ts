@@ -1,7 +1,7 @@
 /**
  * Hanzo Runtime + Hanzo IAM Integration Example
  * 
- * This example shows how to authenticate with Hanzo IAM (Casdoor)
+ * This example shows how to authenticate with Hanzo IAM
  * and use the token to access Hanzo Runtime services.
  */
 
