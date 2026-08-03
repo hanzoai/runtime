@@ -3,7 +3,7 @@ header:
     spdx-id: Apache-2.0
     copyright-owner: Hanzo Industries Inc.
     content: |
-      Copyright 2025 Hanzo Industries Inc.
+      Copyright 2025 Daytona Platforms Inc.
       SPDX-License-Identifier: Apache-2.0
   paths:
     - 'libs/**/*.go'

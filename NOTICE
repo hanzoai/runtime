@@ -1,0 +1,131 @@
+Daytona
+Copyright the various Daytona software authors.
+
+The initial developer of the software is Daytona Platforms, Inc. (https://daytona.io).
+Copyright 2025 Daytona Platforms, Inc. All Rights Reserved.
+
+
+================================================================================
+Hanzo Runtime — derivative work notice
+================================================================================
+
+Everything above this line is the NOTICE as received from upstream Daytona. It
+is reproduced verbatim. It was deleted from this repository on 2025-07-14 and
+is restored here.
+
+
+1. Upstream project
+-------------------
+
+    Project:  Daytona — secure, elastic infrastructure for running AI-generated
+              code
+    Source:   https://github.com/daytonaio/daytona
+    Website:  https://daytona.io
+
+    Copyright 2025 Daytona Platforms, Inc. All Rights Reserved.
+
+The Daytona codebase was begun on 2024-02-06 by Vedran Jukic. Prior to and
+during the Hanzo fork it received contributions from 203 individuals; the most
+substantial by commit volume are Toma Puljak, Ivan Dagelić, Luka Brečić, Tarun
+Chauhan, Fabjan Vučina and Vedran Jukic.
+
+Copyright in the upstream work remains with Daytona Platforms, Inc. and the
+respective contributing authors. Nothing in this NOTICE, and nothing done by
+Hanzo AI, Inc., transfers or reassigns that copyright.
+
+This repository preserves the complete upstream git history, so upstream
+authorship of every file and line is independently verifiable with `git log`
+and `git blame`. Of 1220 commits, 20 are Hanzo's.
+
+
+2. License
+----------
+
+The LICENSE file at the root of this repository is the GNU Affero General
+Public License, Version 3, as received from upstream. It has never been
+modified by Hanzo — its last change is an upstream commit by
+vedran.jukic@gmail.com (a3b9c9b5, 2025-04-28).
+
+Client libraries carry `SPDX-License-Identifier: Apache-2.0` rather than
+AGPL-3.0. That split is upstream's, made in upstream commit f6033f59
+(2025-06-15, "chore: replace AGPL with Apache2 in client libs", #2021) by
+dagelic.ivan@gmail.com. It is preserved exactly: 669 files remain AGPL-3.0 and
+81 remain Apache-2.0.
+
+AGPL-3.0 section 13 — remote network interaction
+------------------------------------------------
+
+If this software is made available to users over a network, section 13 applies
+to the AGPL-licensed portion: those users must be offered the Corresponding
+Source of the running version. The Corresponding Source is published at:
+
+    https://github.com/hanzoai/runtime
+
+
+3. Attribution that was removed, and is restored here
+-----------------------------------------------------
+
+This section exists because upstream attribution was stripped from this
+repository and publicly redistributed in that state. It is recorded rather than
+quietly repaired.
+
+  a) The upstream NOTICE (the text at the top of this file) was DELETED in
+     commit 33d1967d (2025-07-14, "feat: rebrand to Hanzo Runtime").
+
+  b) The copyright line in 751 source files was rewritten from
+     `Copyright 2025 Daytona Platforms Inc.` to
+     `Copyright 2025 Hanzo Industries Inc.` in commit 94dc3545 (2025-08-16),
+     a 1484-file commit titled "feat: Add new Dockerfiles and improve
+     containerization" whose message does not mention copyright at all.
+
+     All 751 of those files are upstream-derived. None is original Hanzo work.
+     The 54 that appear Hanzo-created under `--diff-filter=A` are upstream
+     files renamed during the rebrand — including
+     `libs/sdk-typescript/src/errors/HanzoRuntimeError.ts`, which is
+     upstream's `DaytonaError.ts` renamed in d5808a44. `git log --follow`
+     resolves each one to an upstream author.
+
+  c) The COPYRIGHT file was rewritten from "the Daytona software" to "the
+     Runtime software" in the same commit 94dc3545.
+
+  All three are restored as of 2026-08-03. The 751 copyright lines are returned
+  to `Copyright 2025 Daytona Platforms Inc.`; no SPDX-License-Identifier was
+  altered, so upstream's AGPL/Apache split is untouched. This is a restoration
+  of upstream's own words, not an edit of them — the LICENSE file itself was
+  never touched, by the rebrand or by this restoration.
+
+
+4. Modifications by Hanzo
+-------------------------
+
+    Copyright 2026 Hanzo AI, Inc.
+
+Hanzo's modifications begin 2025-07-14 and are licensed under AGPL-3.0, on the
+same terms as the upstream work, except within the client libraries where
+upstream's Apache-2.0 applies. In summary, Hanzo has:
+
+  * Rebranded from Daytona to Hanzo Runtime across names, packages, SDK
+    identifiers and documentation (the Python SDK package became
+    `hanzo_runtime`, the TypeScript SDK errors `HanzoRuntimeError`).
+  * Replaced PostHog product analytics with Hanzo Insights.
+  * Consolidated on a single KV client provided by injection.
+  * Rebased container images on `ghcr.io/hanzoai/nodejs:v24.18.0`, renamed
+    `docker-compose.yml` to `compose.yml`, and switched husky's pre-commit hook
+    from yarn to pnpm.
+  * Bumped the Go directive in nested modules to 1.26.x for a security
+    advisory.
+  * Replaced GitHub-hosted CI with the native Hanzo pipeline (git.hanzo.ai +
+    cd.hanzo.ai) on self-hosted runners.
+  * Symlinked AGENTS.md and CLAUDE.md to LLM.md.
+
+Hanzo claims copyright only in these modifications. It claims no copyright in
+any file listed in section 3.
+
+
+5. Third-party components
+-------------------------
+
+All third-party components incorporated into this software remain licensed
+under the original license provided by the owner of the applicable component.
+Dependency licenses are recorded in the lockfiles and in each package's own
+metadata.

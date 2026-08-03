@@ -3,7 +3,7 @@ header:
     spdx-id: AGPL-3.0
     copyright-owner: Hanzo Industries Inc.
     content: |
-      Copyright 2025 Hanzo Industries Inc.
+      Copyright 2025 Daytona Platforms Inc.
       SPDX-License-Identifier: AGPL-3.0
   paths:
     - '**/*.go'
