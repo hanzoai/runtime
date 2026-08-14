@@ -1,4 +1,4 @@
-module github.com/hanzoai/proxy
+module github.com/hanzoai/runtime/apps/proxy
 
 go 1.26.4
 

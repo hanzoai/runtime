@@ -6,10 +6,10 @@ package volume
 import (
 	"context"
 
-	"github.com/hanzoai/runtime/cli/apiclient"
-	"github.com/hanzoai/runtime/cli/cmd/common"
-	"github.com/hanzoai/runtime/cli/config"
-	"github.com/hanzoai/runtime/cli/views/volume"
+	"github.com/hanzoai/runtime/apps/cli/apiclient"
+	"github.com/hanzoai/runtime/apps/cli/cmd/common"
+	"github.com/hanzoai/runtime/apps/cli/config"
+	"github.com/hanzoai/runtime/apps/cli/views/volume"
 	"github.com/spf13/cobra"
 )
 

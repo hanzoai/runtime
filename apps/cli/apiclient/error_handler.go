@@ -10,7 +10,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/hanzoai/runtime/cli/internal"
+	"github.com/hanzoai/runtime/apps/cli/internal"
 
 	log "github.com/sirupsen/logrus"
 )

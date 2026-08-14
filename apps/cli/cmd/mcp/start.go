@@ -7,7 +7,7 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/hanzoai/runtime/cli/mcp"
+	"github.com/hanzoai/runtime/apps/cli/mcp"
 	"github.com/spf13/cobra"
 )
 

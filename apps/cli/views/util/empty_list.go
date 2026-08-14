@@ -4,7 +4,7 @@
 package util
 
 import (
-	"github.com/hanzoai/runtime/cli/views/common"
+	"github.com/hanzoai/runtime/apps/cli/views/common"
 )
 
 func NotifyEmptySandboxList(tip bool) {

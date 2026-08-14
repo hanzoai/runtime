@@ -11,8 +11,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/hanzoai/runtime/cli/cmd"
-	"github.com/hanzoai/runtime/cli/internal"
+	"github.com/hanzoai/runtime/apps/cli/cmd"
+	"github.com/hanzoai/runtime/apps/cli/internal"
 )
 
 type Config struct {

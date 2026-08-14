@@ -303,6 +303,7 @@ export class SandboxService {
     const sandbox = new Sandbox()
 
     sandbox.organizationId = organization.id
+    sandbox.isolation = organization.sandboxIsolation
 
     //  TODO: make configurable
     sandbox.region = region
@@ -389,6 +390,7 @@ export class SandboxService {
     // sandbox = from
 
     sandbox.organizationId = organization.id
+    sandbox.isolation = organization.sandboxIsolation
 
     //  TODO: make configurable
     sandbox.region = region

@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/hanzoai/daemon/pkg/toolbox/computeruse"
+	"github.com/hanzoai/runtime/apps/daemon/pkg/toolbox/computeruse"
 	"github.com/go-vgo/robotgo"
 )
 

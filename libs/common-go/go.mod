@@ -1,4 +1,4 @@
-module github.com/hanzoai/common-go
+module github.com/hanzoai/runtime/libs/common-go
 
 go 1.26.4
 

@@ -8,8 +8,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/hanzoai/runner/internal/constants"
-	"github.com/hanzoai/runner/pkg/common"
+	"github.com/hanzoai/runtime/apps/runner/internal/constants"
+	"github.com/hanzoai/runtime/apps/runner/pkg/common"
 	"github.com/gin-gonic/gin"
 )
 

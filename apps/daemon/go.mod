@@ -1,4 +1,4 @@
-module github.com/hanzoai/daemon
+module github.com/hanzoai/runtime/apps/daemon
 
 go 1.26.4
 

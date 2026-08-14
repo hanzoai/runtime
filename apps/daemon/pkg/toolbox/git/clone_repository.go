@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/hanzoai/daemon/pkg/git"
-	"github.com/hanzoai/daemon/pkg/gitprovider"
+	"github.com/hanzoai/runtime/apps/daemon/pkg/git"
+	"github.com/hanzoai/runtime/apps/daemon/pkg/gitprovider"
 	"github.com/gin-gonic/gin"
 	go_git_http "github.com/go-git/go-git/v5/plumbing/transport/http"
 )

@@ -17,6 +17,7 @@ import {
 import { SandboxState } from '../enums/sandbox-state.enum'
 import { SandboxDesiredState } from '../enums/sandbox-desired-state.enum'
 import { SandboxClass } from '../enums/sandbox-class.enum'
+import { Isolation, ISOLATION_DEFAULT } from '../enums/isolation.enum'
 import { BackupState } from '../enums/backup-state.enum'
 import { RunnerRegion } from '../enums/runner-region.enum'
 import { nanoid } from 'nanoid'
@@ -61,6 +62,17 @@ export class Sandbox {
     default: SandboxClass.SMALL,
   })
   class: SandboxClass
+
+  // The boundary this sandbox was created to run behind, copied from its
+  // organization at creation. It is recorded here rather than read from the
+  // organization on every start so that a sandbox keeps running behind what it
+  // was created with.
+  @Column({
+    type: 'enum',
+    enum: Isolation,
+    default: ISOLATION_DEFAULT,
+  })
+  isolation: Isolation
 
   @Column({
     type: 'enum',

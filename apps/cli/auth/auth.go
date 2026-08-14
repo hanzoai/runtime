@@ -14,7 +14,7 @@ import (
 	"time"
 
 	"github.com/coreos/go-oidc/v3/oidc"
-	"github.com/hanzoai/runtime/cli/config"
+	"github.com/hanzoai/runtime/apps/cli/config"
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/oauth2"
 )

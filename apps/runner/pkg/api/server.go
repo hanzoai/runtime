@@ -21,10 +21,10 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/hanzoai/runner/cmd/runner/config"
-	"github.com/hanzoai/runner/pkg/api/controllers"
-	"github.com/hanzoai/runner/pkg/api/docs"
-	"github.com/hanzoai/runner/pkg/api/middlewares"
+	"github.com/hanzoai/runtime/apps/runner/cmd/runner/config"
+	"github.com/hanzoai/runtime/apps/runner/pkg/api/controllers"
+	"github.com/hanzoai/runtime/apps/runner/pkg/api/docs"
+	"github.com/hanzoai/runtime/apps/runner/pkg/api/middlewares"
 	metric "github.com/luxfi/metric"
 
 	"github.com/gin-gonic/gin"

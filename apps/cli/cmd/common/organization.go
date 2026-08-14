@@ -6,9 +6,9 @@ package common
 import (
 	"context"
 
-	"github.com/hanzoai/apiclient"
-	apiclient_cli "github.com/hanzoai/runtime/cli/apiclient"
-	"github.com/hanzoai/runtime/cli/config"
+	apiclient "github.com/hanzoai/runtime/libs/api-client-go"
+	apiclient_cli "github.com/hanzoai/runtime/apps/cli/apiclient"
+	"github.com/hanzoai/runtime/apps/cli/config"
 )
 
 func GetPersonalOrganizationId(profile config.Profile) (string, error) {

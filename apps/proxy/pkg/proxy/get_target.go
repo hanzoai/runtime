@@ -12,7 +12,7 @@ import (
 	"strings"
 	"time"
 
-	common_errors "github.com/hanzoai/common-go/pkg/errors"
+	common_errors "github.com/hanzoai/runtime/libs/common-go/pkg/errors"
 	"github.com/gin-gonic/gin"
 
 	log "github.com/sirupsen/logrus"

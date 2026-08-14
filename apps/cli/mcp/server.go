@@ -4,7 +4,7 @@
 package mcp
 
 import (
-	"github.com/hanzoai/runtime/cli/mcp/tools"
+	"github.com/hanzoai/runtime/apps/cli/mcp/tools"
 	"github.com/mark3labs/mcp-go/mcp"
 	"github.com/mark3labs/mcp-go/server"
 )

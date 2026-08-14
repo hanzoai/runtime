@@ -7,10 +7,10 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/hanzoai/runtime/cli/apiclient"
-	"github.com/hanzoai/runtime/cli/cmd/common"
-	"github.com/hanzoai/runtime/cli/config"
-	"github.com/hanzoai/runtime/cli/views/snapshot"
+	"github.com/hanzoai/runtime/apps/cli/apiclient"
+	"github.com/hanzoai/runtime/apps/cli/cmd/common"
+	"github.com/hanzoai/runtime/apps/cli/config"
+	"github.com/hanzoai/runtime/apps/cli/views/snapshot"
 	"github.com/spf13/cobra"
 )
 

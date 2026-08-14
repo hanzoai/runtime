@@ -1,4 +1,4 @@
-module github.com/hanzoai/runtime/cli
+module github.com/hanzoai/runtime/apps/cli
 
 go 1.26.4
 

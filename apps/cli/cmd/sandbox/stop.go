@@ -7,8 +7,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/hanzoai/runtime/cli/apiclient"
-	view_common "github.com/hanzoai/runtime/cli/views/common"
+	"github.com/hanzoai/runtime/apps/cli/apiclient"
+	view_common "github.com/hanzoai/runtime/apps/cli/views/common"
 	"github.com/spf13/cobra"
 )
 

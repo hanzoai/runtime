@@ -9,7 +9,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/hanzoai/daemon/pkg/gitprovider"
+	"github.com/hanzoai/runtime/apps/daemon/pkg/gitprovider"
 	"gopkg.in/ini.v1"
 )
 

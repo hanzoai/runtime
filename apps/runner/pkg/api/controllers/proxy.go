@@ -10,9 +10,9 @@ import (
 	"regexp"
 	"strings"
 
-	proxy "github.com/hanzoai/common-go/pkg/proxy"
-	"github.com/hanzoai/runner/pkg/common"
-	"github.com/hanzoai/runner/pkg/runner"
+	proxy "github.com/hanzoai/runtime/libs/common-go/pkg/proxy"
+	"github.com/hanzoai/runtime/apps/runner/pkg/common"
+	"github.com/hanzoai/runtime/apps/runner/pkg/runner"
 	"github.com/gin-gonic/gin"
 )
 

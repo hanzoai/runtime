@@ -12,9 +12,9 @@ import (
 	"path/filepath"
 	"sync"
 
-	"github.com/hanzoai/runner/cmd/runner/config"
-	"github.com/hanzoai/runner/internal/util"
-	"github.com/hanzoai/runner/pkg/api/dto"
+	"github.com/hanzoai/runtime/apps/runner/cmd/runner/config"
+	"github.com/hanzoai/runtime/apps/runner/internal/util"
+	"github.com/hanzoai/runtime/apps/runner/pkg/api/dto"
 	log "github.com/sirupsen/logrus"
 )
 

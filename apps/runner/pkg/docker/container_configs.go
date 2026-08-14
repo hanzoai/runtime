@@ -8,17 +8,43 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/hanzoai/runner/cmd/runner/config"
-	"github.com/hanzoai/runner/pkg/api/dto"
+	"github.com/hanzoai/runtime/apps/runner/cmd/runner/config"
+	"github.com/hanzoai/runtime/apps/runner/pkg/api/dto"
 	"github.com/docker/docker/api/types/network"
 
 	"github.com/docker/docker/api/types/container"
 )
 
-func (d *DockerClient) getContainerConfigs(ctx context.Context, sandboxDto dto.CreateSandboxDTO, volumeMountPathBinds []string) (*container.Config, *container.HostConfig, *network.NetworkingConfig, error) {
-	containerConfig := d.getContainerCreateConfig(sandboxDto)
+// sandboxCaps is what the sandbox keeps once every capability is dropped. Each
+// one is here because something in the daemon or the image exercises it:
+//
+//	CHOWN, DAC_OVERRIDE, FOWNER, FSETID  the toolbox file API (chmod, chown) and
+//	                                     package installs into system paths
+//	SETUID, SETGID                       sudo and su, which the sandbox image
+//	                                     grants the sandbox user
+//	KILL                                 process and session management
+//	AUDIT_WRITE                          sudo writes an audit record before it
+//	                                     runs; without this it still works but
+//	                                     prints a permission error every time
+//
+// Docker's default set also carries MKNOD, NET_RAW, NET_BIND_SERVICE,
+// SYS_CHROOT, SETPCAP and SETFCAP. Nothing in the runner, the daemon or the
+// computer-use plugin calls for them, so they stay dropped.
+var sandboxCaps = []string{
+	"CHOWN",
+	"DAC_OVERRIDE",
+	"FOWNER",
+	"FSETID",
+	"SETUID",
+	"SETGID",
+	"KILL",
+	"AUDIT_WRITE",
+}
 
-	hostConfig, err := d.getContainerHostConfig(ctx, sandboxDto, volumeMountPathBinds)
+func (d *DockerClient) getContainerConfigs(ctx context.Context, sandboxDto dto.CreateSandboxDTO, volumeMountPathBinds []string, isolation dto.Isolation, runtime string) (*container.Config, *container.HostConfig, *network.NetworkingConfig, error) {
+	containerConfig := d.getContainerCreateConfig(sandboxDto, isolation)
+
+	hostConfig, err := d.getContainerHostConfig(ctx, sandboxDto, volumeMountPathBinds, runtime)
 	if err != nil {
 		return nil, nil, nil, err
 	}
@@ -27,7 +53,7 @@ func (d *DockerClient) getContainerConfigs(ctx context.Context, sandboxDto dto.C
 	return containerConfig, hostConfig, networkingConfig, nil
 }
 
-func (d *DockerClient) getContainerCreateConfig(sandboxDto dto.CreateSandboxDTO) *container.Config {
+func (d *DockerClient) getContainerCreateConfig(sandboxDto dto.CreateSandboxDTO, isolation dto.Isolation) *container.Config {
 	envVars := []string{
 		"RUNTIME_SANDBOX_ID=" + sandboxDto.Id,
 		"RUNTIME_SANDBOX_SNAPSHOT=" + sandboxDto.Snapshot,
@@ -46,10 +72,16 @@ func (d *DockerClient) getContainerCreateConfig(sandboxDto dto.CreateSandboxDTO)
 		Entrypoint:   sandboxDto.Entrypoint,
 		AttachStdout: true,
 		AttachStderr: true,
+		// Whose the sandbox is and what it runs behind, readable from the
+		// container itself rather than only from the sandbox id.
+		Labels: map[string]string{
+			"hanzo.ai/org":       sandboxDto.OrgId,
+			"hanzo.ai/isolation": string(isolation),
+		},
 	}
 }
 
-func (d *DockerClient) getContainerHostConfig(ctx context.Context, sandboxDto dto.CreateSandboxDTO, volumeMountPathBinds []string) (*container.HostConfig, error) {
+func (d *DockerClient) getContainerHostConfig(ctx context.Context, sandboxDto dto.CreateSandboxDTO, volumeMountPathBinds []string, runtime string) (*container.HostConfig, error) {
 	var binds []string
 
 	binds = append(binds, fmt.Sprintf("%s:/usr/local/bin/runtime:ro", d.daemonPath))
@@ -64,7 +96,9 @@ func (d *DockerClient) getContainerHostConfig(ctx context.Context, sandboxDto dt
 	}
 
 	hostConfig := &container.HostConfig{
-		Privileged: true,
+		Runtime:    runtime,
+		CapDrop:    []string{"ALL"},
+		CapAdd:     sandboxCaps,
 		ExtraHosts: []string{"host.docker.internal:host-gateway"},
 		Resources: container.Resources{
 			CPUPeriod:  100000,
@@ -73,11 +107,6 @@ func (d *DockerClient) getContainerHostConfig(ctx context.Context, sandboxDto dt
 			MemorySwap: sandboxDto.MemoryQuota * 1024 * 1024 * 1024,
 		},
 		Binds: binds,
-	}
-
-	containerRuntime := config.GetContainerRuntime()
-	if containerRuntime != "" {
-		hostConfig.Runtime = containerRuntime
 	}
 
 	filesystem, err := d.getFilesystem(ctx)

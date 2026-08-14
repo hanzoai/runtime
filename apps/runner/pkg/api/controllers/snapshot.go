@@ -13,10 +13,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/hanzoai/runner/cmd/runner/config"
-	"github.com/hanzoai/runner/pkg/api/dto"
-	"github.com/hanzoai/runner/pkg/common"
-	"github.com/hanzoai/runner/pkg/runner"
+	"github.com/hanzoai/runtime/apps/runner/cmd/runner/config"
+	"github.com/hanzoai/runtime/apps/runner/pkg/api/dto"
+	"github.com/hanzoai/runtime/apps/runner/pkg/common"
+	"github.com/hanzoai/runtime/apps/runner/pkg/runner"
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
 )

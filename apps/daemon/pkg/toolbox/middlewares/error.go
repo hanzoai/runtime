@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/hanzoai/daemon/pkg/common"
+	"github.com/hanzoai/runtime/apps/daemon/pkg/common"
 	"github.com/gin-gonic/gin"
 )
 

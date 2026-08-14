@@ -9,11 +9,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/hanzoai/common-go/pkg/timer"
-	"github.com/hanzoai/runner/internal/constants"
-	"github.com/hanzoai/runner/pkg/api/dto"
-	"github.com/hanzoai/runner/pkg/common"
-	"github.com/hanzoai/runner/pkg/models/enums"
+	"github.com/hanzoai/runtime/libs/common-go/pkg/timer"
+	"github.com/hanzoai/runtime/apps/runner/internal/constants"
+	"github.com/hanzoai/runtime/apps/runner/pkg/api/dto"
+	"github.com/hanzoai/runtime/apps/runner/pkg/common"
+	"github.com/hanzoai/runtime/apps/runner/pkg/models/enums"
 	"github.com/docker/docker/errdefs"
 
 	log "github.com/sirupsen/logrus"
@@ -22,12 +22,16 @@ import (
 func (d *DockerClient) Create(ctx context.Context, sandboxDto dto.CreateSandboxDTO) (string, error) {
 	defer timer.Timer()()
 
+	// Settle the boundary before anything expensive happens, so a sandbox this
+	// runner cannot isolate is refused rather than refused after an image pull.
+	isolation, runtime, err := d.resolveIsolation(sandboxDto.Isolation, sandboxDto.OrgId)
+	if err != nil {
+		return "", err
+	}
+
 	startTime := time.Now()
 	defer func() {
-		obs, err := common.ContainerOperationDuration.GetMetricWithLabelValues("create")
-		if err == nil {
-			obs.Observe(time.Since(startTime).Seconds())
-		}
+		common.ContainerOperationDuration.WithLabelValues("create", string(isolation)).Observe(time.Since(startTime).Seconds())
 	}()
 
 	state, err := d.DeduceSandboxState(ctx, sandboxDto.Id)
@@ -72,7 +76,7 @@ func (d *DockerClient) Create(ctx context.Context, sandboxDto dto.CreateSandboxD
 		}
 	}
 
-	containerConfig, hostConfig, networkingConfig, err := d.getContainerConfigs(ctx, sandboxDto, volumeMountPathBinds)
+	containerConfig, hostConfig, networkingConfig, err := d.getContainerConfigs(ctx, sandboxDto, volumeMountPathBinds, isolation, runtime)
 	if err != nil {
 		return "", err
 	}
@@ -82,10 +86,27 @@ func (d *DockerClient) Create(ctx context.Context, sandboxDto dto.CreateSandboxD
 		return "", err
 	}
 
+	created := time.Now()
+
 	err = d.Start(ctx, sandboxDto.Id)
 	if err != nil {
 		return "", err
 	}
+
+	// One record per sandbox carrying what it ran behind and what it was, so a
+	// comparison across boundaries and across workload shapes is a query.
+	log.WithFields(log.Fields{
+		"sandbox":   sandboxDto.Id,
+		"org":       sandboxDto.OrgId,
+		"isolation": isolation,
+		"runtime":   runtime,
+		"snapshot":  sandboxDto.Snapshot,
+		"cpu":       sandboxDto.CpuQuota,
+		"memory":    sandboxDto.MemoryQuota,
+		"create_ms": created.Sub(startTime).Milliseconds(),
+		"start_ms":  time.Since(created).Milliseconds(),
+		"total_ms":  time.Since(startTime).Milliseconds(),
+	}).Info("sandbox created")
 
 	return c.ID, nil
 }

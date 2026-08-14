@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/hanzoai/runner/internal/util"
-	"github.com/hanzoai/runner/pkg/common"
+	"github.com/hanzoai/runtime/apps/runner/internal/util"
+	"github.com/hanzoai/runtime/apps/runner/pkg/common"
 	"github.com/docker/docker/errdefs"
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"

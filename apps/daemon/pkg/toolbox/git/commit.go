@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/hanzoai/daemon/pkg/git"
+	"github.com/hanzoai/runtime/apps/daemon/pkg/git"
 	"github.com/gin-gonic/gin"
 	go_git "github.com/go-git/go-git/v5"
 	"github.com/go-git/go-git/v5/plumbing/object"

@@ -11,15 +11,15 @@ import (
 	"net/http"
 	"slices"
 
-	apiclient "github.com/hanzoai/apiclient"
-	"github.com/hanzoai/proxy/cmd/proxy/config"
-	"github.com/hanzoai/proxy/pkg/cache"
+	apiclient "github.com/hanzoai/runtime/libs/api-client-go"
+	"github.com/hanzoai/runtime/apps/proxy/cmd/proxy/config"
+	"github.com/hanzoai/runtime/apps/proxy/pkg/cache"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/securecookie"
 
-	common_errors "github.com/hanzoai/common-go/pkg/errors"
-	common_proxy "github.com/hanzoai/common-go/pkg/proxy"
+	common_errors "github.com/hanzoai/runtime/libs/common-go/pkg/errors"
+	common_proxy "github.com/hanzoai/runtime/libs/common-go/pkg/proxy"
 
 	log "github.com/sirupsen/logrus"
 )

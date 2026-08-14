@@ -4,9 +4,9 @@
 package auth
 
 import (
-	"github.com/hanzoai/runtime/cli/config"
-	"github.com/hanzoai/runtime/cli/internal"
-	"github.com/hanzoai/runtime/cli/views/common"
+	"github.com/hanzoai/runtime/apps/cli/config"
+	"github.com/hanzoai/runtime/apps/cli/internal"
+	"github.com/hanzoai/runtime/apps/cli/views/common"
 	"github.com/spf13/cobra"
 )
 

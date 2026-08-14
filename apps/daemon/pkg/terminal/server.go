@@ -11,7 +11,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/hanzoai/daemon/pkg/common"
+	"github.com/hanzoai/runtime/apps/daemon/pkg/common"
 	"github.com/gorilla/websocket"
 )
 

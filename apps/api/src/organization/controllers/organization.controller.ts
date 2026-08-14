@@ -23,6 +23,7 @@ import { OrganizationDto } from '../dto/organization.dto'
 import { OrganizationInvitationDto } from '../dto/organization-invitation.dto'
 import { OverviewDto } from '../dto/overview.dto'
 import { UpdateOrganizationQuotaDto } from '../dto/update-organization-quota.dto'
+import { UpdateOrganizationIsolationDto } from '../dto/update-organization-isolation.dto'
 import { OrganizationMemberRole } from '../enums/organization-member-role.enum'
 import { OrganizationActionGuard } from '../guards/organization-action.guard'
 import { OrganizationService } from '../services/organization.service'
@@ -271,6 +272,34 @@ export class OrganizationController {
     @Body() updateOrganizationQuotaDto: UpdateOrganizationQuotaDto,
   ): Promise<OrganizationDto> {
     const organization = await this.organizationService.updateQuota(organizationId, updateOrganizationQuotaDto)
+    return OrganizationDto.fromOrganization(organization)
+  }
+
+  @Patch('/:organizationId/isolation')
+  @ApiOperation({
+    summary: 'Update the boundary this organization\'s sandboxes run behind',
+    operationId: 'updateOrganizationIsolation',
+  })
+  @ApiResponse({
+    status: 200,
+    description: 'Organization details',
+    type: OrganizationDto,
+  })
+  @ApiParam({
+    name: 'organizationId',
+    description: 'Organization ID',
+    type: 'string',
+  })
+  @RequiredSystemRole(SystemRole.ADMIN)
+  @UseGuards(CombinedAuthGuard, SystemActionGuard)
+  async updateOrganizationIsolation(
+    @Param('organizationId') organizationId: string,
+    @Body() updateOrganizationIsolationDto: UpdateOrganizationIsolationDto,
+  ): Promise<OrganizationDto> {
+    const organization = await this.organizationService.updateIsolation(
+      organizationId,
+      updateOrganizationIsolationDto,
+    )
     return OrganizationDto.fromOrganization(organization)
   }
 

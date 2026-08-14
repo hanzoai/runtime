@@ -13,7 +13,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/hanzoai/runtime/cli/config"
+	"github.com/hanzoai/runtime/apps/cli/config"
 	log "github.com/sirupsen/logrus"
 )
 

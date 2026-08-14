@@ -84,13 +84,13 @@ mkdir -p "${DIST_DIR}/dist/apps/cli"
 # Build the binary
 echo "Building Runtime CLI with version: $RUNTIME_VERSION"
 go build \
-    -ldflags "-X 'github.com/hanzoai/runtime/cli/internal.Version=${RUNTIME_VERSION}' \
-    -X 'github.com/hanzoai/runtime/cli/internal.RuntimeApiUrl=${RUNTIME_API_URL}' \
-    -X 'github.com/hanzoai/runtime/cli/internal.Auth0Domain=${RUNTIME_AUTH0_DOMAIN}' \
-    -X 'github.com/hanzoai/runtime/cli/internal.Auth0ClientId=${RUNTIME_AUTH0_CLIENT_ID}' \
-    -X 'github.com/hanzoai/runtime/cli/internal.Auth0ClientSecret=${RUNTIME_AUTH0_CLIENT_SECRET}' \
-    -X 'github.com/hanzoai/runtime/cli/internal.Auth0CallbackPort=${RUNTIME_AUTH0_CALLBACK_PORT}' \
-    -X 'github.com/hanzoai/runtime/cli/internal.Auth0Audience=${RUNTIME_AUTH0_AUDIENCE}'" \
+    -ldflags "-X 'github.com/hanzoai/runtime/apps/cli/internal.Version=${RUNTIME_VERSION}' \
+    -X 'github.com/hanzoai/runtime/apps/cli/internal.RuntimeApiUrl=${RUNTIME_API_URL}' \
+    -X 'github.com/hanzoai/runtime/apps/cli/internal.Auth0Domain=${RUNTIME_AUTH0_DOMAIN}' \
+    -X 'github.com/hanzoai/runtime/apps/cli/internal.Auth0ClientId=${RUNTIME_AUTH0_CLIENT_ID}' \
+    -X 'github.com/hanzoai/runtime/apps/cli/internal.Auth0ClientSecret=${RUNTIME_AUTH0_CLIENT_SECRET}' \
+    -X 'github.com/hanzoai/runtime/apps/cli/internal.Auth0CallbackPort=${RUNTIME_AUTH0_CALLBACK_PORT}' \
+    -X 'github.com/hanzoai/runtime/apps/cli/internal.Auth0Audience=${RUNTIME_AUTH0_AUDIENCE}'" \
     -o "${DIST_DIR}/dist/apps/cli/runtime-${GOOS}-${GOARCH}" main.go
 
 echo "Build complete: ${DIST_DIR}/dist/apps/cli/runtime-${GOOS}-${GOARCH}"

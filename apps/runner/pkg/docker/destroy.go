@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/hanzoai/runner/pkg/common"
-	"github.com/hanzoai/runner/pkg/models/enums"
+	"github.com/hanzoai/runtime/apps/runner/pkg/common"
+	"github.com/hanzoai/runtime/apps/runner/pkg/models/enums"
 	"github.com/docker/docker/api/types/container"
 	"github.com/docker/docker/errdefs"
 
@@ -18,11 +18,9 @@ import (
 
 func (d *DockerClient) Destroy(ctx context.Context, containerId string) error {
 	startTime := time.Now()
+	isolation := ""
 	defer func() {
-		obs, err := common.ContainerOperationDuration.GetMetricWithLabelValues("destroy")
-		if err == nil {
-			obs.Observe(time.Since(startTime).Seconds())
-		}
+		common.ContainerOperationDuration.WithLabelValues("destroy", isolation).Observe(time.Since(startTime).Seconds())
 	}()
 
 	// Ignore err because we want to destroy the container even if it exited
@@ -33,12 +31,18 @@ func (d *DockerClient) Destroy(ctx context.Context, containerId string) error {
 
 	d.cache.SetSandboxState(ctx, containerId, enums.SandboxStateDestroying)
 
-	_, err := d.ContainerInspect(ctx, containerId)
+	c, err := d.ContainerInspect(ctx, containerId)
 	if err != nil {
 		if errdefs.IsNotFound(err) {
 			d.cache.SetSandboxState(ctx, containerId, enums.SandboxStateDestroyed)
 		}
 		return err
+	}
+
+	// The container records what it ran behind, so teardown is comparable
+	// across boundaries without a second lookup.
+	if c.Config != nil {
+		isolation = c.Config.Labels["hanzo.ai/isolation"]
 	}
 
 	err = d.apiClient.ContainerRemove(ctx, containerId, container.RemoveOptions{

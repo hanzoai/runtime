@@ -9,8 +9,8 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/hanzoai/common-go/pkg/errors"
-	"github.com/hanzoai/common-go/pkg/proxy"
+	"github.com/hanzoai/runtime/libs/common-go/pkg/errors"
+	"github.com/hanzoai/runtime/libs/common-go/pkg/proxy"
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
 

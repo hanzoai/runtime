@@ -13,16 +13,17 @@ import (
 
 	golog "log"
 
-	"github.com/hanzoai/runner/cmd/runner/config"
-	"github.com/hanzoai/runner/internal/util"
-	"github.com/hanzoai/runner/pkg/api"
-	"github.com/hanzoai/runner/pkg/cache"
-	"github.com/hanzoai/runner/pkg/daemon"
-	"github.com/hanzoai/runner/pkg/docker"
-	"github.com/hanzoai/runner/pkg/models"
-	"github.com/hanzoai/runner/pkg/runner"
-	"github.com/hanzoai/runner/pkg/services"
 	"github.com/docker/docker/client"
+	"github.com/hanzoai/runtime/apps/runner/cmd/runner/config"
+	"github.com/hanzoai/runtime/apps/runner/internal/util"
+	"github.com/hanzoai/runtime/apps/runner/pkg/api"
+	"github.com/hanzoai/runtime/apps/runner/pkg/api/dto"
+	"github.com/hanzoai/runtime/apps/runner/pkg/cache"
+	"github.com/hanzoai/runtime/apps/runner/pkg/daemon"
+	"github.com/hanzoai/runtime/apps/runner/pkg/docker"
+	"github.com/hanzoai/runtime/apps/runner/pkg/models"
+	"github.com/hanzoai/runtime/apps/runner/pkg/runner"
+	"github.com/hanzoai/runtime/apps/runner/pkg/services"
 
 	"github.com/rs/zerolog"
 	zlog "github.com/rs/zerolog/log"
@@ -73,6 +74,17 @@ func main() {
 		return
 	}
 
+	runtimes, err := docker.Runtimes(ctx, cli)
+	if err != nil {
+		log.Error(err)
+		return
+	}
+
+	defaultRuntime := docker.IsolationRuntime(dto.IsolationDefault)
+	if !runtimes[defaultRuntime] {
+		log.Errorf("Runtime %q for the default %q isolation is not registered with Docker: every sandbox that does not ask for another isolation will be refused", defaultRuntime, dto.IsolationDefault)
+	}
+
 	dockerClient := docker.NewDockerClient(docker.DockerClientConfig{
 		ApiClient:             cli,
 		Cache:                 runnerCache,
@@ -83,6 +95,8 @@ func main() {
 		AWSSecretAccessKey:    cfg.AWSSecretAccessKey,
 		DaemonPath:            daemonPath,
 		ComputerUsePluginPath: pluginPath,
+		Runtimes:              runtimes,
+		RuncOrgs:              config.GetRuncOrgs(),
 	})
 
 	sandboxService := services.NewSandboxService(runnerCache, dockerClient)

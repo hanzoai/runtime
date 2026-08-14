@@ -6,10 +6,10 @@ package services
 import (
 	"context"
 
-	"github.com/hanzoai/runner/pkg/cache"
-	"github.com/hanzoai/runner/pkg/docker"
-	"github.com/hanzoai/runner/pkg/models"
-	"github.com/hanzoai/runner/pkg/models/enums"
+	"github.com/hanzoai/runtime/apps/runner/pkg/cache"
+	"github.com/hanzoai/runtime/apps/runner/pkg/docker"
+	"github.com/hanzoai/runtime/apps/runner/pkg/models"
+	"github.com/hanzoai/runtime/apps/runner/pkg/models/enums"
 )
 
 type SandboxService struct {

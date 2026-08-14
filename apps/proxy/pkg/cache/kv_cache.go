@@ -10,7 +10,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/hanzoai/proxy/cmd/proxy/config"
+	"github.com/hanzoai/runtime/apps/proxy/cmd/proxy/config"
 	"github.com/hanzokv/go/v9"
 )
 

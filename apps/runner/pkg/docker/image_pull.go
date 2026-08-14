@@ -10,11 +10,11 @@ import (
 	"io"
 	"strings"
 
-	"github.com/hanzoai/common-go/pkg/timer"
-	"github.com/hanzoai/runner/internal/constants"
-	"github.com/hanzoai/runner/internal/util"
-	"github.com/hanzoai/runner/pkg/api/dto"
-	"github.com/hanzoai/runner/pkg/models/enums"
+	"github.com/hanzoai/runtime/libs/common-go/pkg/timer"
+	"github.com/hanzoai/runtime/apps/runner/internal/constants"
+	"github.com/hanzoai/runtime/apps/runner/internal/util"
+	"github.com/hanzoai/runtime/apps/runner/pkg/api/dto"
+	"github.com/hanzoai/runtime/apps/runner/pkg/models/enums"
 
 	"github.com/docker/docker/api/types/image"
 	"github.com/docker/docker/api/types/registry"

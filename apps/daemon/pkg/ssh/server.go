@@ -9,8 +9,8 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/hanzoai/daemon/pkg/common"
-	"github.com/hanzoai/daemon/pkg/ssh/config"
+	"github.com/hanzoai/runtime/apps/daemon/pkg/common"
+	"github.com/hanzoai/runtime/apps/daemon/pkg/ssh/config"
 	"github.com/gliderlabs/ssh"
 	"github.com/pkg/sftp"
 	"golang.org/x/sys/unix"

@@ -14,7 +14,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/hanzoai/daemon/pkg/toolbox/computeruse"
+	"github.com/hanzoai/runtime/apps/daemon/pkg/toolbox/computeruse"
 	log "github.com/sirupsen/logrus"
 )
 

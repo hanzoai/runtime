@@ -1,4 +1,4 @@
-module github.com/hanzoai/computer-use
+module github.com/hanzoai/runtime/libs/computer-use
 
 go 1.26.4
 

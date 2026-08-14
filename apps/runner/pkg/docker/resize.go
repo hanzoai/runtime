@@ -6,8 +6,8 @@ package docker
 import (
 	"context"
 
-	"github.com/hanzoai/runner/pkg/api/dto"
-	"github.com/hanzoai/runner/pkg/models/enums"
+	"github.com/hanzoai/runtime/apps/runner/pkg/api/dto"
+	"github.com/hanzoai/runtime/apps/runner/pkg/models/enums"
 
 	"github.com/docker/docker/api/types/container"
 )

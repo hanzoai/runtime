@@ -7,6 +7,7 @@ import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } f
 import { OrganizationUser } from './organization-user.entity'
 import { OrganizationRole } from './organization-role.entity'
 import { OrganizationInvitation } from './organization-invitation.entity'
+import { Isolation, ISOLATION_DEFAULT } from '../../sandbox/enums/isolation.enum'
 
 @Entity()
 export class Organization {
@@ -28,6 +29,17 @@ export class Organization {
     default: true,
   })
   telemetryEnabled: boolean
+
+  // The boundary this organization's sandboxes run behind. A row that predates
+  // this column reads as the default, so nothing gets weaker isolation by
+  // having been created earlier.
+  @Column({
+    type: 'enum',
+    enum: Isolation,
+    default: ISOLATION_DEFAULT,
+    name: 'sandbox_isolation',
+  })
+  sandboxIsolation: Isolation
 
   @Column({
     type: 'int',

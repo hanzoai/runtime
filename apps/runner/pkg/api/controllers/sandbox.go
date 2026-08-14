@@ -6,10 +6,10 @@ package controllers
 import (
 	"net/http"
 
-	"github.com/hanzoai/runner/pkg/api/dto"
-	"github.com/hanzoai/runner/pkg/common"
-	"github.com/hanzoai/runner/pkg/models/enums"
-	"github.com/hanzoai/runner/pkg/runner"
+	"github.com/hanzoai/runtime/apps/runner/pkg/api/dto"
+	"github.com/hanzoai/runtime/apps/runner/pkg/common"
+	"github.com/hanzoai/runtime/apps/runner/pkg/models/enums"
+	"github.com/hanzoai/runtime/apps/runner/pkg/runner"
 	"github.com/gin-gonic/gin"
 )
 

@@ -4,8 +4,8 @@
 package main
 
 import (
-	"github.com/hanzoai/proxy/cmd/proxy/config"
-	"github.com/hanzoai/proxy/pkg/proxy"
+	"github.com/hanzoai/runtime/apps/proxy/cmd/proxy/config"
+	"github.com/hanzoai/runtime/apps/proxy/pkg/proxy"
 
 	log "github.com/sirupsen/logrus"
 )

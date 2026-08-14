@@ -7,7 +7,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/hanzoai/runtime/cli/apiclient"
+	"github.com/hanzoai/runtime/apps/cli/apiclient"
 	"github.com/mark3labs/mcp-go/mcp"
 
 	log "github.com/sirupsen/logrus"
