@@ -23,14 +23,18 @@ type Config struct {
 	EnableTLS          bool   `envconfig:"ENABLE_TLS"`
 	CacheRetentionDays int    `envconfig:"CACHE_RETENTION_DAYS"`
 	Environment        string `envconfig:"ENVIRONMENT"`
-	ContainerRuntime   string `envconfig:"CONTAINER_RUNTIME"`
 	ContainerNetwork   string `envconfig:"CONTAINER_NETWORK"`
-	LogFilePath        string `envconfig:"LOG_FILE_PATH"`
-	AWSRegion          string `envconfig:"AWS_REGION"`
-	AWSEndpointUrl     string `envconfig:"AWS_ENDPOINT_URL"`
-	AWSAccessKeyId     string `envconfig:"AWS_ACCESS_KEY_ID"`
-	AWSSecretAccessKey string `envconfig:"AWS_SECRET_ACCESS_KEY"`
-	AWSDefaultBucket   string `envconfig:"AWS_DEFAULT_BUCKET"`
+	// RuncOrgs lists the organization ids allowed to run sandboxes with no
+	// boundary, for internal infrastructure that wants the speed and accepts
+	// what that costs. Empty names nobody, which is the safe reading of a
+	// field somebody forgot to fill in.
+	RuncOrgs           []string `envconfig:"RUNC_ORGS"`
+	LogFilePath        string   `envconfig:"LOG_FILE_PATH"`
+	AWSRegion          string   `envconfig:"AWS_REGION"`
+	AWSEndpointUrl     string   `envconfig:"AWS_ENDPOINT_URL"`
+	AWSAccessKeyId     string   `envconfig:"AWS_ACCESS_KEY_ID"`
+	AWSSecretAccessKey string   `envconfig:"AWS_SECRET_ACCESS_KEY"`
+	AWSDefaultBucket   string   `envconfig:"AWS_DEFAULT_BUCKET"`
 }
 
 var DEFAULT_API_PORT int = 8080
@@ -69,8 +73,15 @@ func GetConfig() (*Config, error) {
 	return config, nil
 }
 
-func GetContainerRuntime() string {
-	return config.ContainerRuntime
+// GetRuncOrgs returns the organizations allowed to run without a boundary.
+func GetRuncOrgs() map[string]bool {
+	orgs := make(map[string]bool, len(config.RuncOrgs))
+	for _, org := range config.RuncOrgs {
+		if org = strings.TrimSpace(org); org != "" {
+			orgs[org] = true
+		}
+	}
+	return orgs
 }
 
 func GetContainerNetwork() string {

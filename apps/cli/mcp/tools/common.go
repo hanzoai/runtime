@@ -3,7 +3,7 @@
 
 package tools
 
-import "github.com/hanzoai/runtime/cli/apiclient"
+import "github.com/hanzoai/runtime/apps/cli/apiclient"
 
 var runtimeMCPHeaders map[string]string = map[string]string{
 	apiclient.RuntimeSourceHeader: "runtime-mcp",

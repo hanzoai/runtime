@@ -6,9 +6,9 @@ package main
 import (
 	"os"
 
-	cu "github.com/hanzoai/computer-use/pkg/computeruse"
-	"github.com/hanzoai/daemon/pkg/toolbox/computeruse"
-	"github.com/hanzoai/daemon/pkg/toolbox/computeruse/manager"
+	cu "github.com/hanzoai/runtime/libs/computer-use/pkg/computeruse"
+	"github.com/hanzoai/runtime/apps/daemon/pkg/toolbox/computeruse"
+	"github.com/hanzoai/runtime/apps/daemon/pkg/toolbox/computeruse/manager"
 	"github.com/hashicorp/go-hclog"
 	hc_plugin "github.com/hashicorp/go-plugin"
 )

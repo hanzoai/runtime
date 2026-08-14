@@ -6,7 +6,7 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/hanzoai/runtime/cli/views/common"
+	"github.com/hanzoai/runtime/apps/cli/views/common"
 	"github.com/pkg/browser"
 	"github.com/spf13/cobra"
 )

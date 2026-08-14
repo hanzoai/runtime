@@ -5,6 +5,7 @@
 
 import { ApiProperty, ApiSchema } from '@nestjs/swagger'
 import { Organization } from '../entities/organization.entity'
+import { Isolation } from '../../sandbox/enums/isolation.enum'
 
 @ApiSchema({ name: 'Organization' })
 export class OrganizationDto {
@@ -27,6 +28,13 @@ export class OrganizationDto {
     description: 'Personal organization flag',
   })
   personal: boolean
+
+  @ApiProperty({
+    description: 'Boundary this organization\'s sandboxes run behind',
+    enum: Isolation,
+    enumName: 'Isolation',
+  })
+  sandboxIsolation: Isolation
 
   @ApiProperty({
     description: 'Creation timestamp',
@@ -64,6 +72,7 @@ export class OrganizationDto {
       name: organization.name,
       createdBy: organization.createdBy,
       personal: organization.personal,
+      sandboxIsolation: organization.sandboxIsolation,
       createdAt: organization.createdAt,
       updatedAt: organization.updatedAt,
       suspended: organization.suspended,

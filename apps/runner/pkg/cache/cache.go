@@ -8,8 +8,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/hanzoai/runner/pkg/models"
-	"github.com/hanzoai/runner/pkg/models/enums"
+	"github.com/hanzoai/runtime/apps/runner/pkg/models"
+	"github.com/hanzoai/runtime/apps/runner/pkg/models/enums"
 )
 
 type IRunnerCache interface {

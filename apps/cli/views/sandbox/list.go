@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/hanzoai/apiclient"
-	"github.com/hanzoai/runtime/cli/views/common"
-	"github.com/hanzoai/runtime/cli/views/util"
+	apiclient "github.com/hanzoai/runtime/libs/api-client-go"
+	"github.com/hanzoai/runtime/apps/cli/views/common"
+	"github.com/hanzoai/runtime/apps/cli/views/util"
 )
 
 type RowData struct {

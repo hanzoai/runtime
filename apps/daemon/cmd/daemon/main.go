@@ -13,9 +13,9 @@ import (
 
 	golog "log"
 
-	"github.com/hanzoai/daemon/cmd/daemon/config"
-	"github.com/hanzoai/daemon/pkg/terminal"
-	"github.com/hanzoai/daemon/pkg/toolbox"
+	"github.com/hanzoai/runtime/apps/daemon/cmd/daemon/config"
+	"github.com/hanzoai/runtime/apps/daemon/pkg/terminal"
+	"github.com/hanzoai/runtime/apps/daemon/pkg/toolbox"
 	log "github.com/sirupsen/logrus"
 )
 

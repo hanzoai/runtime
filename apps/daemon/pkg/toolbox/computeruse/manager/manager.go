@@ -12,7 +12,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/hanzoai/daemon/pkg/toolbox/computeruse"
+	"github.com/hanzoai/runtime/apps/daemon/pkg/toolbox/computeruse"
 	"github.com/hashicorp/go-hclog"
 	"github.com/hashicorp/go-plugin"
 	log "github.com/sirupsen/logrus"

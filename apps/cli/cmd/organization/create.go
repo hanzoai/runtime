@@ -6,11 +6,11 @@ package organization
 import (
 	"context"
 
-	"github.com/hanzoai/apiclient"
-	apiclient_cli "github.com/hanzoai/runtime/cli/apiclient"
-	"github.com/hanzoai/runtime/cli/config"
-	"github.com/hanzoai/runtime/cli/views/common"
-	"github.com/hanzoai/runtime/cli/views/organization"
+	apiclient "github.com/hanzoai/runtime/libs/api-client-go"
+	apiclient_cli "github.com/hanzoai/runtime/apps/cli/apiclient"
+	"github.com/hanzoai/runtime/apps/cli/config"
+	"github.com/hanzoai/runtime/apps/cli/views/common"
+	"github.com/hanzoai/runtime/apps/cli/views/organization"
 	"github.com/spf13/cobra"
 )
 

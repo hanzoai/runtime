@@ -6,7 +6,7 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/hanzoai/runtime/cli/internal"
+	"github.com/hanzoai/runtime/apps/cli/internal"
 	"github.com/spf13/cobra"
 )
 

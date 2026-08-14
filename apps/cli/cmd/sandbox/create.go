@@ -9,12 +9,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/hanzoai/apiclient"
-	apiclient_cli "github.com/hanzoai/runtime/cli/apiclient"
-	"github.com/hanzoai/runtime/cli/cmd/common"
-	"github.com/hanzoai/runtime/cli/config"
-	"github.com/hanzoai/runtime/cli/util"
-	views_common "github.com/hanzoai/runtime/cli/views/common"
+	apiclient "github.com/hanzoai/runtime/libs/api-client-go"
+	apiclient_cli "github.com/hanzoai/runtime/apps/cli/apiclient"
+	"github.com/hanzoai/runtime/apps/cli/cmd/common"
+	"github.com/hanzoai/runtime/apps/cli/config"
+	"github.com/hanzoai/runtime/apps/cli/util"
+	views_common "github.com/hanzoai/runtime/apps/cli/views/common"
 	"github.com/spf13/cobra"
 )
 

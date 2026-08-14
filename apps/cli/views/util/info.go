@@ -5,7 +5,7 @@ package util
 
 import (
 	"github.com/charmbracelet/lipgloss"
-	"github.com/hanzoai/runtime/cli/views/common"
+	"github.com/hanzoai/runtime/apps/cli/views/common"
 )
 
 const PropertyNameWidth = 16

@@ -7,13 +7,13 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/hanzoai/apiclient"
-	apiclient_cli "github.com/hanzoai/runtime/cli/apiclient"
-	"github.com/hanzoai/runtime/cli/cmd/common"
-	"github.com/hanzoai/runtime/cli/config"
-	view_common "github.com/hanzoai/runtime/cli/views/common"
-	"github.com/hanzoai/runtime/cli/views/organization"
-	"github.com/hanzoai/runtime/cli/views/util"
+	apiclient "github.com/hanzoai/runtime/libs/api-client-go"
+	apiclient_cli "github.com/hanzoai/runtime/apps/cli/apiclient"
+	"github.com/hanzoai/runtime/apps/cli/cmd/common"
+	"github.com/hanzoai/runtime/apps/cli/config"
+	view_common "github.com/hanzoai/runtime/apps/cli/views/common"
+	"github.com/hanzoai/runtime/apps/cli/views/organization"
+	"github.com/hanzoai/runtime/apps/cli/views/util"
 	"github.com/spf13/cobra"
 )
 

@@ -9,6 +9,7 @@ import { EntityManager, In, IsNull, LessThan, MoreThan, Not, Or, Repository } fr
 import { CreateOrganizationDto } from '../dto/create-organization.dto'
 import { OverviewDto } from '../dto/overview.dto'
 import { UpdateOrganizationQuotaDto } from '../dto/update-organization-quota.dto'
+import { UpdateOrganizationIsolationDto } from '../dto/update-organization-isolation.dto'
 import { Organization } from '../entities/organization.entity'
 import { OrganizationUser } from '../entities/organization-user.entity'
 import { OrganizationMemberRole } from '../enums/organization-member-role.enum'
@@ -172,6 +173,28 @@ export class OrganizationService implements OnModuleInit {
     organization.volumeQuota = updateOrganizationQuotaDto.volumeQuota ?? organization.volumeQuota
     organization.snapshotQuota = updateOrganizationQuotaDto.snapshotQuota ?? organization.snapshotQuota
     return this.organizationRepository.save(organization)
+  }
+
+  async updateIsolation(
+    organizationId: string,
+    updateOrganizationIsolationDto: UpdateOrganizationIsolationDto,
+  ): Promise<Organization> {
+    const organization = await this.organizationRepository.findOne({ where: { id: organizationId } })
+    if (!organization) {
+      throw new NotFoundException(`Organization with ID ${organizationId} not found`)
+    }
+
+    const previous = organization.sandboxIsolation
+    organization.sandboxIsolation = updateOrganizationIsolationDto.isolation
+    const saved = await this.organizationRepository.save(organization)
+
+    // The reason a boundary was chosen is only useful if it survives the
+    // request that carried it.
+    this.logger.log(
+      `Organization ${organizationId} isolation ${previous} -> ${updateOrganizationIsolationDto.isolation}: ${updateOrganizationIsolationDto.reason}`,
+    )
+
+    return saved
   }
 
   async suspend(organizationId: string, suspensionReason?: string, suspendedUntil?: Date): Promise<void> {

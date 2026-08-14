@@ -8,14 +8,14 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/hanzoai/runtime/cli/cmd"
-	"github.com/hanzoai/runtime/cli/cmd/auth"
-	"github.com/hanzoai/runtime/cli/cmd/mcp"
-	"github.com/hanzoai/runtime/cli/cmd/organization"
-	"github.com/hanzoai/runtime/cli/cmd/sandbox"
-	"github.com/hanzoai/runtime/cli/cmd/snapshot"
-	"github.com/hanzoai/runtime/cli/cmd/volume"
-	"github.com/hanzoai/runtime/cli/internal"
+	"github.com/hanzoai/runtime/apps/cli/cmd"
+	"github.com/hanzoai/runtime/apps/cli/cmd/auth"
+	"github.com/hanzoai/runtime/apps/cli/cmd/mcp"
+	"github.com/hanzoai/runtime/apps/cli/cmd/organization"
+	"github.com/hanzoai/runtime/apps/cli/cmd/sandbox"
+	"github.com/hanzoai/runtime/apps/cli/cmd/snapshot"
+	"github.com/hanzoai/runtime/apps/cli/cmd/volume"
+	"github.com/hanzoai/runtime/apps/cli/internal"
 	"github.com/joho/godotenv"
 	"github.com/spf13/cobra"
 )

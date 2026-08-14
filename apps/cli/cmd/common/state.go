@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/hanzoai/apiclient"
-	apiclient_cli "github.com/hanzoai/runtime/cli/apiclient"
+	apiclient "github.com/hanzoai/runtime/libs/api-client-go"
+	apiclient_cli "github.com/hanzoai/runtime/apps/cli/apiclient"
 )
 
 func AwaitSnapshotState(ctx context.Context, apiClient *apiclient.APIClient, targetImage string, state apiclient.SnapshotState) error {

@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/hanzoai/runtime/cli/cmd/mcp/agents"
+	"github.com/hanzoai/runtime/apps/cli/cmd/mcp/agents"
 	"github.com/spf13/cobra"
 )
 

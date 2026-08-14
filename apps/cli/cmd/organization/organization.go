@@ -6,8 +6,8 @@ package organization
 import (
 	"errors"
 
-	"github.com/hanzoai/runtime/cli/config"
-	"github.com/hanzoai/runtime/cli/internal"
+	"github.com/hanzoai/runtime/apps/cli/config"
+	"github.com/hanzoai/runtime/apps/cli/internal"
 	"github.com/spf13/cobra"
 )
 

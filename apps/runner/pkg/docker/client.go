@@ -7,7 +7,7 @@ import (
 	"io"
 	"sync"
 
-	"github.com/hanzoai/runner/pkg/cache"
+	"github.com/hanzoai/runtime/apps/runner/pkg/cache"
 	"github.com/docker/docker/client"
 )
 
@@ -21,6 +21,12 @@ type DockerClientConfig struct {
 	AWSSecretAccessKey    string
 	DaemonPath            string
 	ComputerUsePluginPath string
+	// Runtimes the Docker daemon offers, which decides which boundaries this
+	// node can provide.
+	Runtimes map[string]bool
+	// RuncOrgs are the organizations allowed to run without a boundary. Empty
+	// names nobody.
+	RuncOrgs map[string]bool
 }
 
 func NewDockerClient(config DockerClientConfig) *DockerClient {
@@ -35,6 +41,8 @@ func NewDockerClient(config DockerClientConfig) *DockerClient {
 		volumeMutexes:         make(map[string]*sync.Mutex),
 		daemonPath:            config.DaemonPath,
 		computerUsePluginPath: config.ComputerUsePluginPath,
+		runtimes:              config.Runtimes,
+		runcOrgs:              config.RuncOrgs,
 	}
 }
 
@@ -50,4 +58,6 @@ type DockerClient struct {
 	volumeMutexesMutex    sync.Mutex
 	daemonPath            string
 	computerUsePluginPath string
+	runtimes              map[string]bool
+	runcOrgs              map[string]bool
 }

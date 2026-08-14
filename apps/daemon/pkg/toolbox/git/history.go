@@ -7,7 +7,7 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/hanzoai/daemon/pkg/git"
+	"github.com/hanzoai/runtime/apps/daemon/pkg/git"
 	"github.com/gin-gonic/gin"
 )
 

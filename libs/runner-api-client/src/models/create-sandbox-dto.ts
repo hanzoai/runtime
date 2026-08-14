@@ -96,7 +96,13 @@ export interface CreateSandboxDTO {
    * @type {string}
    * @memberof CreateSandboxDTO
    */
-  userId: string
+  orgId: string
+  /**
+   *
+   * @type {string}
+   * @memberof CreateSandboxDTO
+   */
+  isolation?: CreateSandboxDTOIsolationEnum
   /**
    *
    * @type {Array<DtoVolumeDTO>}
@@ -104,3 +110,12 @@ export interface CreateSandboxDTO {
    */
   volumes?: Array<DtoVolumeDTO>
 }
+
+export const CreateSandboxDTOIsolationEnum = {
+  Gvisor: 'gvisor',
+  Firecracker: 'firecracker',
+  Runc: 'runc',
+} as const
+
+export type CreateSandboxDTOIsolationEnum =
+  (typeof CreateSandboxDTOIsolationEnum)[keyof typeof CreateSandboxDTOIsolationEnum]

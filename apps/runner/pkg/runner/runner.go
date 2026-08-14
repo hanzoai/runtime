@@ -6,9 +6,9 @@ package runner
 import (
 	"log"
 
-	"github.com/hanzoai/runner/pkg/cache"
-	"github.com/hanzoai/runner/pkg/docker"
-	"github.com/hanzoai/runner/pkg/services"
+	"github.com/hanzoai/runtime/apps/runner/pkg/cache"
+	"github.com/hanzoai/runtime/apps/runner/pkg/docker"
+	"github.com/hanzoai/runtime/apps/runner/pkg/services"
 )
 
 type RunnerInstanceConfig struct {

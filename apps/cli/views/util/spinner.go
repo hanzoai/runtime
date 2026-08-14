@@ -10,7 +10,7 @@ import (
 	"github.com/charmbracelet/bubbles/spinner"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
-	"github.com/hanzoai/runtime/cli/views/common"
+	"github.com/hanzoai/runtime/apps/cli/views/common"
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/term"
 )

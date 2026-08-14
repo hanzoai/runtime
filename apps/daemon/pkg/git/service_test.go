@@ -6,8 +6,8 @@ package git_test
 import (
 	"testing"
 
-	"github.com/hanzoai/daemon/pkg/git"
-	"github.com/hanzoai/daemon/pkg/gitprovider"
+	"github.com/hanzoai/runtime/apps/daemon/pkg/git"
+	"github.com/hanzoai/runtime/apps/daemon/pkg/gitprovider"
 	"github.com/go-git/go-git/v5/plumbing/transport/http"
 	"github.com/stretchr/testify/suite"
 )

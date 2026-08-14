@@ -6,7 +6,7 @@ package docker
 import (
 	"context"
 
-	"github.com/hanzoai/common-go/pkg/timer"
+	"github.com/hanzoai/runtime/libs/common-go/pkg/timer"
 	"github.com/docker/docker/api/types/container"
 
 	log "github.com/sirupsen/logrus"

@@ -7,9 +7,9 @@ import (
 	"context"
 	"net/http"
 
-	apiclient "github.com/hanzoai/apiclient"
-	"github.com/hanzoai/runtime/cli/auth"
-	"github.com/hanzoai/runtime/cli/config"
+	apiclient "github.com/hanzoai/runtime/libs/api-client-go"
+	"github.com/hanzoai/runtime/apps/cli/auth"
+	"github.com/hanzoai/runtime/apps/cli/config"
 )
 
 var apiClient *apiclient.APIClient

@@ -10,9 +10,9 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/hanzoai/common-go/pkg/timer"
-	"github.com/hanzoai/runner/pkg/common"
-	"github.com/hanzoai/runner/pkg/models/enums"
+	"github.com/hanzoai/runtime/libs/common-go/pkg/timer"
+	"github.com/hanzoai/runtime/apps/runner/pkg/common"
+	"github.com/hanzoai/runtime/apps/runner/pkg/models/enums"
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/container"
 

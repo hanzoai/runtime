@@ -7,8 +7,8 @@ import (
 	"context"
 	"io"
 
-	"github.com/hanzoai/runner/internal/util"
-	"github.com/hanzoai/runner/pkg/api/dto"
+	"github.com/hanzoai/runtime/apps/runner/internal/util"
+	"github.com/hanzoai/runtime/apps/runner/pkg/api/dto"
 
 	"github.com/docker/docker/api/types/image"
 	"github.com/docker/docker/pkg/jsonmessage"

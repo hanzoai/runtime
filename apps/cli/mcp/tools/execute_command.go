@@ -9,8 +9,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/hanzoai/apiclient"
-	apiclient_cli "github.com/hanzoai/runtime/cli/apiclient"
+	apiclient "github.com/hanzoai/runtime/libs/api-client-go"
+	apiclient_cli "github.com/hanzoai/runtime/apps/cli/apiclient"
 	"github.com/mark3labs/mcp-go/mcp"
 
 	log "github.com/sirupsen/logrus"

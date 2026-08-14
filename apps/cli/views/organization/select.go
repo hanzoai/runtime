@@ -5,8 +5,8 @@ package organization
 
 import (
 	"github.com/charmbracelet/huh"
-	"github.com/hanzoai/apiclient"
-	"github.com/hanzoai/runtime/cli/views/common"
+	apiclient "github.com/hanzoai/runtime/libs/api-client-go"
+	"github.com/hanzoai/runtime/apps/cli/views/common"
 )
 
 func GetOrganizationIdFromPrompt(organizationList []apiclient.Organization) (*apiclient.Organization, error) {

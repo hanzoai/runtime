@@ -10,9 +10,9 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/hanzoai/apiclient"
-	apiclient_cli "github.com/hanzoai/runtime/cli/apiclient"
-	"github.com/hanzoai/runtime/cli/pkg/minio"
+	apiclient "github.com/hanzoai/runtime/libs/api-client-go"
+	apiclient_cli "github.com/hanzoai/runtime/apps/cli/apiclient"
+	"github.com/hanzoai/runtime/apps/cli/pkg/minio"
 )
 
 // Create MinIO client from access parameters
